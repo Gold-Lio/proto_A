@@ -15,6 +15,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 	public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel, ReportPanel, 
 		EmergencyPanel, VotePanel, KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
+
 	public List<PlayerScript> Players = new List<PlayerScript>();
 	public PlayerScript MyPlayer;
 	
@@ -36,7 +37,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	{
 		if (isTest) return;
 
-		Screen.SetResolution(1600, 900, false);
+		Screen.SetResolution(720, 405, false);
 		PV = photonView;
 		ShowPanel(DisconnectPanel);
 		ShowBackground(WaitingBackground);
@@ -123,7 +124,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		SetImpoCrew();
 		PhotonNetwork.CurrentRoom.IsOpen = false;
 		PhotonNetwork.CurrentRoom.IsVisible = false;
-		ChatManager.CM.photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, false);
+		//ChatManager.CM.photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, false);
 
 		PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
 	}
