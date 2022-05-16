@@ -19,7 +19,6 @@ ScriptsOnlyBuild:
     - PointersController
     - ProximityVoiceTrigger
     - UIManager
-    - VoteManager
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -262,107 +261,105 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4484}
     - Class: 114
-      Script: {instanceID: 4530}
+      Script: {instanceID: 4538}
     - Class: 114
-      Script: {instanceID: 4540}
+      Script: {instanceID: 4618}
     - Class: 114
-      Script: {instanceID: 4620}
+      Script: {instanceID: 4866}
     - Class: 114
-      Script: {instanceID: 4868}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5074}
+      Script: {instanceID: 5158}
     - Class: 114
-      Script: {instanceID: 5160}
+      Script: {instanceID: 5204}
     - Class: 114
-      Script: {instanceID: 5206}
+      Script: {instanceID: 5218}
     - Class: 114
       Script: {instanceID: 5220}
     - Class: 114
-      Script: {instanceID: 5222}
+      Script: {instanceID: 5236}
     - Class: 114
-      Script: {instanceID: 5238}
+      Script: {instanceID: 5274}
     - Class: 114
-      Script: {instanceID: 5276}
+      Script: {instanceID: 5280}
     - Class: 114
-      Script: {instanceID: 5282}
+      Script: {instanceID: 5292}
     - Class: 114
-      Script: {instanceID: 5294}
+      Script: {instanceID: 5446}
     - Class: 114
-      Script: {instanceID: 5448}
+      Script: {instanceID: 5468}
     - Class: 114
       Script: {instanceID: 5470}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 5488}
     - Class: 114
-      Script: {instanceID: 5490}
+      Script: {instanceID: 5494}
     - Class: 114
-      Script: {instanceID: 5496}
+      Script: {instanceID: 5636}
     - Class: 114
-      Script: {instanceID: 5638}
+      Script: {instanceID: 5686}
     - Class: 114
-      Script: {instanceID: 5688}
+      Script: {instanceID: 5762}
     - Class: 114
-      Script: {instanceID: 5764}
+      Script: {instanceID: 5886}
     - Class: 114
-      Script: {instanceID: 5888}
+      Script: {instanceID: 6026}
     - Class: 114
-      Script: {instanceID: 6028}
+      Script: {instanceID: 6058}
     - Class: 114
-      Script: {instanceID: 6060}
+      Script: {instanceID: 6094}
     - Class: 114
-      Script: {instanceID: 6096}
+      Script: {instanceID: 6100}
     - Class: 114
-      Script: {instanceID: 6102}
+      Script: {instanceID: 6194}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 6230}
     - Class: 114
-      Script: {instanceID: 6232}
+      Script: {instanceID: 6276}
     - Class: 114
-      Script: {instanceID: 6278}
+      Script: {instanceID: 6334}
     - Class: 114
-      Script: {instanceID: 6336}
+      Script: {instanceID: 6344}
     - Class: 114
       Script: {instanceID: 6346}
     - Class: 114
-      Script: {instanceID: 6348}
+      Script: {instanceID: 6450}
     - Class: 114
-      Script: {instanceID: 6452}
+      Script: {instanceID: 6582}
     - Class: 114
-      Script: {instanceID: 6584}
+      Script: {instanceID: 6626}
     - Class: 114
-      Script: {instanceID: 6628}
+      Script: {instanceID: 6680}
     - Class: 114
-      Script: {instanceID: 6682}
+      Script: {instanceID: 6702}
     - Class: 114
-      Script: {instanceID: 6704}
+      Script: {instanceID: 6754}
     - Class: 114
-      Script: {instanceID: 6756}
+      Script: {instanceID: 6894}
     - Class: 114
-      Script: {instanceID: 6896}
+      Script: {instanceID: 7234}
     - Class: 114
-      Script: {instanceID: 7236}
+      Script: {instanceID: 7390}
     - Class: 114
       Script: {instanceID: 7392}
     - Class: 114
-      Script: {instanceID: 7394}
+      Script: {instanceID: 7512}
     - Class: 114
-      Script: {instanceID: 7514}
+      Script: {instanceID: 7692}
     - Class: 114
-      Script: {instanceID: 7694}
+      Script: {instanceID: 7726}
     - Class: 114
-      Script: {instanceID: 7728}
+      Script: {instanceID: 7768}
     - Class: 114
-      Script: {instanceID: 7770}
+      Script: {instanceID: 7776}
     - Class: 114
-      Script: {instanceID: 7778}
+      Script: {instanceID: 7888}
     - Class: 114
-      Script: {instanceID: 7890}
+      Script: {instanceID: 7944}
     - Class: 114
-      Script: {instanceID: 7946}
+      Script: {instanceID: 8004}
     - Class: 114
-      Script: {instanceID: 8006}
-    - Class: 114
-      Script: {instanceID: 8184}
+      Script: {instanceID: 8182}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -978,7 +975,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: e5d761d1a82c9fce1e1a2ac42d7e1184
+      Hash: e24b3961556bd6cd87b6d0c14e41a945
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -1336,12 +1333,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: VoteManager
   - hash:
       serializedVersion: 2
       Hash: e37675de1ea5e56da90f5600d33587bd
@@ -1794,7 +1785,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 60dd6b831d6055af426f4feed5f898a3
+      Hash: 314e6821744121573d076bad7dda046c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -2448,7 +2439,7 @@ ScriptsOnlyBuild:
     className: PunTurnManager
   - hash:
       serializedVersion: 2
-      Hash: 6c3be9e84594df182505d601d884408c
+      Hash: 2bac02286a4c7d50f8aa4685f8b8abcb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerScript

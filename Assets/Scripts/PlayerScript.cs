@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public Rigidbody2D RB;
 	public GameObject[] Anims;
 	public SpriteRenderer[] CharacterSR;
-	public Transform Character, Canvas, Ghost;
+	public Transform Character, Canvas;// Ghost;
 	public Text NickText;
 
 	public enum State { Idle, Walk };
@@ -24,11 +24,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public PlayerScript KillTargetPlayer;
 	public int targetDeadColorIndex;
 
-	[SerializeField] int _voteColorIndex; // 투표한 사람 색
-	public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
-	[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
+	//[SerializeField] int _voteColorIndex; // 투표한 사람 색
+	//public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
+	//[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
 
-	public List<int> VotedColors = new List<int>();
+	//public List<int> VotedColors = new List<int>();
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
 	Vector2 input;
@@ -88,8 +88,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	{
 		transform.position = target;
 	}
-
-
 	
 
 	[PunRPC]
@@ -103,12 +101,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			if (_input.x < 0) 
 			{
 				Character.localScale = Vector3.one;
-				if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
+				//if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
 			}
 			else 
 			{
 				Character.localScale = new Vector3(-1, 1, 1);
-				if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = new Vector3(-1, 1, 1);
+				//if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = new Vector3(-1, 1, 1);
 			}
 		}
 		else 
@@ -161,7 +159,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
-
 	public void SetMission() 
 	{
 		if (!PV.IsMine) return;
@@ -185,41 +182,43 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.CompareTag("DeadBody") && PV.IsMine) 
-		{
-			if (isDie) return;
-			UM.SetInteractionBtn1(4, true);
-			targetDeadColorIndex = col.GetComponent<DeadBodyScript>().colorIndex;
-		}
+	//DeadBody에 닿았을때의 Report기능 On
+	//void OnTriggerEnter2D(Collider2D col)
+	//{
+	//	if (col.CompareTag("DeadBody") && PV.IsMine) 
+	//	{
+	//		if (isDie) return;
+	//		UM.SetInteractionBtn1(4, true);
+	//		targetDeadColorIndex = col.GetComponent<DeadBodyScript>().colorIndex;
+	//	}
 
-		if (!col.CompareTag("Player") || !NM.isGameStart) return;
-		if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
-		if (!col.GetComponent<PlayerScript>().isImposter) 
-		{
-			UM.SetInteractionBtn0(5, true);
-			KillTargetPlayer = col.GetComponent<PlayerScript>();
-		}
-	}
+	//	if (!col.CompareTag("Player") || !NM.isGameStart) return;
+	//	if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+	//	if (!col.GetComponent<PlayerScript>().isImposter) 
+	//	{
+	//		UM.SetInteractionBtn0(5, true);
+	//		KillTargetPlayer = col.GetComponent<PlayerScript>();
+	//	}
+	//}
 
-	void OnTriggerExit2D(Collider2D col)
-	{
-		if (col.CompareTag("DeadBody") && PV.IsMine)
-		{
-			if (isDie) return;
-			UM.SetInteractionBtn1(4, false);
-			targetDeadColorIndex = -1;
-		}
+	//DeadBody에 닿았을때의 Report기능 OFF
+	//void OnTriggerExit2D(Collider2D col)
+	//{
+	//	if (col.CompareTag("DeadBody") && PV.IsMine)
+	//	{
+	//		if (isDie) return;
+	//		UM.SetInteractionBtn1(4, false);
+	//		targetDeadColorIndex = -1;
+	//	}
 
-		if (!col.CompareTag("Player") || !NM.isGameStart) return;
-		if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
-		if (!col.GetComponent<PlayerScript>().isImposter)
-		{
-			UM.SetInteractionBtn0(5, false);
-			KillTargetPlayer = null;
-		}
-	}
+	//	if (!col.CompareTag("Player") || !NM.isGameStart) return;
+	//	if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+	//	if (!col.GetComponent<PlayerScript>().isImposter)
+	//	{
+	//		UM.SetInteractionBtn0(5, false);
+	//		KillTargetPlayer = null;
+	//	}
+	//}
 
 	public void Kill() 
 	{
@@ -252,40 +251,76 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
-	[PunRPC]
-	void SetVotedDie() 
-	{
-		isDie = true;
+	//[PunRPC]
+	//void SetVotedDie() 
+	//{
+	//	isDie = true;
 
-		transform.GetChild(0).gameObject.SetActive(false);
-		transform.GetChild(1).gameObject.SetActive(false);
+	//	transform.GetChild(0).gameObject.SetActive(false);
+	//	transform.GetChild(1).gameObject.SetActive(false);
 
-		if (PV.IsMine)
-		{
-			transform.GetChild(1).gameObject.SetActive(true);
-			transform.GetChild(2).gameObject.SetActive(true);
-			Physics2D.IgnoreLayerCollision(8, 9);
-			PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
-			NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
-		}
-	}
+	//	if (PV.IsMine)
+	//	{
+	//		transform.GetChild(1).gameObject.SetActive(true);
+	//		transform.GetChild(2).gameObject.SetActive(true);
+	//		Physics2D.IgnoreLayerCollision(8, 9);
+	//		PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
+	//		NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
+	//	}
+	//}
 
 
-	[PunRPC]
-	void SetGhostColor(int colorIndex) 
-	{
-		Color color = UM.colors[colorIndex];
-		Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
-	}
+	//[PunRPC]
+	//void SetGhostColor(int colorIndex) 
+	//{
+	//	Color color = UM.colors[colorIndex];
+	//	Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
+	//}
 
-	public void VotedColorsAdd(int votedColorIndex) 
-	{
-		VotedColors.Add(votedColorIndex);
-	}
+	//public void VotedColorsAdd(int votedColorIndex) 
+	//{
+	//	VotedColors.Add(votedColorIndex);
+	//}
 
-	[PunRPC]
-	void VotedColorsClearRPC()
-	{
-		VotedColors.Clear();
-	}
+	//[PunRPC]
+	//void VotedColorsClearRPC()
+	//{
+	//	VotedColors.Clear();
+	//}
+	//[PunRPC]
+	//void SetVotedDie() 
+	//{
+	//	isDie = true;
+
+	//	transform.GetChild(0).gameObject.SetActive(false);
+	//	transform.GetChild(1).gameObject.SetActive(false);
+
+	//	if (PV.IsMine)
+	//	{
+	//		transform.GetChild(1).gameObject.SetActive(true);
+	//		transform.GetChild(2).gameObject.SetActive(true);
+	//		Physics2D.IgnoreLayerCollision(8, 9);
+	//		PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
+	//		NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
+	//	}
+	//}
+
+
+	//[PunRPC]
+	//void SetGhostColor(int colorIndex) 
+	//{
+	//	Color color = UM.colors[colorIndex];
+	//	Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
+	//}
+
+	//public void VotedColorsAdd(int votedColorIndex) 
+	//{
+	//	VotedColors.Add(votedColorIndex);
+	//}
+
+	//[PunRPC]
+	//void VotedColorsClearRPC()
+	//{
+	//	VotedColors.Clear();
+	//}
 }

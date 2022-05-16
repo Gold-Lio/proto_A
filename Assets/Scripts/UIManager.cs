@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviourPun
     int curBtn0, curBtn1, curBtn2;
     bool active0, active1, active2;
 
+    //이미지 인터렉션 버튼 0 use  
     public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2;
     public Text Interaction0Text;
 
@@ -33,24 +34,24 @@ public class UIManager : MonoBehaviourPun
     public GameObject MissionClearText;
     public int curInteractionNum;
     public Slider MissionGageSlider;
-    public Transform[] VotePanels;
-    public GameObject SabotagePanel;
+   // public Transform[] VotePanels;
+  //  public GameObject SabotagePanel;
     public Button[] DoorMaps;
     public Image ReportDeadBodyImage;
-    public Toggle[] VoteToggles;
-    public Toggle SkipVoteToggle, CancelVoteToggle;
-    public GameObject SkipVoteResultGrid;
-    public Image KickPanelImage;
-    public Text KickPanelText;
+ //   public Toggle[] VoteToggles;
+ //   public Toggle SkipVoteToggle, CancelVoteToggle;
+ //   public GameObject SkipVoteResultGrid;
+    //public Image KickPanelImage;
+    //public Text KickPanelText;
     PhotonView PV;
-    public GameObject VoteResultImage;
+    //public GameObject VoteResultImage;
     public InputField ChatInput;
     public Text ChatText;
     public Scrollbar ChatScroll;
     public RectTransform ChatContent;
     public GameObject[] ChatPanels;
-    public int killCooltime, emergencyCooltime;
-    public Text VoteTimerText;
+    public int killCooltime; //emergencyCooltime;
+    //public Text VoteTimerText;
 
     void Start()
     {
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
+    //전체 리포트 버튼 UI 및 버튼 사진 
     public void SetInteractionBtn1(int index, bool _active)
     {
         curBtn1 = index;
@@ -83,6 +85,7 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn1.GetComponent<Button>().interactable = active1;
     }
 
+    //임포스터에게만 보이는 사보타지 UI 및 버튼 사진
     public void SetInteractionBtn2(int index, bool _active)
     {
         curBtn2 = index;
@@ -91,13 +94,11 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn2.GetComponent<Button>().interactable = active2;
     }
 
-
     public void ColorChange(int _colorIndex)
     {
         PreviewImage.color = colors[_colorIndex];
         NM.MyPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, _colorIndex);
     }
-
 
     public void ClickInteractionBtn0()
     {
@@ -109,7 +110,7 @@ public class UIManager : MonoBehaviourPun
             PreviewImage.color = colors[NM.MyPlayer.colorIndex];
         }
 
-        // 킬
+        // 킬   ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 해당Kill은 UI에 달려있어서 그것을 모든 Player에서 할당되도록. 
         else if (curBtn0 == 5)
         {
             if (NM.MyPlayer.isDie) return;
@@ -124,12 +125,12 @@ public class UIManager : MonoBehaviourPun
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
 
-        // 이머전시
-        else if (curBtn0 == 8)
-        {
-            if (NM.MyPlayer.isDie) return;
-            NM.GetComponent<PhotonView>().RPC("EmergencyRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor);
-        }
+        //// 이머전시
+        //else if (curBtn0 == 8)
+        //{
+        //    if (NM.MyPlayer.isDie) return;
+        //    NM.GetComponent<PhotonView>().RPC("EmergencyRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor);
+        //}
     }
 
 
@@ -143,14 +144,14 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-    public void ClickInteractionBtn2() 
-    {
-        // 사보타지
-        if (curBtn2 == 6) 
-        {
-            SabotagePanel.SetActive(true);
-        }
-    }
+    //public void ClickInteractionBtn2() 
+    //{
+    //    // 사보타지
+    //    if (curBtn2 == 6) 
+    //    {
+    //        SabotagePanel.SetActive(true);
+    //    }
+    //}
 
     public void SetIsCustomize(bool b)
     {
@@ -164,13 +165,14 @@ public class UIManager : MonoBehaviourPun
         SetMap();
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
-
     }
 
     void ShowStartBtn()
     {
         StartBtn.gameObject.SetActive(true);
-        //StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 7; // 기본값
+        //StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 7; // 기본값\
+
+        //1보다 클경우 변경하는 ..?
         StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 1; // 2
     }
 
@@ -185,7 +187,6 @@ public class UIManager : MonoBehaviourPun
             bool contain = colorList.Contains(i + 1);
             ColorCancel[i].SetActive(contain);
             ColorBtn[i].interactable = !contain;
-
         }
     }
 
@@ -209,6 +210,8 @@ public class UIManager : MonoBehaviourPun
 
         PlayerMap.position = new Vector3(playerMapX, playerMapY, 0);
     }
+
+
 
     //UI에서 죽여야함. 
     public IEnumerator KillCo()
@@ -235,20 +238,20 @@ public class UIManager : MonoBehaviourPun
         NM.MyPlayer.isKillable = true;
     }
 
-    public IEnumerator EnergencyCo() 
-    {
-        for (int i = 20; i > 0; i--)
-        {
-            emergencyCooltime = i;
-            if (UM.curBtn0 == 8)
-                Interaction0Text.text = emergencyCooltime.ToString();
-            else
-                Interaction0Text.text = "";
-            yield return new WaitForSeconds(1);
-        }
-        emergencyCooltime = 0;
-        Interaction0Text.text = "";
-    }
+    //public IEnumerator EnergencyCo()  //이멀전시도 기본 20초.
+    //{
+    //    for (int i = 20; i > 0; i--)
+    //    {
+    //        emergencyCooltime = i;
+    //        if (UM.curBtn0 == 8)
+    //            Interaction0Text.text = emergencyCooltime.ToString();
+    //        else
+    //            Interaction0Text.text = "";
+    //        yield return new WaitForSeconds(1);
+    //    }
+    //    emergencyCooltime = 0;
+    //    Interaction0Text.text = "";
+    //}
 
 
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
@@ -327,6 +330,4 @@ public class UIManager : MonoBehaviourPun
         yield return new WaitForSeconds(18);
         DoorMaps[doorIndex].interactable = true;
     }
-
-
 }

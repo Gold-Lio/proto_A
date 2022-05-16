@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
-using static VoteManager;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
@@ -14,7 +13,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	void Awake() => NM = this;
 
 	public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel, ReportPanel, 
-		EmergencyPanel, VotePanel, KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
+		 KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
 
 	public List<PlayerScript> Players = new List<PlayerScript>();
 	public PlayerScript MyPlayer;
@@ -30,8 +29,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	public bool isTest;
 	public enum ImpoType { OnlyMaster, Rand1, Rand2 }
 	public ImpoType impoType;
-	public int VoteTimer;
-
 
 	void Start()
 	{
@@ -79,8 +76,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		InfoPanel.SetActive(false);
 		GamePanel.SetActive(false);
 		ReportPanel.SetActive(false);
-		EmergencyPanel.SetActive(false);
-		VotePanel.SetActive(false);
+		//EmergencyPanel.SetActive(false);
+		//VotePanel.SetActive(false);
 		KickPanel.SetActive(false);
 		NoOneKickPanel.SetActive(false);
 		CrewWinPanel.SetActive(false);
@@ -186,13 +183,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		ShowPanel(GamePanel);
 		ShowGameUI();
 		StartCoroutine(UM.KillCo());
-		StartCoroutine(UM.EnergencyCo());
+		//StartCoroutine(UM.EnergencyCo());
 	}
 
 	public override void OnPlayerLeftRoom(Player otherPlayer)
 	{
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
-		VM.photonView.RPC("VoteUpdateRPC", RpcTarget.All);
 	}
 
 
@@ -205,20 +201,30 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	}
 
 
+	//게임UI를 보여주는 함수  
+	//모든 플레이어에게 똑같은 UI를 넣지만, 그대신
+	//imposter일 경우 +추가로 UI의 몇개를 더 넣어줘야겠지??
+
+	
+	//임포스터일 경우 
 	void ShowGameUI() 
 	{
 		if (MyPlayer.isImposter)
 		{
 			UM.SetInteractionBtn0(5, false);
-			UM.SetInteractionBtn1(4, false);
-			UM.SetInteractionBtn2(6, true);
-		}
-		else
-		{
-			UM.SetInteractionBtn0(0, false);
-			UM.SetInteractionBtn1(4, false);
-			UM.SetInteractionBtn2(7, false);
-		}
+            UM.SetInteractionBtn1(4, false);
+            UM.SetInteractionBtn2(6, true);
+        }
+
+        //임포스터가 아닐경우
+
+        else
+        {
+            UM.SetInteractionBtn0(5, false);
+            UM.SetInteractionBtn0(0, false);
+            UM.SetInteractionBtn1(4, false);
+            UM.SetInteractionBtn2(7, false);
+        }
 	}
 
 	[PunRPC]
@@ -227,41 +233,40 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		// actor가 리포트함
 		ShowPanel(ReportPanel);
 		UM.ReportDeadBodyImage.color = UM.colors[targetDeadColorIndex];
-		StartCoroutine(ShowVotePanelCo(actor));
+		//StartCoroutine(ShowVotePanelCo(actor));
 	}
 
-	[PunRPC]
-	void EmergencyRPC(int actor)
-	{
-		// actor가 긴급소집함
-		ShowPanel(EmergencyPanel);
-		StartCoroutine(ShowVotePanelCo(actor));
-	}
+	//[PunRPC]
+	//void EmergencyRPC(int actor)
+	//{
+	//	// actor가 긴급소집함
+	//	ShowPanel(EmergencyPanel);
+	//	StartCoroutine(ShowVotePanelCo(actor));
+	//}
 
-	IEnumerator ShowVotePanelCo(int callActor) 
-	{
-		yield return new WaitForSeconds(4);
-		ShowPanel(VotePanel);
-		VM.VoteInit(callActor);
-		foreach (GameObject DeadBody in GameObject.FindGameObjectsWithTag("DeadBody"))
-			PhotonNetwork.Destroy(DeadBody);
-	}
+	//IEnumerator ShowVotePanelCo(int callActor) 
+	//{
+	//	yield return new WaitForSeconds(4);
+	//	ShowPanel(VotePanel);
+	//	foreach (GameObject DeadBody in GameObject.FindGameObjectsWithTag("DeadBody"))
+	//		PhotonNetwork.Destroy(DeadBody);
+	//}
 
 
-	[PunRPC]
-	void ShowGhostRPC()
-	{
-		for (int i = 0; i < Players.Count; i++)
-		{
-			if (!MyPlayer.isDie) continue;
+	//[PunRPC]
+	//void ShowGhostRPC()
+	//{
+	//	for (int i = 0; i < Players.Count; i++)
+	//	{
+	//		if (!MyPlayer.isDie) continue;
 
-			if (Players[i].isDie)
-			{
-				Players[i].transform.GetChild(1).gameObject.SetActive(true);
-				Players[i].transform.GetChild(2).gameObject.SetActive(true);
-			}
-		}
-	}
+	//		if (Players[i].isDie)
+	//		{
+	//			Players[i].transform.GetChild(1).gameObject.SetActive(true);
+	//			Players[i].transform.GetChild(2).gameObject.SetActive(true);
+	//		}
+	//	}
+	//}
 
 
 	public void WinCheck() 
