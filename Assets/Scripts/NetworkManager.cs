@@ -41,6 +41,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		PV = photonView;
 		ShowPanel(DisconnectPanel);
 		ShowBackground(WaitingBackground);
+
+		//채팅시스템. 
+
 	}
 
 	public void Connect(InputField NickInput)

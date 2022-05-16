@@ -28,16 +28,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
 	[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
 
-
 	public List<int> VotedColors = new List<int>();
-
-
-
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
 	Vector2 input;
-
-
 
 
 	void Start()
@@ -294,9 +288,4 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	{
 		VotedColors.Clear();
 	}
-
-
-
-
-
 }

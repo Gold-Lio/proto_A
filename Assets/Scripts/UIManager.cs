@@ -11,11 +11,11 @@ public class UIManager : MonoBehaviourPun
     public static UIManager UM;
     void Awake() => UM = this;
 
-
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
     int curBtn0, curBtn1, curBtn2;
     bool active0, active1, active2;
+
     public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2;
     public Text Interaction0Text;
 
@@ -101,8 +101,6 @@ public class UIManager : MonoBehaviourPun
 
     public void ClickInteractionBtn0()
     {
-        
-
         // 커스터마이즈
         if (curBtn0 == 1)
         {
@@ -132,8 +130,6 @@ public class UIManager : MonoBehaviourPun
             if (NM.MyPlayer.isDie) return;
             NM.GetComponent<PhotonView>().RPC("EmergencyRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor);
         }
-
-
     }
 
 
@@ -204,7 +200,6 @@ public class UIManager : MonoBehaviourPun
         float playerWidth = MyPlayerPos.x - LeftBottom.position.x;
         float playerHeight = MyPlayerPos.y - LeftBottom.position.y;
 
-
         // 지도
         float widthMap = RightTopMap.position.x - LeftBottomMap.position.x;
         float heightMap = RightTopMap.position.y - LeftBottomMap.position.y;
@@ -215,13 +210,14 @@ public class UIManager : MonoBehaviourPun
         PlayerMap.position = new Vector3(playerMapX, playerMapY, 0);
     }
 
+    //UI에서 죽여야함. 
     public IEnumerator KillCo()
     {
         if (!NM.MyPlayer.isImposter) yield break;
 
         SetInteractionBtn0(5, false);
         NM.MyPlayer.isKillable = false;
-        for (int i = 20; i > 0; i--) // 기본 15초 킬대기
+        for (int i = 20; i > 0; i--) // 기본 15초 킬대기  //킬 후 20 초 대기. 
         //for (int i = 5; i > 0; i--)
         {
             killCooltime = i;
