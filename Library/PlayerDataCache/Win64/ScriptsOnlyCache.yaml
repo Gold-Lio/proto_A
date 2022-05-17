@@ -2518,4 +2518,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Project_Folder/Unity/Proto_A/test/AmongUs.exe
+  playerPath: C:/Users/user/Desktop/git/proto_A/test/AmongUs.exe

@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
 	public enum State { Idle, Walk };
 	public State state;
-	public bool isWalk, isMove, isImposter, isKillable, isDie;
+	public bool isWalk, isMove,  isImposter, isKillable, isDie;
 	public int actor, colorIndex;
 	public float speed; //기본 40
 	public PlayerScript KillTargetPlayer;
@@ -149,6 +149,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		isImposter = _isImposter;
 	}
 
+	//임포스터의 이름은 빨간색
 	public void SetNickColor() 
 	{
 		if (!isImposter) return;
@@ -159,6 +160,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
+	//미션 자체에서 가챠. 
 	public void SetMission() 
 	{
 		if (!PV.IsMine) return;
@@ -182,45 +184,54 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 
-	//DeadBody에 닿았을때의 Report기능 On
-	//void OnTriggerEnter2D(Collider2D col)
-	//{
-	//	if (col.CompareTag("DeadBody") && PV.IsMine) 
-	//	{
-	//		if (isDie) return;
-	//		UM.SetInteractionBtn1(4, true);
-	//		targetDeadColorIndex = col.GetComponent<DeadBodyScript>().colorIndex;
-	//	}
+   // DeadBody에 닿았을때의 Report기능 On
 
-	//	if (!col.CompareTag("Player") || !NM.isGameStart) return;
-	//	if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
-	//	if (!col.GetComponent<PlayerScript>().isImposter) 
-	//	{
-	//		UM.SetInteractionBtn0(5, true);
-	//		KillTargetPlayer = col.GetComponent<PlayerScript>();
-	//	}
-	//}
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("DeadBody") && PV.IsMine)
+        {
+            if (isDie) return;
+            UM.SetInteractionBtn1(4, true);
+            targetDeadColorIndex = col.GetComponent<DeadBodyScript>().colorIndex;
+        }
 
-	//DeadBody에 닿았을때의 Report기능 OFF
-	//void OnTriggerExit2D(Collider2D col)
-	//{
-	//	if (col.CompareTag("DeadBody") && PV.IsMine)
-	//	{
-	//		if (isDie) return;
-	//		UM.SetInteractionBtn1(4, false);
-	//		targetDeadColorIndex = -1;
-	//	}
 
-	//	if (!col.CompareTag("Player") || !NM.isGameStart) return;
-	//	if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
-	//	if (!col.GetComponent<PlayerScript>().isImposter)
-	//	{
-	//		UM.SetInteractionBtn0(5, false);
-	//		KillTargetPlayer = null;
-	//	}
-	//}
+		//활성
+        if (!col.CompareTag("Player") || !NM.isGameStart) return;
+        if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
-	public void Kill() 
+        if (!col.GetComponent<PlayerScript>().isImposter)
+        {
+			//죽이는 버튼 활성화!
+            UM.SetInteractionBtn0(5, true);
+            KillTargetPlayer = col.GetComponent<PlayerScript>();
+        }
+    }
+
+  //  DeadBody에 닿았을때의 Report기능 OFF
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("DeadBody") && PV.IsMine)
+        {
+            if (isDie) return;
+            UM.SetInteractionBtn1(4, false);
+            targetDeadColorIndex = -1;
+        }
+
+		//비활성
+        if (!col.CompareTag("Player") || !NM.isGameStart) return;
+		if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+		//col 매개변수와 PlayerScripts를 가져오고 임포스터 일때, 임포스터가 아닐때,
+        if (!col.GetComponent<PlayerScript>().isImposter)
+		{
+            UM.SetInteractionBtn0(5, false);
+            KillTargetPlayer = null;
+        }
+    }
+
+
+    public void Kill() 
 	{
 		// 죽이기 성공
 		StartCoroutine(UM.KillCo());
@@ -236,7 +247,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex) 
 	{
 		isDie = b;
-
 		transform.GetChild(0).gameObject.SetActive(false);
 		transform.GetChild(1).gameObject.SetActive(false);
 
@@ -268,7 +278,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	//		NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
 	//	}
 	//}
-
 
 	//[PunRPC]
 	//void SetGhostColor(int colorIndex) 

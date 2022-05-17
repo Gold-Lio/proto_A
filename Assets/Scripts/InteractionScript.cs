@@ -13,11 +13,14 @@ public class InteractionScript : MonoBehaviourPun
 	GameObject Line;
 	public int curInteractionNum;
 	
-
 	void Start()
     {		
 		Line = transform.GetChild(0).gameObject;
     }
+
+
+	//ㅇㅇㅇㅇㅇㅇ
+
 
 	void OnTriggerEnter2D(Collider2D col)
 	{

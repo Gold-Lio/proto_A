@@ -117,14 +117,7 @@ public class UIManager : MonoBehaviourPun
             NM.MyPlayer.Kill();
         }
 
-        // 사용
-        else if (curBtn0 == 0)
-        {
-            // 크루원 작업
-            GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
-            CurMinigame.GetComponent<MinigameManager>().StartMission();
-        }
-
+        
         //// 이머전시
         //else if (curBtn0 == 8)
         //{
@@ -136,12 +129,20 @@ public class UIManager : MonoBehaviourPun
 
     public void ClickInteractionBtn1()
     {
-        // 리포트
-        if (curBtn1 == 4)
+        // 사용
+        if (curBtn0 == 0)
         {
-            if (NM.MyPlayer.isDie) return;
-            NM.GetComponent<PhotonView>().RPC("ReportRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor, NM.MyPlayer.targetDeadColorIndex);
+            // 크루원 작업
+            GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
+            CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
+
+        //// 리포트
+        //if (curBtn1 == 4)
+        //{
+        //    if (NM.MyPlayer.isDie) return;
+        //    NM.GetComponent<PhotonView>().RPC("ReportRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor, NM.MyPlayer.targetDeadColorIndex);
+        //}
     }
 
     //public void ClickInteractionBtn2() 
@@ -216,11 +217,11 @@ public class UIManager : MonoBehaviourPun
     //UI에서 죽여야함. 
     public IEnumerator KillCo()
     {
-        if (!NM.MyPlayer.isImposter) yield break;
+       // if (!NM.MyPlayer.isImposter) yield break;
 
         SetInteractionBtn0(5, false);
         NM.MyPlayer.isKillable = false;
-        for (int i = 20; i > 0; i--) // 기본 15초 킬대기  //킬 후 20 초 대기. 
+        for (int i = 5; i > 0; i--) // 기본 15초 킬대기  //킬 후 20 초 대기. 
         //for (int i = 5; i > 0; i--)
         {
             killCooltime = i;

@@ -129,6 +129,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
 	}
 
+	//
 	void SetImpoCrew() 
 	{
 		List<PlayerScript> GachaList = new List<PlayerScript>(Players);
@@ -191,7 +192,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 	}
 
-
 	public int GetCrewCount() 
 	{
 		int crewCount = 0;
@@ -206,24 +206,23 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	//imposter일 경우 +추가로 UI의 몇개를 더 넣어줘야겠지??
 
 	
-	//임포스터일 경우 
+
+	//서로에게 보여지는 UI의 종류. 
 	void ShowGameUI() 
 	{
 		if (MyPlayer.isImposter)
 		{
-			UM.SetInteractionBtn0(5, false);
-            UM.SetInteractionBtn1(4, false);
-            UM.SetInteractionBtn2(6, true);
-        }
-
-        //임포스터가 아닐경우
-
+			UM.SetInteractionBtn0(5, true);
+			UM.SetInteractionBtn0(0, true);
+		   // UM.SetInteractionBtn1(4, false);
+		   //UM.SetInteractionBtn2(6, false);
+		}
         else
         {
-            UM.SetInteractionBtn0(5, false);
-            UM.SetInteractionBtn0(0, false);
-            UM.SetInteractionBtn1(4, false);
-            UM.SetInteractionBtn2(7, false);
+            UM.SetInteractionBtn0(5, true);
+            UM.SetInteractionBtn0(0, true);
+          //  UM.SetInteractionBtn1(4, false);
+            //UM.SetInteractionBtn2(7, false);
         }
 	}
 
