@@ -6,19 +6,26 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using static NetworkManager;
 using static UIManager;
+using Cinemachine;
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
     
 	public Rigidbody2D RB;
 	public GameObject[] Anims;
-	public SpriteRenderer[] CharacterSR;
-	public Transform Character, Canvas;// Ghost;
-	public Text NickText;
+    public SpriteRenderer[] CharacterSR;
+	
 
+
+    public Transform Character, Canvas; // Ghost;
+	public Text NickText;
 	public enum State { Idle, Walk };
 	public State state;
-	public bool isWalk, isMove,  isImposter, isKillable, isDie;
+	//플레이어 bool 값. 
+	public bool isWalk, isMove, 
+		//임포인지, kill각, 이미 죽었는지 
+		isImposter, isKillable, isDie;
+
 	public int actor, colorIndex;
 	public float speed; //기본 40
 	public PlayerScript KillTargetPlayer;
@@ -46,16 +53,19 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		StartCoroutine(StateCo());
 	}
 
+
 	IEnumerator StateCo() 
 	{
 		while (true) yield return StartCoroutine(state.ToString()); 
 	}
+
 
 	void OnDestroy()
 	{
 		NM.Players.Remove(this);
 		NM.SortPlayers();
 	}
+	
 
 	void SetNick() 
 	{
@@ -63,16 +73,30 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 
+
+
+
+
+
+
+
+
+
 	void Update()
     {
 		if (!PV.IsMine) return;
 
-
 		if (isMove) 
 		{
+			//Move();
+			//Rotate();
+
 			input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 			RB.velocity = input * speed;
 			isWalk = RB.velocity != Vector2.zero;
+			
+
+			//움직임의 포톤뷰
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 		}
 
@@ -80,9 +104,86 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		{
 			Camera.main.transform.position = transform.position + new Vector3(0,0,-10);
 		}
-
 		NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
 	}
+
+	//void Move()
+	//{
+	//	dirX = Mathf.RoundToInt(CrossPlatformInputManager.GetAxis("Horizontal"));
+	//	dirY = Mathf.RoundToInt(CrossPlatformInputManager.GetAxis("Vertical"));
+
+	//	transform.position = new Vector2(dirX * moveSpeed * Time.deltaTime + transform.position.x,
+	//		dirY * moveSpeed * Time.deltaTime + transform.position.y);
+	//}
+
+	//void Rotate()
+	//{
+	//	if (dirX == 0 && dirY == 1)
+	//	{
+	//		rotateAngle = 0;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 1);
+	//	}
+
+	//	if (dirX == 1 && dirY == 1)
+	//	{
+	//		rotateAngle = -45f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 2);
+	//	}
+
+	//	if (dirX == 1 && dirY == 0)
+	//	{
+	//		rotateAngle = -90f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 3);
+	//	}
+
+	//	if (dirX == 1 && dirY == -1)
+	//	{
+	//		rotateAngle = -135f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 4);
+	//	}
+
+	//	if (dirX == 0 && dirY == -1)
+	//	{
+	//		rotateAngle = -180f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 5);
+	//	}
+
+	//	if (dirX == -1 && dirY == -1)
+	//	{
+	//		rotateAngle = -225f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 6);
+	//	}
+
+	//	if (dirX == -1 && dirY == 0)
+	//	{
+	//		rotateAngle = -270f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 7);
+	//	}
+
+	//	if (dirX == -1 && dirY == 1)
+	//	{
+	//		rotateAngle = -315f;
+	//		anim.speed = 1;
+	//		anim.SetInteger("Direction", 8);
+	//	}
+
+	//	if (dirX == 0 && dirY == 0)
+	//	{
+	//		anim.speed = 0;
+	//	}
+	//} - 대체될 움직임과 Rotate 함수
+	
+	//Player생성 위치.
+
+
+
 
 	public void SetPos(Vector3 target) 
 	{
@@ -90,6 +191,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 	
 
+
+
+
+	//플레이어 애니메이션 수정할것. 
 	[PunRPC]
 	void AnimSprites(bool _isWalk, Vector2 _input) 
 	{
@@ -97,14 +202,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		{
 			state = State.Walk;
 
+			//input x가 0 이라면 rmfoeh idle이고 
+			// input 보다 0이 더 클경우 -1 
 			if (_input.x == 0) return;
-			if (_input.x < 0) 
-			{
-				Character.localScale = Vector3.one;
-				//if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
-			}
-			else 
-			{
+            if (_input.x < 0)
+            {
+                Character.localScale = Vector3.one;
+                //if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
+            }
+			//혹은 +1 
+            else
+            {
 				Character.localScale = new Vector3(-1, 1, 1);
 				//if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = new Vector3(-1, 1, 1);
 			}
@@ -115,6 +223,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
+	//인덱스로 서로 결정. 
 	void ShowAnim(int index)
 	{
 		for (int i = 0; i < Anims.Length; i++)
@@ -135,6 +244,36 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		yield return new WaitForSeconds(0.15f);
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	[PunRPC]
 	public void SetColor(int _colorIndex) 
 	{
@@ -148,6 +287,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	{
 		isImposter = _isImposter;
 	}
+
+
+
+
+
+
+
 
 	//임포스터의 이름은 빨간색
 	public void SetNickColor() 
@@ -185,7 +331,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
 
    // DeadBody에 닿았을때의 Report기능 On
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("DeadBody") && PV.IsMine)
@@ -209,7 +354,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     }
 
   //  DeadBody에 닿았을때의 Report기능 OFF
-
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("DeadBody") && PV.IsMine)
@@ -222,6 +366,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		//비활성
         if (!col.CompareTag("Player") || !NM.isGameStart) return;
 		if (!PV.IsMine || !isImposter || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+		
+		
 		//col 매개변수와 PlayerScripts를 가져오고 임포스터 일때, 임포스터가 아닐때,
         if (!col.GetComponent<PlayerScript>().isImposter)
 		{

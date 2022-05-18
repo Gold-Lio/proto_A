@@ -10,17 +10,8 @@ public class Sample_Movement : MonoBehaviour
     [SerializeField]
     float moveSpeed = 2f;
 
-    //[SerializeField]
-    //float bulletSpeed = 5f;
-
     Animator anim;
 
-    //[SerializeField]
-    //Transform gun;
-    //[SerializeField]
-    //Rigidbody2D bullet;
-
-    // Use this for initialization
     void Start()
     {
         rotateAngle = 0f;
@@ -32,7 +23,6 @@ public class Sample_Movement : MonoBehaviour
     void Update()
     {
         Move();
-        //Fire();
         Rotate();
     }
 
@@ -44,17 +34,6 @@ public class Sample_Movement : MonoBehaviour
         transform.position = new Vector2(dirX * moveSpeed * Time.deltaTime + transform.position.x,
             dirY * moveSpeed * Time.deltaTime + transform.position.y);
     }
-
-    //void Fire()
-    //{
-    //	if (CrossPlatformInputManager.GetButtonDown("Fire1"))
-    //	{
-    //		var firedBullet = Instantiate(bullet, gun.position, gun.rotation);
-    //		firedBullet.AddForce(gun.up * bulletSpeed);
-    //	}
-
-    //}
-
     void Rotate()
     {
         if (dirX == 0 && dirY == 1)
@@ -117,8 +96,5 @@ public class Sample_Movement : MonoBehaviour
         {
             anim.speed = 0;
         }
-
-      //  gun.rotation = Quaternion.Euler(0f, 0f, rotateAngle);
-
     }
 }

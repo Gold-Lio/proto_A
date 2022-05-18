@@ -175,6 +175,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 		yield return new WaitForSeconds(3);
 		isGameStart = true;
+		//플레이어가 생성되는 위치
 		MyPlayer.SetPos(SpawnPoint.position);
 		MyPlayer.SetNickColor();
 		MyPlayer.SetMission();
