@@ -81,6 +81,7 @@
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Scripts\BetterToggle.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Minigame\IMinigame.cs" />
+    <Compile Include="Assets\Scripts\Minigame\MiniDelay.cs" />
     <Compile Include="Assets\Scripts\Minigame\Mini1Target.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Scripts\SoundsForJoinAndLeave.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\Scripts\Minigame\MinigameManager.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoiceUI\Scripts\DemoVoiceUI.cs" />
+    <Compile Include="Assets\PlayerMovement.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Sample_Movement.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
@@ -123,8 +125,6 @@
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Minigame\MiniDelay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

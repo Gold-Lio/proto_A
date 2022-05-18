@@ -76,8 +76,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		InfoPanel.SetActive(false);
 		GamePanel.SetActive(false);
 		ReportPanel.SetActive(false);
-		//EmergencyPanel.SetActive(false);
-		//VotePanel.SetActive(false);
 		KickPanel.SetActive(false);
 		NoOneKickPanel.SetActive(false);
 		CrewWinPanel.SetActive(false);
@@ -111,13 +109,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	}
 
 
+	/// <summary>
+	/// 여기부분 이해가 잘 안됨
+	/// </summary>
 	public void SortPlayers() => Players.Sort((p1, p2) => p1.actor.CompareTo(p2.actor));
-
 
 	public Color GetColor(int colorIndex) 
 	{
 		return UM.colors[colorIndex];
 	}
+
+
 
 	public void GameStart() 
 	{
@@ -176,6 +178,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 		yield return new WaitForSeconds(3);
 		isGameStart = true;
+	
+		
 		//플레이어가 생성되는 위치
 		MyPlayer.SetPos(SpawnPoint.position);
 		MyPlayer.SetNickColor();
@@ -186,13 +190,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		ShowPanel(GamePanel);
 		ShowGameUI();
 		StartCoroutine(UM.KillCo());
-		//StartCoroutine(UM.EnergencyCo());
 	}
 
 	public override void OnPlayerLeftRoom(Player otherPlayer)
 	{
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 	}
+
+
+
+
 
 	public int GetCrewCount() 
 	{
@@ -206,8 +213,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	//게임UI를 보여주는 함수  
 	//모든 플레이어에게 똑같은 UI를 넣지만, 그대신
 	//imposter일 경우 +추가로 UI의 몇개를 더 넣어줘야겠지??
-
-	
 
 	//서로에게 보여지는 UI의 종류. 
 	void ShowGameUI() 
@@ -231,44 +236,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	[PunRPC]
 	void ReportRPC(int actor, int targetDeadColorIndex) 
 	{
-		// actor가 리포트함
 		ShowPanel(ReportPanel);
 		UM.ReportDeadBodyImage.color = UM.colors[targetDeadColorIndex];
-		//StartCoroutine(ShowVotePanelCo(actor));
 	}
-
-	//[PunRPC]
-	//void EmergencyRPC(int actor)
-	//{
-	//	// actor가 긴급소집함
-	//	ShowPanel(EmergencyPanel);
-	//	StartCoroutine(ShowVotePanelCo(actor));
-	//}
-
-	//IEnumerator ShowVotePanelCo(int callActor) 
-	//{
-	//	yield return new WaitForSeconds(4);
-	//	ShowPanel(VotePanel);
-	//	foreach (GameObject DeadBody in GameObject.FindGameObjectsWithTag("DeadBody"))
-	//		PhotonNetwork.Destroy(DeadBody);
-	//}
-
-
-	//[PunRPC]
-	//void ShowGhostRPC()
-	//{
-	//	for (int i = 0; i < Players.Count; i++)
-	//	{
-	//		if (!MyPlayer.isDie) continue;
-
-	//		if (Players[i].isDie)
-	//		{
-	//			Players[i].transform.GetChild(1).gameObject.SetActive(true);
-	//			Players[i].transform.GetChild(2).gameObject.SetActive(true);
-	//		}
-	//	}
-	//}
-
 
 	public void WinCheck() 
 	{
