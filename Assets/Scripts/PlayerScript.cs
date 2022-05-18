@@ -15,8 +15,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public GameObject[] Anims;
     public SpriteRenderer[] CharacterSR;
 	
-
-
     public Transform Character, Canvas; // Ghost;
 	public Text NickText;
 	public enum State { Idle, Walk };
