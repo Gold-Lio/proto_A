@@ -1,0 +1,768 @@
+fileFormatVersion: 2
+guid: 522a0cd4303915349b6ec6607727a096
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2614713560328910674
+    second: PC Computer - MapleStory - Red Snail Morph_0
+  - first:
+      213: 1891292459630427565
+    second: PC Computer - MapleStory - Red Snail Morph_1
+  - first:
+      213: -5366104092145271882
+    second: PC Computer - MapleStory - Red Snail Morph_2
+  - first:
+      213: 3166046199471578733
+    second: PC Computer - MapleStory - Red Snail Morph_3
+  - first:
+      213: -834999464572853163
+    second: PC Computer - MapleStory - Red Snail Morph_4
+  - first:
+      213: -7620250345519269614
+    second: PC Computer - MapleStory - Red Snail Morph_5
+  - first:
+      213: -3320024079450556450
+    second: PC Computer - MapleStory - Red Snail Morph_6
+  - first:
+      213: -8258320321858074783
+    second: PC Computer - MapleStory - Red Snail Morph_7
+  - first:
+      213: 8608363904830664416
+    second: PC Computer - MapleStory - Red Snail Morph_8
+  - first:
+      213: 7577614122456473081
+    second: PC Computer - MapleStory - Red Snail Morph_9
+  - first:
+      213: 7777658670409835563
+    second: PC Computer - MapleStory - Red Snail Morph_10
+  - first:
+      213: 1650997158568559512
+    second: PC Computer - MapleStory - Red Snail Morph_11
+  - first:
+      213: 7959877189794268900
+    second: PC Computer - MapleStory - Red Snail Morph_12
+  - first:
+      213: -5374371054060178072
+    second: PC Computer - MapleStory - Red Snail Morph_13
+  - first:
+      213: -6097480464737807954
+    second: PC Computer - MapleStory - Red Snail Morph_14
+  - first:
+      213: -4556648996211975345
+    second: PC Computer - MapleStory - Red Snail Morph_15
+  - first:
+      213: -7652241320710982989
+    second: PC Computer - MapleStory - Red Snail Morph_16
+  - first:
+      213: -4144437512519114077
+    second: PC Computer - MapleStory - Red Snail Morph_17
+  - first:
+      213: 4540830409739790937
+    second: PC Computer - MapleStory - Red Snail Morph_18
+  - first:
+      213: -9108580529849671055
+    second: PC Computer - MapleStory - Red Snail Morph_19
+  - first:
+      213: -887109893025344577
+    second: PC Computer - MapleStory - Red Snail Morph_20
+  - first:
+      213: 4375252539891265181
+    second: PC Computer - MapleStory - Red Snail Morph_21
+  - first:
+      213: 4088326953549611354
+    second: PC Computer - MapleStory - Red Snail Morph_22
+  - first:
+      213: -7928422433496885277
+    second: PC Computer - MapleStory - Red Snail Morph_23
+  - first:
+      213: -7329698201666016539
+    second: PC Computer - MapleStory - Red Snail Morph_24
+  - first:
+      213: 6340575932262709031
+    second: PC Computer - MapleStory - Red Snail Morph_25
+  - first:
+      213: 2082867875245304062
+    second: PC Computer - MapleStory - Red Snail Morph_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 418
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8c237cedba6bbd0800000000000000
+      internalID: -2614713560328910674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 378
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad75a6b8783f3a10800000000000000
+      internalID: 1891292459630427565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 378
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb39ef42c4c785b0800000000000000
+      internalID: -5366104092145271882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 378
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e9af57e3e00fb20800000000000000
+      internalID: 3166046199471578733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_4
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 378
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5546e76396c7964f0800000000000000
+      internalID: -834999464572853163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 322
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219b6cf3fae6f3690800000000000000
+      internalID: -7620250345519269614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_6
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 322
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed73b92a0b7ece1d0800000000000000
+      internalID: -3320024079450556450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 282
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1678246fb6d846d80800000000000000
+      internalID: -8258320321858074783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 226
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eee9b4cc5d077770800000000000000
+      internalID: 8608363904830664416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_9
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 226
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd500e75e7192960800000000000000
+      internalID: 7577614122456473081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 186
+        width: 39
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24e30a5a5bcfeb60800000000000000
+      internalID: 7777658670409835563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 138
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89388a91b2589e610800000000000000
+      internalID: 1650997158568559512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 90
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e60c61812a277e60800000000000000
+      internalID: 7959877189794268900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_13
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 90
+        width: 41
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865f99f30066a65b0800000000000000
+      internalID: -5374371054060178072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_14
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 44
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea15b6ab2d5616ba0800000000000000
+      internalID: -6097480464737807954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 44
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b15ae41e783c0c0800000000000000
+      internalID: -4556648996211975345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 47
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2b477ef07cdc590800000000000000
+      internalID: -7652241320710982989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 44
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2ae706a000c76c0800000000000000
+      internalID: -4144437512519114077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_18
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 47
+        width: 33
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ae4d50335440f30800000000000000
+      internalID: 4540830409739790937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_19
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 35
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17265467442d79180800000000000000
+      internalID: -9108580529849671055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_20
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 28
+        width: 33
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb35d7d904a50b3f0800000000000000
+      internalID: -887109893025344577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_21
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 28
+        width: 47
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e28d2010508bc30800000000000000
+      internalID: 4375252539891265181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_22
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 28
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51caff04b7acb830800000000000000
+      internalID: 4088326953549611354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_23
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 28
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e71e26adc598f190800000000000000
+      internalID: -7928422433496885277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_24
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 28
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eaa0eae15ea74a90800000000000000
+      internalID: -7329698201666016539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_25
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 28
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727f8e177304ef750800000000000000
+      internalID: 6340575932262709031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Red Snail Morph_26
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 7
+        width: 38
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8a11a0c45d7ec10800000000000000
+      internalID: 2082867875245304062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
