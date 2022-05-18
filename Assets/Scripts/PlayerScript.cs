@@ -64,14 +64,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		NM.SortPlayers();
 	}
 	
-
-	void SetNick() 
+void SetNick() 
 	{
 		NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
 	}
 
 
 
+	
 
 
 
@@ -93,7 +93,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			RB.velocity = input * speed;
 			isWalk = RB.velocity != Vector2.zero;
 			
-
 			//움직임의 포톤뷰
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 		}

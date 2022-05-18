@@ -57,7 +57,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 	public override void OnJoinedLobby()
 	{
-		PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 10 }, null);
+		PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 2 }, null);
 	}
 
 	public override void OnJoinedRoom()
@@ -82,7 +82,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		NoOneKickPanel.SetActive(false);
 		CrewWinPanel.SetActive(false);
 		ImposterWinPanel.SetActive(false);
-
 		CurPanel.SetActive(true);
 	}
 
@@ -111,7 +110,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		}
 	}
 
+
 	public void SortPlayers() => Players.Sort((p1, p2) => p1.actor.CompareTo(p2.actor));
+
 
 	public Color GetColor(int colorIndex) 
 	{

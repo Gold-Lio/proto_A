@@ -9,7 +9,6 @@ public class Sample_Movement : MonoBehaviour
 
     [SerializeField]
     float moveSpeed = 2f;
-
     Animator anim;
 
     void Start()
