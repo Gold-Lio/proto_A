@@ -12,10 +12,12 @@ public class ChatManager : MonoBehaviourPun
     public static ChatManager CM;
 	void Awake() => CM = this;
 
+
 	public void ChatClear() 
     {
         photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, true);
     }
+
 
     public void OnEndEdit() 
     {

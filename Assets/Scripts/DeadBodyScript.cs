@@ -22,4 +22,5 @@ public class DeadBodyScript : MonoBehaviourPun
         colorIndex = _colorIndex;
         NM.WinCheck();
     }
+
 }

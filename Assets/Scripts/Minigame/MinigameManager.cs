@@ -6,9 +6,7 @@ using static NetworkManager;
 
 public class MinigameManager : MonoBehaviour, IMinigame
 {
-	
     public int curRemainMission;
-	//남은미션
 	int remainMission;
 
 	public void StartMission()
