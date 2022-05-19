@@ -57,7 +57,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 	public override void OnJoinedLobby()
 	{
-		PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 2 }, null);
+		PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 10 }, null);
 	}
 
 	public override void OnJoinedRoom()
