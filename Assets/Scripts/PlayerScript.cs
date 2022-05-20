@@ -72,12 +72,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 		}
 
-		if (NM.isGameStart) 
-		{
-			Camera.main.transform.position = transform.position + new Vector3(0,0,-10);
-		}
+        if (NM.isGameStart)
+        {
+            Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
+        }
 
-		NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
+        NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
 	}
 
 	public void SetPos(Vector3 target) 
@@ -187,6 +187,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 
+
+
+
+
+
+	//죽은 후에 유령 이슈 수정 요망
 	public void Kill() 
 	{
 		// 죽이기 성공

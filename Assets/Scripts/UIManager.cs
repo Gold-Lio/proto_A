@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviourPun
     public Sprite[] sprites;
     int curBtn0, curBtn1, curBtn2;
     bool active0, active1, active2;
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1;
+    public Image WaitingInteractionBtn0, InteractionBtn1, InteractionBtn2;
     public Text Interaction2Text;
 
     public Image PreviewImage;
@@ -64,8 +64,8 @@ public class UIManager : MonoBehaviourPun
         }
         else
         {
-            InteractionBtn0.sprite = sprites[index];
-            InteractionBtn0.GetComponent<Button>().interactable = active0;
+            InteractionBtn1.sprite = sprites[index];
+            InteractionBtn1.GetComponent<Button>().interactable = active0;
         }
     }
 
@@ -75,8 +75,8 @@ public class UIManager : MonoBehaviourPun
     {
         curBtn0 = index;
         active0 = _active;
-        InteractionBtn0.sprite = sprites[index];
-        InteractionBtn0.GetComponent<Button>().interactable = active0;
+        InteractionBtn1.sprite = sprites[index];
+        InteractionBtn1.GetComponent<Button>().interactable = active0;
     }
 
     //공통의 kill btn_2
@@ -84,8 +84,8 @@ public class UIManager : MonoBehaviourPun
     {
         curBtn1 = index;
         active1 = _active;
-        InteractionBtn1.sprite = sprites[index];
-        InteractionBtn1.GetComponent<Button>().interactable = active1;
+        InteractionBtn2.sprite = sprites[index];
+        InteractionBtn2.GetComponent<Button>().interactable = active1;
     }
 
     public void ColorChange(int _colorIndex)
@@ -182,8 +182,8 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn2(5, false);
         NM.MyPlayer.isKillable = false;
 
-        //for (int i = 15; i > 0; i--) // 기본 15초 킬대기
-        for (int i = 3; i > 0; i--)
+        for (int i = 15; i > 0; i--) // 기본 15초 킬대기
+        //for (int i = 3; i > 0; i--)
         {
             killCooltime = i;
 

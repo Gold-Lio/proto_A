@@ -16,6 +16,10 @@ public class InteractionScript : MonoBehaviourPun
 	void Start()
     {		
 		Line = transform.GetChild(0).gameObject;
+
+		UM.SetInteractionBtn0(1, false);
+		UM.SetInteractionBtn1(0, false);
+		UM.SetInteractionBtn2(5, false);
     }
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -56,13 +60,6 @@ public class InteractionScript : MonoBehaviourPun
 				Line.SetActive(false);
 				UM.SetInteractionBtn1(0, false);
 			}
-
-			//else if (type == Type.Emergency)
-			//{
-			//	Line.SetActive(false);
-			//	if(NM.MyPlayer.isImposter) UM.SetInteractionBtn0(5, false);
-			//	else UM.SetInteractionBtn0(0, false);
-			//}
 		}
 	}
 
