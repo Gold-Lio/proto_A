@@ -153,23 +153,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
-
-	public void SetMission() 
-	{
-		if (!PV.IsMine) return;
-		if (isImposter) return;
-
-		List<int> GachaList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		for (int i = 0; i < 4; i++)
-		{
-			int rand = Random.Range(0, GachaList.Count);
-			NM.Interactions[GachaList[rand]].SetActive(true);
-			UM.MissionMaps[GachaList[rand]].SetActive(true);
-			GachaList.RemoveAt(rand);
-		}
-	}
-
-
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (!col.gameObject.CompareTag("Player")) return;
@@ -179,13 +162,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.CompareTag("DeadBody") && PV.IsMine) 
-		{
-			if (isDie) return;
-			UM.SetInteractionBtn1(4, true);
-			targetDeadColorIndex = col.GetComponent<DeadBodyScript>().colorIndex;
-		}
-
 		if (!col.CompareTag("Player") || !NM.isGameStart) return;
 		if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 

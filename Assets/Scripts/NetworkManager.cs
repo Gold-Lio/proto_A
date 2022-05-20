@@ -175,12 +175,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		isGameStart = true;
 		MyPlayer.SetPos(SpawnPoint.position);
 		MyPlayer.SetNickColor();
-		MyPlayer.SetMission();
+		//MyPlayer.SetMission();
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 		
 		yield return new WaitForSeconds(1);
 		ShowPanel(GamePanel);
 		ShowGameUI();
+
+
 		StartCoroutine(UM.KillCo());
 		StartCoroutine(UM.EnergencyCo());
 	}
@@ -205,59 +207,57 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	{
 		if (MyPlayer.isImposter)
 		{
-			UM.SetInteractionBtn0(5, false);
-			UM.SetInteractionBtn1(4, false);
-			UM.SetInteractionBtn2(6, true);
+			UM.SetInteractionBtn0(0, true);
+			UM.SetInteractionBtn1(5, true);
 		}
 		else
 		{
-			UM.SetInteractionBtn0(0, false);
-			UM.SetInteractionBtn1(4, false);
-			UM.SetInteractionBtn2(7, false);
+			UM.SetInteractionBtn0(0, true);
+			UM.SetInteractionBtn1(5, true);
 		}
 	}
 
-	[PunRPC]
-	void ReportRPC(int actor, int targetDeadColorIndex) 
-	{
-		// actor가 리포트함
-		ShowPanel(ReportPanel);
-		UM.ReportDeadBodyImage.color = UM.colors[targetDeadColorIndex];
-		StartCoroutine(ShowVotePanelCo(actor));
-	}
+	//[PunRPC]
+	//void ReportRPC(int actor, int targetDeadColorIndex) 
+	//{
+	//	// actor가 리포트함
+	//	ShowPanel(ReportPanel);
+	//	UM.ReportDeadBodyImage.color = UM.colors[targetDeadColorIndex];
+	//	StartCoroutine(ShowVotePanelCo(actor));
+	//}
 
-	[PunRPC]
-	void EmergencyRPC(int actor)
-	{
-		// actor가 긴급소집함
-		ShowPanel(EmergencyPanel);
-		StartCoroutine(ShowVotePanelCo(actor));
-	}
+	//[PunRPC]
+	//void EmergencyRPC(int actor)
+	//{
+	//	// actor가 긴급소집함
+	//	ShowPanel(EmergencyPanel);
+	//	StartCoroutine(ShowVotePanelCo(actor));
+	//}
 
-	IEnumerator ShowVotePanelCo(int callActor) 
-	{
-		yield return new WaitForSeconds(4);
-		ShowPanel(VotePanel);
-		VM.VoteInit(callActor);
-		foreach (GameObject DeadBody in GameObject.FindGameObjectsWithTag("DeadBody"))
-			PhotonNetwork.Destroy(DeadBody);
-	}
+	//IEnumerator ShowVotePanelCo(int callActor) 
+	//{
+	//	yield return new WaitForSeconds(4);
+	//	ShowPanel(VotePanel);
+	//	VM.VoteInit(callActor);
+	//	foreach (GameObject DeadBody in GameObject.FindGameObjectsWithTag("DeadBody"))
+	//		PhotonNetwork.Destroy(DeadBody);
+	//}
 
 
-	[PunRPC]
-	void ShowGhostRPC()
-	{
-		for (int i = 0; i < Players.Count; i++)
-		{
-			if (!MyPlayer.isDie) continue;
+	//[PunRPC]
+	//void ShowGhostRPC()
+	//{
+	//	for (int i = 0; i < Players.Count; i++)
+	//	{
+	//		if (!MyPlayer.isDie) continue;
 
-			if (Players[i].isDie)
-			{
-				Players[i].transform.GetChild(1).gameObject.SetActive(true);
-				Players[i].transform.GetChild(2).gameObject.SetActive(true);
-			}
-		}
-	}
+	//		if (Players[i].isDie)
+	//		{
+	//			Players[i].transform.GetChild(1).gameObject.SetActive(true);
+	//			Players[i].transform.GetChild(2).gameObject.SetActive(true);
+	//		}
+	//	}
+	//}
 
 
 	public void WinCheck() 

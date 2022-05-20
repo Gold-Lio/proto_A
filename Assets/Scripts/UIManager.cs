@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviourPun
     public Sprite[] sprites;
     int curBtn0, curBtn1, curBtn2;
     bool active0, active1, active2;
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2;
+    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1;
     public Text Interaction0Text;
 
     public Image PreviewImage;
@@ -57,6 +57,7 @@ public class UIManager : MonoBehaviourPun
         PV = photonView;
     }
 
+    //공통의 Use
     public void SetInteractionBtn0(int index, bool _active)
     {
         curBtn0 = index;
@@ -75,23 +76,31 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
+    //공통에서 가질 use버튼 활성화 
+
+
+    //공통의 use
     public void SetInteractionBtn1(int index, bool _active)
+    {
+        curBtn0 = index;
+        active0 = _active;
+        InteractionBtn0.sprite = sprites[index];
+        InteractionBtn0.GetComponent<Button>().interactable = active0;
+    }
+
+    //공통의 kill
+    public void SetInteractionBtn2(int index, bool _active)
     {
         curBtn1 = index;
         active1 = _active;
         InteractionBtn1.sprite = sprites[index];
         InteractionBtn1.GetComponent<Button>().interactable = active1;
+
+        //curBtn2 = index;
+        //active2 = _active;
+        ////InteractionBtn2.sprite = sprites[index];
+        //InteractionBtn2.GetComponent<Button>().interactable = active2;
     }
-
-    public void SetInteractionBtn2(int index, bool _active)
-    {
-        curBtn2 = index;
-        active2 = _active;
-        InteractionBtn2.sprite = sprites[index];
-        InteractionBtn2.GetComponent<Button>().interactable = active2;
-    }
-
-
     public void ColorChange(int _colorIndex)
     {
         PreviewImage.color = colors[_colorIndex];
@@ -99,10 +108,11 @@ public class UIManager : MonoBehaviourPun
     }
 
 
+
+
+
     public void ClickInteractionBtn0()
     {
-        
-
         // 커스터마이즈
         if (curBtn0 == 1)
         {
@@ -111,48 +121,31 @@ public class UIManager : MonoBehaviourPun
             PreviewImage.color = colors[NM.MyPlayer.colorIndex];
         }
 
-        // 킬
-        else if (curBtn0 == 5)
-        {
-            if (NM.MyPlayer.isDie) return;
-            NM.MyPlayer.Kill();
-        }
-
-        // 사용
-        else if (curBtn0 == 0)
+        //// 사용
+        //else if (curBtn0 == 0)
+        //{
+        //    // 크루원 작업
+        //    GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
+        //    CurMinigame.GetComponent<MinigameManager>().StartMission();
+        //}
+    }
+    public void ClickInteractionBtn()
+    {
+        if(curBtn0 == 0)
         {
             // 크루원 작업
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
-
-        // 이머전시
-        else if (curBtn0 == 8)
-        {
-            if (NM.MyPlayer.isDie) return;
-            NM.GetComponent<PhotonView>().RPC("EmergencyRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor);
-        }
-
-
     }
-
 
     public void ClickInteractionBtn1()
     {
-        // 리포트
-        if (curBtn1 == 4)
+        // 킬
+        if (curBtn1 == 5)
         {
             if (NM.MyPlayer.isDie) return;
-            NM.GetComponent<PhotonView>().RPC("ReportRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor, NM.MyPlayer.targetDeadColorIndex);
-        }
-    }
-
-    public void ClickInteractionBtn2() 
-    {
-        // 사보타지
-        if (curBtn2 == 6) 
-        {
-            SabotagePanel.SetActive(true);
+            NM.MyPlayer.Kill();
         }
     }
 
@@ -168,7 +161,6 @@ public class UIManager : MonoBehaviourPun
         SetMap();
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
-
     }
 
     void ShowStartBtn()
@@ -189,10 +181,8 @@ public class UIManager : MonoBehaviourPun
             bool contain = colorList.Contains(i + 1);
             ColorCancel[i].SetActive(contain);
             ColorBtn[i].interactable = !contain;
-
         }
     }
-
 
     public void SetMap()
     {
@@ -203,7 +193,6 @@ public class UIManager : MonoBehaviourPun
         Vector3 MyPlayerPos = NM.MyPlayer.transform.position;
         float playerWidth = MyPlayerPos.x - LeftBottom.position.x;
         float playerHeight = MyPlayerPos.y - LeftBottom.position.y;
-
 
         // 지도
         float widthMap = RightTopMap.position.x - LeftBottomMap.position.x;
@@ -217,10 +206,11 @@ public class UIManager : MonoBehaviourPun
 
     public IEnumerator KillCo()
     {
-        if (!NM.MyPlayer.isImposter) yield break;
+       // if (!NM.MyPlayer.isImposter) yield break;
 
         SetInteractionBtn0(5, false);
         NM.MyPlayer.isKillable = false;
+
         //for (int i = 15; i > 0; i--) // 기본 15초 킬대기
         for (int i = 3; i > 0; i--)
         {
@@ -238,6 +228,7 @@ public class UIManager : MonoBehaviourPun
 
         NM.MyPlayer.isKillable = true;
     }
+
 
     public IEnumerator EnergencyCo() 
     {
