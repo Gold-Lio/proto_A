@@ -30,19 +30,11 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
-				if (col.GetComponent<PlayerScript>().isImposter) return;
+				//if (col.GetComponent<PlayerScript>().isImposter) return;
 
 				UM.curInteractionNum = curInteractionNum;
 				Line.SetActive(true);
-				UM.SetInteractionBtn0(0, true);
-			}
-
-			else if (type == Type.Emergency) 
-			{
-				if (col.GetComponent<PlayerScript>().isDie) return;
-				Line.SetActive(true);
-				bool isEmergency = UM.emergencyCooltime == 0;
-				UM.SetInteractionBtn0(8, isEmergency);
+				UM.SetInteractionBtn1(0, true);
 			}
 		}
 	}
@@ -59,18 +51,18 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
-				if (col.GetComponent<PlayerScript>().isImposter) return;
+				//if (col.GetComponent<PlayerScript>().isImposter) return;
 
 				Line.SetActive(false);
-				UM.SetInteractionBtn0(0, false);
+				UM.SetInteractionBtn1(0, false);
 			}
 
-			else if (type == Type.Emergency)
-			{
-				Line.SetActive(false);
-				if(NM.MyPlayer.isImposter) UM.SetInteractionBtn0(5, false);
-				else UM.SetInteractionBtn0(0, false);
-			}
+			//else if (type == Type.Emergency)
+			//{
+			//	Line.SetActive(false);
+			//	if(NM.MyPlayer.isImposter) UM.SetInteractionBtn0(5, false);
+			//	else UM.SetInteractionBtn0(0, false);
+			//}
 		}
 	}
 

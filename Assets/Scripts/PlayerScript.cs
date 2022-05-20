@@ -15,7 +15,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public SpriteRenderer[] CharacterSR;
 	public Transform Character, Canvas, Ghost;
 	public Text NickText;
-
 	public enum State { Idle, Walk };
 	public State state;
 	public bool isWalk, isMove, isImposter, isKillable, isDie;
@@ -24,11 +23,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public PlayerScript KillTargetPlayer;
 	public int targetDeadColorIndex;
 
-	[SerializeField] int _voteColorIndex; // 투표한 사람 색
-	public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
-	[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
+	//[SerializeField] int _voteColorIndex; // 투표한 사람 색
+	//public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
+	//[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
 
-	public List<int> VotedColors = new List<int>();
+	//public List<int> VotedColors = new List<int>();
 
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
@@ -153,6 +152,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
+
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (!col.gameObject.CompareTag("Player")) return;
@@ -168,29 +168,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		//살인자가 주체_    user또한 주체가 되어야한다. 
 		if (col.GetComponent<PlayerScript>()) 
 		{
-			UM.SetInteractionBtn0(5, true);
+			UM.SetInteractionBtn2(5, true);
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.CompareTag("DeadBody") && PV.IsMine)
-		{
-			if (isDie) return;
-			UM.SetInteractionBtn1(4, false);
-			targetDeadColorIndex = -1;
-		}
-
+		
 		if (!col.CompareTag("Player") || !NM.isGameStart) return;
 		if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
 		if (col.GetComponent<PlayerScript>())
 		{
-			UM.SetInteractionBtn0(5, false);
+			UM.SetInteractionBtn2(5, false);
 			KillTargetPlayer = null;
 		}
 	}
+
 
 	public void Kill() 
 	{
@@ -224,44 +219,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 	[PunRPC]
-	void SetVotedDie() 
-	{
-		isDie = true;
-
-		transform.GetChild(0).gameObject.SetActive(false);
-		transform.GetChild(1).gameObject.SetActive(false);
-
-		if (PV.IsMine)
-		{
-			transform.GetChild(1).gameObject.SetActive(true);
-			transform.GetChild(2).gameObject.SetActive(true);
-			Physics2D.IgnoreLayerCollision(8, 9);
-			PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
-			NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
-		}
-	}
-
-
-	[PunRPC]
 	void SetGhostColor(int colorIndex) 
 	{
 		Color color = UM.colors[colorIndex];
 		Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
 	}
-
-	public void VotedColorsAdd(int votedColorIndex) 
-	{
-		VotedColors.Add(votedColorIndex);
-	}
-
-	[PunRPC]
-	void VotedColorsClearRPC()
-	{
-		VotedColors.Clear();
-	}
-
-
-
-
 
 }
