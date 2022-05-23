@@ -16,10 +16,6 @@ public class InteractionScript : MonoBehaviourPun
 	void Start()
     {		
 		Line = transform.GetChild(0).gameObject;
-
-		UM.SetInteractionBtn0(0, false);
-		UM.SetInteractionBtn1(0, false);
-		UM.SetInteractionBtn2(5, false);
     }
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -34,9 +30,19 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
+				if (col.GetComponent<PlayerScript>().isImposter) return;
+
 				UM.curInteractionNum = curInteractionNum;
 				Line.SetActive(true);
-				UM.SetInteractionBtn1(0, true);
+				UM.SetInteractionBtn0(0, true);
+			}
+
+			else if (type == Type.Emergency) 
+			{
+				if (col.GetComponent<PlayerScript>().isDie) return;
+				Line.SetActive(true);
+				bool isEmergency = UM.emergencyCooltime == 0;
+				UM.SetInteractionBtn0(8, isEmergency);
 			}
 		}
 	}
@@ -53,8 +59,17 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
+				if (col.GetComponent<PlayerScript>().isImposter) return;
+
 				Line.SetActive(false);
-				UM.SetInteractionBtn1(0, false);
+				UM.SetInteractionBtn0(0, false);
+			}
+
+			else if (type == Type.Emergency)
+			{
+				Line.SetActive(false);
+				if(NM.MyPlayer.isImposter) UM.SetInteractionBtn0(5, false);
+				else UM.SetInteractionBtn0(0, false);
 			}
 		}
 	}

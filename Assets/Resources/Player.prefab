@@ -467,6 +467,8 @@ MonoBehaviour:
   speed: 40
   KillTargetPlayer: {fileID: 0}
   targetDeadColorIndex: 0
+  _voteColorIndex: 0
+  VotedColors: 
   PV: {fileID: 0}
   nick: 
 --- !u!114 &1878694176956332237
@@ -559,7 +561,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 11.75
 --- !u!210 &1134813157383694236
 SortingGroup:
   m_ObjectHideFlags: 0

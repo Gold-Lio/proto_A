@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
-
+using static VoteManager;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
@@ -13,8 +13,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	public static NetworkManager NM;
 	void Awake() => NM = this;
 
-	public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel, 
-		  KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
+	public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel, ReportPanel, 
+		EmergencyPanel, VotePanel, KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
 	public List<PlayerScript> Players = new List<PlayerScript>();
 	public PlayerScript MyPlayer;
 	
@@ -29,6 +29,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	public bool isTest;
 	public enum ImpoType { OnlyMaster, Rand1, Rand2 }
 	public ImpoType impoType;
+	public int VoteTimer;
+
 
 	void Start()
 	{
@@ -72,8 +74,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		WaitingPanel.SetActive(false);
 		InfoPanel.SetActive(false);
 		GamePanel.SetActive(false);
-		//ReportPanel.SetActive(false);
-		//EmergencyPanel.SetActive(false);
+		ReportPanel.SetActive(false);
+		EmergencyPanel.SetActive(false);
+		VotePanel.SetActive(false);
 		KickPanel.SetActive(false);
 		NoOneKickPanel.SetActive(false);
 		CrewWinPanel.SetActive(false);
@@ -119,7 +122,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		// 방장이 게임시작
 		SetImpoCrew();
 		PhotonNetwork.CurrentRoom.IsOpen = false;
-		PhotonNetwork.CurrentRoom.IsVisible = false;	
+		PhotonNetwork.CurrentRoom.IsVisible = false;
 		ChatManager.CM.photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, false);
 
 		PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
@@ -144,15 +147,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 			}
 		}
 
-		//else if (impoType == ImpoType.Rand2) 
-		//{
-		//	for (int i = 0; i < 2; i++) // 임포스터 2명 (기본)
-		//	{
-		//		int rand = Random.Range(0, GachaList.Count); // 랜덤
-		//		Players[rand].GetComponent<PhotonView>().RPC("SetImpoCrew", RpcTarget.AllViaServer, true);
-		//		GachaList.RemoveAt(rand);
-		//	}
-		//}
+		else if (impoType == ImpoType.Rand2) 
+		{
+			for (int i = 0; i < 2; i++) // 임포스터 2명 (기본)
+			{
+				int rand = Random.Range(0, GachaList.Count); // 랜덤
+				Players[rand].GetComponent<PhotonView>().RPC("SetImpoCrew", RpcTarget.AllViaServer, true);
+				GachaList.RemoveAt(rand);
+			}
+		}
 	}
 
 	[PunRPC]
@@ -172,18 +175,20 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		isGameStart = true;
 		MyPlayer.SetPos(SpawnPoint.position);
 		MyPlayer.SetNickColor();
-		//MyPlayer.SetMission();
+		MyPlayer.SetMission();
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 		
 		yield return new WaitForSeconds(1);
 		ShowPanel(GamePanel);
 		ShowGameUI();
 		StartCoroutine(UM.KillCo());
+		StartCoroutine(UM.EnergencyCo());
 	}
 
 	public override void OnPlayerLeftRoom(Player otherPlayer)
 	{
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
+		VM.photonView.RPC("VoteUpdateRPC", RpcTarget.All);
 	}
 
 
@@ -200,20 +205,61 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	{
 		if (MyPlayer.isImposter)
 		{
-			UM.SetInteractionBtn1(0, false);
-			UM.SetInteractionBtn2(5, false);
+			UM.SetInteractionBtn0(5, false);
+			UM.SetInteractionBtn1(4, false);
+			UM.SetInteractionBtn2(6, true);
 		}
 		else
 		{
-			UM.SetInteractionBtn1(0, false);
-			UM.SetInteractionBtn2(5, false);
+			UM.SetInteractionBtn0(0, false);
+			UM.SetInteractionBtn1(4, false);
+			UM.SetInteractionBtn2(7, false);
+		}
+	}
+
+	[PunRPC]
+	void ReportRPC(int actor, int targetDeadColorIndex) 
+	{
+		// actor가 리포트함
+		ShowPanel(ReportPanel);
+		UM.ReportDeadBodyImage.color = UM.colors[targetDeadColorIndex];
+		StartCoroutine(ShowVotePanelCo(actor));
+	}
+
+	[PunRPC]
+	void EmergencyRPC(int actor)
+	{
+		// actor가 긴급소집함
+		ShowPanel(EmergencyPanel);
+		StartCoroutine(ShowVotePanelCo(actor));
+	}
+
+	IEnumerator ShowVotePanelCo(int callActor) 
+	{
+		yield return new WaitForSeconds(4);
+		ShowPanel(VotePanel);
+		VM.VoteInit(callActor);
+		foreach (GameObject DeadBody in GameObject.FindGameObjectsWithTag("DeadBody"))
+			PhotonNetwork.Destroy(DeadBody);
+	}
+
+
+	[PunRPC]
+	void ShowGhostRPC()
+	{
+		for (int i = 0; i < Players.Count; i++)
+		{
+			if (!MyPlayer.isDie) continue;
+
+			if (Players[i].isDie)
+			{
+				Players[i].transform.GetChild(1).gameObject.SetActive(true);
+				Players[i].transform.GetChild(2).gameObject.SetActive(true);
+			}
 		}
 	}
 
 
-
-
-	//이 탈출해야지만, 승리하는 조건. 
 	public void WinCheck() 
 	{
 		int crewCount = 0;

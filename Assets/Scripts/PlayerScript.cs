@@ -15,19 +15,20 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public SpriteRenderer[] CharacterSR;
 	public Transform Character, Canvas, Ghost;
 	public Text NickText;
+
 	public enum State { Idle, Walk };
 	public State state;
-	public bool isWalk, isMove, isImposter, isKillable, isDie, isDeaded;
+	public bool isWalk, isMove, isImposter, isKillable, isDie;
 	public int actor, colorIndex;
 	public float speed; //기본 40
 	public PlayerScript KillTargetPlayer;
 	public int targetDeadColorIndex;
 
-	//[SerializeField] int _voteColorIndex; // 투표한 사람 색
-	//public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
-	//[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
+	[SerializeField] int _voteColorIndex; // 투표한 사람 색
+	public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
+	[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
 
-	//public List<int> VotedColors = new List<int>();
+	public List<int> VotedColors = new List<int>();
 
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
@@ -43,7 +44,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		NM.SortPlayers();
 		isMove = true;
 		StartCoroutine(StateCo());
-
 	}
 
 	IEnumerator StateCo() 
@@ -73,12 +73,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 		}
 
-        if (NM.isGameStart)
-        {
-            Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
-        }
+		if (NM.isGameStart) 
+		{
+			Camera.main.transform.position = transform.position + new Vector3(0,0,-10);
+		}
 
-        NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
+		NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
 	}
 
 	public void SetPos(Vector3 target) 
@@ -154,6 +154,22 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 
+	public void SetMission() 
+	{
+		if (!PV.IsMine) return;
+		if (isImposter) return;
+
+		List<int> GachaList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		for (int i = 0; i < 4; i++)
+		{
+			int rand = Random.Range(0, GachaList.Count);
+			NM.Interactions[GachaList[rand]].SetActive(true);
+			UM.MissionMaps[GachaList[rand]].SetActive(true);
+			GachaList.RemoveAt(rand);
+		}
+	}
+
+
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (!col.gameObject.CompareTag("Player")) return;
@@ -163,35 +179,46 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
+		if (col.CompareTag("DeadBody") && PV.IsMine) 
+		{
+			if (isDie) return;
+			UM.SetInteractionBtn1(4, true);
+			targetDeadColorIndex = col.GetComponent<DeadBodyScript>().colorIndex;
+		}
+
 		if (!col.CompareTag("Player") || !NM.isGameStart) return;
 		if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
 		//살인자가 주체_    user또한 주체가 되어야한다. 
 		if (col.GetComponent<PlayerScript>()) 
 		{
-			UM.SetInteractionBtn2(5, true);
+			UM.SetInteractionBtn0(5, true);
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D col)
 	{
-		
+		if (col.CompareTag("DeadBody") && PV.IsMine)
+		{
+			if (isDie) return;
+			UM.SetInteractionBtn1(4, false);
+			targetDeadColorIndex = -1;
+		}
+
 		if (!col.CompareTag("Player") || !NM.isGameStart) return;
 		if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
 		if (col.GetComponent<PlayerScript>())
 		{
-			UM.SetInteractionBtn2(5, false);
+			UM.SetInteractionBtn0(5, false);
 			KillTargetPlayer = null;
 		}
 	}
 
-
-	//죽은 후에 유령 이슈 수정 요망
 	public void Kill() 
 	{
-		// 죽이기 성공, 기존에 있던 플레이어를 없애고 , 시체를 Spawn한다. 
+		// 죽이기 성공
 		StartCoroutine(UM.KillCo());
 		KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
 		Vector3 TargetPos = KillTargetPlayer.transform.position;
@@ -199,42 +226,66 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		
 		GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
 		CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
-    }
-	
-    [PunRPC]
-    void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex)
-    {
-        isDie = b;
+	}
 
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(false);
+	[PunRPC]
+	void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex) 
+	{
+		isDie = b;
 
-        if (PV.IsMine)
-        {
-			if(isDeaded)
-            {
-				//
-            }
-			
-			//모든 행동 불가능. 
-			//카메라는 
-			GameObject.FindWithTag("Player");
-        }
+		transform.GetChild(0).gameObject.SetActive(false);
+		transform.GetChild(1).gameObject.SetActive(false);
 
-		// 연출 시작
-        //	StartCoroutine(UM.DieCo(_killerColorIndex, _deadBodyColorIndex));
-        //	
-		// 플레이어 자식으로 있는 유령 소환.
-		//	transform.GetChild(1).gameObject.SetActive(true);
-        //	transform.GetChild(2).gameObject.SetActive(true);
-        //	Physics2D.IgnoreLayerCollision(8, 9);
-        //	PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
-        //	NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
-    }
+		if (PV.IsMine) 
+		{
+			StartCoroutine(UM.DieCo(_killerColorIndex, _deadBodyColorIndex));
+			transform.GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(2).gameObject.SetActive(true);
+			Physics2D.IgnoreLayerCollision(8, 9);
+			PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
+			NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
+		}
+	}
+
+	[PunRPC]
+	void SetVotedDie() 
+	{
+		isDie = true;
+
+		transform.GetChild(0).gameObject.SetActive(false);
+		transform.GetChild(1).gameObject.SetActive(false);
+
+		if (PV.IsMine)
+		{
+			transform.GetChild(1).gameObject.SetActive(true);
+			transform.GetChild(2).gameObject.SetActive(true);
+			Physics2D.IgnoreLayerCollision(8, 9);
+			PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
+			NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
+		}
+	}
+
+
+	[PunRPC]
+	void SetGhostColor(int colorIndex) 
+	{
+		Color color = UM.colors[colorIndex];
+		Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
+	}
+
+	public void VotedColorsAdd(int votedColorIndex) 
+	{
+		VotedColors.Add(votedColorIndex);
+	}
+
+	[PunRPC]
+	void VotedColorsClearRPC()
+	{
+		VotedColors.Clear();
+	}
+
+
+
+
+
 }
-	//[PunRPC]
-	//void SetGhostColor(int colorIndex) 
-	//{
-	//	Color color = UM.colors[colorIndex];
-	//	Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
-	//}
