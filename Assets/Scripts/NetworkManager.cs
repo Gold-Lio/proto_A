@@ -200,13 +200,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 	{
 		if (MyPlayer.isImposter)
 		{
-			UM.SetInteractionBtn1(0, true);
-			UM.SetInteractionBtn2(5, true);
+			UM.SetInteractionBtn1(0, false);
+			UM.SetInteractionBtn2(5, false);
 		}
 		else
 		{
-			UM.SetInteractionBtn1(0, true);
-			UM.SetInteractionBtn2(5, true);
+			UM.SetInteractionBtn1(0, false);
+			UM.SetInteractionBtn2(5, false);
 		}
 	}
 

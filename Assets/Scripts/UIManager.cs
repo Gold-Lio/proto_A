@@ -50,13 +50,12 @@ public class UIManager : MonoBehaviourPun
         PV = photonView;
     }
 
-    //공통의 Use
+    // 대기실
     public void SetInteractionBtn0(int index, bool _active)
     {
         curBtn0 = index;
         active0 = _active;
 
-        // 대기실
         if (!NM.isGameStart)
         {
             WaitingInteractionBtn0.sprite = sprites[index];
@@ -182,7 +181,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn2(5, false);
         NM.MyPlayer.isKillable = false;
 
-        for (int i = 15; i > 0; i--) // 기본 15초 킬대기
+        for (int i = 10; i > 0; i--) // 기본 15초 킬대기
         //for (int i = 3; i > 0; i--)
         {
             killCooltime = i;
@@ -200,6 +199,7 @@ public class UIManager : MonoBehaviourPun
         NM.MyPlayer.isKillable = true;
     }
 
+    //킬 당한 인원에게 킬 연출 true
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
     {
         DiePanel.SetActive(true);
@@ -224,12 +224,17 @@ public class UIManager : MonoBehaviourPun
     [PunRPC]
     public void AddMissionGage()
     {
-        MissionGageSlider.value += 0.25f;
+        //미션 게이지  수정할것. 
+        MissionGageSlider.value += 0.5f;
 
         if (MissionGageSlider.value == MissionGageSlider.maxValue) 
         {
+
+            // 미션게이지가 다 찰경우 문을 오픈.
+
+
             // 크루원 승리
-            NM.Winner(true);
+            //NM.Winner(true);
         }
     }
 

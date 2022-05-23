@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public Text NickText;
 	public enum State { Idle, Walk };
 	public State state;
-	public bool isWalk, isMove, isImposter, isKillable, isDie;
+	public bool isWalk, isMove, isImposter, isKillable, isDie, isDeaded;
 	public int actor, colorIndex;
 	public float speed; //기본 40
 	public PlayerScript KillTargetPlayer;
@@ -43,6 +43,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		NM.SortPlayers();
 		isMove = true;
 		StartCoroutine(StateCo());
+
 	}
 
 	IEnumerator StateCo() 
@@ -187,15 +188,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	}
 
 
-
-
-
-
-
 	//죽은 후에 유령 이슈 수정 요망
 	public void Kill() 
 	{
-		// 죽이기 성공
+		// 죽이기 성공, 기존에 있던 플레이어를 없애고 , 시체를 Spawn한다. 
 		StartCoroutine(UM.KillCo());
 		KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
 		Vector3 TargetPos = KillTargetPlayer.transform.position;
@@ -203,32 +199,42 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		
 		GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
 		CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
-	}
+    }
+	
+    [PunRPC]
+    void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex)
+    {
+        isDie = b;
 
-	[PunRPC]
-	void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex) 
-	{
-		isDie = b;
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
 
-		transform.GetChild(0).gameObject.SetActive(false);
-		transform.GetChild(1).gameObject.SetActive(false);
+        if (PV.IsMine)
+        {
+			if(isDeaded)
+            {
+				//
+            }
+			
+			//모든 행동 불가능. 
+			//카메라는 
+			GameObject.FindWithTag("Player");
+        }
 
-		if (PV.IsMine) 
-		{
-			StartCoroutine(UM.DieCo(_killerColorIndex, _deadBodyColorIndex));
-			transform.GetChild(1).gameObject.SetActive(true);
-			transform.GetChild(2).gameObject.SetActive(true);
-			Physics2D.IgnoreLayerCollision(8, 9);
-			PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
-			NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
-		}
-	}
-
-	[PunRPC]
-	void SetGhostColor(int colorIndex) 
-	{
-		Color color = UM.colors[colorIndex];
-		Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
-	}
-
+		// 연출 시작
+        //	StartCoroutine(UM.DieCo(_killerColorIndex, _deadBodyColorIndex));
+        //	
+		// 플레이어 자식으로 있는 유령 소환.
+		//	transform.GetChild(1).gameObject.SetActive(true);
+        //	transform.GetChild(2).gameObject.SetActive(true);
+        //	Physics2D.IgnoreLayerCollision(8, 9);
+        //	PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
+        //	NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
+    }
 }
+	//[PunRPC]
+	//void SetGhostColor(int colorIndex) 
+	//{
+	//	Color color = UM.colors[colorIndex];
+	//	Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
+	//}

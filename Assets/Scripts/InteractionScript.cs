@@ -17,7 +17,7 @@ public class InteractionScript : MonoBehaviourPun
     {		
 		Line = transform.GetChild(0).gameObject;
 
-		UM.SetInteractionBtn0(1, false);
+		UM.SetInteractionBtn0(0, false);
 		UM.SetInteractionBtn1(0, false);
 		UM.SetInteractionBtn2(5, false);
     }
@@ -34,8 +34,6 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
-				//if (col.GetComponent<PlayerScript>().isImposter) return;
-
 				UM.curInteractionNum = curInteractionNum;
 				Line.SetActive(true);
 				UM.SetInteractionBtn1(0, true);
@@ -55,8 +53,6 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
-				//if (col.GetComponent<PlayerScript>().isImposter) return;
-
 				Line.SetActive(false);
 				UM.SetInteractionBtn1(0, false);
 			}
