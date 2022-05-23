@@ -11,13 +11,12 @@ public class UIManager : MonoBehaviourPun
     public static UIManager UM;
     void Awake() => UM = this;
 
-
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
     int curBtn0, curBtn1, curBtn2;
     bool active0, active1, active2;
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2;
-    public Text Interaction0Text;
+    public Image WaitingInteractionBtn0, InteractionBtn1, InteractionBtn2;
+    public Text Interaction2Text;
 
     public Image PreviewImage;
     public Color[] colors;
@@ -33,36 +32,30 @@ public class UIManager : MonoBehaviourPun
     public GameObject MissionClearText;
     public int curInteractionNum;
     public Slider MissionGageSlider;
-    public Transform[] VotePanels;
     public GameObject SabotagePanel;
     public Button[] DoorMaps;
     public Image ReportDeadBodyImage;
-    public Toggle[] VoteToggles;
-    public Toggle SkipVoteToggle, CancelVoteToggle;
-    public GameObject SkipVoteResultGrid;
     public Image KickPanelImage;
     public Text KickPanelText;
     PhotonView PV;
-    public GameObject VoteResultImage;
     public InputField ChatInput;
     public Text ChatText;
     public Scrollbar ChatScroll;
     public RectTransform ChatContent;
     public GameObject[] ChatPanels;
     public int killCooltime, emergencyCooltime;
-    public Text VoteTimerText;
 
     void Start()
     {
         PV = photonView;
     }
 
+    // 대기실
     public void SetInteractionBtn0(int index, bool _active)
     {
         curBtn0 = index;
         active0 = _active;
 
-        // 대기실
         if (!NM.isGameStart)
         {
             WaitingInteractionBtn0.sprite = sprites[index];
@@ -70,27 +63,29 @@ public class UIManager : MonoBehaviourPun
         }
         else
         {
-            InteractionBtn0.sprite = sprites[index];
-            InteractionBtn0.GetComponent<Button>().interactable = active0;
+            InteractionBtn1.sprite = sprites[index];
+            InteractionBtn1.GetComponent<Button>().interactable = active0;
         }
     }
 
+    //공통에서 가질 use버튼 활성화 
+    //공통의 use btn_1
     public void SetInteractionBtn1(int index, bool _active)
+    {
+        curBtn0 = index;
+        active0 = _active;
+        InteractionBtn1.sprite = sprites[index];
+        InteractionBtn1.GetComponent<Button>().interactable = active0;
+    }
+
+    //공통의 kill btn_2
+    public void SetInteractionBtn2(int index, bool _active)
     {
         curBtn1 = index;
         active1 = _active;
-        InteractionBtn1.sprite = sprites[index];
-        InteractionBtn1.GetComponent<Button>().interactable = active1;
-    }
-
-    public void SetInteractionBtn2(int index, bool _active)
-    {
-        curBtn2 = index;
-        active2 = _active;
         InteractionBtn2.sprite = sprites[index];
-        InteractionBtn2.GetComponent<Button>().interactable = active2;
+        InteractionBtn2.GetComponent<Button>().interactable = active1;
     }
-
 
     public void ColorChange(int _colorIndex)
     {
@@ -98,11 +93,8 @@ public class UIManager : MonoBehaviourPun
         NM.MyPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, _colorIndex);
     }
 
-
     public void ClickInteractionBtn0()
     {
-        
-
         // 커스터마이즈
         if (curBtn0 == 1)
         {
@@ -110,49 +102,24 @@ public class UIManager : MonoBehaviourPun
             SetIsCustomize(false);
             PreviewImage.color = colors[NM.MyPlayer.colorIndex];
         }
-
-        // 킬
-        else if (curBtn0 == 5)
-        {
-            if (NM.MyPlayer.isDie) return;
-            NM.MyPlayer.Kill();
-        }
-
-        // 사용
-        else if (curBtn0 == 0)
+    }
+    public void ClickInteractionBtn1()
+    {
+        if(curBtn0 == 0)
         {
             // 크루원 작업
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
-
-        // 이머전시
-        else if (curBtn0 == 8)
-        {
-            if (NM.MyPlayer.isDie) return;
-            NM.GetComponent<PhotonView>().RPC("EmergencyRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor);
-        }
-
-
     }
 
-
-    public void ClickInteractionBtn1()
+    public void ClickInteractionBtn2()
     {
-        // 리포트
-        if (curBtn1 == 4)
+        // 킬
+        if (curBtn1 == 5)
         {
             if (NM.MyPlayer.isDie) return;
-            NM.GetComponent<PhotonView>().RPC("ReportRPC", RpcTarget.AllViaServer, NM.MyPlayer.actor, NM.MyPlayer.targetDeadColorIndex);
-        }
-    }
-
-    public void ClickInteractionBtn2() 
-    {
-        // 사보타지
-        if (curBtn2 == 6) 
-        {
-            SabotagePanel.SetActive(true);
+            NM.MyPlayer.Kill();
         }
     }
 
@@ -168,13 +135,11 @@ public class UIManager : MonoBehaviourPun
         SetMap();
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
-
     }
 
     void ShowStartBtn()
     {
         StartBtn.gameObject.SetActive(true);
-        //StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 7; // 기본값
         StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 1; // 2
     }
 
@@ -189,10 +154,8 @@ public class UIManager : MonoBehaviourPun
             bool contain = colorList.Contains(i + 1);
             ColorCancel[i].SetActive(contain);
             ColorBtn[i].interactable = !contain;
-
         }
     }
-
 
     public void SetMap()
     {
@@ -204,7 +167,6 @@ public class UIManager : MonoBehaviourPun
         float playerWidth = MyPlayerPos.x - LeftBottom.position.x;
         float playerHeight = MyPlayerPos.y - LeftBottom.position.y;
 
-
         // 지도
         float widthMap = RightTopMap.position.x - LeftBottomMap.position.x;
         float heightMap = RightTopMap.position.y - LeftBottomMap.position.y;
@@ -214,47 +176,30 @@ public class UIManager : MonoBehaviourPun
 
         PlayerMap.position = new Vector3(playerMapX, playerMapY, 0);
     }
-
     public IEnumerator KillCo()
     {
-        if (!NM.MyPlayer.isImposter) yield break;
-
-        SetInteractionBtn0(5, false);
+        SetInteractionBtn2(5, false);
         NM.MyPlayer.isKillable = false;
-        //for (int i = 15; i > 0; i--) // 기본 15초 킬대기
-        for (int i = 3; i > 0; i--)
+
+        for (int i = 10; i > 0; i--) // 기본 15초 킬대기
+        //for (int i = 3; i > 0; i--)
         {
             killCooltime = i;
 
             if (UM.curBtn0 == 5) 
-                Interaction0Text.text = killCooltime.ToString();
+                Interaction2Text.text = killCooltime.ToString();
             else
-                Interaction0Text.text = "";
+                Interaction2Text.text = "";
 
             yield return new WaitForSeconds(1);
         }
         killCooltime = 0;
-        Interaction0Text.text = "";
+        Interaction2Text.text = "";
 
         NM.MyPlayer.isKillable = true;
     }
 
-    public IEnumerator EnergencyCo() 
-    {
-        for (int i = 20; i > 0; i--)
-        {
-            emergencyCooltime = i;
-            if (UM.curBtn0 == 8)
-                Interaction0Text.text = emergencyCooltime.ToString();
-            else
-                Interaction0Text.text = "";
-            yield return new WaitForSeconds(1);
-        }
-        emergencyCooltime = 0;
-        Interaction0Text.text = "";
-    }
-
-
+    //킬 당한 인원에게 킬 연출 true
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
     {
         DiePanel.SetActive(true);
@@ -270,7 +215,6 @@ public class UIManager : MonoBehaviourPun
         LogText.text = log;
     }
 
-
     [PunRPC]
     public void SetMaxMissionGage()
     {
@@ -280,18 +224,22 @@ public class UIManager : MonoBehaviourPun
     [PunRPC]
     public void AddMissionGage()
     {
-        MissionGageSlider.value += 0.25f;
+        //미션 게이지  수정할것. 
+        MissionGageSlider.value += 0.5f;
 
         if (MissionGageSlider.value == MissionGageSlider.maxValue) 
         {
+
+            // 미션게이지가 다 찰경우 문을 오픈.
+
+
             // 크루원 승리
-            NM.Winner(true);
+            //NM.Winner(true);
         }
     }
 
     public IEnumerator MissionClearCo(GameObject MissionPanel) 
     {
-
         MissionPanel.SetActive(false);
         MissionClearText.SetActive(true);
         yield return new WaitForSeconds(2);
@@ -304,33 +252,34 @@ public class UIManager : MonoBehaviourPun
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
     }
 
-    public void DoorMapClick(int doorIndex) 
-    {
-        PV.RPC("DoorMapClickRPC", RpcTarget.AllViaServer, doorIndex);
-    }
+    //public void DoorMapClick(int doorIndex) 
+    //{
+    //    PV.RPC("DoorMapClickRPC", RpcTarget.AllViaServer, doorIndex);
+    //}
 
-    [PunRPC]
-    void DoorMapClickRPC(int doorIndex) 
-    {
-        StartCoroutine(DoorCo(doorIndex));
-        StartCoroutine(DoorCoolCo(doorIndex));
-    }
+    //[PunRPC]
+    //void DoorMapClickRPC(int doorIndex) 
+    //{
+    //    StartCoroutine(DoorCo(doorIndex));
+    //    StartCoroutine(DoorCoolCo(doorIndex));
+    //}
 
-    IEnumerator DoorCo(int doorIndex) 
-    {
-        NM.Doors[doorIndex].SetActive(true);
-        yield return new WaitForSeconds(7);
-        NM.Doors[doorIndex].SetActive(false);
-    }
+    //IEnumerator DoorCo(int doorIndex) 
+    //{
+    //    NM.Doors[doorIndex].SetActive(true);
+    //    yield return new WaitForSeconds(7);
+    //    NM.Doors[doorIndex].SetActive(false);
+    //}
 
-    IEnumerator DoorCoolCo(int doorIndex) 
-    {
-        if (!NM.MyPlayer.isImposter) yield break;
+    //IEnumerator DoorCoolCo(int doorIndex) 
+    //{
+    //    if (!NM.MyPlayer.isImposter) yield break;
 
-        DoorMaps[doorIndex].interactable = false;
-        yield return new WaitForSeconds(18);
-        DoorMaps[doorIndex].interactable = true;
-    }
+    //    DoorMaps[doorIndex].interactable = false;
+    //    yield return new WaitForSeconds(18);
+    //    DoorMaps[doorIndex].interactable = true;
+    //}
 
 
 }
+
