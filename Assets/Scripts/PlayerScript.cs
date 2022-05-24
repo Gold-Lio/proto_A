@@ -79,10 +79,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			
 		}
 
-        //if (NM.isGameStart)
-        //{
-        //    Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
-        //}
+        if (NM.isGameStart)
+        {
+            Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
+        }
 
         NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
 
