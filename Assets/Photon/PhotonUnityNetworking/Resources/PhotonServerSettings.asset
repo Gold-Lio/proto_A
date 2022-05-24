@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: b14a3c07-b658-4998-bbb8-ad2bb9d51163
+    AppIdRealtime: 03f419e3-1433-46c1-be22-dc0ab9b83a11
+    AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: 
-    AppVersion: 2
+    AppIdVoice: d43e08b3-509b-4144-be8d-20a936bd30d3
+    AppVersion: 
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -27,45 +28,27 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: kr
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - AddMissionGage
+  - AnimSprites
+  - ChatClearRPC
+  - ChatRPC
   - ClickRpc
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - AnimSprites
-  - SetColor
   - GameStartRPC
-  - SetImpoCrew
-  - SpawnBody
-  - SetIsDie
+  - RespawnSpaceship
+  - SetColor
   - SetDie
-  - SetGhostColor
+  - SetImpoCrew
   - SetMaxMissionGage
-  - AddMissionGage
-  - Report
-  - ReportRPC
-  - EmergencyRPC
-  - ShowGhostRPC
-  - DoorMapClickRPC
-  - VotedRPC
-  - SetCurVoteIndexRPC
-  - UpdateVoteRPC
-  - SetVotedDie
-  - SetVotedCountRPC
-  - VotedCountRPC
-  - VoteColorIndexRPC
-  - VoteUpdateRPC
-  - VotedColorsAddRPC
-  - VotedColorsClearRPC
-  - ReturnToGameRPC
-  - ChatRPC
-  - ChatClearRPC
+  - SpawnBody
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 1
+  DevRegionSetOnce: 0
