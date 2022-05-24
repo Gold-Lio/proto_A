@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviourPun
     public int curInteractionNum;
     public Slider MissionGageSlider;
     public GameObject SabotagePanel;
+
+    public GameObject Rock;
     public Button[] DoorMaps;
     public Image ReportDeadBodyImage;
     public Image KickPanelImage;
@@ -176,6 +178,8 @@ public class UIManager : MonoBehaviourPun
 
         PlayerMap.position = new Vector3(playerMapX, playerMapY, 0);
     }
+
+
     public IEnumerator KillCo()
     {
         SetInteractionBtn2(5, false);
@@ -186,7 +190,7 @@ public class UIManager : MonoBehaviourPun
         {
             killCooltime = i;
 
-            if (UM.curBtn0 == 5) 
+            if (UM.curBtn1 == 5) 
                 Interaction2Text.text = killCooltime.ToString();
             else
                 Interaction2Text.text = "";
@@ -225,14 +229,14 @@ public class UIManager : MonoBehaviourPun
     public void AddMissionGage()
     {
         //미션 게이지  수정할것. 
-        MissionGageSlider.value += 0.5f;
+        MissionGageSlider.value += 5.0f;
 
         if (MissionGageSlider.value == MissionGageSlider.maxValue) 
         {
+            Rock.SetActive(false);
+
 
             // 미션게이지가 다 찰경우 문을 오픈.
-
-
             // 크루원 승리
             //NM.Winner(true);
         }
@@ -251,35 +255,6 @@ public class UIManager : MonoBehaviourPun
         StartCoroutine(MissionClearCo(MissionPanel));
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
     }
-
-    //public void DoorMapClick(int doorIndex) 
-    //{
-    //    PV.RPC("DoorMapClickRPC", RpcTarget.AllViaServer, doorIndex);
-    //}
-
-    //[PunRPC]
-    //void DoorMapClickRPC(int doorIndex) 
-    //{
-    //    StartCoroutine(DoorCo(doorIndex));
-    //    StartCoroutine(DoorCoolCo(doorIndex));
-    //}
-
-    //IEnumerator DoorCo(int doorIndex) 
-    //{
-    //    NM.Doors[doorIndex].SetActive(true);
-    //    yield return new WaitForSeconds(7);
-    //    NM.Doors[doorIndex].SetActive(false);
-    //}
-
-    //IEnumerator DoorCoolCo(int doorIndex) 
-    //{
-    //    if (!NM.MyPlayer.isImposter) yield break;
-
-    //    DoorMaps[doorIndex].interactable = false;
-    //    yield return new WaitForSeconds(18);
-    //    DoorMaps[doorIndex].interactable = true;
-    //}
-
 
 }
 

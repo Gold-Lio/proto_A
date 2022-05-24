@@ -72,8 +72,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		WaitingPanel.SetActive(false);
 		InfoPanel.SetActive(false);
 		GamePanel.SetActive(false);
-		//ReportPanel.SetActive(false);
-		//EmergencyPanel.SetActive(false);
 		KickPanel.SetActive(false);
 		NoOneKickPanel.SetActive(false);
 		CrewWinPanel.SetActive(false);
@@ -143,16 +141,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 				GachaList.RemoveAt(rand);
 			}
 		}
-
-		//else if (impoType == ImpoType.Rand2) 
-		//{
-		//	for (int i = 0; i < 2; i++) // 임포스터 2명 (기본)
-		//	{
-		//		int rand = Random.Range(0, GachaList.Count); // 랜덤
-		//		Players[rand].GetComponent<PhotonView>().RPC("SetImpoCrew", RpcTarget.AllViaServer, true);
-		//		GachaList.RemoveAt(rand);
-		//	}
-		//}
 	}
 
 	[PunRPC]

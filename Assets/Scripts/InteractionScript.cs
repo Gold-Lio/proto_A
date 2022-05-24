@@ -8,7 +8,7 @@ using static NetworkManager;
 
 public class InteractionScript : MonoBehaviourPun
 {
-	public enum Type { Customize, Mission, Emergency };
+	public enum Type { Customize, Mission, Worthy , EndGameChenck };
 	public Type type;
 	GameObject Line;
 	public int curInteractionNum;
@@ -38,6 +38,13 @@ public class InteractionScript : MonoBehaviourPun
 				Line.SetActive(true);
 				UM.SetInteractionBtn1(0, true);
 			}
+
+			else if(type == Type.Worthy)
+            {
+
+				Line.SetActive(true);
+				UM.SetInteractionBtn1(0, true);
+			}
 		}
 	}
 
@@ -56,6 +63,17 @@ public class InteractionScript : MonoBehaviourPun
 				Line.SetActive(false);
 				UM.SetInteractionBtn1(0, false);
 			}
+
+			else if (type == Type.Worthy)
+			{
+
+				Line.SetActive(false);
+				UM.SetInteractionBtn1(0, false);
+			}
+
+			//여기서 캐릭터가 일정 수준 떨어질 경우.  -모든 미션창 취소되고 처음 으로 돌아가도록. 
+
+
 		}
 	}
 
