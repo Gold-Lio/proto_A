@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusController: {fileID: 0}
   RB: {fileID: 4313270873243922857}
   Anims:
   - {fileID: 6281039177050997804}
@@ -462,13 +463,14 @@ MonoBehaviour:
   isImposter: 0
   isKillable: 0
   isDie: 0
+  isDeaded: 0
   actor: 0
   colorIndex: 0
   speed: 40
   KillTargetPlayer: {fileID: 0}
   targetDeadColorIndex: 0
-  _voteColorIndex: 0
-  VotedColors: 
+  killCount: 0
+  killLimit: 0
   PV: {fileID: 0}
   nick: 
 --- !u!114 &1878694176956332237
@@ -561,7 +563,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11.75
+  m_Radius: 6
 --- !u!210 &1134813157383694236
 SortingGroup:
   m_ObjectHideFlags: 0

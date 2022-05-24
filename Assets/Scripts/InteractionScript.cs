@@ -8,7 +8,7 @@ using static NetworkManager;
 
 public class InteractionScript : MonoBehaviourPun
 {
-	public enum Type { Customize, Mission, Emergency };
+	public enum Type { Customize, Mission, Worthy , EndGameChenck };
 	public Type type;
 	GameObject Line;
 	public int curInteractionNum;
@@ -16,7 +16,13 @@ public class InteractionScript : MonoBehaviourPun
 	void Start()
     {		
 		Line = transform.GetChild(0).gameObject;
+
+		UM.SetInteractionBtn0(0, false);
+		UM.SetInteractionBtn1(0, false);
+		UM.SetInteractionBtn2(5, false);
     }
+
+
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
@@ -30,19 +36,15 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
-				if (col.GetComponent<PlayerScript>().isImposter) return;
-
 				UM.curInteractionNum = curInteractionNum;
 				Line.SetActive(true);
-				UM.SetInteractionBtn0(0, true);
+				UM.SetInteractionBtn1(0, true);
 			}
 
-			else if (type == Type.Emergency) 
-			{
-				if (col.GetComponent<PlayerScript>().isDie) return;
+			else if(type == Type.Worthy) // 현재 보물상자는 미션진행 불가능   
+            {
 				Line.SetActive(true);
-				bool isEmergency = UM.emergencyCooltime == 0;
-				UM.SetInteractionBtn0(8, isEmergency);
+				UM.SetInteractionBtn1(0, true);
 			}
 		}
 	}
@@ -59,20 +61,20 @@ public class InteractionScript : MonoBehaviourPun
 
 			else if (type == Type.Mission)
 			{
-				if (col.GetComponent<PlayerScript>().isImposter) return;
-
 				Line.SetActive(false);
-				UM.SetInteractionBtn0(0, false);
+				UM.SetInteractionBtn1(0, false);
 			}
 
-			else if (type == Type.Emergency)
+			else if (type == Type.Worthy)  // 현재 보물상자는 미션진행 불가능   
 			{
 				Line.SetActive(false);
-				if(NM.MyPlayer.isImposter) UM.SetInteractionBtn0(5, false);
-				else UM.SetInteractionBtn0(0, false);
+				UM.SetInteractionBtn1(0, false);
 			}
+
+			//여기서 캐릭터가 일정 수준 떨어질 경우.  -모든 미션창 취소되고 처음 으로 돌아가도록. 
+
+
 		}
 	}
-
 
 }
