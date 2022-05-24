@@ -123,6 +123,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
 	}
 
+
+	//로봇사냥꾼 랜덤 설정
 	void SetImpoCrew() 
 	{
 		List<PlayerScript> GachaList = new List<PlayerScript>(Players);
@@ -134,7 +136,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 		else if (impoType == ImpoType.Rand1)
 		{
-			for (int i = 0; i < 1; i++) // 임포스터 1명 (테스트)
+			for (int i = 0; i < 1; i++) // 
 			{
 				int rand = Random.Range(0, GachaList.Count); // 랜덤
 				Players[rand].GetComponent<PhotonView>().RPC("SetImpoCrew", RpcTarget.AllViaServer, true);

@@ -22,6 +22,8 @@ public class InteractionScript : MonoBehaviourPun
 		UM.SetInteractionBtn2(5, false);
     }
 
+
+
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) 
@@ -39,9 +41,8 @@ public class InteractionScript : MonoBehaviourPun
 				UM.SetInteractionBtn1(0, true);
 			}
 
-			else if(type == Type.Worthy)
+			else if(type == Type.Worthy) // 현재 보물상자는 미션진행 불가능   
             {
-
 				Line.SetActive(true);
 				UM.SetInteractionBtn1(0, true);
 			}
@@ -64,9 +65,8 @@ public class InteractionScript : MonoBehaviourPun
 				UM.SetInteractionBtn1(0, false);
 			}
 
-			else if (type == Type.Worthy)
+			else if (type == Type.Worthy)  // 현재 보물상자는 미션진행 불가능   
 			{
-
 				Line.SetActive(false);
 				UM.SetInteractionBtn1(0, false);
 			}
@@ -76,6 +76,5 @@ public class InteractionScript : MonoBehaviourPun
 
 		}
 	}
-
 
 }

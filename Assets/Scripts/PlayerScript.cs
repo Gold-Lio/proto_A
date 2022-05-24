@@ -9,7 +9,8 @@ using static UIManager;
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
-    
+	public StatusController statusController;
+
 	public Rigidbody2D RB;
 	public GameObject[] Anims;
 	public SpriteRenderer[] CharacterSR;
@@ -21,7 +22,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public int actor, colorIndex;
 	public float speed; //기본 40
 	public PlayerScript KillTargetPlayer;
-	public int targetDeadColorIndex;
+    public int targetDeadColorIndex;
+
+	public int killCount;
+	public int killLimit;
 
 	//[SerializeField] int _voteColorIndex; // 투표한 사람 색
 	//public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
@@ -43,6 +47,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		NM.SortPlayers();
 		isMove = true;
 		StartCoroutine(StateCo());
+		statusController = FindObjectOfType<StatusController>();
 
 	}
 
@@ -71,14 +76,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			RB.velocity = input * speed;
 			isWalk = RB.velocity != Vector2.zero;
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
+			
 		}
 
-        if (NM.isGameStart)
-        {
-            Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
-        }
+        //if (NM.isGameStart)
+        //{
+        //    Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
+        //}
 
         NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
+
+		//statusController.DecreaseSt(100);
+		//스테미너 설정을 해줘야함. 
 	}
 
 	public void SetPos(Vector3 target) 
@@ -152,44 +161,75 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			if (NM.Players[i].isImposter) NM.Players[i].NickText.color = Color.red;
 		}
 	}
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (!col.gameObject.CompareTag("Player")) return;
+        Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
+    }
 
-
-	void OnCollisionEnter2D(Collision2D col)
-	{
-		if (!col.gameObject.CompareTag("Player")) return;
-		Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
-	}
-
-
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		if (!col.CompareTag("Player") || !NM.isGameStart) return;
-		if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (!col.CompareTag("Player") || !NM.isGameStart) return;
+        if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
 		//살인자가 주체_    user또한 주체가 되어야한다. 
-		if (col.GetComponent<PlayerScript>()) 
+		if (col.GetComponent<PlayerScript>())
 		{
 			UM.SetInteractionBtn2(5, true);
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
 		}
-	}
 
-	void OnTriggerExit2D(Collider2D col)
-	{
-		
-		if (!col.CompareTag("Player") || !NM.isGameStart) return;
-		if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
-		if (col.GetComponent<PlayerScript>())
+
+
+
+
+
+
+
+		//일반 탐험로봇이라면 
+		else if(!isImposter && col.GetComponent<PlayerScript>())
 		{
-			UM.SetInteractionBtn2(5, false);
-			KillTargetPlayer = null;
+			//킬이 한번만 가능하고 그 뒤로는 비 활성화 되야한다. 
+
+			UM.SetInteractionBtn2(5, true);
+			KillTargetPlayer = col.GetComponent<PlayerScript>();
+
+            for (int i = 0; i < killLimit; i++)
+            {
+				killCount++;
+                if (killCount > killLimit)
+                {
+					UM.SetInteractionBtn2(5, false);
+                }
+            }
 		}
-	}
 
 
-	//죽은 후에 유령 이슈 수정 요망
-	public void Kill() 
+
+
+
+
+
+
+
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+
+        if (!col.CompareTag("Player") || !NM.isGameStart) return;
+        if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+
+        if (col.GetComponent<PlayerScript>())
+        {
+            UM.SetInteractionBtn2(5, false);
+            KillTargetPlayer = null;
+        }
+    }
+
+
+    //죽은 후에 유령 이슈 수정 요망
+    public void Kill()
 	{
 		// 죽이기 성공, 기존에 있던 플레이어를 없애고 , 시체를 Spawn한다. 
 		StartCoroutine(UM.KillCo());

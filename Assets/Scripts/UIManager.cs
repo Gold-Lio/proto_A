@@ -203,6 +203,7 @@ public class UIManager : MonoBehaviourPun
         NM.MyPlayer.isKillable = true;
     }
 
+
     //킬 당한 인원에게 킬 연출 true
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
     {
@@ -213,6 +214,7 @@ public class UIManager : MonoBehaviourPun
         yield return new WaitForSeconds(4);
         DiePanel.SetActive(false);
     }
+
 
     public void ShowLog(string log)
     {
@@ -241,6 +243,7 @@ public class UIManager : MonoBehaviourPun
             //NM.Winner(true);
         }
     }
+
 
     public IEnumerator MissionClearCo(GameObject MissionPanel) 
     {
