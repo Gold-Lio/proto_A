@@ -237,13 +237,11 @@ public class UIManager : MonoBehaviourPun
         {
             Rock.SetActive(false);
 
-
             // 미션게이지가 다 찰경우 문을 오픈.
             // 크루원 승리
             //NM.Winner(true);
         }
     }
-
 
     public IEnumerator MissionClearCo(GameObject MissionPanel) 
     {
@@ -253,11 +251,11 @@ public class UIManager : MonoBehaviourPun
         MissionClearText.SetActive(false);
     }
 
-    public void MissionClear(GameObject MissionPanel) 
+    //미션클리어 함수
+    public void MissionClear(GameObject MissionPanel)
     {
         StartCoroutine(MissionClearCo(MissionPanel));
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
     }
-
 }
 

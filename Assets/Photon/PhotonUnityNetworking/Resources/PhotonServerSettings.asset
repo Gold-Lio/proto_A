@@ -49,6 +49,9 @@ MonoBehaviour:
   - SetImpoCrew
   - SetMaxMissionGage
   - SpawnBody
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

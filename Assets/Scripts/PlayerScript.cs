@@ -69,7 +69,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	void Update()
     {
 		if (!PV.IsMine) return;
-
+		
 		if (isMove) 
 		{
 			input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -78,6 +78,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 			
 		}
+
+
+
 
         if (NM.isGameStart)
         {
@@ -161,6 +164,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			if (NM.Players[i].isImposter) NM.Players[i].NickText.color = Color.red;
 		}
 	}
+
+
+
+
+
+
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
@@ -180,13 +190,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 
 
-
-
-
-
-
-
-
 		//일반 탐험로봇이라면 
 		else if(!isImposter && col.GetComponent<PlayerScript>())
 		{
@@ -204,14 +207,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
                 }
             }
 		}
-
-
-
-
-
-
-
-
 
     }
     void OnTriggerExit2D(Collider2D col)
