@@ -30,7 +30,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	//[SerializeField] int _voteColorIndex; // 투표한 사람 색
 	//public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
 	//[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
-
 	//public List<int> VotedColors = new List<int>();
 
 	[HideInInspector] public PhotonView PV;
@@ -48,7 +47,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		isMove = true;
 		StartCoroutine(StateCo());
 		statusController = FindObjectOfType<StatusController>();
-
 	}
 
 	IEnumerator StateCo() 
@@ -76,11 +74,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			RB.velocity = input * speed;
 			isWalk = RB.velocity != Vector2.zero;
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
-			
 		}
-
-
-
 
         if (NM.isGameStart)
         {
@@ -165,12 +159,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
-
-
-
-
-
-
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
@@ -189,7 +177,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
 		}
 
-
 		//일반 탐험로봇이라면 
 		else if(!isImposter && col.GetComponent<PlayerScript>())
 		{
@@ -207,11 +194,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks
                 }
             }
 		}
-
     }
     void OnTriggerExit2D(Collider2D col)
     {
-
         if (!col.CompareTag("Player") || !NM.isGameStart) return;
         if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
@@ -221,7 +206,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             KillTargetPlayer = null;
         }
     }
-
 
     //죽은 후에 유령 이슈 수정 요망
     public void Kill()
@@ -248,28 +232,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         {
 			if(isDeaded)
             {
-				//
             }
-			
 			//모든 행동 불가능. 
 			//카메라는 
-			GameObject.FindWithTag("Player");
         }
-
-		// 연출 시작
-        //	StartCoroutine(UM.DieCo(_killerColorIndex, _deadBodyColorIndex));
-        //	
-		// 플레이어 자식으로 있는 유령 소환.
-		//	transform.GetChild(1).gameObject.SetActive(true);
-        //	transform.GetChild(2).gameObject.SetActive(true);
-        //	Physics2D.IgnoreLayerCollision(8, 9);
-        //	PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
-        //	NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
     }
 }
-	//[PunRPC]
-	//void SetGhostColor(int colorIndex) 
-	//{
-	//	Color color = UM.colors[colorIndex];
-	//	Ghost.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.6f);
-	//}
+

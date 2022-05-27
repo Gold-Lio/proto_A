@@ -17,7 +17,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		  KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
 	public List<PlayerScript> Players = new List<PlayerScript>();
 	public PlayerScript MyPlayer;
-	
+
 	public GameObject CrewInfoText, ImposterInfoText, WaitingBackground, Background;
 	public bool isGameStart;
 	public Transform SpawnPoint;
@@ -57,6 +57,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 10 }, null);
 		
 	}
+
 	//public override void 
 
  //   public override void OnJoinRoomFailed(short returnCode, string message)
@@ -183,7 +184,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 	}
 
-
 	public int GetCrewCount() 
 	{
 		int crewCount = 0;
@@ -192,7 +192,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		return crewCount;
 	}
 
-
+	//기본적 UI구성
 	void ShowGameUI() 
 	{
 		if (MyPlayer.isImposter)
@@ -206,9 +206,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 			UM.SetInteractionBtn2(5, false);
 		}
 	}
-
-
-
 
 	//이 탈출해야지만, 승리하는 조건. 
 	public void WinCheck() 

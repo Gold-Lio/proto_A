@@ -15,9 +15,7 @@ public class MinigameManager : MonoBehaviour, IMinigame
     public void StartMission()
     {
         remainMission = curRemainMission;
-
         gameObject.SetActive(true);
-
     }
 
     public void CancelMission()

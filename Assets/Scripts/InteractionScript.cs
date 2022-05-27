@@ -11,7 +11,11 @@ public class InteractionScript : MonoBehaviourPun
     public enum Type { Customize, Mission, Worthy, EndGameChenck };
     public Type type;
     GameObject Line;
-    MinigameManager mission;
+    MinigameManager MM;
+    PlayerScript PS;
+
+    bool isEnded;
+
     public int curInteractionNum;
 
     void Start()
@@ -27,7 +31,6 @@ public class InteractionScript : MonoBehaviourPun
     {
         MissionPanel.SetActive(false);
     }
-
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -58,6 +61,8 @@ public class InteractionScript : MonoBehaviourPun
     {
         if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
         {
+            //isEnded = GetComponent<PlayerScript>().isImposter;
+
             if (type == Type.Customize)
             {
                 Line.SetActive(false);
@@ -68,10 +73,6 @@ public class InteractionScript : MonoBehaviourPun
             {
                 Line.SetActive(false);
                 UM.SetInteractionBtn1(0, false);
-
-
-                //
-
               //  MissionFail(gameObject.SetActive(false));
                  //현재 켜져있는 미션창도 꺼주세요
             }
@@ -81,21 +82,14 @@ public class InteractionScript : MonoBehaviourPun
                 Line.SetActive(false);
                 UM.SetInteractionBtn1(0, false);
             }
-
             //미션 매니저꺼를 가져와서 해제???
-
             //여기서 캐릭터가 일정 수준 떨어질 경우.  -모든 미션창 취소되고 처음 으로 돌아가도록. 
+        }
+        if(col.CompareTag("Player"))
+        {
+            Line.SetActive(false);
+            MM.CancelMission();
         }
     }
 }
 
-//		//   if(curBtn0 == 0)
-//		{
-//		//	// 크루원 작업
-//		//	GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
-//		//	CurMinigame.GetComponent<MinigameManager>().StartMission();
-//		//}
-//		//
-//	}
-
-//}
