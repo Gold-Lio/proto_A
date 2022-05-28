@@ -9,10 +9,12 @@ public class Mini2Target : MonoBehaviour, IPointerUpHandler
 	bool isClear;
 	Slider slider;
 
+
 	void Awake()
 	{
 		MM = transform.GetComponentInParent<MinigameManager>();
 		slider = GetComponent<Slider>();
+
 	}
 
 
