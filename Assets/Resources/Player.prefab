@@ -627,9 +627,10 @@ GameObject:
   - component: {fileID: 2251365688590393041}
   - component: {fileID: 6836631978736809089}
   - component: {fileID: 1878694176956332237}
+  - component: {fileID: 1285795496050467884}
+  - component: {fileID: -8337405656579847960}
   - component: {fileID: 5938605979782063756}
   - component: {fileID: 4313270873243922857}
-  - component: {fileID: 1285795496050467884}
   - component: {fileID: 3453123840919098698}
   - component: {fileID: 1134813157383694236}
   - component: {fileID: 2407605101697276292}
@@ -721,6 +722,34 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1285795496050467884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719893841155581119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 0
+  m_UseLocal: 0
+--- !u!114 &-8337405656579847960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719893841155581119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eaecc0ac0b4cc418a45a77e62dc4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &5938605979782063756
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -758,22 +787,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1285795496050467884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719893841155581119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
 --- !u!58 &3453123840919098698
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -860,7 +873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 4.3}
+  m_AnchoredPosition: {x: 0, y: 1.46}
   m_SizeDelta: {x: 6.84, y: 16.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8491290351953271942
@@ -975,8 +988,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: 373.2046, y: 133.58525}
+  m_AnchoredPosition: {x: 0, y: -6.45}
+  m_SizeDelta: {x: 330.4, y: 133.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8491290352219676440
 CanvasRenderer:

@@ -58,13 +58,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 		
 	}
 
-	//public override void 
-
- //   public override void OnJoinRoomFailed(short returnCode, string message)
- //   {
- //       base.OnJoinRoomFailed(returnCode, message);
- //   }
-
     public override void OnJoinedRoom()
 	{
 		ShowPanel(WaitingPanel);

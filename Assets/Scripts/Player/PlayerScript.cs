@@ -9,8 +9,6 @@ using static UIManager;
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
-	public StatusController statusController;
-
 	public Rigidbody2D RB;
 	public GameObject[] Anims;
 	public SpriteRenderer[] CharacterSR;
@@ -27,11 +25,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public int killCount;
 	public int killLimit;
 
-	//[SerializeField] int _voteColorIndex; // 투표한 사람 색
-	//public int VoteColorIndex { get => _voteColorIndex; set => PV.RPC("VoteColorIndexRPC", RpcTarget.AllBuffered, value); }
-	//[PunRPC] void VoteColorIndexRPC(int value) { _voteColorIndex = value; }
-	//public List<int> VotedColors = new List<int>();
-
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
 	Vector2 input;
@@ -46,7 +39,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		NM.SortPlayers();
 		isMove = true;
 		StartCoroutine(StateCo());
-		statusController = FindObjectOfType<StatusController>();
 	}
 
 	IEnumerator StateCo() 

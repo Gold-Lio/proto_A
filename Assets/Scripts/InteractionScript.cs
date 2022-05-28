@@ -85,11 +85,11 @@ public class InteractionScript : MonoBehaviourPun
             //미션 매니저꺼를 가져와서 해제???
             //여기서 캐릭터가 일정 수준 떨어질 경우.  -모든 미션창 취소되고 처음 으로 돌아가도록. 
         }
-        if(col.CompareTag("Player"))
-        {
-            Line.SetActive(false);
-            MM.CancelMission();
-        }
+        //if(col.CompareTag("Player"))
+        //{
+        //    Line.SetActive(false);
+        //    MM.CancelMission();
+        //}
     }
 }
 
