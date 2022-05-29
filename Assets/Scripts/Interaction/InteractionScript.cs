@@ -70,10 +70,7 @@ public class InteractionScript : MonoBehaviourPun
 				Line.SetActive(false);
 				UM.SetInteractionBtn1(0, false);
 			}
-
 			//여기서 캐릭터가 일정 수준 떨어질 경우.  -모든 미션창 취소되고 처음 으로 돌아가도록. 
-
-
 		}
 	}
 
