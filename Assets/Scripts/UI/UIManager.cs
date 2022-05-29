@@ -8,8 +8,19 @@ using static NetworkManager;
 
 public class UIManager : MonoBehaviourPun
 {
-    public static UIManager UM;
-    void Awake() => UM = this;
+    public static UIManager UM = null;
+    private void Awake()
+    {
+        if (UM == null)
+        {
+            UM = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
@@ -215,11 +226,15 @@ public class UIManager : MonoBehaviourPun
         DiePanel.SetActive(false);
     }
 
-
     public void ShowLog(string log)
     {
         LogText.text = log;
     }
+
+
+
+
+
 
     [PunRPC]
     public void SetMaxMissionGage()
@@ -236,7 +251,6 @@ public class UIManager : MonoBehaviourPun
         if (MissionGageSlider.value == MissionGageSlider.maxValue) 
         {
             Rock.SetActive(false);
-
             // 미션게이지가 다 찰경우 문을 오픈.
             // 크루원 승리
             //NM.Winner(true);

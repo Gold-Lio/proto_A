@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
-    private static GameManager s_instance; // 유일성이 보장된다.
-    private static GameManager Instance { get { Init(); return s_instance; } }
+    private static GameManager GM = null; // 유일성이 보장된다.
+    private static GameManager Instance { get { Init(); return GM; } }
 
     InputManager _input = new InputManager();
     public static InputManager Input { get { return Instance._input; } }
@@ -21,16 +21,20 @@ public class GameManager : MonoBehaviour
 
     static void Init()
     {
-        if (s_instance == null)
+        if (GM == null)
         {
             GameObject go = GameObject.Find("@GameManager");
             if (go == null)
             {
                 go = new GameObject { name = "GameManager" };
-                go.AddComponent<GameManager>();
+                DontDestroyOnLoad(go);
+                GM = go.AddComponent<GameManager>();
+                GM = go.GetComponent<GameManager>();
             }
-            DontDestroyOnLoad(go);
-            s_instance = go.GetComponent<GameManager>();
+        }
+        else
+        {
+            Destroy(GM);
         }
     }
 }
