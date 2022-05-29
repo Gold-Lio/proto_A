@@ -26,7 +26,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel,
-          KickPanel, NoOneKickPanel, CrewWinPanel, ImposterWinPanel;
+           CrewWinPanel, ImposterWinPanel;
     public List<PlayerScript> Players = new List<PlayerScript>();
     public PlayerScript MyPlayer;
 
@@ -85,8 +85,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         WaitingPanel.SetActive(false);
         InfoPanel.SetActive(false);
         GamePanel.SetActive(false);
-        KickPanel.SetActive(false);
-        NoOneKickPanel.SetActive(false);
         CrewWinPanel.SetActive(false);
         ImposterWinPanel.SetActive(false);
 
