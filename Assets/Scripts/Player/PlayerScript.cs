@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     public int targetDeadColorIndex;
 
 	public int killCount;
-	public int killLimit;
+	public int killLimit = 2;
 
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
@@ -174,21 +174,38 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		//일반 탐험로봇이라면 
 		else if(!isImposter && col.GetComponent<PlayerScript>())
 		{
-			//킬이 한번만 가능하고 그 뒤로는 비 활성화 되야한다. 
+			////킬이 한번만 가능하고 그 뒤로는 비 활성화 되야한다. 
+
+			//UM.SetInteractionBtn2(5, true);
+			//KillTargetPlayer = col.GetComponent<PlayerScript>();
+
+			//         for (int i = 0; i < killLimit; i++)
+			//         {
+			//	killCount++;
+			//             if (killCount >= killLimit)
+			//             {
+			//		UM.SetInteractionBtn2(5, false);
+			//             }
+			//         }
 
 			UM.SetInteractionBtn2(5, true);
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
-
-            for (int i = 0; i < killLimit; i++)
-            {
+			if (killCount > killLimit)
+			{
 				killCount++;
-                if (killCount > killLimit)
-                {
-					UM.SetInteractionBtn2(5, false);
-                }
-            }
+			}
+			else if (killCount == killLimit)
+            {
+				UM.SetInteractionBtn2(5, false);
+            }			
+
 		}
     }
+
+
+
+
+
     void OnTriggerExit2D(Collider2D col)
     {
         if (!col.CompareTag("Player") || !NM.isGameStart) return;

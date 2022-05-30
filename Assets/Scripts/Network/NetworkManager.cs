@@ -182,6 +182,26 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(UM.KillCo());
     }
 
+
+
+    //기본적 UI구성
+    public void ShowGameUI()
+    {
+        if (MyPlayer.isImposter)
+        {
+            UM.SetInteractionBtn1(0, false);
+            UM.SetInteractionBtn2(5, false);
+        }
+        else
+        {
+            UM.SetInteractionBtn1(0, false);
+            UM.SetInteractionBtn2(5, false);
+        }
+    }
+
+
+
+
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
@@ -198,22 +218,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
 
-
-
-    //기본적 UI구성
-    void ShowGameUI()
-    {
-        if (MyPlayer.isImposter)
-        {
-            UM.SetInteractionBtn1(0, false);
-            UM.SetInteractionBtn2(5, false);
-        }
-        else
-        {
-            UM.SetInteractionBtn1(0, false);
-            UM.SetInteractionBtn2(5, false);
-        }
-    }
 
     //이 탈출해야지만, 승리하는 조건. 
     public void WinCheck()
