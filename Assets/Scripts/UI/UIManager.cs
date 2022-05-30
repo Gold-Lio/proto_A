@@ -39,17 +39,19 @@ public class UIManager : MonoBehaviourPun
     public GameObject[] MissionMaps;
     public Image KillerImage, DeadbodyImage;
     public Text LogText;
+    public Text broadCastText; 
+
+
     public GameObject[] Minigames;
     public GameObject MissionClearText;
+
+
     public int curInteractionNum;
     public Slider MissionGageSlider;
     public GameObject SabotagePanel;
 
     public GameObject Rock;
-    public Button[] DoorMaps;
-    public Image ReportDeadBodyImage;
-    public Image KickPanelImage;
-    public Text KickPanelText;
+
     PhotonView PV;
     public InputField ChatInput;
     public Text ChatText;

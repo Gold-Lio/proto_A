@@ -448,5 +448,10 @@ namespace Photon.Realtime
 
             return false;
         }
+
+        public static object GetComponent<T>()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

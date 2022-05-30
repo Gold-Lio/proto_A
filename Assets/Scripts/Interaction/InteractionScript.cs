@@ -5,9 +5,11 @@ using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
 using static NetworkManager;
-
+using UnityEngine.UI;
 public class InteractionScript : MonoBehaviourPun
 {
+	private PlayerScript PS;
+
 	public enum Type { Customize, Mission, Worthy , EndGameChenck };
 	public Type type;
 	GameObject Line;
@@ -20,13 +22,15 @@ public class InteractionScript : MonoBehaviourPun
 		UM.SetInteractionBtn0(0, false);
 		UM.SetInteractionBtn1(0, false);
 		UM.SetInteractionBtn2(5, false);
+
+		PS = GetComponent<PlayerScript>();
     }
 
 
-
+    [PunRPC]
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) 
+		if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
 		{
 			if (type == Type.Customize)
 			{
@@ -41,10 +45,25 @@ public class InteractionScript : MonoBehaviourPun
 				UM.SetInteractionBtn1(0, true);
 			}
 
-			else if(type == Type.Worthy) // 현재 보물상자는 미션진행 불가능   
-            {
+			else if (type == Type.Worthy) // 현재 보물상자는 미션진행 불가능   
+			{
 				Line.SetActive(true);
 				UM.SetInteractionBtn1(0, true);
+			}
+
+			if (type == Type.EndGameChenck)
+			{
+
+				if(col.GetComponent<PlayerScript>().isImposter)  
+				{
+					Debug.Log("살인마는 방 밖으로 나갈 수 없읍니다.");
+					UM.broadCastText.text = "살인마는 방 밖으로 나갈 수 없습니다";
+					StartCoroutine(Wait());
+				}
+				else 
+				{
+					NM.Winner(true);
+				}
 			}
 		}
 	}
@@ -74,4 +93,9 @@ public class InteractionScript : MonoBehaviourPun
 		}
 	}
 
+	IEnumerator Wait()
+    {
+		yield return new WaitForSeconds(3.0f);
+		UM.broadCastText.text = "";
+    }
 }

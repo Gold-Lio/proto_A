@@ -9,6 +9,8 @@ using static UIManager;
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
+//	public static PlayerScript PS;
+
 	public Rigidbody2D RB;
 	public GameObject[] Anims;
 	public SpriteRenderer[] CharacterSR;
@@ -224,6 +226,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         {
 			if(isDeaded)
             {
+
             }
 			//모든 행동 불가능. 
 			//카메라는 

@@ -21,8 +21,6 @@ public class MinigameManager : MonoBehaviour, IMinigame
         gameObject.SetActive(false);
 	}
 
-
-
 	public void CompleteMission()
 	{
 		if (--remainMission <= 0)
