@@ -242,17 +242,15 @@ public class UIManager : MonoBehaviourPun
         LogText.text = log;
     }
 
-
-
-
-
-
+    //플레이어들을 전체로 묶는 것 GetCrewCount
     [PunRPC]
     public void SetMaxMissionGage()
     {
         MissionGageSlider.maxValue = NM.GetCrewCount();
-    }
+    }       
 
+
+    //슬라이드를 보물 획득량 배열로 바꿔야함.
     [PunRPC]
     public void AddMissionGage()
     {
@@ -261,10 +259,7 @@ public class UIManager : MonoBehaviourPun
 
         if (MissionGageSlider.value == MissionGageSlider.maxValue) 
         {
-            Rock.SetActive(false);
-            // 미션게이지가 다 찰경우 문을 오픈.
-            // 크루원 승리
-            //NM.Winner(true);
+            Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
         }
     }
 

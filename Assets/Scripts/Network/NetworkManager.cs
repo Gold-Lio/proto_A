@@ -183,7 +183,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
 
-
     //기본적 UI구성
     public void ShowGameUI()
     {
@@ -199,15 +198,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
-
-
-
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
-    }
-
-
+    //public override void OnPlayerLeftRoom(Player otherPlayer)
+    //{
+    //    UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
+    //}
 
     public int GetCrewCount()
     {
@@ -216,8 +210,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!Players[i].isImposter) ++crewCount;
         return crewCount;
     }
-
-
 
     //이 탈출해야지만, 승리하는 조건. 
     public void WinCheck()
@@ -235,10 +227,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 ++crewCount;
         }
 
-        if (impoCount == 0 && crewCount > 0) // 모든 임포가 죽음
-            Winner(true);
-        else if (impoCount != 0 && impoCount > crewCount) // 임포가 크루보다 많음
-            Winner(false);
+        //if (impoCount == 0 && crewCount > 0) 
+        //    Winner(true); //탐험로봇 승리
+        Winner(true);
+        
+        if(impoCount != 0 && impoCount > crewCount) 
+            Winner(false); //로봇청소기 승리
     }
 
     public void Winner(bool isCrewWin)
@@ -247,13 +241,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (isCrewWin)
         {
-            print("크루원 승리");
+            print("탐험로봇 승리");
             ShowPanel(CrewWinPanel);
             Invoke("WinnerDelay", 3);
         }
         else
         {
-            print("임포스터 승리");
+            print("로봇청소기 승리");
             ShowPanel(ImposterWinPanel);
             Invoke("WinnerDelay", 3);
         }
@@ -261,6 +255,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     void WinnerDelay()
     {
+        PV.RPC("Winner", RpcTarget.AllViaServer);
         Application.Quit();
     }
 }

@@ -9,11 +9,14 @@ using UnityEngine.UI;
 public class InteractionScript : MonoBehaviourPun
 {
 	private PlayerScript PS;
+	public static InteractionScript IS;
 
 	public enum Type { Customize, Mission, Worthy , EndGameChenck };
 	public Type type;
 	GameObject Line;
 	public int curInteractionNum;
+	public bool isCleanerWin;
+
 
 	void Start()
     {		
@@ -53,23 +56,21 @@ public class InteractionScript : MonoBehaviourPun
 
 
 
-
-
-
 			//EndGame 기능
 
 			if (type == Type.EndGameChenck)
 			{
-
 				if(col.GetComponent<PlayerScript>().isImposter)  
 				{
 					Debug.Log("살인마는 방 밖으로 나갈 수 없읍니다.");
 					UM.broadCastText.text = "살인마는 방 밖으로 나갈 수 없습니다. 남은 사람들을 처리하세요.";
 					StartCoroutine(Wait()); //3초 뒤에 꺼지는 코루틴
 				}
-				else 
+				else if(!col.GetComponent<PlayerScript>().isImposter)
 				{
-					NM.Winner(true);
+					isCleanerWin = true;
+					Debug.Log("탐험로봇");
+					NM.WinCheck();
 				}
 			}
 		}
