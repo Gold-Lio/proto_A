@@ -58,6 +58,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	{
 		NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
 	}
+
 	void Update()
     {
 		if (!PV.IsMine) return;
@@ -70,10 +71,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 		}
 
-        if (NM.isGameStart)
-        {
-            Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
-        }
+        //if (NM.isGameStart)
+        //{
+        //    Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
+        //}
 
         NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
 
@@ -153,7 +154,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
+		//미션 쪼개기 분할
+	//public void SeparateMission()
+ //   {
+
+ //   }
+
+
+
+
+
+	void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
         Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
@@ -165,7 +176,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
 		//살인자가 주체_    user또한 주체가 되어야한다. 
-		if (col.GetComponent<PlayerScript>())
+		if (isImposter&& col.GetComponent<PlayerScript>())
 		{
 			UM.SetInteractionBtn2(5, true);
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
@@ -174,37 +185,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		//일반 탐험로봇이라면 
 		else if(!isImposter && col.GetComponent<PlayerScript>())
 		{
-			////킬이 한번만 가능하고 그 뒤로는 비 활성화 되야한다. 
-
-			//UM.SetInteractionBtn2(5, true);
-			//KillTargetPlayer = col.GetComponent<PlayerScript>();
-
-			//         for (int i = 0; i < killLimit; i++)
-			//         {
-			//	killCount++;
-			//             if (killCount >= killLimit)
-			//             {
-			//		UM.SetInteractionBtn2(5, false);
-			//             }
-			//         }
-
+	
 			UM.SetInteractionBtn2(5, true);
 			KillTargetPlayer = col.GetComponent<PlayerScript>();
-			if (killCount > killLimit)
-			{
-				killCount++;
-			}
-			else if (killCount == killLimit)
-            {
-				UM.SetInteractionBtn2(5, false);
-            }			
-
-		}
+        }
     }
-
-
-
-
 
     void OnTriggerExit2D(Collider2D col)
     {
@@ -218,19 +203,48 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         }
     }
 
+
+	IEnumerator KillLimitCo()  //그러고 킬카운트 다운-없애기.
+    {
+		if (killCount < killLimit)
+        {
+			killCount++;
+			if(killCount == killLimit)
+            {
+				UM.SetInteractionBtn2(5, false);
+            }
+		}
+		yield return null;
+    }
+
+
     //죽은 후에 유령 이슈 수정 요망
     public void Kill()
 	{
-		// 죽이기 성공, 기존에 있던 플레이어를 없애고 , 시체를 Spawn한다. 
-		StartCoroutine(UM.KillCo());
-		KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
-		Vector3 TargetPos = KillTargetPlayer.transform.position;
-		transform.position = TargetPos;
-		
-		GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
-		CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
-    }
-	
+		if (isImposter)
+        {
+			StartCoroutine(UM.KillCo());
+			KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
+			Vector3 TargetPos = KillTargetPlayer.transform.position;
+			transform.position = TargetPos;
+
+			GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
+			CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
+		}
+
+		else if (!isImposter)
+        {
+			StartCoroutine(KillLimitCo());// 킬을 막아버리는 곳. 
+			KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
+			Vector3 TargetPos = KillTargetPlayer.transform.position;
+			transform.position = TargetPos;
+
+			GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
+			CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
+		}
+	}
+
+
     [PunRPC]
     void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex)
     {

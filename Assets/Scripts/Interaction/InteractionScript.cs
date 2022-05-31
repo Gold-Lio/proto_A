@@ -54,8 +54,6 @@ public class InteractionScript : MonoBehaviourPun
 				UM.SetInteractionBtn1(0, true);
 			}
 
-
-
 			//EndGame 기능
 
 			if (type == Type.EndGameChenck)

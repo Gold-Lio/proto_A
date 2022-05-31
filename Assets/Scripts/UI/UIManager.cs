@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviourPun
     public Button[] ColorBtn;
     public Button StartBtn;
     public Transform LeftBottom, RightTop, LeftBottomMap, RightTopMap, PlayerMap;
-    public GameObject[] MissionMaps;
+    public GameObject[] MissionMaps; 
     public Image KillerImage, DeadbodyImage;
     public Text LogText;
     public Text broadCastText; 
@@ -50,8 +50,7 @@ public class UIManager : MonoBehaviourPun
 
 
     public int curInteractionNum;
-    public Slider MissionGageSlider;
-    public GameObject SabotagePanel;
+   // public Slider MissionGageSlider;
 
     public GameObject Rock;
 
@@ -63,15 +62,15 @@ public class UIManager : MonoBehaviourPun
     public GameObject[] ChatPanels;
     public int killCooltime, emergencyCooltime;
 
-    void Start()
-    {
+    void Start() 
+    { 
         PV = photonView;
     }
 
     // 대기실
     public void SetInteractionBtn0(int index, bool _active)
     {
-        curBtn0 = index;
+        curBtn0 = index; 
         active0 = _active;
 
         if (!NM.isGameStart)
@@ -221,10 +220,8 @@ public class UIManager : MonoBehaviourPun
         }
         killCooltime = 0;
         Interaction2Text.text = "";
-
         NM.MyPlayer.isKillable = true;
     }
-
 
     //킬 당한 인원에게 킬 연출 true
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
@@ -243,25 +240,32 @@ public class UIManager : MonoBehaviourPun
     }
 
     //플레이어들을 전체로 묶는 것 GetCrewCount
+    //슬라이드를 보물 획득량 배열로 바꿔야함.
+  
+    
+
+    //보물이 있다는 가정하에. 
     [PunRPC]
     public void SetMaxMissionGage()
     {
-        MissionGageSlider.maxValue = NM.GetCrewCount();
-    }       
-
-
-    //슬라이드를 보물 획득량 배열로 바꿔야함.
-    [PunRPC]
-    public void AddMissionGage()
-    {
-        //미션 게이지  수정할것. 
-        MissionGageSlider.value += 5.0f;
-
-        if (MissionGageSlider.value == MissionGageSlider.maxValue) 
-        {
-            Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
-        }
+      //  MissionGageSlider.maxValue = NM.GetCrewCount();
     }
+
+    //SetMission을 해줘야한다. 새로운 Player에게
+    //[PunRPC]
+    //public void AddMissionGage()
+    //{
+    //    int[] mission_Count = new int[5];
+    //    if(mission_Count != null)
+
+    //    //미션 게이지  수정할것. 
+    //    //MissionGageSlider.value += 5.0f;
+
+    //    //if (MissionGageSlider.value == MissionGageSlider.maxValue) 
+    //    //{
+    //    //    Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
+    //    //}
+    //}
 
     public IEnumerator MissionClearCo(GameObject MissionPanel) 
     {
