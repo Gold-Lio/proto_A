@@ -56,6 +56,7 @@ MonoBehaviour:
   - OnTriggerExit2D
   - Winner
   - WinnerDelay
+  - WinCheckPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

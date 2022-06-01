@@ -39,10 +39,10 @@ public class UIManager : MonoBehaviourPun
     public Button[] ColorBtn;
     public Button StartBtn;
     public Transform LeftBottom, RightTop, LeftBottomMap, RightTopMap, PlayerMap;
-    public GameObject[] MissionMaps; 
+    public GameObject[] MissionMaps;
     public Image KillerImage, DeadbodyImage;
     public Text LogText;
-    public Text broadCastText; 
+    public Text broadCastText;
 
 
     public GameObject[] Minigames;
@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviourPun
 
 
     public int curInteractionNum;
-   // public Slider MissionGageSlider;
+    // public Slider MissionGageSlider;
 
     public GameObject Rock;
 
@@ -62,15 +62,15 @@ public class UIManager : MonoBehaviourPun
     public GameObject[] ChatPanels;
     public int killCooltime, emergencyCooltime;
 
-    void Start() 
-    { 
+    void Start()
+    {
         PV = photonView;
     }
 
     // 대기실
     public void SetInteractionBtn0(int index, bool _active)
     {
-        curBtn0 = index; 
+        curBtn0 = index;
         active0 = _active;
 
         if (!NM.isGameStart)
@@ -122,7 +122,7 @@ public class UIManager : MonoBehaviourPun
     }
     public void ClickInteractionBtn1()
     {
-        if(curBtn0 == 0)
+        if (curBtn0 == 0)
         {
             // 크루원 작업
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
@@ -149,7 +149,6 @@ public class UIManager : MonoBehaviourPun
     {
         if (!PhotonNetwork.InRoom) return;
         SetActiveColors();
-        SetMap();
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
     }
@@ -174,53 +173,27 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-
-
-
-
-
-
-    public void SetMap()
-    {
-        // 실제 맵
-        float width = RightTop.position.x - LeftBottom.position.x;
-        float height = RightTop.position.y - LeftBottom.position.y;
-
-        Vector3 MyPlayerPos = NM.MyPlayer.transform.position;
-        float playerWidth = MyPlayerPos.x - LeftBottom.position.x;
-        float playerHeight = MyPlayerPos.y - LeftBottom.position.y;
-
-        // 지도
-        float widthMap = RightTopMap.position.x - LeftBottomMap.position.x;
-        float heightMap = RightTopMap.position.y - LeftBottomMap.position.y;
-
-        float playerMapX = LeftBottomMap.position.x + (playerWidth / width) * widthMap;
-        float playerMapY = LeftBottomMap.position.y + (playerHeight / height) * heightMap;
-
-        PlayerMap.position = new Vector3(playerMapX, playerMapY, 0);
-    }
-
-
     public IEnumerator KillCo()
     {
         SetInteractionBtn2(5, false);
         NM.MyPlayer.isKillable = false;
 
-        for (int i = 10; i > 0; i--) // 기본 15초 킬대기
-        //for (int i = 3; i > 0; i--)
-        {
-            killCooltime = i;
+        for (int i = 5; i > 0; i--) // 기본 15초 킬대기
+          //  for (int i = 3; i > 0; i--)
+            {
+                killCooltime = i;
 
-            if (UM.curBtn1 == 5) 
-                Interaction2Text.text = killCooltime.ToString();
-            else
-                Interaction2Text.text = "";
+                if (UM.curBtn1 == 5)
+                    Interaction2Text.text = killCooltime.ToString();
+                else
+                    Interaction2Text.text = "";
 
-            yield return new WaitForSeconds(1);
-        }
+                yield return new WaitForSeconds(1);
+            }
         killCooltime = 0;
         Interaction2Text.text = "";
         NM.MyPlayer.isKillable = true;
+        SetInteractionBtn2(5, true);
     }
 
     //킬 당한 인원에게 킬 연출 true
@@ -241,33 +214,28 @@ public class UIManager : MonoBehaviourPun
 
     //플레이어들을 전체로 묶는 것 GetCrewCount
     //슬라이드를 보물 획득량 배열로 바꿔야함.
-  
-    
 
-    //보물이 있다는 가정하에. 
+
+
     [PunRPC]
     public void SetMaxMissionGage()
     {
-      //  MissionGageSlider.maxValue = NM.GetCrewCount();
+        // MissionGageSlider.maxValue = NM.GetCrewCount();
     }
 
-    //SetMission을 해줘야한다. 새로운 Player에게
-    //[PunRPC]
-    //public void AddMissionGage()
-    //{
-    //    int[] mission_Count = new int[5];
-    //    if(mission_Count != null)
+    [PunRPC]
+    public void AddMissionGage() //가득찼을때 실행되는. 
+    {
+        //MissionGageSlider.value += 0.25f;
 
-    //    //미션 게이지  수정할것. 
-    //    //MissionGageSlider.value += 5.0f;
+        //  if (MissionGageSlider.value == MissionGageSlider.maxValue)
+        {
+            // 크루원 승리
+            NM.Winner(true);
+        }
+    }
 
-    //    //if (MissionGageSlider.value == MissionGageSlider.maxValue) 
-    //    //{
-    //    //    Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
-    //    //}
-    //}
-
-    public IEnumerator MissionClearCo(GameObject MissionPanel) 
+    public IEnumerator MissionClearCo(GameObject MissionPanel)
     {
         MissionPanel.SetActive(false);
         MissionClearText.SetActive(true);

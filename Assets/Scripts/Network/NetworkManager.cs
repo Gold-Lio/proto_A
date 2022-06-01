@@ -35,7 +35,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public Transform SpawnPoint;
     public Light2D PointLight2D;
     public GameObject[] Interactions;
-    public GameObject[] Doors;
     public GameObject[] Lights;
     PhotonView PV;
     public bool isTest;

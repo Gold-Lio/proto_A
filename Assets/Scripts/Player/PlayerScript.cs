@@ -9,7 +9,7 @@ using static UIManager;
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
-//	public static PlayerScript PS;
+	public static PlayerScript PS = null;
 
 	public Rigidbody2D RB;
 	public GameObject[] Anims;
@@ -71,15 +71,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
 		}
 
-        //if (NM.isGameStart)
-        //{
-        //    Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
-        //}
-
         NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
 
-		//statusController.DecreaseSt(100);
-		//스테미너 설정을 해줘야함. 
 	}
 
 	public void SetPos(Vector3 target) 
@@ -154,16 +147,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		}
 	}
 
-		//미션 쪼개기 분할
-	//public void SeparateMission()
- //   {
-
- //   }
-
-
-
-
-
 	void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
@@ -185,9 +168,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		//일반 탐험로봇이라면 
 		else if(!isImposter && col.GetComponent<PlayerScript>())
 		{
-	
-			UM.SetInteractionBtn2(5, true);
-			KillTargetPlayer = col.GetComponent<PlayerScript>();
+				UM.SetInteractionBtn2(5, true);
+				KillTargetPlayer = col.GetComponent<PlayerScript>();
         }
     }
 
