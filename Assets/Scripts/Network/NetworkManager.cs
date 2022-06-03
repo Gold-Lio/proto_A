@@ -5,25 +5,24 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
-
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    public static NetworkManager NM = null;
+    public static NetworkManager NM;
 
-    private void Awake()
-    {
-        if (NM == null)
-        {
-            NM = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
+    private void Awake() => NM = this;
+    //{
+    //    if (NM == null)
+    //    {
+    //        NM = this;
+    //        DontDestroyOnLoad(this);
+    //    }
+    //    else
+    //    {
+    //        Destroy(this);
+    //    }
+    //}
 
     public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel,
            CrewWinPanel, ImposterWinPanel;
@@ -35,6 +34,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public Transform SpawnPoint;
     public Light2D PointLight2D;
     public GameObject[] Interactions;
+    public GameObject[] Doors;
     public GameObject[] Lights;
     PhotonView PV;
     public bool isTest;
@@ -66,6 +66,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 10 }, null);
+
     }
 
     public override void OnJoinedRoom()
@@ -114,7 +115,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
-    //좀 의문이 드는 곳 - 강의들어야함. 
     public void SortPlayers() => Players.Sort((p1, p2) => p1.actor.CompareTo(p2.actor));
 
     public Color GetColor(int colorIndex)
@@ -154,27 +154,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
         }
     }
-    //public void SeparateMission()
-    //{
-    //    //네트워크 매니져의 Players를 가져온다.(결국에는 PlayerScripts꺼. )
-    //    List<PlayerScript> SeparateList = new List<PlayerScript>(Players);
-
-    //    //다시 모든 플레이어들의 수를 가져온다. 
-
-    //    for (int i = 0; i < Players.Count; i++)
-    //    {
-    //        Players[i].`
-
-    //    }
-    //}
-
-
 
     [PunRPC]
     void GameStartRPC()
     {
         StartCoroutine(GameStartCo());
     }
+
     IEnumerator GameStartCo()
     {
         ShowPanel(InfoPanel);
@@ -184,7 +170,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         yield return new WaitForSeconds(3);
         isGameStart = true;
-        MyPlayer.SetPos(SpawnPoint.position); //캐릭터들을 스폰시키는 위치.
+        MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
         //MyPlayer.SetMission();
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
@@ -211,7 +197,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
-    //모두 한곳으로 넣어버리는 GetCrewCount - UI 와 유기적으로 작동해야함. 
+
     public int GetCrewCount()
     {
         int crewCount = 0;
@@ -219,12 +205,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!Players[i].isImposter) ++crewCount;
         return crewCount;
     }
-
-
-
-
-
-
 
     //이 탈출해야지만, 승리하는 조건. 
     public void WinCheck()
@@ -237,19 +217,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             var Player = Players[i];
             if (Players[i].isDie) continue;
             if (Player.isImposter)
-                ++impoCount;  
+                ++impoCount;
             else
                 ++crewCount;
         }
-
         //if (impoCount == 0 && crewCount > 0) 
         //    Winner(true); //탐험로봇 승리
-        Winner(true);
+        //  Winner(true);
         
         if(impoCount != 0 && impoCount > crewCount) 
             Winner(false); //로봇청소기 승리
     }
-
 
     public void Winner(bool isCrewWin)
     {

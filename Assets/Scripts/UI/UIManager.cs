@@ -44,13 +44,15 @@ public class UIManager : MonoBehaviourPun
     public Text LogText;
     public Text broadCastText;
 
+    public const int KILL_COUNT = 2;
+
 
     public GameObject[] Minigames;
     public GameObject MissionClearText;
 
-
     public int curInteractionNum;
-    // public Slider MissionGageSlider;
+    public Slider MissionGageSlider;
+    public GameObject SabotagePanel;
 
     public GameObject Rock;
 
@@ -173,28 +175,35 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-    public IEnumerator KillCo()
+
+    public IEnumerator CoolDown()
     {
         SetInteractionBtn2(5, false);
         NM.MyPlayer.isKillable = false;
 
-        for (int i = 5; i > 0; i--) // 기본 15초 킬대기
-          //  for (int i = 3; i > 0; i--)
-            {
-                killCooltime = i;
+        for (int i = 5; i > 0; i--) // 기본 10초 킬대기
+        {
+            killCooltime = i;
 
-                if (UM.curBtn1 == 5)
-                    Interaction2Text.text = killCooltime.ToString();
-                else
-                    Interaction2Text.text = "";
+            if (UM.curBtn1 == 5)
+                Interaction2Text.text = killCooltime.ToString();
+            else
+                Interaction2Text.text = "";
 
-                yield return new WaitForSeconds(1);
-            }
+            yield return new WaitForSeconds(1);
+        }
         killCooltime = 0;
         Interaction2Text.text = "";
+        yield return new WaitForSeconds(1);
         NM.MyPlayer.isKillable = true;
-        SetInteractionBtn2(5, true);
     }
+
+    public IEnumerator KillCo()
+    {
+        StartCoroutine(CoolDown());
+        yield return new WaitForSeconds(1);
+    }
+
 
     //킬 당한 인원에게 킬 연출 true
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
@@ -213,25 +222,23 @@ public class UIManager : MonoBehaviourPun
     }
 
     //플레이어들을 전체로 묶는 것 GetCrewCount
-    //슬라이드를 보물 획득량 배열로 바꿔야함.
-
-
-
     [PunRPC]
     public void SetMaxMissionGage()
     {
-        // MissionGageSlider.maxValue = NM.GetCrewCount();
+        MissionGageSlider.maxValue = NM.GetCrewCount();
     }
 
-    [PunRPC]
-    public void AddMissionGage() //가득찼을때 실행되는. 
-    {
-        //MissionGageSlider.value += 0.25f;
 
-        //  if (MissionGageSlider.value == MissionGageSlider.maxValue)
+    //슬라이드를 보물 획득량 배열로 바꿔야함.
+    [PunRPC]
+    public void AddMissionGage()
+    {
+        //미션 게이지  수정할것. 
+        MissionGageSlider.value += 5.0f;
+
+        if (MissionGageSlider.value == MissionGageSlider.maxValue)
         {
-            // 크루원 승리
-            NM.Winner(true);
+            Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
         }
     }
 

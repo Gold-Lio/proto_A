@@ -55,8 +55,6 @@ public class InteractionScript : MonoBehaviourPun
 			}
 
 
-
-
 			//EndGame 기능
 
 			if (type == Type.EndGameChenck)
@@ -71,7 +69,7 @@ public class InteractionScript : MonoBehaviourPun
 				{
 					isCleanerWin = true;
 					Debug.Log("탐험로봇");
-					StartCoroutine(WinCheckPlayer());
+					StartCoroutine(WincheckCo());
 				}
 			}
 		}
@@ -110,10 +108,9 @@ public class InteractionScript : MonoBehaviourPun
     }
 
     [PunRPC]
-	IEnumerator WinCheckPlayer()
+	IEnumerator WincheckCo()
     {
 		NM.Winner(true);
 		yield return null;
-    }
-
+	}
 }
