@@ -30,6 +30,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public PlayerScript MyPlayer;
 
     public GameObject CrewInfoText, ImposterInfoText, WaitingBackground, Background;
+    public GameObject onChatButton;
+
     public bool isGameStart;
     public Transform SpawnPoint;
     public Light2D PointLight2D;
@@ -72,9 +74,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         ShowPanel(WaitingPanel);
+        onChatButton.SetActive(true);
         MyPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity)
             .GetComponent<PlayerScript>();
-
+     //   ChatManager.CM.ChatClear(); // 추가된 부분
         SetRandColor();
     }
 
@@ -90,10 +93,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         CurPanel.SetActive(true);
     }
 
+
     void ShowBackground(GameObject CurBackground)
     {
         WaitingBackground.SetActive(false);
         Background.SetActive(false);
+
+        onChatButton.SetActive(false); //채팅 비활성화
 
         CurBackground.SetActive(true);
     }
