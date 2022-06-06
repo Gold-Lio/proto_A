@@ -53,14 +53,12 @@ public class InteractionScript : MonoBehaviourPun
 				UM.SetInteractionBtn1(0, true);
 			}
 
-
 			//EndGame 기능
 
 			if (type == Type.EndGameChenck)
 			{
 				if(col.GetComponent<PlayerScript>().isImposter)  
 				{
-					Debug.Log("살인마는 방 밖으로 나갈 수 없읍니다.");
 					UM.broadCastText.text = "살인마는 방 밖으로 나갈 수 없습니다. 남은 사람들을 처리하세요.";
 					StartCoroutine(Wait()); //3초 뒤에 꺼지는 코루틴
 				}

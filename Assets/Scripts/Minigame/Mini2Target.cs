@@ -14,7 +14,6 @@ public class Mini2Target : MonoBehaviour, IPointerUpHandler
 	{
 		MM = transform.GetComponentInParent<MinigameManager>();
 		slider = GetComponent<Slider>();
-
 	}
 
 

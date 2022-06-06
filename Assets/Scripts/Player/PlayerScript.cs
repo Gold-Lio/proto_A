@@ -149,6 +149,19 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         }
     }
 
+    //public void SetMission()
+    //{
+    //    if (!PV.IsMine) return;
+      
+    //    List<int> GachaList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    //    for (int i = 0; i < 9; i++)
+    //    {
+    //        int rand = Random.Range(0, GachaList.Count);
+    //        NM.Interactions[GachaList[rand]].SetActive(true);
+    //        GachaList.RemoveAt(rand);
+    //    }
+    //}
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
@@ -174,13 +187,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             {
                 UM.SetInteractionBtn2(5, true);
                 KillTargetPlayer = col.GetComponent<PlayerScript>();
-                Debug.Log("터치 및 킬 0");
             }
             else if(killCount == 1) 
             {
                 UM.SetInteractionBtn2(5, false);
                 KillTargetPlayer = null;
-                Debug.Log("터치 및 킬 1");
                 return;
             }
         }

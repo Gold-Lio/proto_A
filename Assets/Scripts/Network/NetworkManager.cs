@@ -23,7 +23,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     //        Destroy(this);
     //    }
     //}
-
     public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel,
            CrewWinPanel, ImposterWinPanel;
     public List<PlayerScript> Players = new List<PlayerScript>();
@@ -179,7 +178,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         isGameStart = true;
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
-        //MyPlayer.SetMission();
+       // MyPlayer.SetMission();
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 
         yield return new WaitForSeconds(1);
@@ -212,6 +211,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!Players[i].isImposter) ++crewCount;
         return crewCount;
     }
+
+
 
     [PunRPC]
     //이 탈출해야지만, 승리하는 조건. 

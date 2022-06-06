@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviourPun
     public Button[] ColorBtn;
     public Button StartBtn;
     public Transform LeftBottom, RightTop, LeftBottomMap, RightTopMap, PlayerMap;
-    public GameObject[] MissionMaps;
+
     public Image KillerImage, DeadbodyImage;
     public Text LogText;
     public Text broadCastText;
@@ -50,7 +50,9 @@ public class UIManager : MonoBehaviourPun
 
     public int curInteractionNum;
     public Slider MissionGageSlider;
-    public GameObject SabotagePanel;
+
+    private int[] missionsArray;
+    public GameObject[] missionCompliteArray;
 
     public GameObject Rock;
 
@@ -218,6 +220,27 @@ public class UIManager : MonoBehaviourPun
         LogText.text = log;
     }
 
+    //[PunRPC]
+    //public void MissionComplite()
+    //{
+    //    //missionsArray  ㅡ 체크할 일반 int 타입배열
+    //  //  missionCompliteArray - 표시될 오브젝트의 배열
+
+       
+
+    //        for (int i = 0; i < missionsArray.Length; i++)
+    //        {
+    //            missionCompliteArray[i].gameObject.SetActive(true);
+    //        }
+
+    //        if (PlayerScript.PS.isImposter)
+    //        {
+    //            Rock.SetActive(false);
+    //        }
+    //    }
+    //}
+
+
     //플레이어들을 전체로 묶는 것 GetCrewCount
     [PunRPC]
     public void SetMaxMissionGage()
@@ -225,20 +248,19 @@ public class UIManager : MonoBehaviourPun
         MissionGageSlider.maxValue = NM.GetCrewCount();
     }
 
-
     //슬라이드를 보물 획득량 배열로 바꿔야함.
     [PunRPC]
     public void AddMissionGage()
     {
-        //미션 게이지  수정할것. 
-        MissionGageSlider.value += 5.0f;
-
+        //미션 게이지  수정할것.
+        MissionGageSlider.value += 0.5f;
         if (MissionGageSlider.value == MissionGageSlider.maxValue)
         {
             Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
         }
     }
 
+    //Text 2초.
     public IEnumerator MissionClearCo(GameObject MissionPanel)
     {
         MissionPanel.SetActive(false);
