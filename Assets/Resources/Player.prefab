@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5eaecc0ac0b4cc418a45a77e62dc4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followCam: {fileID: 0}
 --- !u!114 &6836631978736809089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +760,6 @@ MonoBehaviour:
   KillTargetPlayer: {fileID: 0}
   targetDeadColorIndex: 0
   killCount: 0
-  killLimit: 0
   PV: {fileID: 0}
   nick: 
 --- !u!70 &5938605979782063756

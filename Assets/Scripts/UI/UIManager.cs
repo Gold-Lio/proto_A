@@ -24,7 +24,6 @@ public class UIManager : MonoBehaviourPun
 
     public PlayerScript MyPlayer;
 
-
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
     int curBtn0, curBtn1, curBtn2;
@@ -45,7 +44,6 @@ public class UIManager : MonoBehaviourPun
     public Text broadCastText;
 
     public const int KILL_COUNT = 2;
-
 
     public GameObject[] Minigames;
     public GameObject MissionClearText;
@@ -174,7 +172,6 @@ public class UIManager : MonoBehaviourPun
             ColorBtn[i].interactable = !contain;
         }
     }
-
 
     public IEnumerator CoolDown()
     {

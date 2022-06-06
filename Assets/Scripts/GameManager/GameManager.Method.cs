@@ -16,9 +16,7 @@ public partial class GameManager : MonoBehaviour
 }
 
 
-
 public partial class GameManager : MonoBehaviour
-
 {
     public static GameManager Instance
     {

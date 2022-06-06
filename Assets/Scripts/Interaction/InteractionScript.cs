@@ -10,7 +10,6 @@ public class InteractionScript : MonoBehaviourPun
 {
 	private PlayerScript PS;
 	public static InteractionScript IS;
-
 	public enum Type { Customize, Mission, Worthy , EndGameChenck };
 	public Type type;
 	GameObject Line;

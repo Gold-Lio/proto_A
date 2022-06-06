@@ -134,7 +134,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         SetImpoCrew();
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        ChatManager.CM.photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, false);
+        
+        //ChatManager.CM.photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, false);
 
         PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
     }
@@ -212,6 +213,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         return crewCount;
     }
 
+    [PunRPC]
     //이 탈출해야지만, 승리하는 조건. 
     public void WinCheck()
     {
@@ -235,6 +237,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             Winner(false); //로봇청소기 승리
     }
 
+    [PunRPC]
     public void Winner(bool isCrewWin)
     {
         if (!isGameStart) return;
@@ -253,9 +256,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    [PunRPC]
     void WinnerDelay()
     {
         PV.RPC("Winner", RpcTarget.AllViaServer);
+        GameManager.Instance.GameEnd(this);
         Application.Quit();
     }
 }

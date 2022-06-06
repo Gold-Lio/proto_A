@@ -22,11 +22,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     public bool isWalk, isMove, isImposter, isKillable, isDie, isHadBeenKill;
     public int actor, colorIndex;
     public float speed; //기본 40
+
     public PlayerScript KillTargetPlayer;
     public int targetDeadColorIndex;
 
     public int killCount;
-    public int killLimit = 1;
 
     [HideInInspector] public PhotonView PV;
     [HideInInspector] public string nick;
@@ -61,8 +61,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     }
     void Update()
     {
-
-
         if (!PV.IsMine) return;
 
         if (isMove)
@@ -78,28 +76,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             isWalk = RB.position != Vector2.zero;
             PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
         }
-
         NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
-
-        //if (!PV.IsMine) return;
-
-        //if (isMove) 
-        //{
-        //	input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        //	RB.velocity = input * speed;
-        //	isWalk = RB.velocity != Vector2.zero;
-        //	PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
-        //}
-
-        //      if (NM.isGameStart)
-        //      {
-        //          Camera.main.transform.position = transform.position + new Vector3(0, 0, -10);
-        //      }
-
-        //      NM.PointLight2D.transform.position = transform.position + new Vector3(0,0,10);
-
-        //statusController.DecreaseSt(100);
-        //스테미너 설정을 해줘야함. 
     }
 
     public void SetPos(Vector3 target)
@@ -183,9 +160,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         if (!col.CompareTag("Player") || !NM.isGameStart) return;
         if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
-
         //살인자가 주체_    user또한 주체가 되어야한다. 
-        if (col.GetComponent<PlayerScript>())
+        if (isImposter && col.GetComponent<PlayerScript>())
         {
             UM.SetInteractionBtn2(5, true);
             KillTargetPlayer = col.GetComponent<PlayerScript>();
@@ -194,21 +170,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         //일반 탐험로봇이라면 
         else if (!isImposter && col.GetComponent<PlayerScript>())
         {
-            ////킬이 한번만 가능하고 그 뒤로는 비 활성화 되야한다. 
-
-            for (int killCount = 0; killCount < killLimit; killCount++)
+            if (isKillable && killCount == 0)
             {
-                if (killCount == 0)
-                {
-                    UM.SetInteractionBtn2(5, true);
-                    KillTargetPlayer = col.GetComponent<PlayerScript>();
-                }
-                else
-                {
-                    UM.SetInteractionBtn2(5, false);
-                }
+                UM.SetInteractionBtn2(5, true);
+                KillTargetPlayer = col.GetComponent<PlayerScript>();
+                Debug.Log("터치 및 킬 0");
+            }
+            else if(killCount == 1) 
+            {
+                UM.SetInteractionBtn2(5, false);
+                KillTargetPlayer = null;
+                Debug.Log("터치 및 킬 1");
+                return;
             }
         }
+            ////킬이 한번만 가능하고 그 뒤로는 비 활성화 되야한다. 
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -226,7 +202,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //죽은 후에 유령 이슈 수정 요망
     public void Kill()
     {
-        // 죽이기 성공, 기존에 있던 플레이어를 없애고 , 시체를 Spawn한다. 
+        if (PV.IsMine && !isImposter)
+        {
+            killCount++;
+        }
+
+      //  죽이기 성공, 기존에 있던 플레이어를 없애고 , 시체를 Spawn한다. 
         StartCoroutine(UM.KillCo());
         KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
         Vector3 TargetPos = KillTargetPlayer.transform.position;
@@ -248,6 +229,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
                 GameManager.Instance.isPlayerDead = true;
                 UM.SetInteractionBtn1(0, false);
                 UM.SetInteractionBtn2(5, false);
+
                 PV.RPC("DestroyRPC", RpcTarget.AllBuffered);
             }
         }

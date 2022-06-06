@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
 using static NetworkManager;
+using Cinemachine;
 
 public class DeadBodyScript : MonoBehaviourPun
 {
@@ -20,6 +21,9 @@ public class DeadBodyScript : MonoBehaviourPun
         CurBody.GetChild(1).GetComponent<SpriteRenderer>().color = UM.colors[_colorIndex];
         gameObject.tag = "DeadBody";
         colorIndex = _colorIndex;
+
+        NM.WinCheck(); // 다 죽었을 경우 살인마 승
+
     }
 
 }
