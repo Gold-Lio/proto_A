@@ -5,11 +5,8 @@ public partial class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
-    public bool isGameStart
-    {
-        get;
-        private set;
-    }
+    public bool isGameStart { get; private set; }
+    public bool isInGameStart { get; private set; }
 
     public bool isPlayerDead
     {

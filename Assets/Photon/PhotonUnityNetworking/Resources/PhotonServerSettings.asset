@@ -59,6 +59,7 @@ MonoBehaviour:
   - DestroyRPC
   - WincheckCo
   - WinCheck
+  - Inventory
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

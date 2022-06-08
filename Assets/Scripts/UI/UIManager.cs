@@ -51,6 +51,9 @@ public class UIManager : MonoBehaviourPun
     public int curInteractionNum;
     public Slider MissionGageSlider;
 
+    public GameObject inventroy;
+
+
     private int[] missionsArray;
     public GameObject[] missionCompliteArray;
 
@@ -260,6 +263,15 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
+
+
+    [PunRPC]
+    public void Inventory()
+    {
+        inventroy.SetActive(true);
+    }
+
+
     //Text 2초.
     public IEnumerator MissionClearCo(GameObject MissionPanel)
     {
@@ -275,5 +287,7 @@ public class UIManager : MonoBehaviourPun
         StartCoroutine(MissionClearCo(MissionPanel));
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
     }
+
+
 }
 
