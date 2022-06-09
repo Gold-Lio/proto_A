@@ -17,6 +17,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField]
     //  private Text broadCastText;
 
+    [Space(20)]
     public Slot[] slots;
     public Transform slotHolder;
 
