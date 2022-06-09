@@ -183,7 +183,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         yield return new WaitForSeconds(1);
         ShowPanel(GamePanel);
+        UM.Inventory();
         ShowGameUI();
+
         StartCoroutine(UM.KillCo());
     }
 

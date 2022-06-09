@@ -71,7 +71,6 @@ public class InteractionScript : MonoBehaviourPun
 			}
 		}
 	}
-
     [PunRPC]
 	void OnTriggerExit2D(Collider2D col)
 	{
