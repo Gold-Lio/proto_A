@@ -32,6 +32,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     [HideInInspector] public string nick;
     Vector2 input;
 
+    private void Awake()
+    {
+        RB = GetComponent<Rigidbody2D>();
+    }
+
     void Start()
     {
         PV = photonView;
@@ -41,13 +46,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
-        StartCoroutine(StateCo());
+       // StartCoroutine(StateCo());
     }
 
-    IEnumerator StateCo()
-    {
-        while (true) yield return StartCoroutine(state.ToString());
-    }
+    //IEnumerator StateCo()
+    //{
+    //    while (true) yield return StartCoroutine(state.ToString());
+    //}
 
     void OnDestroy()
     {
@@ -61,69 +66,101 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     }
     void Update()
     {
+        //if (!PV.IsMine) return;
+        //if (isMove)
+        //{
+        //    input.x = Input.GetAxisRaw("Horizontal");
+        //    input.y = Input.GetAxisRaw("Vertical");
+
+        //    RB.MovePosition(RB.position + input * speed * Time.fixedDeltaTime);
+        //    if (input.x != 0)
+        //    {
+        //        SR.flipX = input.x == 1;
+        //    }
+        //    isWalk = RB.position != Vector2.zero;
+        //   // PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
+        //}
+        //NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+    }
+
+    private void FixedUpdate()
+    {
         if (!PV.IsMine) return;
 
         if (isMove)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
 
-            RB.MovePosition(RB.position + input * speed * Time.fixedDeltaTime);
-            if (input.x != 0)
-            {
-                SR.flipX = input.x == 1;
-            }
-            isWalk = RB.position != Vector2.zero;
-            PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
+            Run(h, v);
+
+            //input.x = Input.GetAxisRaw("Horizontal");
+            //input.y = Input.GetAxisRaw("Vertical");
+
+            //RB.MovePosition(RB.position + input * speed * Time.fixedDeltaTime);
+
+            //if (input.x != 0)
+            //{
+            //    SR.flipX = input.x == 1;
+            //}
+            //isWalk = RB.position != Vector2.zero;
         }
         NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
     }
+
+    private void Run(float h, float v)
+    {
+        input.Set(h, v);
+        input = input.normalized * speed * Time.deltaTime;
+        RB.MovePosition(RB.position + input);
+    }
+
 
     public void SetPos(Vector3 target)
     {
         transform.position = target;
     }
 
-    [PunRPC]
-    void AnimSprites(bool _isWalk, Vector2 _input)
-    {
-        if (_isWalk)
-        {
-            state = State.Walk;
+    //[PunRPC]
+    //void AnimSprites(bool _isWalk, Vector2 _input)
+    //{
+    //    if (_isWalk)
+    //    {
+    //        state = State.Walk;
 
-            if (_input.x == 0) return;
-            if (_input.x < 0)
-            {
-                Character.localScale = Vector3.one;
-            }
-            else
-            {
-                Character.localScale = new Vector3(-1, 1, 1);
-            }
-        }
-        else
-        {
-            state = State.Idle;
-        }
-    }
+    //        if (_input.x == 0) return;
+    //        if (_input.x < 0)
+    //        {
+    //            Character.localScale = Vector3.one;
+    //        }
+    //        else
+    //        {
+    //            Character.localScale = new Vector3(-1, 1, 1);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        state = State.Idle;
+    //    }
+    //}
 
-    void ShowAnim(int index)
-    {
-        for (int i = 0; i < Anims.Length; i++)
-            Anims[i].SetActive(index == i);
-    }
-    IEnumerator Idle()
-    {
-        ShowAnim(0);
-        yield return new WaitForSeconds(0.1f);
-    }
-    IEnumerator Walk()
-    {
-        ShowAnim(0);
-        yield return new WaitForSeconds(0.15f);
-        ShowAnim(1);
-        yield return new WaitForSeconds(0.15f);
-    }
+    //void ShowAnim(int index)
+    //{
+    //    for (int i = 0; i < Anims.Length; i++)
+    //        Anims[i].SetActive(index == i);
+    //}
+    //IEnumerator Idle()
+    //{
+    //    ShowAnim(0);
+    //    yield return new WaitForSeconds(0.1f);
+    //}
+    //IEnumerator Walk()
+    //{
+    //    ShowAnim(0);
+    //    yield return new WaitForSeconds(0.15f);
+    //    ShowAnim(1);
+    //    yield return new WaitForSeconds(0.15f);
+    //}
 
     [PunRPC]
     public void SetColor(int _colorIndex)

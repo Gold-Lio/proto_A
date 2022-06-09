@@ -757,7 +757,7 @@ MonoBehaviour:
   isHadBeenKill: 0
   actor: 0
   colorIndex: 0
-  speed: 100
+  speed: 40
   KillTargetPlayer: {fileID: 0}
   targetDeadColorIndex: 0
   killCount: 0
