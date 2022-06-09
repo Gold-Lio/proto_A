@@ -6,17 +6,19 @@ TagManager:
   tags:
   - Bullet
   - DeadBody
+  - Relics
+  - Item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Map
   - Water
   - UI
-  - 
-  - 
   - Player
-  - Map
+  - Item
+  - 
+  - 
   - 
   - 
   - 
