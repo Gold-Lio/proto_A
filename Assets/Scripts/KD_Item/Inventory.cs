@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//public enum SlotType
-//{
-//    SlotCount = 5
-//}
-
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
     public delegate void OnSlotCountChange(int val);
-
     public OnSlotCountChange onSlotCountChange;
-    //SlotType slotCount;
+
 
     public delegate void OnChnageItem();
     public OnChnageItem onChnageItem;
@@ -21,7 +15,17 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
 
     public int slotCount;
+    public int SlotCnt
+    {
+        get => slotCount;
+        set
+        {
+            slotCount = value;
+            onSlotCountChange.Invoke(slotCount);
+        }
+    }
 
+    #region 싱글턴
     private void Awake()
     {
         if (instance == null)
@@ -34,6 +38,7 @@ public class Inventory : MonoBehaviour
             return;
         }
     }
+    #endregion
 
     private void Start()
     {
@@ -54,10 +59,12 @@ public class Inventory : MonoBehaviour
             {
                 onChnageItem.Invoke();
                 return true;
+                Debug.Log("additem true");
             }
         }
-        return false;
 
+        Debug.Log("additem false");
+        return false;
     }
 
 
@@ -67,7 +74,7 @@ public class Inventory : MonoBehaviour
     {
         if (col.CompareTag("Item"))
         {
-            Debug.Log("아이템에 닿았다");
+            Debug.Log("아이템에 닿았다"); //현재 이거 자체가 씹히고 있는 상황. 
             FiedItems fiedItems = col.GetComponent<FiedItems>();
             if (AddItem(fiedItems.GetItem()))
             {
@@ -81,14 +88,6 @@ public class Inventory : MonoBehaviour
     /// 대리자 정의, 대리자 인스턴스 화
     /// set안에서 대리자 호출한다. 
     /// </summary>
-    //public int SlotCnt
-    //{
-    //    get => SlotCnt;
-    //    set
-    //    {
-    //        slotCnt = value;
-    //        onSlotCountChange.Invoke(slotCnt);
-    //    }
-    //}
+
 
 }
