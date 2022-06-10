@@ -263,8 +263,6 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-
-
     [PunRPC]
     public void Inventory()
     {
