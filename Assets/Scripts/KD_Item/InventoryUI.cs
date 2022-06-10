@@ -17,20 +17,62 @@ public class InventoryUI : MonoBehaviour
     [SerializeField]
     //  private Text broadCastText;
 
-    [Space(20)]
+ //   [Space(20)]
     public Slot[] slots;
     public Transform slotHolder;
 
     //스타트에서 inventory를 초기화
     //onslotCOuntChnage가 참조할 메서드를 정의한다. += 연산자사용. 
+    
+    //onChnageItem이 참조할 메서드를 정의한다. RedrawSlotUI;
     private void Start()
     {
         inventory = Inventory.instance;
         slots = slotHolder.GetComponentsInChildren<Slot>();
         // inventory.onSlotCountChange += SlotChange;
+        inventory.onChangeItem += RedrawSlotUI;
         //인벤토리패널 초기화
         inventroyPanel.SetActive(false);
     }
+
+    void RedrawSlotUI()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].RemoveSlot();
+        }
+        for (int i = 0; i < inventory.items.Count; i++)
+        {
+            slots[i].item = inventory.items[i];
+            slots[i].UpdateSlotUI();
+        }
+    }
+
+    ////반복문을 통해서 슬롯들을 초기화하고 item의 개수만큼 slot을 채워넣는다.
+    //void RedrawSlotUI()
+    //{
+    //    for (int i = 0; i < slots.Length; i++)
+    //    {
+    //        slots[i].RemoveSlot();
+    //    }
+    //    for (int i = 0; i < inventory.items.Count; i++)
+    //    {
+    //        slots[i].item = inventory.items[i];
+    //        slots[i].UpdateSlotUI();
+    //    }
+    //}
+
+
+
+
+
+
+
+
+
+
+
+
 }
     //private void SlotChange(int val)
     //{
