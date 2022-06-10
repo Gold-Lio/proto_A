@@ -2973,6 +2973,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camp_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 7176911456842421123, guid: 2c5605a3639c1a14c91d6f131b929314,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177432860275618645, guid: 2c5605a3639c1a14c91d6f131b929314,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177529068353573171, guid: 2c5605a3639c1a14c91d6f131b929314,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5605a3639c1a14c91d6f131b929314, type: 3}
 --- !u!1 &492381134 stripped
@@ -4911,7 +4926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 679787196}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}

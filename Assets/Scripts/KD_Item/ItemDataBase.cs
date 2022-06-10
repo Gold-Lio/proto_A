@@ -6,13 +6,13 @@ public class ItemDataBase : MonoBehaviour
 {
     public static ItemDataBase instance;
 
-    private void Awake()
+    public void Awake()
     {
         instance = this; 
     }
     public List<Item> itemDB = new List<Item>();
 
-
+    [Space(20)]
     public GameObject fieldItemPrefab;
     public Vector3[] pos;
 

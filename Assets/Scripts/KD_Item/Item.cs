@@ -7,7 +7,6 @@ public enum ItemType
     Item
 }
 
-
 [System.Serializable]
 public class Item 
 {
@@ -20,6 +19,4 @@ public class Item
     {
         return false;
     }
-
-
 }
