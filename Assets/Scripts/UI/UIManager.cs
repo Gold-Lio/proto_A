@@ -51,9 +51,6 @@ public class UIManager : MonoBehaviourPun
     public int curInteractionNum;
     public Slider MissionGageSlider;
 
-    public GameObject inventroy;
-
-
     private int[] missionsArray;
     public GameObject[] missionCompliteArray;
 
@@ -262,13 +259,6 @@ public class UIManager : MonoBehaviourPun
             Rock.SetActive(false); //미션을 완수하면 문을 오픈한다. 
         }
     }
-
-    [PunRPC]
-    public void Inventory()
-    {
-        inventroy.SetActive(true);
-    }
-
 
     //Text 2초.
     public IEnumerator MissionClearCo(GameObject MissionPanel)

@@ -93,7 +93,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             float v = Input.GetAxisRaw("Vertical");
 
             Run(h, v);
-
+            
+            if (input.x != 0)
+            {
+                SR.flipX = input.x == 1;
+            }
             //input.x = Input.GetAxisRaw("Horizontal");
             //input.y = Input.GetAxisRaw("Vertical");
 
@@ -113,6 +117,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         input.Set(h, v);
         input = input.normalized * speed * Time.deltaTime;
         RB.MovePosition(RB.position + input);
+       
     }
 
 
@@ -120,48 +125,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     {
         transform.position = target;
     }
-
-    //[PunRPC]
-    //void AnimSprites(bool _isWalk, Vector2 _input)
-    //{
-    //    if (_isWalk)
-    //    {
-    //        state = State.Walk;
-
-    //        if (_input.x == 0) return;
-    //        if (_input.x < 0)
-    //        {
-    //            Character.localScale = Vector3.one;
-    //        }
-    //        else
-    //        {
-    //            Character.localScale = new Vector3(-1, 1, 1);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        state = State.Idle;
-    //    }
-    //}
-
-    //void ShowAnim(int index)
-    //{
-    //    for (int i = 0; i < Anims.Length; i++)
-    //        Anims[i].SetActive(index == i);
-    //}
-    //IEnumerator Idle()
-    //{
-    //    ShowAnim(0);
-    //    yield return new WaitForSeconds(0.1f);
-    //}
-    //IEnumerator Walk()
-    //{
-    //    ShowAnim(0);
-    //    yield return new WaitForSeconds(0.15f);
-    //    ShowAnim(1);
-    //    yield return new WaitForSeconds(0.15f);
-    //}
-
+   
     [PunRPC]
     public void SetColor(int _colorIndex)
     {
