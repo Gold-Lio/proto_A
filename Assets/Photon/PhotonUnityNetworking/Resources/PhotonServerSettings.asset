@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: bd89fe1f-f4ec-481d-941f-a96a991cd702
     AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: d43e08b3-509b-4144-be8d-20a936bd30d3
+    AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -41,26 +41,25 @@ MonoBehaviour:
   - ClickRpc
   - DestroyRpc
   - DestroySpaceship
+  - DoorMapClickRPC
+  - EmergencyRPC
   - Fire
   - GameStartRPC
+  - ReportRPC
   - RespawnSpaceship
+  - ReturnToGameRPC
   - SetColor
   - SetDie
+  - SetGhostColor
   - SetImpoCrew
   - SetMaxMissionGage
+  - SetVotedDie
+  - ShowGhostRPC
   - SpawnBody
-  - CantHearYou
-  - ChangeColour
-  - HeresWhy
-  - OnTriggerEnter2D
-  - OnTriggerExit2D
-  - Winner
-  - WinnerDelay
-  - DestroyRPC
-  - WincheckCo
-  - WinCheck
-  - Inventory
-  - OnCollisionEnter2D
+  - VoteColorIndexRPC
+  - VotedColorsClearRPC
+  - VoteUpdateRPC
+  - Punch
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
