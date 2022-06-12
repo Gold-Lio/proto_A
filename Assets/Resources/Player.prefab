@@ -172,15 +172,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RB: {fileID: 4313270873243922857}
-  Anims:
-  - {fileID: 0}
-  - {fileID: 0}
   CharacterSR:
-  - {fileID: 0}
-  - {fileID: 0}
-  Character: {fileID: 0}
+  - {fileID: 1140705742494177079}
+  - {fileID: 1140705742494177079}
+  SR: {fileID: 0}
+  Character: {fileID: 2251365688590393041}
   Canvas: {fileID: 8491290351953271947}
-  Ghost: {fileID: 0}
   NickText: {fileID: 8491290352219676445}
   state: 0
   isWalk: 0
@@ -190,15 +187,13 @@ MonoBehaviour:
   isDie: 0
   actor: 0
   colorIndex: 0
-  speed: 40
+  speed: 100
   KillTargetPlayer: {fileID: 0}
   targetDeadColorIndex: 0
   PV: {fileID: 0}
   nick: 
   punchGo: {fileID: 456536054883469890}
   punchAnim: {fileID: 456536054883469891}
-  punchEffect: {fileID: 0}
-  audioClip: {fileID: 0}
 --- !u!114 &1878694176956332237
 MonoBehaviour:
   m_ObjectHideFlags: 0

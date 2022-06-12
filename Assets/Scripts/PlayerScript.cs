@@ -11,9 +11,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 {
 
 	public Rigidbody2D RB;
-	public GameObject[] Anims;
 	public SpriteRenderer[] CharacterSR;
-	public Transform Character, Canvas, Ghost;
+	public SpriteRenderer SR;
+
+	public Transform Character, Canvas ;
 	public Text NickText;
 
 	public enum State { Idle, Walk };
@@ -27,11 +28,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	[HideInInspector] public PhotonView PV;
 	[HideInInspector] public string nick;
 	Vector2 input;
+	bool facingRight;
+
 
 	public GameObject punchGo;
 	public Animator punchAnim;
-	public ParticleSystem punchEffect;
-	public AudioClip audioClip;
+	//public ParticleSystem punchEffect;
+	//public AudioClip audioClip;
 
 	void Start()
 	{
@@ -42,92 +45,109 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		NM.Players.Add(this);
 		NM.SortPlayers();
 		isMove = true;
-		StartCoroutine(StateCo());
+		//StartCoroutine(StateCo());
 	}
 
-	IEnumerator StateCo()
-	{
-		while (true) yield return StartCoroutine(state.ToString());
-	}
+	//IEnumerator StateCo()
+	//{
+	//	while (true) yield return StartCoroutine(state.ToString());
+	//}
 
-	void OnDestroy()
-	{
-		NM.Players.Remove(this);
-		NM.SortPlayers();
-	}
+	//void OnDestroy()
+	//{
+	//	NM.Players.Remove(this);
+	//	NM.SortPlayers();
+	//}
 
 	void SetNick()
 	{
 		NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
 	}
 
-
 	void Update()
 	{
-		if (!PV.IsMine) return;
-
-		if (isMove)
-		{
-			input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-			RB.velocity = input * speed;
-			isWalk = RB.velocity != Vector2.zero;
-			PV.RPC("AnimSprites", RpcTarget.All, isWalk, input);
+		if (PV.IsMine)
+        {
+			Move();
+			PV.RPC("Filp", RpcTarget.AllBuffered, input);
+			NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
 		}
-		NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+
 	}
 
-	public void SetPos(Vector3 target)
+    [PunRPC]
+    public void Move()
+    {
+		input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+		RB.MovePosition(RB.position + (input * speed * Time.deltaTime));
+	}
+
+    [PunRPC]
+    public void Filp(Vector2 input)
+    {
+		if (input.x < 0 && !facingRight)
+		{
+			transform.localScale = new Vector2(1, 1); // left flip.
+		}
+
+		if (input.x > 0 && !facingRight)
+		{
+			transform.localScale = new Vector2(-1, 1); // left flip.
+		}
+	}
+
+
+
+    public void SetPos(Vector3 target)
 	{
 		transform.position = target;
 	}
 
 
+	//[PunRPC]
+	//void AnimSprites(bool _isWalk, Vector2 _input)
+	//{
+	//	if (_isWalk)
+	//	{
+	//		state = State.Walk;
 
+	//		if (_input.x == 0) return;
+	//		if (_input.x < 0)
+	//		{
+	//			Character.localScale = Vector3.one;
+	//			if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
+	//		}
+	//		else
+	//		{
+	//			Character.localScale = new Vector3(-1, 1, 1);
+	//			if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = new Vector3(-1, 1, 1);
+	//		}
+	//	}
+	//	else
+	//	{
+	//		state = State.Idle;
+	//	}
+	//}
 
-	[PunRPC]
-	void AnimSprites(bool _isWalk, Vector2 _input)
-	{
-		if (_isWalk)
-		{
-			state = State.Walk;
+	//void ShowAnim(int index)
+	//{
+	//	for (int i = 0; i < Anims.Length; i++)
+	//		Anims[i].SetActive(index == i);
+	//}
 
-			if (_input.x == 0) return;
-			if (_input.x < 0)
-			{
-				Character.localScale = Vector3.one;
-				if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
-			}
-			else
-			{
-				Character.localScale = new Vector3(-1, 1, 1);
-				if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = new Vector3(-1, 1, 1);
-			}
-		}
-		else
-		{
-			state = State.Idle;
-		}
-	}
+	//IEnumerator Idle()
+	//{
+	//	ShowAnim(0);
+	//	yield return new WaitForSeconds(0.1f);
+	//}
 
-	void ShowAnim(int index)
-	{
-		for (int i = 0; i < Anims.Length; i++)
-			Anims[i].SetActive(index == i);
-	}
-
-	IEnumerator Idle()
-	{
-		ShowAnim(0);
-		yield return new WaitForSeconds(0.1f);
-	}
-
-	IEnumerator Walk()
-	{
-		ShowAnim(0);
-		yield return new WaitForSeconds(0.15f);
-		ShowAnim(1);
-		yield return new WaitForSeconds(0.15f);
-	}
+	//IEnumerator Walk()
+	//{
+	//	ShowAnim(0);
+	//	yield return new WaitForSeconds(0.15f);
+	//	ShowAnim(1);
+	//	yield return new WaitForSeconds(0.15f);
+	//}
 
 	[PunRPC]
 	public void SetColor(int _colorIndex)
