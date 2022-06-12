@@ -223,6 +223,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         //CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
     }
 
+    [PunRPC]
     IEnumerator punchCo()
     {
         yield return new WaitForSeconds(0.5f);

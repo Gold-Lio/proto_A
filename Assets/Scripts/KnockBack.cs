@@ -16,9 +16,9 @@ public class KnockBack : MonoBehaviour
             {
                 player.isKinematic = false;
                 Vector2 difference = player.transform.position - transform.position;
-                difference = difference.normalized * 4;
-                player.AddForce(difference, ForceMode2D.Impulse);
-               // player.isKinematic = true;
+                difference = difference.normalized * 100;
+                player.AddForce(difference * 1000, ForceMode2D.Impulse);
+                // player.isKinematic = true;
                 StartCoroutine(KnockBackCo(player));
             }
         }
