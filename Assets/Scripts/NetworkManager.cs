@@ -162,7 +162,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ShowPanel(GamePanel);
         ShowGameUI();
 
-        StartCoroutine(UM.KillCo());
+        StartCoroutine(UM.PunchCoolCo());
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)

@@ -236,10 +236,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 	public void Punch()  // 펀치 함수. 
 	{
 		punchGo.SetActive(true);
-		punchAnim.SetBool("IsPunch", true);
-
+		punchAnim.SetTrigger("IsPunch");
+		StartCoroutine(punchCo());
 		// 죽이기 성공
-		//StartCoroutine(UM.KillCo());
+		StartCoroutine(UM.PunchCoolCo());
+
 		//KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
 		//Vector3 TargetPos = KillTargetPlayer.transform.position;
 		//transform.position = TargetPos;
@@ -247,6 +248,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 		//GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
 		//CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
 	}
+
+	IEnumerator punchCo()
+    {
+		yield return new WaitForSeconds(0.5f);
+		punchGo.SetActive(false);
+    }
 
 }
 

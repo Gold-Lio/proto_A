@@ -125,6 +125,8 @@ public class UIManager : MonoBehaviourPun
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
+           
+            
             //if (NM.MyPlayer.isDie) return;
             //NM.MyPlayer.Kill();
         }
@@ -175,7 +177,7 @@ public class UIManager : MonoBehaviourPun
     }
 
 
-    public IEnumerator KillCo()
+    public IEnumerator PunchCoolCo()
     {
         SetInteractionBtn1(5, false);
         NM.MyPlayer.isKillable = false;
