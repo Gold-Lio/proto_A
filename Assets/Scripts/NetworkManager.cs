@@ -161,8 +161,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1);
         ShowPanel(GamePanel);
         ShowGameUI();
-
         StartCoroutine(UM.PunchCoolCo());
+
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)

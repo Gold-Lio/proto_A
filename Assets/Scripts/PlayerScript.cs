@@ -12,7 +12,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
-    public SpriteRenderer SR;
 
     public Transform Character, Canvas;
     public Text NickText;
@@ -29,6 +28,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     [HideInInspector] public string nick;
     Vector2 input;
     bool facingRight;
+
+    public float knockBackTime;
 
 
     public GameObject punchGo;
@@ -70,6 +71,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         {
             Move();
             PV.RPC("Filp", RpcTarget.AllBuffered, input);
+
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
 
@@ -173,7 +175,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         }
     }
 
-
     public void SetMission()
     {
         if (!PV.IsMine) return;
@@ -200,43 +201,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     {
         if (!col.CompareTag("Player") || !NM.isGameStart) return;
         if (!PV.IsMine || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
-
-        if (col.gameObject.CompareTag("IsPunch"))
-        {
-            if (isImposter && col.GetComponent<PlayerScript>())
-            {
-                UM.SetInteractionBtn1(5, true);
-                KillTargetPlayer = col.GetComponent<PlayerScript>();
-                Vector2 difference = transform.position - col.transform.position;
-                transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-            }
-
-            //일반 
-            else if (!isImposter && col.GetComponent<PlayerScript>())
-            {
-                UM.SetInteractionBtn1(5, true);
-                KillTargetPlayer = col.GetComponent<PlayerScript>(); Vector2 difference = transform.position - col.transform.position;
-                transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
-            }
-        }
-        //살인자
-
-        //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
-
-
-
     }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (!col.CompareTag("Player") || !NM.isGameStart) return;
-        if (!PV.IsMine /*|| !isImposter */ || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
 
-        if (col.GetComponent<PlayerScript>())
-        {
-            UM.SetInteractionBtn1(5, true);
-            KillTargetPlayer = null;
-        }
-    }
+
+    //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
 
     [PunRPC]
     public void Punch()  // 펀치 함수. 

@@ -197,6 +197,7 @@ public class UIManager : MonoBehaviourPun
         Interaction1Text.text = "";
 
         NM.MyPlayer.isKillable = true;
+        SetInteractionBtn1(5, true);
     }
 
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
