@@ -10,22 +10,20 @@ public class KnockBack : MonoBehaviour
     {
         if (col.gameObject.CompareTag("IsPunch"))
         {
-            Debug.Log("Player Detacted");
             Rigidbody2D player = col.GetComponent<Rigidbody2D>();
 
             if (player != null)
             {
                 player.isKinematic = false;
-
                 Vector2 difference = player.transform.position - transform.position;
                 difference = difference.normalized * 4;
                 player.AddForce(difference, ForceMode2D.Impulse);
-                player.isKinematic = true;
-
+               // player.isKinematic = true;
                 StartCoroutine(KnockBackCo(player));
             }
         }
     }
+
 
     private IEnumerator KnockBackCo(Rigidbody2D player)
     {

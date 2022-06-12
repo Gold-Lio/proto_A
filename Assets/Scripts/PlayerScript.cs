@@ -197,11 +197,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     }
 
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (!col.CompareTag("Player") || !NM.isGameStart) return;
-        if (!PV.IsMine || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
-    }
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    if (!col.CompareTag("Player") || !NM.isGameStart) return;
+    //    if (!PV.IsMine || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+    //}
 
 
     //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
