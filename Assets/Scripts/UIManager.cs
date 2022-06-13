@@ -182,7 +182,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, false);
         NM.MyPlayer.isKillable = false;
 
-        for (int i = 5; i > 0; i--) // 기본 15초 킬대기
+        for (int i = 1; i > 0; i--) // 기본 15초 킬대기
         {
             killCooltime = i;
 

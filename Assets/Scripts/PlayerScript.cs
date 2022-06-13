@@ -9,6 +9,7 @@ using static UIManager;
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
+    public static PlayerScript PS;
 
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
@@ -29,13 +30,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     Vector2 input;
     bool facingRight;
 
-    public float knockBackTime;
-
-
     public GameObject punchGo;
     public Animator punchAnim;
     //public ParticleSystem punchEffect;
     //public AudioClip audioClip;
+
+    private void Awake()
+    {
+        PS = this;
+    }
 
     void Start()
     {
@@ -65,16 +68,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
     }
 
-    void Update()
+    [PunRPC]
+    void FixedUpdate()
     {
         if (PV.IsMine)
         {
             Move();
             PV.RPC("Filp", RpcTarget.AllBuffered, input);
-
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
-
     }
 
     [PunRPC]
@@ -98,58 +100,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         }
     }
 
-
-
     public void SetPos(Vector3 target)
     {
         transform.position = target;
     }
 
-
-    //[PunRPC]
-    //void AnimSprites(bool _isWalk, Vector2 _input)
-    //{
-    //	if (_isWalk)
-    //	{
-    //		state = State.Walk;
-
-    //		if (_input.x == 0) return;
-    //		if (_input.x < 0)
-    //		{
-    //			Character.localScale = Vector3.one;
-    //			if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = Vector3.one;
-    //		}
-    //		else
-    //		{
-    //			Character.localScale = new Vector3(-1, 1, 1);
-    //			if (Ghost.gameObject.activeInHierarchy) Ghost.localScale = new Vector3(-1, 1, 1);
-    //		}
-    //	}
-    //	else
-    //	{
-    //		state = State.Idle;
-    //	}
-    //}
-
-    //void ShowAnim(int index)
-    //{
-    //	for (int i = 0; i < Anims.Length; i++)
-    //		Anims[i].SetActive(index == i);
-    //}
-
-    //IEnumerator Idle()
-    //{
-    //	ShowAnim(0);
-    //	yield return new WaitForSeconds(0.1f);
-    //}
-
-    //IEnumerator Walk()
-    //{
-    //	ShowAnim(0);
-    //	yield return new WaitForSeconds(0.15f);
-    //	ShowAnim(1);
-    //	yield return new WaitForSeconds(0.15f);
-    //}
 
     [PunRPC]
     public void SetColor(int _colorIndex)
@@ -189,22 +144,20 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         }
     }
 
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (!col.gameObject.CompareTag("Player")) return;
-        Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
-    }
-
-
-    //void OnTriggerEnter2D(Collider2D col)
+    //public IEnumerator KnockBack(float knockbackDuration, float knockBackPower, Transform obj)
     //{
-    //    if (!col.CompareTag("Player") || !NM.isGameStart) return;
-    //    if (!PV.IsMine || !isKillable || col.GetComponent<PlayerScript>().isDie) return;
+    //    float timer = 0;
+    //    while(knockbackDuration > timer)
+    //    {
+    //        timer += Time.deltaTime;
+    //        Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+    //        RB.AddForce(-direction * knockBackPower);
+    //    }
+    //    yield return 0;
     //}
-
-
+    
     //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
+
 
     [PunRPC]
     public void Punch()  // 펀치 함수. 

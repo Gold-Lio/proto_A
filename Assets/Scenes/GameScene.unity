@@ -6626,7 +6626,7 @@ PrefabInstance:
     - target: {fileID: 2572442558240624912, guid: 3dbcd3b7f4d6b1240a757028c556e419,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -92.69995
+      value: -92.700195
       objectReference: {fileID: 0}
     - target: {fileID: 2572442558240624912, guid: 3dbcd3b7f4d6b1240a757028c556e419,
         type: 3}
@@ -8400,6 +8400,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152558779}
   m_CullTransparentMesh: 0
+--- !u!1 &1201027810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2140780510313023370, guid: a5d5c874f5be6684f907db7dcc013d81,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686435400392554702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1201027811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201027810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsOpen
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!114 &1201027812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201027810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1201027811}
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1202649883
 GameObject:
   m_ObjectHideFlags: 0
@@ -12191,7 +12241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702901579}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -15646,6 +15696,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissionBox
       objectReference: {fileID: 0}
+    - target: {fileID: 2140780510313023370, guid: a5d5c874f5be6684f907db7dcc013d81,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981703308160074021, guid: a5d5c874f5be6684f907db7dcc013d81,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6097512046388648763, guid: a5d5c874f5be6684f907db7dcc013d81,
         type: 3}
       propertyPath: m_RootOrder
@@ -15700,6 +15760,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115771042151893104, guid: a5d5c874f5be6684f907db7dcc013d81,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085925905316058321, guid: a5d5c874f5be6684f907db7dcc013d81,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5d5c874f5be6684f907db7dcc013d81, type: 3}

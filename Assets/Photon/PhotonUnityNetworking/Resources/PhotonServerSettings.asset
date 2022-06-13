@@ -64,6 +64,8 @@ MonoBehaviour:
   - Filp
   - KnockBackCo
   - punchCo
+  - OnCollisionEnter2D
+  - FixedUpdate
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
