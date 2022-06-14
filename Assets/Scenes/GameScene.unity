@@ -10522,7 +10522,6 @@ MonoBehaviour:
   ChatPanels: []
   anim: {fileID: 1686435399451493625, guid: a5d5c874f5be6684f907db7dcc013d81, type: 3}
   killCooltime: 0
-  emergencyCooltime: 0
 --- !u!4 &1505266036
 Transform:
   m_ObjectHideFlags: 0

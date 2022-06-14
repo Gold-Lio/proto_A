@@ -28,45 +28,32 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: kr
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
   - AddMissionGage
-  - AnimSprites
   - ChatClearRPC
   - ChatRPC
   - ClickRpc
   - DestroyRpc
   - DestroySpaceship
-  - DoorMapClickRPC
-  - EmergencyRPC
+  - Filp
   - Fire
+  - FixedUpdate
   - GameStartRPC
-  - ReportRPC
+  - KnockBackCo
+  - Move
+  - OnTriggerEnter2D
+  - Punch
   - RespawnSpaceship
-  - ReturnToGameRPC
   - SetColor
-  - SetDie
-  - SetGhostColor
   - SetImpoCrew
   - SetMaxMissionGage
-  - SetVotedDie
   - ShowGhostRPC
   - SpawnBody
-  - VoteColorIndexRPC
-  - VotedColorsClearRPC
-  - VoteUpdateRPC
-  - Punch
-  - Move
-  - Filp
-  - KnockBackCo
-  - punchCo
-  - OnCollisionEnter2D
-  - FixedUpdate
-  - OnTriggerEnter2D
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 1
+  DevRegionSetOnce: 0
