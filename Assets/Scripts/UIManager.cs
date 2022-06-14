@@ -40,8 +40,7 @@ public class UIManager : MonoBehaviourPun
 
     public Animator anim;
 
-    public int killCooltime, emergencyCooltime;
-
+    public int killCooltime;
     void Start()
     {
         PV = photonView;
@@ -101,13 +100,12 @@ public class UIManager : MonoBehaviourPun
         else if (curBtn0 == 0)
         {
             // 크루원 작업
-            StartCoroutine(OpenBox());
+            //StartCoroutine(OpenBox());
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
     
     }
-
 
     public void ClickInteractionBtn1()
     {
@@ -195,7 +193,7 @@ public class UIManager : MonoBehaviourPun
         }
         killCooltime = 0;
         Interaction1Text.text = "";
-
+        //Enum상태 변경
         NM.MyPlayer.isKillable = true;
         SetInteractionBtn1(5, true);
     }

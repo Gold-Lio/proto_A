@@ -7,7 +7,13 @@ using UnityEngine.UI;
 using static NetworkManager;
 using static UIManager;
 
-public class PlayerScript : MonoBehaviourPunCallbacks
+public enum State
+{
+    Ready,
+    Attack
+}
+
+public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
 
@@ -17,7 +23,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     public Transform Character, Canvas;
     public Text NickText;
 
-    public enum State { Idle, Walk };
     public State state;
     public bool isWalk, isMove, isImposter, isKillable, isDie;
     public int actor, colorIndex;
@@ -71,12 +76,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     [PunRPC]
     void FixedUpdate()
     {
-        if (PV.IsMine)
+        if (!PV.IsMine)
         {
-            Move();
-            PV.RPC("Filp", RpcTarget.AllBuffered, input);
-            NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+            return;
         }
+
+        Move();
+        PV.RPC("Filp", RpcTarget.AllBuffered, input);
+        NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
     }
 
     [PunRPC]
@@ -104,7 +111,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     {
         transform.position = target;
     }
-
 
     [PunRPC]
     public void SetColor(int _colorIndex)
@@ -155,19 +161,28 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //    }
     //    yield return 0;
     //}
-    
+
     //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+        }
+
+
+    }
+
 
 
     [PunRPC]
     public void Punch()  // 펀치 함수. 
     {
+        state = State.Attack;
         punchGo.SetActive(true);
         punchAnim.SetTrigger("IsPunch");
         StartCoroutine(punchCo());
         // 죽이기 성공
         StartCoroutine(UM.PunchCoolCo());
-
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
         //Vector3 TargetPos = KillTargetPlayer.transform.position;
         //transform.position = TargetPos;
@@ -182,6 +197,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(0.5f);
         punchGo.SetActive(false);
     }
+
 
 }
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7479211199343895847
+--- !u!114 &7474057928074196466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,13 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 456536054883469890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 5964254729532721629}
+  - {fileID: 3458796263149765172}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7719893841155581119
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +40,6 @@ GameObject:
   - component: {fileID: 6836631978736809089}
   - component: {fileID: 1878694176956332237}
   - component: {fileID: 1285795496050467884}
-  - component: {fileID: 994645473225757243}
   - component: {fileID: 1134813157383694236}
   m_Layer: 6
   m_Name: Player
@@ -211,8 +218,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 6836631978736809089}
   - {fileID: 1285795496050467884}
-  - {fileID: 994645473225757243}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -232,22 +239,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 0
---- !u!114 &994645473225757243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719893841155581119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 1
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
 --- !u!210 &1134813157383694236
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -482,6 +473,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2689056477215300119, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
+        type: 3}
+      propertyPath: knockBackStrength
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5504172611636862659, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
         type: 3}
       propertyPath: m_RootOrder
@@ -550,14 +546,15 @@ PrefabInstance:
     - target: {fileID: 8188115637888151800, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
         type: 3}
       propertyPath: ObservedComponents.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8188115637888151800, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
         type: 3}
       propertyPath: ObservedComponents.Array.data[1]
       value: 
-      objectReference: {fileID: 7479211199343895847}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8188115637888151800, guid: 40e2e501a57185d4eb0ed9f86a921ae3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 40e2e501a57185d4eb0ed9f86a921ae3, type: 3}
 --- !u!1 &456536054883469890 stripped
 GameObject:
@@ -577,3 +574,27 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 5347829722509235342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5964254729532721629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1797504560970702163, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5347829722509235342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456536054883469890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3458796263149765172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8806597946453644986, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5347829722509235342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456536054883469890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

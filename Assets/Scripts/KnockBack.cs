@@ -32,16 +32,16 @@ public class KnockBack : MonoBehaviourPun
     }
 
     [PunRPC]
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             hitEffect?.Play();
             hitAudio?.PlayOneShot(hitSound);
-            Rigidbody2D player = col.collider.GetComponent<Rigidbody2D>();
+            Rigidbody2D player = col.gameObject.GetComponent<Rigidbody2D>();
             Debug.Log("µé¾î¿È");
-           
-            if(player != null)
+
+            if (player != null)
             {
                 Vector2 difference = player.transform.position - transform.position;
                 player.AddForce(difference.normalized * knockBackStrength, ForceMode2D.Impulse);
@@ -51,8 +51,7 @@ public class KnockBack : MonoBehaviourPun
             //   StartCoroutine(PlayerScript.PS.KnockBack(knockDuration, knockBackPower, this.transform));
         }
     }
-}
-
+} 
 
 
     //private void OnTriggerEnter2D(Collider2D col)
