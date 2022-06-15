@@ -165,10 +165,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     }
 
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
-    }
+    //public override void OnPlayerLeftRoom(Player otherPlayer)
+    //{
+    //    UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
+    //}
 
 
     public int GetCrewCount()

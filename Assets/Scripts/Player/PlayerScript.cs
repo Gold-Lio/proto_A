@@ -31,9 +31,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
     public GameObject punchGo;
     public Animator punchAnim;
-    //public ParticleSystem punchEffect;
-    //public AudioClip audioClip;
 
+    //[SerializeField] private UI_Inventory uiInventory;
+    //private Inventory inventory;
+  
     private void Awake()
     {
         PS = this;
@@ -49,7 +50,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         NM.SortPlayers();
         isMove = true;
         //StartCoroutine(StateCo());
-        PV = GetComponent<PhotonView>();
+        //uiInventory.SetPlayer(this);
+        //uiInventory.SetInventory(inventory);
     }
 
     //IEnumerator StateCo()
@@ -62,6 +64,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //	NM.Players.Remove(this);
     //	NM.SortPlayers();
     //}
+
 
     void SetNick()
     {
@@ -187,6 +190,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         punchGo.SetActive(false);
     }
 }
+
+
+
+
+
 
 
 //	[PunRPC] //인벤토리를 쏟아낼 함수
