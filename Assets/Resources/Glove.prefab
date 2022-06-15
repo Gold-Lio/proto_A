@@ -293,7 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c695e4fe24232d5489a1fc8eee4c9244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackStrength: 50
+  AttackState: 0
+  knockBackStrength: 20
+  attackClip: {fileID: 8300000, guid: 12a16b827f54b5443920014585939492, type: 3}
 --- !u!1001 &1136032857942377583
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -160,7 +160,6 @@ MonoBehaviour:
   Character: {fileID: 2251365688590393041}
   Canvas: {fileID: 8491290351953271947}
   NickText: {fileID: 8491290352219676445}
-  state: 0
   isWalk: 0
   isMove: 0
   isImposter: 0
@@ -194,7 +193,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 6836631978736809089}
   - {fileID: 1285795496050467884}
   sceneViewId: 0
   InstantiationId: 0
@@ -503,16 +501,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glove
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504172611636862668, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5791587845984521125, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
-        type: 3}
-      propertyPath: knockBackStrength
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e2e501a57185d4eb0ed9f86a921ae3, type: 3}
