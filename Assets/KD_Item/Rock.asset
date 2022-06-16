@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Rock
   itemType: 0
   itemImage: {fileID: 21300008, guid: 2183f75904738814fb98ee9f080f4c20, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 7109002907795722604, guid: 450a2f084561026459aef2900c886323,
+    type: 3}

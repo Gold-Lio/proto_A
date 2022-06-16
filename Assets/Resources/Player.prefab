@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1878694176956332237}
   - component: {fileID: 1285795496050467884}
   - component: {fileID: 1134813157383694236}
+  - component: {fileID: -86978347440380963}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -225,6 +226,20 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-86978347440380963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719893841155581119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d6bf647e5e0044da165e0edb33c3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupActivated: 0
+  theInventory: {fileID: 0}
 --- !u!1 &8491290351953271946
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,11 +527,6 @@ PrefabInstance:
         type: 3}
       propertyPath: knockBackStrength
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8188115637888151800, guid: 40e2e501a57185d4eb0ed9f86a921ae3,
-        type: 3}
-      propertyPath: sceneViewId
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e2e501a57185d4eb0ed9f86a921ae3, type: 3}

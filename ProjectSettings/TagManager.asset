@@ -6,7 +6,7 @@ TagManager:
   tags:
   - DeadBody
   - IsPunch
-  - Slot
+  - Missile
   - Item
   layers:
   - Default

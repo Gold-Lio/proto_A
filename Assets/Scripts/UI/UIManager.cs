@@ -9,6 +9,7 @@ using static NetworkManager;
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
+     //public ActionController actionController;
     void Awake() => UM = this;
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
@@ -117,30 +118,24 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
+
     public void ClickInteractionBtn2()
     {
         // 획득
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
-           
-            
             //if (NM.MyPlayer.isDie) return;
             //NM.MyPlayer.Kill();
         }
     }
 
 
+
+
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
-    }
-
-
-    IEnumerator OpenBox()
-    {
-        GetComponent<BoxInteraction>().OpenBox();
-        yield return new WaitForSeconds(1.0f);
     }
 
 
@@ -198,6 +193,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, true);
     }
 
+
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
     {
         DiePanel.SetActive(true);
@@ -225,7 +221,7 @@ public class UIManager : MonoBehaviourPun
         if (MissionGageSlider.value == MissionGageSlider.maxValue) 
         {
             // 크루원 승리
-            NM.Winner(true);
+            //NM.Winner(true);
         }
     }
 

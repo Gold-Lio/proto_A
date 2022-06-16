@@ -13,7 +13,7 @@ public enum State
     Attack
 }
 
-public class PlayerScript : MonoBehaviourPunCallbacks 
+public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public static PlayerScript PS;
 
@@ -44,6 +44,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     private void Awake()
     {
         PS = this;
+     //   uiInventory.SetPlayer(this);
+      //  uiInventory.SetInventory(inventory);
     }
 
     void Start()
@@ -55,7 +57,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
-
+        //StartCoroutine(StateCo());
     }
 
     public Vector3 GetPosition()
@@ -119,6 +121,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         transform.position = target;
     }
 
+ 
+
+
     [PunRPC]
     public void SetColor(int _colorIndex)
     {
@@ -170,8 +175,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //}
 
     //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
- 
-
+  
 
     [PunRPC]
     public void Punch()  // 펀치 함수. 

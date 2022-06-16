@@ -30,12 +30,12 @@ public class Slot : MonoBehaviour
          SetColor(1);
     }
 
-    //걸러내도 괜찮음. 
-    //슬롯의 개수를 변경시킬 수 있는  사용하는 함수?
-    public void SetSlotCount(int _count)
-    {
+    ////걸러내도 괜찮음. 
+    ////슬롯의 개수를 변경시킬 수 있는  사용하는 함수?
+    //public void SetSlotCount(int _count)
+    //{
         
-    }
+    //}
 
     //슬롯 전체 초기화
     private void ClearSlot()
