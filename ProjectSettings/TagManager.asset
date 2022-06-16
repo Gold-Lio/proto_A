@@ -6,7 +6,8 @@ TagManager:
   tags:
   - DeadBody
   - IsPunch
-  - Missile
+  - Slot
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Item
   - Mission
   - Mission_2
   - 

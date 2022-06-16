@@ -5,11 +5,15 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
+using static PlayerScript;
+
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public static NetworkManager NM;
+
+    public Inventory inventory;
     void Awake() => NM = this;
 
     public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel, CrewWinPanel, ImposterWinPanel;
@@ -113,6 +117,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         return UM.colors[colorIndex];
     }
 
+    //게임이 시작한다~~
+
     public void GameStart()
     {
         // 방장이 게임시작
@@ -161,7 +167,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1);
         ShowPanel(GamePanel);
         ShowGameUI();
+
+
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        
+
         StartCoroutine(UM.PunchCoolCo());
+
 
     }
 

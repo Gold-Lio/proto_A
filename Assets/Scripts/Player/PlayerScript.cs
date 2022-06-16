@@ -13,7 +13,7 @@ public enum State
     Attack
 }
 
-public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
+public class PlayerScript : MonoBehaviourPunCallbacks 
 {
     public static PlayerScript PS;
 
@@ -40,15 +40,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     //public ParticleSystem punchEffect;
     //public AudioClip audioClip;
 
-    [SerializeField] private UI_Inventory uiInventory;
-    private Inventory inventory;
-
 
     private void Awake()
     {
         PS = this;
-     //   uiInventory.SetPlayer(this);
-      //  uiInventory.SetInventory(inventory);
     }
 
     void Start()
@@ -60,7 +55,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
-        //StartCoroutine(StateCo());
+
     }
 
     public Vector3 GetPosition()
@@ -79,17 +74,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     //	NM.Players.Remove(this);
     //	NM.SortPlayers();
     //}
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
-        if (itemWorld != null)
-        {
-            // Touching Item
-            inventory.AddItem(itemWorld.GetItem());
-            itemWorld.DestroySelf();
-        }
-    }
-
 
     void SetNick()
     {
@@ -186,15 +170,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     //}
 
     //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-        }
-
-
-    }
-
+ 
 
 
     [PunRPC]
