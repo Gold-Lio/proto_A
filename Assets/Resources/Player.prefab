@@ -235,11 +235,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7719893841155581119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d6bf647e5e0044da165e0edb33c3b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 964aba927b8ca954eb85303a3102bdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupActivated: 0
-  theInventory: {fileID: 0}
+  items: 0000000000000000000000000000000000000000
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8491290351953271946
 GameObject:
   m_ObjectHideFlags: 0

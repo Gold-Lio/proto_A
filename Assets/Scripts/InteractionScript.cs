@@ -27,7 +27,7 @@ public class InteractionScript : MonoBehaviourPun
 		{
 			if (type == Type.Customize)
 			{
-				Line.SetActive(true);
+				//Line.SetActive(true);
 				UM.SetInteractionBtn0(1, true);
 			}
 
@@ -36,7 +36,7 @@ public class InteractionScript : MonoBehaviourPun
 				// if (col.GetComponent<PlayerScript>().isImposter) return;
 
 				UM.curInteractionNum = curInteractionNum;
-				Line.SetActive(true);
+				//Line.SetActive(true);
 				UM.SetInteractionBtn0(0, true);
 			}
 		}
@@ -48,7 +48,7 @@ public class InteractionScript : MonoBehaviourPun
 		{
 			if (type == Type.Customize)
 			{
-				Line.SetActive(false);
+				//Line.SetActive(false);
 				UM.SetInteractionBtn0(0, false);
 			}
 
@@ -56,7 +56,7 @@ public class InteractionScript : MonoBehaviourPun
 			{
 				//if (col.GetComponent<PlayerScript>().isImposter) return;
 
-				Line.SetActive(false);
+				//Line.SetActive(false);
 				UM.SetInteractionBtn0(0, false);
 			}
 		}

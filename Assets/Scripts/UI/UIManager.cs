@@ -9,7 +9,12 @@ using static NetworkManager;
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
-     //public ActionController actionController;
+    //public ActionController actionController;
+
+    private Inventory inventory;
+    public GameObject itemButton;
+
+
     void Awake() => UM = this;
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
@@ -118,26 +123,30 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-
     public void ClickInteractionBtn2()
     {
         // 획득
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
-            //if (NM.MyPlayer.isDie) return;
-            //NM.MyPlayer.Kill();
+            Pickup.instance.PickUPInventory();
         }
+
+                // 이것의 결과를 가져와야할 것이다~ 이말이야. 
+
+                //if (NM.MyPlayer.isDie) return;
+                //NM.MyPlayer.Kill();
+
+                //inventory.items[i] = 1; // makes sure that the slot is now considered FULL
+                //Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+                //Destroy(gameObject);
+                //break;
+
     }
-
-
-
-
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
     }
-
 
     void Update()
     {
@@ -145,7 +154,6 @@ public class UIManager : MonoBehaviourPun
         SetActiveColors();
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
-
     }
 
     void ShowStartBtn()

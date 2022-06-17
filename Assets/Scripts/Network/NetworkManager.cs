@@ -153,6 +153,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         yield return new WaitForSeconds(3);
         isGameStart = true;
+        
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
         MyPlayer.SetMission();
@@ -162,22 +163,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ShowPanel(GamePanel);
         ShowGameUI();
 
-        Inventory.Instance.SetSlots();
-        FindInventory();
-
+        // Inventory.Instance.SetSlots();
         StartCoroutine(UM.PunchCoolCo());
-
     }
 
     //public override void OnPlayerLeftRoom(Player otherPlayer)
     //{
     //    UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
     //}
-
-    public void FindInventory()
-    {
-        GameObject.Find("Inventory");
-    }
 
     public int GetCrewCount()
     {
@@ -204,22 +197,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
-    [PunRPC]
-    void ShowGhostRPC()
-    {
-        for (int i = 0; i < Players.Count; i++)
-        {
-            if (!MyPlayer.isDie) continue;
-
-            if (Players[i].isDie)
-            {
-                Players[i].transform.GetChild(1).gameObject.SetActive(true);
-                Players[i].transform.GetChild(2).gameObject.SetActive(true);
-            }
-        }
-    }
-
-
     public void WinCheck()
     {
         int crewCount = 0;
@@ -234,7 +211,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             else
                 ++crewCount;
         }
-
         if (impoCount == 0 && crewCount > 0) // 모든 임포가 죽음
             Winner(true);
         else if (impoCount != 0 && impoCount > crewCount) // 임포가 크루보다 많음
@@ -247,13 +223,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (isCrewWin)
         {
-            print("크루원 승리");
+            print("고고학자 승리");
             ShowPanel(CrewWinPanel);
             Invoke("WinnerDelay", 3);
         }
         else
         {
-            print("임포스터 승리");
+            print("파라오 승리");
             ShowPanel(ImposterWinPanel);
             Invoke("WinnerDelay", 3);
         }

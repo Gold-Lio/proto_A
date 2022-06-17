@@ -1,47 +1,34 @@
-using System.Collections;
+癤퓎sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
+public class Slot : MonoBehaviour {
 
 
+    private Inventory inventory;
+    public int index;
 
-public class Slot : MonoBehaviour
-{
-    public Item item;
-    public Image itemImage;
-
-
-    //이미지 투명도 조절
-    public void SetColor(float _alpha)
+    private void Start()
     {
-        Color color = itemImage.color;
-        color.a = _alpha;
-        itemImage.color = color;
+        inventory = GetComponent<Inventory>();
     }
 
-
-    //아이템 추가
-    public void AddItem(Item _item)
+    private void Update()
     {
-        item = _item;
+         new WaitForSeconds(3f);
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 
-        itemImage.sprite = item.itemImage;
-
-         SetColor(1);
+        if (transform.childCount <= 0) {
+            inventory.items[index] = 0;
+        }
     }
 
-    ////걸러내도 괜찮음. 
-    ////슬롯의 개수를 변경시킬 수 있는  사용하는 함수?
-    //public void SetSlotCount(int _count)
-    //{
-        
-    //}
+    public void Cross() {
 
-    //슬롯 전체 초기화
-    private void ClearSlot()
-    {
-        item = null;
-        itemImage.sprite = null;
-        SetColor(0);
+        foreach (Transform child in transform) {
+            child.GetComponent<Spawn>().SpawnItem();
+            GameObject.Destroy(child.gameObject);
+        }
     }
+
 }

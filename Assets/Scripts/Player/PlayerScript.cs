@@ -35,10 +35,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     Vector2 input;
     bool facingRight;
 
+    Vector2 playerDir;
+
     public GameObject punchGo;
     public Animator punchAnim;
     //public ParticleSystem punchEffect;
     //public AudioClip audioClip;
+
 
 
     private void Awake()
@@ -92,6 +95,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
         Move();
         PV.RPC("Filp", RpcTarget.AllBuffered, input);
+        Debug.DrawRay(RB.position, playerDir * 7.0f, Color.red);
+        RaycastHit2D raycast = Physics2D.Raycast(RB.position, playerDir * 7.0f);
+ 
         NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
     }
 
@@ -108,11 +114,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         if (input.x < 0 && !facingRight)
         {
             transform.localScale = new Vector2(1, 1); // left flip.
+            playerDir = Vector2.left;
         }
 
         if (input.x > 0 && !facingRight)
         {
             transform.localScale = new Vector2(-1, 1); // left flip.
+            playerDir = Vector2.right;
         }
     }
 
