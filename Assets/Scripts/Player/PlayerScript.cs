@@ -17,6 +17,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public static PlayerScript PS;
 
+    public Inventory inventory;
+
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
 
@@ -39,6 +41,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
     public GameObject punchGo;
     public Animator punchAnim;
+
     //public ParticleSystem punchEffect;
     //public AudioClip audioClip;
 
@@ -208,6 +211,34 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         punchGo.SetActive(false);
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
+
+    //private void OnCollisioEnter2D(Collision2D col)
+    //{
+    //    IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
+    //    Debug.Log("닿았다");
+    //    if (item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
+
+    
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+    //    if (item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
 
 }
 

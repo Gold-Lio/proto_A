@@ -11,10 +11,6 @@ public class UIManager : MonoBehaviourPun
     public static UIManager UM;
     //public ActionController actionController;
 
-    private Inventory inventory;
-    public GameObject itemButton;
-
-
     void Awake() => UM = this;
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
@@ -129,7 +125,6 @@ public class UIManager : MonoBehaviourPun
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
-            Pickup.instance.PickUPInventory();
         }
 
                 // 이것의 결과를 가져와야할 것이다~ 이말이야. 

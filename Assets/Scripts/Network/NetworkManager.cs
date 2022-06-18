@@ -29,7 +29,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public enum ImpoType {Rand1}
     public ImpoType impoType;
 
-
     void Start()
     {
         if (isTest) return;
@@ -38,6 +37,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PV = photonView;
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
+        
 
     }
 
@@ -158,6 +158,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         MyPlayer.SetNickColor();
         MyPlayer.SetMission();
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
+
+        PlayerScript.PS.GetComponent<Inventory>();
 
         yield return new WaitForSeconds(1);
         ShowPanel(GamePanel);
