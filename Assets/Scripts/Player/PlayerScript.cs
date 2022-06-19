@@ -211,11 +211,22 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         punchGo.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    //private void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+    //    if (item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
+
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+        IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
         if (item != null)
         {
+            Debug.Log("존재함");
+                
             inventory.AddItem(item);
         }
     }
@@ -230,7 +241,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //    }
     //}
 
-    
+
     //private void OnControllerColliderHit(ControllerColliderHit hit)
     //{
     //    IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();

@@ -20,8 +20,6 @@ public class Potion : MonoBehaviour, IInventoryItem
         get { return _Image; }
     }
 
-
-
     public void OnPickup()
     {
         gameObject.SetActive(false);
