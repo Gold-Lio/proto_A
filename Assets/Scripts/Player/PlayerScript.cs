@@ -6,7 +6,6 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using static NetworkManager;
 using static UIManager;
-using static PickUp;
 
 public enum State
 {
@@ -17,7 +16,6 @@ public enum State
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public static PlayerScript PS;
-    public PickUp pickUp;
 
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
@@ -63,7 +61,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
-        pickUp = GetComponent<PickUp>();
         //StartCoroutine(StateCo());
     }
 

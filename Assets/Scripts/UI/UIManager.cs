@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
     //public ActionController actionController;
-    private PickUp pickUp;
 
     void Awake() => UM = this;
 
@@ -47,7 +46,6 @@ public class UIManager : MonoBehaviourPun
     void Start()
     {
         PV = photonView;
-        pickUp = GetComponent<PickUp>();
     }
 
     public void SetInteractionBtn0(int index, bool _active)
