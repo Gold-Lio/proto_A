@@ -68,8 +68,6 @@ public class InteractionScript : MonoBehaviourPun
 
                 //Line.SetActive(false);
                 UM.SetInteractionBtn0(0, false);
-
-				MM.isMissioning = false;
             }
 
 

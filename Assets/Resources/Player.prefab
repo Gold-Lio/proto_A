@@ -154,7 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUp: {fileID: 6807971768638202432, guid: f874e0565f4615443a69e676eee4b182, type: 3}
+  inventory: {fileID: 4429179265509200975, guid: 485704d0df7e75d418cdb22f957210cf,
+    type: 3}
   RB: {fileID: 4313270873243922857}
   CharacterSR:
   - {fileID: 1140705742494177079}
@@ -239,9 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1b6f52a2d824d49b01f8505d9e0ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
-  slotPrefab: {fileID: 1430472830416679184, guid: 899fe798f94d8fa4db8fe84123939b2b,
-    type: 3}
 --- !u!1 &8491290351953271946
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,51 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class HUD : MonoBehaviour
 {
-    public Inventory Inventory;
+    public Inventory inventory;
 
-    public GameObject MessagePanel;
-
-    // Use this for initialization
-    void Start()
+    //시작과 동시에 
+    private void Start()
     {
-        Inventory.ItemAdded += InventoryScript_ItemAdded;
+        inventory.ItemAdded += Inventory_Script_ItemAdded;
     }
 
-    private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
+    private void Inventory_Script_ItemAdded(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");
-        int index = -1;
+
+        Debug.Log("찾았다");
         foreach (Transform slot in inventoryPanel)
         {
-            index++;
+            Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
 
-            //    // Border... Image
-            //    Transform imageTransform = slot.GetChild(0).GetChild(0).GetComponent<Inventory>();
-            //    //ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
+            if (!image.enabled)
+            {
+                image.enabled = true;
+                image.sprite = e.Item.Image;
 
-            //    if (index == e.Item.Slot.Id)
-            //    {
-            //        image.enabled = true;
-            //        image.sprite = e.Item.Image;
-
-            //        int itemCount = e.Item.Slot.Count;
-            //        if (itemCount > 1)
-            //            txtCount.text = itemCount.ToString();
-            //        else
-            //            txtCount.text = "";
-
-
-            //        // Store a reference to the item
-            //        itemDragHandler.Item = e.Item;
-
-            //        break;
-            //    }
-            //}
+                break;
+            }
         }
-
     }
 }
-

@@ -16,6 +16,7 @@ public enum State
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public static PlayerScript PS;
+    public Inventory inventory;
 
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
@@ -216,14 +217,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //}
 
 
-    //private void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-    //    if (item != null)
-    //    {
-    //        inventory.AddItem(item);
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
 
     //private void OnCollisionEnter2D(Collision2D col)
     //{
@@ -231,7 +232,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //    if (item != null)
     //    {
     //        Debug.Log("존재함");
-                
+
     //        inventory.AddItem(item);
     //    }
     //}
