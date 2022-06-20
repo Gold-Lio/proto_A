@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1878694176956332237}
   - component: {fileID: 1285795496050467884}
   - component: {fileID: 1134813157383694236}
+  - component: {fileID: 887397912969156617}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -153,8 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 8963171557868526735, guid: 485704d0df7e75d418cdb22f957210cf,
-    type: 3}
+  pickUp: {fileID: 6807971768638202432, guid: f874e0565f4615443a69e676eee4b182, type: 3}
   RB: {fileID: 4313270873243922857}
   CharacterSR:
   - {fileID: 1140705742494177079}
@@ -227,6 +227,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &887397912969156617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719893841155581119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1b6f52a2d824d49b01f8505d9e0ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots: []
+  slotPrefab: {fileID: 1430472830416679184, guid: 899fe798f94d8fa4db8fe84123939b2b,
+    type: 3}
 --- !u!1 &8491290351953271946
 GameObject:
   m_ObjectHideFlags: 0

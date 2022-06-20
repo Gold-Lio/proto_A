@@ -6,6 +6,7 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using static NetworkManager;
 using static UIManager;
+using static PickUp;
 
 public enum State
 {
@@ -16,8 +17,7 @@ public enum State
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public static PlayerScript PS;
-
-    public Inventory inventory;
+    public PickUp pickUp;
 
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
@@ -63,6 +63,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
+        pickUp = GetComponent<PickUp>();
         //StartCoroutine(StateCo());
     }
 
@@ -132,8 +133,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         transform.position = target;
     }
 
- 
-
 
     [PunRPC]
     public void SetColor(int _colorIndex)
@@ -197,6 +196,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         StartCoroutine(punchCo());
         // 죽이기 성공
         StartCoroutine(UM.PunchCoolCo());
+        //KillTargetPlayer.GetComponent<PhotonView>().RPC("Punch", RpcTarget.AllViaServer, true);
+
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
         //Vector3 TargetPos = KillTargetPlayer.transform.position;
         //transform.position = TargetPos;
@@ -211,6 +212,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         punchGo.SetActive(false);
     }
 
+    //[PunRPC]
+    //public void GetItem()
+    //{
+    //    pickUp.SetPickUp();
+    //}
+
+
     //private void OnTriggerEnter2D(Collider2D col)
     //{
     //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
@@ -220,16 +228,16 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //    }
     //}
 
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            Debug.Log("존재함");
+    //private void OnCollisionEnter2D(Collision2D col)
+    //{
+    //    IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
+    //    if (item != null)
+    //    {
+    //        Debug.Log("존재함");
                 
-            inventory.AddItem(item);
-        }
-    }
+    //        inventory.AddItem(item);
+    //    }
+    //}
 
     //private void OnCollisioEnter2D(Collision2D col)
     //{

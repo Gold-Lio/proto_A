@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
     //public ActionController actionController;
+    private PickUp pickUp;
 
     void Awake() => UM = this;
 
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviourPun
     void Start()
     {
         PV = photonView;
+        pickUp = GetComponent<PickUp>();
     }
 
     public void SetInteractionBtn0(int index, bool _active)
@@ -125,6 +127,7 @@ public class UIManager : MonoBehaviourPun
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
+            //pickUp.SetPickUp();
         }
 
                 // 이것의 결과를 가져와야할 것이다~ 이말이야. 

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3498195086997642849}
   - component: {fileID: 3498195086997642850}
   - component: {fileID: 3498195086997642851}
-  - component: {fileID: 3498195086997642844}
+  - component: {fileID: 2917498458640209787}
+  - component: {fileID: 432808509945714187}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -132,7 +133,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3498195086997642844
+--- !u!114 &2917498458640209787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +142,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 3498195086997642846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5283fd416dd47f4ebb0c2a2d61e47f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a56ef68375e92643b9a2e49bb1b2086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Image: {fileID: 21300008, guid: 2183f75904738814fb98ee9f080f4c20, type: 3}
+  slotItem: {fileID: 4053634406020324265, guid: 210b46fcee777d147ba51a340469bf17,
+    type: 3}
+  inventory: {fileID: 8963171557868526735, guid: 485704d0df7e75d418cdb22f957210cf,
+    type: 3}
+--- !u!114 &432808509945714187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498195086997642846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff0973164e98cf42a000567a9481650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  curInteractionNum: 2

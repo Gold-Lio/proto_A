@@ -6,10 +6,12 @@ using Photon.Realtime;
 using static UIManager;
 using static NetworkManager;
 
-public class InteractionScript : MonoBehaviourPun
+public class InteractionScript : MonoBehaviourPun 
 {
 	public enum Type { Customize, Mission, PickUp };
 	public Type type;
+	MinigameManager MM;
+
 	GameObject Line;
 	public int curInteractionNum;
 	private Animator anim;
@@ -19,6 +21,7 @@ public class InteractionScript : MonoBehaviourPun
     {		
 	//	Line = transform.GetChild(0).gameObject;
 		anim = GetComponent<Animator>();
+		MM = GetComponent<MinigameManager>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -39,6 +42,13 @@ public class InteractionScript : MonoBehaviourPun
 				//Line.SetActive(true);
 				UM.SetInteractionBtn0(0, true);
 			}
+
+			else if(type == Type.PickUp)
+            {
+			
+				
+				 //UM.SetInteractionBtn2(6, true);
+            }
 		}
 	}
 
@@ -53,14 +63,36 @@ public class InteractionScript : MonoBehaviourPun
 			}
 
 			else if (type == Type.Mission)
-			{
-				//if (col.GetComponent<PlayerScript>().isImposter) return;
+            {
+                //if (col.GetComponent<PlayerScript>().isImposter) return;
 
-				//Line.SetActive(false);
-				UM.SetInteractionBtn0(0, false);
+                //Line.SetActive(false);
+                UM.SetInteractionBtn0(0, false);
+
+				MM.isMissioning = false;
+            }
+
+
+            else if (type == Type.PickUp)
+			{
+			
+				// UM.SetInteractionBtn2(6, false);
 			}
 		}
 	}
 
+    public void StartMission()
+    {
+        throw new System.NotImplementedException();
+    }
 
+    public void CancelMission()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void CompleteMission()
+    {
+        throw new System.NotImplementedException();
+    }
 }

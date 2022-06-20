@@ -159,7 +159,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         MyPlayer.SetMission();
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 
+
         PlayerScript.PS.GetComponent<Inventory>();
+       // Inventory.instance.SetInventory();
+
 
         yield return new WaitForSeconds(1);
         ShowPanel(GamePanel);
