@@ -12,8 +12,13 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
-
     }
+
+    //public void OnDrag(PointerEventData eventData)
+    //{
+    //    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //    transform.position = mousePos;
+    //}
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.localPosition = Vector3.zero;

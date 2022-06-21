@@ -27,7 +27,6 @@ public class Sword : MonoBehaviour, IInventoryItem
         gameObject.SetActive(false);
     }
 
-
     //일단 그냥 3d라도 해보자. 
 
     public void OnDrop()

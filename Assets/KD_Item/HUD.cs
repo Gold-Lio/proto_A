@@ -41,18 +41,20 @@ public class HUD : MonoBehaviour
         foreach (Transform slot in inventoryPanel)
         {
             // Border... Image
-            Transform imageTransform = slot.GetChild(0).GetChild(0);
+            Transform imageTransform = slot.GetChild(0).GetChild(0); 
             Image image = imageTransform.GetComponent<Image>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
-            if (!image.enabled)
 
+            //we found the empty slot
+            if (!image.enabled)
             {
                 image.enabled = true;
                 image.sprite = e.Item.Image;
 
-                itemDragHandler.Item = e.Item;
 
+                //store a reference to the item
+                itemDragHandler.Item = e.Item;
                 break;
             }
         }
@@ -63,20 +65,25 @@ public class HUD : MonoBehaviour
         Transform inventoryPanel = transform.Find("InventoryPanel");
         foreach (Transform slot in inventoryPanel)
         {
-            // Border... Image
+            // Border... Image  
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-            Image image = imageTransform.GetComponent<Image>();
+            Image image = imageTransform.GetComponent<Image>(); 
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
-
-            if (itemDragHandler.Item.Equals(e.Item))
+            if(itemDragHandler.Item == null)
             {
-                // image.enabled = false;
-                // image.sprite = null;
-                itemDragHandler.Item = null;
-                break;
+                continue;
             }
+
+            ////we found the item int the UI
+            //if (itemDragHandler.Item.Equals(e.Item))
+            //{
+            //    image.enabled = false;
+            //    image.sprite = null;
+            //    itemDragHandler.Item = null;
+            //    continue;
+            //     break;
+            //}
         }
     }
-
 }

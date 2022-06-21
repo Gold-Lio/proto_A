@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour
 
     public void RemovedItem(IInventoryItem item)
     {
-
         if (mItems.Contains(item))
         {
             mItems.Remove(item);
