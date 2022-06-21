@@ -45,8 +45,9 @@ public class HUD : MonoBehaviour
             Image image = imageTransform.GetComponent<Image>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
-          if(!image.enabled)
-                {
+            if (!image.enabled)
+
+            {
                 image.enabled = true;
                 image.sprite = e.Item.Image;
 
@@ -70,8 +71,8 @@ public class HUD : MonoBehaviour
 
             if (itemDragHandler.Item.Equals(e.Item))
             {
-                image.enabled = false;
-                image.sprite = null;
+                // image.enabled = false;
+                // image.sprite = null;
                 itemDragHandler.Item = null;
                 break;
             }
