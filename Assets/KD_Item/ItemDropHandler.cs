@@ -12,6 +12,8 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
 
         if (!RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition))
         {
+            Debug.Log("onDrop");
+
             IInventoryItem item = eventData.pointerDrag.gameObject.GetComponent<ItemDragHandler>().Item;
             if (item != null)
             {
