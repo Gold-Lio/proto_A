@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     private List<IInventoryItem> mItems = new List<IInventoryItem>(); //인터페이스의 List 변수 mitems를 만듦
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
+    public event EventHandler<InventoryEventArgs> ItemRemoved;
 
     public void AddItem(IInventoryItem item)
     {
@@ -32,6 +33,26 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RemovedItem(IInventoryItem item)
+    {
+
+        if (mItems.Contains(item))
+        {
+            mItems.Remove(item);
+            item.OnDrop();
+
+            Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
+            if (collider != null)
+            {
+                collider.enabled = true;
+            }
+
+            if (ItemRemoved != null)
+            {
+                ItemRemoved(this, new InventoryEventArgs(item));
+            }
+        }
+    }
 }
 //    public static Inventory instance;
 //    //슬롯 데이타 리스트를 만들고 슬롯을 관리해준다.
