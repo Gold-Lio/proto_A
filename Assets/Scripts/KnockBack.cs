@@ -13,13 +13,10 @@ public class KnockBack : MonoBehaviourPun
         Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
         if (RB != null)
         {
-
             Vector2 input = col.transform.position - transform.position;
             input.y = 0;
 
             RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
-
-
         }
     }
 }

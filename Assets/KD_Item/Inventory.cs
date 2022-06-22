@@ -53,30 +53,5 @@ public class Inventory : MonoBehaviour
         }
     }
 }
-//    public static Inventory instance;
-//    //슬롯 데이타 리스트를 만들고 슬롯을 관리해준다.
-//    public List<SlotData> slots = new List<SlotData>();
-//    private int maxSlot = 5;
-
-//    public GameObject slotPrefab;
-
-//    public void Start()
-//    {
-//        //slot을 프리팹화 한 후 panel아래에 maxSlot만큼 생성
-//        GameObject inventoryPanel = GameObject.Find("InventoryPanel");
-
-//        for (int i = 0; i < maxSlot; i++)
-//        {
-//            GameObject go = Instantiate(slotPrefab, inventoryPanel.transform, false);
-//            //리스트에 isempty와 슬롯오브젝트르르 담아서 추가해준다.
-//            go.name = "Slot_" + i;
-//            SlotData slot = new SlotData();
-//            slot.isEmpty = true;
-//            slot.slotObject = go;
-//            slots.Add(slot);
-
-//        }
-//    }
-//}
 
 
