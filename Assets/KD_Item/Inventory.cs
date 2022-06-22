@@ -35,8 +35,8 @@ public class Inventory : MonoBehaviour
 
     public void RemovedItem(IInventoryItem item)
     {
-        if (mItems.Contains(item))
-        {
+        //if (mItems.Contains(item))
+        //{
             mItems.Remove(item);
             item.OnDrop();
 
@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
             {
                 ItemRemoved(this, new InventoryEventArgs(item));
             }
-        }
+       // }
     }
 }
 

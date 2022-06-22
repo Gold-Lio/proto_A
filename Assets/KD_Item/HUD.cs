@@ -28,7 +28,7 @@ public class HUD : MonoBehaviour
 
 
             //we found the empty slot
-            if (!image.enabled)
+           if (!image.enabled)
             {
                 image.enabled = true;
                 image.sprite = e.Item.Image;
