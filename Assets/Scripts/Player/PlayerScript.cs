@@ -91,8 +91,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Move()
     {
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        RB.MovePosition(RB.position + (input * speed * Time.deltaTime));
+        float inputX = Input.GetAxisRaw("Horizontal");
+        float inputY = Input.GetAxisRaw("Vertical");
+
+        input = new Vector2(inputX, inputY);
+        input *= speed;
+        RB.velocity = input.normalized * speed;
     }
 
     [PunRPC]
