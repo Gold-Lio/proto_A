@@ -41,10 +41,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     public GameObject punchGo;
     public Animator punchAnim;
 
-    //public ParticleSystem punchEffect;
-    //public AudioClip audioClip;
-
-
 
     private void Awake()
     {
@@ -70,17 +66,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         return transform.position;
     }
 
-
-    //IEnumerator StateCo()
-    //{
-    //	while (true) yield return StartCoroutine(state.ToString());
-    //}
-
-    //void OnDestroy()
-    //{
-    //	NM.Players.Remove(this);
-    //	NM.SortPlayers();
-    //}
 
     void SetNick()
     {
@@ -131,7 +116,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         transform.position = target;
     }
 
-
     [PunRPC]
     public void SetColor(int _colorIndex)
     {
@@ -170,20 +154,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         }
     }
 
-    //public IEnumerator KnockBack(float knockbackDuration, float knockBackPower, Transform obj)
-    //{
-    //    float timer = 0;
-    //    while(knockbackDuration > timer)
-    //    {
-    //        timer += Time.deltaTime;
-    //        Vector2 direction = (obj.transform.position - this.transform.position).normalized;
-    //        RB.AddForce(-direction * knockBackPower);
-    //    }
-    //    yield return 0;
-    //}
-
-    //if(col.GetComponent<!!!>) 아이템스크립트를 가지고 있다면 setinteractionBtn의 2의 6번이 켜져야한다. 
-  
 
     [PunRPC]
     public void Punch()  // 펀치 함수. 
@@ -210,13 +180,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         punchGo.SetActive(false);
     }
 
-    //[PunRPC]
-    //public void GetItem()
-    //{
-    //    pickUp.SetPickUp();
-    //}
-
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
@@ -225,38 +188,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             inventory.AddItem(item);
         }
     }
-
-    //private void OnCollisionEnter2D(Collision2D col)
-    //{
-    //    IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
-    //    if (item != null)
-    //    {
-    //        Debug.Log("존재함");
-
-    //        inventory.AddItem(item);
-    //    }
-    //}
-
-    //private void OnCollisioEnter2D(Collision2D col)
-    //{
-    //    IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
-    //    Debug.Log("닿았다");
-    //    if (item != null)
-    //    {
-    //        inventory.AddItem(item);
-    //    }
-    //}
-
-
-    //private void OnControllerColliderHit(ControllerColliderHit hit)
-    //{
-    //    IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
-    //    if (item != null)
-    //    {
-    //        inventory.AddItem(item);
-    //    }
-    //}
-
 }
 
 
