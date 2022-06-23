@@ -73,7 +73,6 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn1.sprite = sprites[index];
         InteractionBtn1.GetComponent<Button>().interactable = active1;
     }
-
     public void SetInteractionBtn2(int index, bool _active)
     {
         curBtn2 = index;
@@ -88,7 +87,6 @@ public class UIManager : MonoBehaviourPun
         NM.MyPlayer.GetComponent<PhotonView>().RPC("SetColor", RpcTarget.AllBuffered, _colorIndex);
     }
 
-
     public void ClickInteractionBtn0()
     {
         // 커스터마이즈
@@ -102,11 +100,9 @@ public class UIManager : MonoBehaviourPun
         else if (curBtn0 == 0)
         {
             // 크루원 작업
-            //StartCoroutine(OpenBox());
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
-    
     }
 
     public void ClickInteractionBtn1()
