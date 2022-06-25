@@ -16,7 +16,7 @@ public enum State
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public static PlayerScript PS;
-    public Inventory inventory;
+  //  public Inventory inventory;
 
     public Rigidbody2D RB;
     public SpriteRenderer[] CharacterSR;
@@ -37,7 +37,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     bool facingRight;
 
     Vector2 playerDir;
-
+    Vector3 curPos;
+    
     public GameObject punchGo;
     public Animator punchAnim;
 
@@ -75,17 +76,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     [PunRPC]
     void FixedUpdate()
     {
-        if (!PV.IsMine)
+        if(!PV.IsMine)
         {
             return;
         }
 
-        Move();
-        PV.RPC("Filp", RpcTarget.AllBuffered, input);
-        Debug.DrawRay(RB.position, playerDir * 7.0f, Color.red);
-        RaycastHit2D raycast = Physics2D.Raycast(RB.position, playerDir * 7.0f);
- 
-        NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+        if(PV.IsMine)
+        {
+            Move();
+            PV.RPC("Filp", RpcTarget.AllBuffered, input);
+            NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+        }
+
+        // IsMine이 아닌 것들은 부드럽게 위치 동기화
+        else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
+        else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
     [PunRPC]
@@ -184,14 +189,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         punchGo.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            inventory.AddItem(item);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+    //    if (item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
 }
 
 
