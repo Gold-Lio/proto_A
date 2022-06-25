@@ -13,14 +13,15 @@ public enum State
     Attack
 }
 
-public class PlayerScript : MonoBehaviourPunCallbacks
+public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
   //  public Inventory inventory;
 
     public Rigidbody2D RB;
+    public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
-
+    
     public Transform Character, Canvas;
     public Text NickText;
 
@@ -39,7 +40,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     Vector2 playerDir;
     Vector3 curPos;
     
-    public GameObject punchGo;
     public Animator punchAnim;
 
 
@@ -81,44 +81,46 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             return;
         }
 
-        if(PV.IsMine)
-        {
-            Move();
-            PV.RPC("Filp", RpcTarget.AllBuffered, input);
-            NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
-        }
-
-        // IsMine이 아닌 것들은 부드럽게 위치 동기화
-        else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
-        else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
-    }
-
-    [PunRPC]
-    public void Move()
-    {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
         input = new Vector2(inputX, inputY);
         input *= speed;
         RB.velocity = input.normalized * speed;
+
+        if (PV.IsMine)
+        {
+            if(inputX != 0)
+            {
+                PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
+            }
+            NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+        }
+        // IsMine이 아닌 것들은 부드럽게 위치 동기화
+        else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
+        else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
     [PunRPC]
-    public void Filp(Vector2 input)
-    {
-        if (input.x < 0 && !facingRight)
-        {
-            transform.localScale = new Vector2(1, 1); // left flip.
-            playerDir = Vector2.left;
-        }
+    void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
-        if (input.x > 0 && !facingRight)
-        {
-            transform.localScale = new Vector2(-1, 1); // left flip.
-            playerDir = Vector2.right;
-        }
-    }
+    //[PunRPC]
+    //public void Filp(Vector2 input)
+    //{
+    //    //if (input.x < 0 && !facingRight)
+    //    //{
+    //    //    transform.localScale = new Vector2(1, 1); // left flip.
+    //    //    playerDir = Vector2.left;
+    //    //}
+
+    //    //if (input.x > 0 && !facingRight)
+    //    //{
+    //    //    transform.localScale = new Vector2(-1, 1); // left flip.
+    //    //    playerDir = Vector2.right;
+    //    //}
+
+
+    //}
 
     public void SetPos(Vector3 target)
     {
@@ -167,10 +169,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Punch()  // 펀치 함수. 
     {
-        state = State.Attack;
-        punchGo.SetActive(true);
-        punchAnim.SetTrigger("IsPunch");
-        StartCoroutine(punchCo());
+        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? -2f : 0f, 2f, -2f), Quaternion.identity)
+                    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
+
         // 죽이기 성공
         StartCoroutine(UM.PunchCoolCo());
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("Punch", RpcTarget.AllViaServer, true);
@@ -183,11 +184,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         //CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
     }
 
-    IEnumerator punchCo()
-    {
-        yield return new WaitForSeconds(0.5f);
-        punchGo.SetActive(false);
-    }
+    //IEnumerator punchCo()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    punchGo.SetActive(false);
+    //}
 
     //private void OnTriggerEnter2D(Collider2D col)
     //{
@@ -197,6 +198,20 @@ public class PlayerScript : MonoBehaviourPunCallbacks
     //        inventory.AddItem(item);
     //    }
     //}
+
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+        else
+        {
+            curPos = (Vector3)stream.ReceiveNext();
+        }
+    }
+
 }
 
 

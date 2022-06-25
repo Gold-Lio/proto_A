@@ -4,21 +4,32 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class KnockBack : MonoBehaviourPun
+public class KnockBack : MonoBehaviourPunCallbacks
 {
     public float knockBackStrength;
+    public PhotonView PV;
+    int dir;
+
+    private void Start() => Destroy(gameObject, 0.4f);
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
-        if (RB != null)
+        if(!PV.IsMine  && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
         {
-            Vector2 input = col.transform.position - transform.position;
-            input.y = 0;
-
-            RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
+            Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
+            Debug.Log("´ê´Â´Ù");
+            if (RB != null)
+            {
+                col.GetComponent<PlayerScript>();
+                Vector2 input = col.transform.position - transform.position;
+                input.y = 0;
+                RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
+            }
         }
     }
+
+    [PunRPC]
+    void DirRPC(int dir) => this.dir = dir;
 }
    
 

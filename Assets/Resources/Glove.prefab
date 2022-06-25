@@ -10,12 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5504172611636862659}
   - component: {fileID: 5504172611636862658}
-  - component: {fileID: 5504172611636862669}
   - component: {fileID: 1421847538900103152}
   - component: {fileID: 682664291652312124}
   - component: {fileID: 8057663966443936549}
   - component: {fileID: 8188115637888151800}
-  - component: {fileID: 1797504560970702163}
   - component: {fileID: 5791587845984521125}
   m_Layer: 6
   m_Name: Glove
@@ -23,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5504172611636862659
 Transform:
   m_ObjectHideFlags: 0
@@ -80,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b353eef314711ab41875b3236cdaa54f, type: 3}
-  m_Color: {r: 0.6226415, g: 0.6117647, b: 0.4258633, a: 0}
+  m_Color: {r: 0.6226415, g: 0.6117647, b: 0.4258633, a: 0.4117647}
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 0
@@ -90,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5504172611636862669
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5504172611636862668}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 948de361037a14c4bb1dc573b156c97a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &1421847538900103152
 Rigidbody2D:
   serializedVersion: 4
@@ -260,27 +239,10 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1797504560970702163}
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1797504560970702163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5504172611636862668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &5791587845984521125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c695e4fe24232d5489a1fc8eee4c9244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackStrength: 50
+  knockBackStrength: 20
+  PV: {fileID: 8188115637888151800}
 --- !u!1001 &1136032857942377583
 PrefabInstance:
   m_ObjectHideFlags: 0
