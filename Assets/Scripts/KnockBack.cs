@@ -12,6 +12,8 @@ public class KnockBack : MonoBehaviourPunCallbacks
 
     private void Start() => Destroy(gameObject, 0.4f);
 
+    void Update() => transform.Translate(Vector3.right * 4f * Time.deltaTime * dir);
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(!PV.IsMine  && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
@@ -24,6 +26,7 @@ public class KnockBack : MonoBehaviourPunCallbacks
                 Vector2 input = col.transform.position - transform.position;
                 input.y = 0;
                 RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
+                Debug.Log("OK");
             }
         }
     }

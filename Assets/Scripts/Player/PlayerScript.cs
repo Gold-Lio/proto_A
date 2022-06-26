@@ -7,16 +7,9 @@ using UnityEngine.UI;
 using static NetworkManager;
 using static UIManager;
 
-public enum State
-{
-    Ready,
-    Attack
-}
-
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
-  //  public Inventory inventory;
 
     public Rigidbody2D RB;
     public SpriteRenderer SR;
@@ -25,7 +18,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public Transform Character, Canvas;
     public Text NickText;
 
-    public State state;
     public bool isWalk, isMove, isImposter, isKillable, isDie;
     public int actor, colorIndex;
     public float speed; //기본 40
@@ -46,8 +38,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         PS = this;
-     //   uiInventory.SetPlayer(this);
-      //  uiInventory.SetInventory(inventory);
     }
 
     void Start()
@@ -59,15 +49,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
-        //StartCoroutine(StateCo());
     }
 
     public Vector3 GetPosition()
     {
         return transform.position;
     }
-
-
     void SetNick()
     {
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
@@ -118,8 +105,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     //    //    transform.localScale = new Vector2(-1, 1); // left flip.
     //    //    playerDir = Vector2.right;
     //    //}
-
-
     //}
 
     public void SetPos(Vector3 target)
@@ -165,15 +150,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-
     [PunRPC]
     public void Punch()  // 펀치 함수. 
     {
-        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? -2f : 0f, 2f, -2f), Quaternion.identity)
+        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f), Quaternion.Euler(0,0,-180))
                     .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
-        // 죽이기 성공
         StartCoroutine(UM.PunchCoolCo());
+
+
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("Punch", RpcTarget.AllViaServer, true);
 
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
@@ -183,22 +168,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         //GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
         //CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
     }
-
-    //IEnumerator punchCo()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    punchGo.SetActive(false);
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-    //    if (item != null)
-    //    {
-    //        inventory.AddItem(item);
-    //    }
-    //}
-
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {

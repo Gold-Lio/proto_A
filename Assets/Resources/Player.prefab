@@ -160,7 +160,6 @@ MonoBehaviour:
   Character: {fileID: 2251365688590393041}
   Canvas: {fileID: 8491290351953271947}
   NickText: {fileID: 8491290352219676445}
-  state: 0
   isWalk: 0
   isMove: 0
   isImposter: 0
