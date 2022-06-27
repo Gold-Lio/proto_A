@@ -10,6 +10,10 @@ public class KnockBack : MonoBehaviourPunCallbacks
     public PhotonView PV;
     int dir;
 
+    public Transform cam;
+    Vector3 camPosition_Origin;
+    public float shake;
+
     private void Start() => Destroy(gameObject, 0.4f);
 
     void Update() => transform.Translate(Vector3.right * 4f * Time.deltaTime * dir);
@@ -20,6 +24,7 @@ public class KnockBack : MonoBehaviourPunCallbacks
         {
             Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
             Debug.Log("´ê´Â´Ù");
+             
             if (RB != null)
             {
                 col.GetComponent<PlayerScript>();
@@ -27,12 +32,31 @@ public class KnockBack : MonoBehaviourPunCallbacks
                 input.y = 0;
                 RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
                 Debug.Log("OK");
+              //StartCoroutine(CamAction());
             }
         }
     }
 
     [PunRPC]
     void DirRPC(int dir) => this.dir = dir;
+
+
+   // IEnumerator CamAction()
+   // {
+   ////     cam = CameraSetup.instance.transform;
+
+   //     camPosition_Origin = cam.position;
+   //     cam.position = 
+   //         new Vector3(cam.position.x + Random.Range(-shake,shake),cam.position.y + Random.Range(-shake,shake),
+   //         cam.position.z + Random.Range(-shake,shake));
+   //     yield return new WaitForSecondsRealtime(0.05f);
+   //     cam.position =
+   //               new Vector3(cam.position.x + Random.Range(-shake, shake), cam.position.y + Random.Range(-shake, shake),
+   //               cam.position.z + Random.Range(-shake, shake));
+   //     yield return new WaitForSecondsRealtime(0.05f);
+
+   //     cam.position = camPosition_Origin;
+   // }
 }
    
 

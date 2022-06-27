@@ -255,8 +255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c695e4fe24232d5489a1fc8eee4c9244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackStrength: 20
+  knockBackStrength: 100
   PV: {fileID: 8188115637888151800}
+  cam: {fileID: 0}
+  shake: 0.05
 --- !u!1001 &1136032857942377583
 PrefabInstance:
   m_ObjectHideFlags: 0
