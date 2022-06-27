@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6480ce1362808541ba2f3482723341a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    itemtype: 0
+    itemName: 
+    itemImage: {fileID: 0}
+  itemIcon: {fileID: 8606407783737638305}
 --- !u!1 &8606407783737638319
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +151,7 @@ GameObject:
   - component: {fileID: 8606407783737638304}
   - component: {fileID: 8606407783737638305}
   m_Layer: 5
-  m_Name: ItemImgae
+  m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5d9ba4e7d0964044ea54abe409d81dfd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

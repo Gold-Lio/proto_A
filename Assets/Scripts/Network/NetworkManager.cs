@@ -153,7 +153,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         yield return new WaitForSeconds(3);
         isGameStart = true;
-        
+         
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
         MyPlayer.SetMission();
@@ -168,6 +168,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ShowPanel(GamePanel);
         ShowGameUI();
 
+     //   Inventory_UI.instance.GoInventory()
         // Inventory.Instance.SetSlots();
         StartCoroutine(UM.PunchCoolCo());
     }

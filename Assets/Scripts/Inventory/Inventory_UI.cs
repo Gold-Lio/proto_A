@@ -6,24 +6,27 @@ using UnityEngine;
 
 public class Inventory_UI : MonoBehaviour 
 {
- //   public PhotonView PV;
+    Inventory inven;
+    Slot[] slots;
+    public Transform slotHolder;
 
-    public GameObject inventoryPanel;
-    bool activeInventory = false;
-
-    private void Start()
+    // 스타트하자마자? 시작되는 문제. 
+    public void Start()
     {
-        inventoryPanel.SetActive(activeInventory);
+        inven = Inventory.instance;
+        slots = slotHolder.GetComponentsInChildren<Slot>();
+        inven.onChangeItem += RedrawSlotUI;
     }
-
-    private void Update()
+    public void RedrawSlotUI()
     {
-        //if (PV.IsMine)
-        //{
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                activeInventory = !activeInventory;
-                inventoryPanel.SetActive(activeInventory);
-            }
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].RemoveSlot();
+        }
+        for (int i = 0; i < inven.items.Count; i++)
+        {
+            slots[i].item = inven.items[i];
+            slots[i].UpdateSlotUI();
+        }
     }
 }
