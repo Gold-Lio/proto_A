@@ -25,7 +25,6 @@ public class Slot : MonoBehaviour
         item = _item;
         itemImage.sprite = item.itemImage;
 
-
         SetColor(1); // 아이템이 들어왔기때문에 알파값 1로 변경
     }
 

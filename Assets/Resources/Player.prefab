@@ -152,6 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theInventory: {fileID: 3914781232652402673, guid: e828b579b28b3ca458276b6af776b68e,
+    type: 3}
+  range: 100
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
   RB: {fileID: 4313270873243922857}
   SR: {fileID: 1140705742494177079}
   CharacterSR:
@@ -172,10 +178,6 @@ MonoBehaviour:
   targetDeadColorIndex: 0
   PV: {fileID: 0}
   nick: 
-  punchAnim: {fileID: 0}
-  layMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!114 &1878694176956332237
 MonoBehaviour:
   m_ObjectHideFlags: 0

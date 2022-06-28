@@ -11,6 +11,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
 
+    [SerializeField]
+    private Inventory theInventory;
+
+    public float range; // 습득 가능한 최대 거리.
+
+    // private bool pickupActivated = false; // 습득 가능할 시 true.
+
+    private RaycastHit hitInfo; // 충돌체 정보 저장.
+
+    // 아이템 레이어에만 반응하도록 레이어 마스크를 설정.
+    [SerializeField]
+    private LayerMask layerMask;
 
     public Rigidbody2D RB;
     public SpriteRenderer SR;
@@ -29,15 +41,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [HideInInspector] public string nick;
     Vector2 input;
     bool facingRight;
-    bool isHurt;
 
     Vector2 playerDir;
     Vector3 curPos;
-
-    public Animator punchAnim;
-
-    RaycastHit hitInfo;
-    public LayerMask layMask;
 
     private void Awake()
     {
@@ -72,28 +78,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             return;
         }
 
-        //Debug.DrawRay(transform.position, new Vector3(1, 0, 0), Color.red);
-
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, layerMask("Item");     
-        //       RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0), 0.9f, LayerMask.GetMask("Item"));
-
-        Debug.DrawRay(transform.position, new Vector3(0, -1, 0) * 0.9f, new Color(0, 1, 0));
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0) * 5f);
-
-        if(hit.collider.CompareTag("Item"))
-        {
-            Debug.Log(hit.collider.name);
-        }
-
-        //if (hit.collider != null)
-        //{
-        //    Debug.Log(hit.collider.name);
-        //}
-        //걸렸을때ㅡ 어떻게 판정할거야?
-
         float inputX = Input.GetAxisRaw("Horizontal");
-
         float inputY = Input.GetAxisRaw("Vertical");
 
         input = new Vector2(inputX, inputY);
@@ -107,11 +92,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+
+            Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
+
+           // CheckDebug();
+
+            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, range, layerMask);
         }
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
+
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
@@ -190,8 +182,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    void CheckItem()
+    public void CheckItem()
     {
-
+        if (hitInfo.transform.tag == "Item")
+        {
+            Debug.Log("들어옴");
+            theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
+            Destroy(hitInfo.transform.gameObject);
+        }
     }
 }

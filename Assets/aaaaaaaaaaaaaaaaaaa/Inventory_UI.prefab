@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 9092541014900218762}
   - component: {fileID: 9092541014900218763}
   - component: {fileID: 9092541014900218759}
-  - component: {fileID: 9092541014900218758}
   m_Layer: 5
   m_Name: Inventory_UI
   m_TagString: Untagged
@@ -29,7 +28,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9092541014900218761}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
@@ -140,19 +139,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &9092541014900218758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9092541014900218761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5136fa0f767a2f246bba26d280f3ce09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go_InventoryUi: {fileID: 9092541014900218761}
 --- !u!1001 &5442434101388337247
 PrefabInstance:
   m_ObjectHideFlags: 0

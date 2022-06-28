@@ -12,6 +12,7 @@ public class InteractionScript : MonoBehaviourPun
     public enum Type { Customize, Mission, PickUp };
     public Type type;
     MinigameManager MM;
+    public static Item go;
 
     GameObject Line;
     public int curInteractionNum;
@@ -44,6 +45,8 @@ public class InteractionScript : MonoBehaviourPun
             else if (type == Type.PickUp)
             {
                 UM.SetInteractionBtn2(6, true);
+
+
             }
         }
     }
@@ -67,6 +70,7 @@ public class InteractionScript : MonoBehaviourPun
             else if (type == Type.PickUp)
             {
                 UM.SetInteractionBtn2(6, false);
+
             }
         }
     }

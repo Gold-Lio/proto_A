@@ -16,6 +16,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public List<PlayerScript> Players = new List<PlayerScript>();
     public PlayerScript MyPlayer;
 
+    public Text timeText;
+    public float time;
+    private float selectCountdown;
+
+
     public GameObject CrewInfoText, ImposterInfoText, WaitingBackground, Background;
     public GameObject onChatButton;
 
@@ -26,7 +31,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public GameObject[] Lights;
     PhotonView PV;
     public bool isTest;
-    public enum ImpoType {Rand1}
+    public enum ImpoType { Rand1 }
     public ImpoType impoType;
 
     void Start()
@@ -37,7 +42,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PV = photonView;
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
-        
+
 
     }
 
@@ -121,6 +126,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.CurrentRoom.IsVisible = false;
 
         PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
+
+
     }
 
     void SetImpoCrew()
@@ -153,24 +160,46 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         yield return new WaitForSeconds(3);
         isGameStart = true;
-         
+
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
         MyPlayer.SetMission();
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 
 
-      //  PlayerScript.PS.GetComponent<Inventory>();
-       // Inventory.instance.SetInventory();
+        //  PlayerScript.PS.GetComponent<Inventory>();
+        // Inventory.instance.SetInventory();
 
-
-        yield return new WaitForSeconds(1);
         ShowPanel(GamePanel);
         ShowGameUI();
+       
 
-     //   Inventory_UI.instance.GoInventory()
+        //   Inventory_UI.instance.GoInventory()
         // Inventory.Instance.SetSlots();
         StartCoroutine(UM.PunchCoolCo());
+
+
+        selectCountdown = time;
+    }
+
+    private void Update()
+    {
+        if (Mathf.Floor(selectCountdown) <= 0)
+        {
+             WinCheck();
+
+
+
+
+
+
+            // Count 0일때 동작할 함수 삽입
+        }
+        else
+        {
+            selectCountdown -= Time.deltaTime;
+            timeText.text = Mathf.Floor(selectCountdown).ToString();
+         }
     }
 
     //public override void OnPlayerLeftRoom(Player otherPlayer)

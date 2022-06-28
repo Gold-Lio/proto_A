@@ -125,11 +125,12 @@ public class UIManager : MonoBehaviourPun
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
-            //PickUpAction.instance(); //먹는것.
-            Item item;
-            //theInventory.AcquireItem()
+            // NM.MyPlayer.CheckItem();
+
+            PlayerScript.PS.CheckItem();
         }
     }
+
 
 
     public void SetIsCustomize(bool b)
