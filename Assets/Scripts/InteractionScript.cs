@@ -6,78 +6,70 @@ using Photon.Realtime;
 using static UIManager;
 using static NetworkManager;
 
-public class InteractionScript : MonoBehaviourPun 
+public class InteractionScript : MonoBehaviourPun
 {
-	public enum Type { Customize, Mission, PickUp };
-	public Type type;
-	MinigameManager MM;
+    private InteractionScript IS;
+    public enum Type { Customize, Mission, PickUp };
+    public Type type;
+    MinigameManager MM;
 
-	GameObject Line;
-	public int curInteractionNum;
-	private Animator anim;
+    GameObject Line;
+    public int curInteractionNum;
+    private Animator anim;
 
+    void Start()
+    {
+        //	Line = transform.GetChild(0).gameObject;
+        anim = GetComponent<Animator>();
+        MM = GetComponent<MinigameManager>();
+    }
 
-	void Start()
-    {		
-	//	Line = transform.GetChild(0).gameObject;
-		anim = GetComponent<Animator>();
-		MM = GetComponent<MinigameManager>();
-	}
-
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) 
-		{
-			if (type == Type.Customize)
-			{
-				//Line.SetActive(true);
-				UM.SetInteractionBtn0(1, true);
-			}
-
-			else if (type == Type.Mission)
-			{
-				// if (col.GetComponent<PlayerScript>().isImposter) return;
-
-				UM.curInteractionNum = curInteractionNum;
-				//Line.SetActive(true);
-				UM.SetInteractionBtn0(0, true);
-			}
-
-			else if(type == Type.PickUp)
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
+        {
+            if (type == Type.Customize)
             {
-			
-				
-				 //UM.SetInteractionBtn2(6, true);
+                //Line.SetActive(true);
+                UM.SetInteractionBtn0(1, true);
             }
-		}
-	}
 
-	void OnTriggerExit2D(Collider2D col)
-	{
-		if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) 
-		{
-			if (type == Type.Customize)
-			{
-				//Line.SetActive(false);
-				UM.SetInteractionBtn0(0, false);
-			}
-
-			else if (type == Type.Mission)
+            else if (type == Type.Mission)
             {
-                //if (col.GetComponent<PlayerScript>().isImposter) return;
+                UM.curInteractionNum = curInteractionNum;
+                //Line.SetActive(true);
+                UM.SetInteractionBtn0(0, true);
+            }
 
+            else if (type == Type.PickUp)
+            {
+                UM.SetInteractionBtn2(6, true);
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
+        {
+            if (type == Type.Customize)
+            {
                 //Line.SetActive(false);
                 UM.SetInteractionBtn0(0, false);
             }
 
+            else if (type == Type.Mission)
+            {
+                //Line.SetActive(false);
+                UM.SetInteractionBtn0(0, false);
+            }
 
             else if (type == Type.PickUp)
-			{
-			
-				// UM.SetInteractionBtn2(6, false);
-			}
-		}
-	}
+            {
+                UM.SetInteractionBtn2(6, false);
+            }
+        }
+    }
 
     public void StartMission()
     {

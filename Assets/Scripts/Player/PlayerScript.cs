@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
 
+
     public Rigidbody2D RB;
     public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
@@ -33,10 +34,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     Vector2 playerDir;
     Vector3 curPos;
 
-
-
     public Animator punchAnim;
 
+    RaycastHit hitInfo;
+    public LayerMask layMask;
 
     private void Awake()
     {
@@ -71,7 +72,28 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             return;
         }
 
+        //Debug.DrawRay(transform.position, new Vector3(1, 0, 0), Color.red);
+
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, layerMask("Item");     
+        //       RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0), 0.9f, LayerMask.GetMask("Item"));
+
+        Debug.DrawRay(transform.position, new Vector3(0, -1, 0) * 0.9f, new Color(0, 1, 0));
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0, -1, 0) * 5f);
+
+        if(hit.collider.CompareTag("Item"))
+        {
+            Debug.Log(hit.collider.name);
+        }
+
+        //if (hit.collider != null)
+        //{
+        //    Debug.Log(hit.collider.name);
+        //}
+        //걸렸을때ㅡ 어떻게 판정할거야?
+
         float inputX = Input.GetAxisRaw("Horizontal");
+
         float inputY = Input.GetAxisRaw("Vertical");
 
         input = new Vector2(inputX, inputY);
@@ -93,22 +115,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
-
-    //[PunRPC]
-    //public void Filp(Vector2 input)
-    //{
-    //    //if (input.x < 0 && !facingRight)
-    //    //{
-    //    //    transform.localScale = new Vector2(1, 1); // left flip.
-    //    //    playerDir = Vector2.left;
-    //    //}
-
-    //    //if (input.x > 0 && !facingRight)
-    //    //{
-    //    //    transform.localScale = new Vector2(-1, 1); // left flip.
-    //    //    playerDir = Vector2.right;
-    //    //}
-    //}
 
     public void SetPos(Vector3 target)
     {
@@ -184,26 +190,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
+    void CheckItem()
+    {
+
+    }
 }
-
-
-//	[PunRPC] //인벤토리를 쏟아낼 함수
-//void SetDie(bool b, int _killerColorIndex, int _deadBodyColorIndex) 
-//{
-//	isDie = b;
-
-//	transform.GetChild(0).gameObject.SetActive(false);
-//	transform.GetChild(1).gameObject.SetActive(false);
-
-//	if (PV.IsMine) 
-//	{
-//		StartCoroutine(UM.DieCo(_killerColorIndex, _deadBodyColorIndex));
-
-//		transform.GetChild(1).gameObject.SetActive(true); //유령을 스폰한다. 
-//		transform.GetChild(2).gameObject.SetActive(true);
-//		Physics2D.IgnoreLayerCollision(8, 9);
-//		PV.RPC("SetGhostColor", RpcTarget.AllViaServer, colorIndex);
-//		NM.GetComponent<PhotonView>().RPC("ShowGhostRPC", RpcTarget.AllViaServer);
-//	}
-//}
-

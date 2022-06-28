@@ -98,7 +98,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7719893841155581119}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -173,6 +173,9 @@ MonoBehaviour:
   PV: {fileID: 0}
   nick: 
   punchAnim: {fileID: 0}
+  layMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1878694176956332237
 MonoBehaviour:
   m_ObjectHideFlags: 0

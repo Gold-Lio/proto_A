@@ -7,6 +7,7 @@ TagManager:
   - DeadBody
   - IsPunch
   - FieldItem
+  - Item
   layers:
   - Default
   - TransparentFX

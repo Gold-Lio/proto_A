@@ -6,10 +6,14 @@ using Photon.Pun;
 using Photon.Realtime;
 using static NetworkManager;
 
+
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
-    //public ActionController actionController;
+
+    [SerializeField]
+    public Inventory theInventory;
+    public InteractionScript IS;
 
     void Awake() => UM = this;
 
@@ -121,20 +125,13 @@ public class UIManager : MonoBehaviourPun
         if (curBtn2 == 6)
         {
             Debug.Log("PickUp");
-            //pickUp.SetPickUp();
+            //PickUpAction.instance(); //먹는것.
+            Item item;
+            //theInventory.AcquireItem()
         }
-
-                // 이것의 결과를 가져와야할 것이다~ 이말이야. 
-
-                //if (NM.MyPlayer.isDie) return;
-                //NM.MyPlayer.Kill();
-
-                //inventory.items[i] = 1; // makes sure that the slot is now considered FULL
-                //Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
-                //Destroy(gameObject);
-                //break;
-
     }
+
+
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
@@ -227,7 +224,6 @@ public class UIManager : MonoBehaviourPun
 
     public IEnumerator MissionClearCo(GameObject MissionPanel) 
     {
-
         MissionPanel.SetActive(false);
         MissionClearText.SetActive(true);
         yield return new WaitForSeconds(2);
