@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Cinemachine;
 
 public class KnockBack : MonoBehaviourPunCallbacks
 {
@@ -10,55 +11,123 @@ public class KnockBack : MonoBehaviourPunCallbacks
     public PhotonView PV;
     int dir;
 
-    public Transform cam;
-    Vector3 camPosition_Origin;
+    bool stopping;
+    public float stopTime;
+    public float slowTime;
+
+    Vector2 camPosition_original;
     public float shake;
 
-    private void Start() => Destroy(gameObject, 0.4f);
+
+    // private void Start() => Destroy(gameObject, 0.4f);
+    private void Start()
+    {
+        Destroy(gameObject, 0.4f);
+    }
+
 
     void Update() => transform.Translate(Vector3.right * 4f * Time.deltaTime * dir);
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(!PV.IsMine  && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
+        if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
         {
             Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
             Debug.Log("닿는다");
-             
+
             if (RB != null)
             {
-                col.GetComponent<PlayerScript>();
-                Vector2 input = col.transform.position - transform.position;
-                input.y = 0;
-                RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
-                Debug.Log("OK");
-              //StartCoroutine(CamAction());
+               // TimeStop();
+                Debug.Log("타임스탑");
+                //col.GetComponent<PlayerScript>();
+                //Vector2 input = col.transform.position - transform.position;
+                //input.y = 0;
+                //RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
+                ////PlayerScript.PS.TimeStop();
+                //Debug.Log("OK");
+                //StartCoroutine(CamAction());
             }
         }
     }
+
+    //public void TimeStop()
+    //{
+    //    if (!stopping)
+    //    {
+    //        stopping = true;
+    //        Time.timeScale = 0;
+
+    //        StartCoroutine("Stop");
+    //        StartCoroutine("CamAction");
+    //    }
+    //}
+
+    //IEnumerator Stop()
+    //{
+    //    yield return new WaitForSecondsRealtime(stopTime);
+    //    Time.timeScale = 0.01f;
+    //    yield return new WaitForSecondsRealtime(slowTime);
+
+    //    Time.timeScale = 1;
+    //    stopping = false;
+    //}
+
+    //IEnumerator CamAction()
+    //{
+
+    //    camPosition_original = cam.position;
+
+    //    cam.position =
+    //        new Vector2(cam.position.x + Random.Range(-shake, shake), cam.position.y + Random.Range(-shake, shake));
+    //    yield return new WaitForSecondsRealtime(0.05f);
+
+    //    cam.position =
+    //              new Vector2(cam.position.x + Random.Range(-shake, shake), cam.position.y + Random.Range(-shake, shake));
+    //    yield return new WaitForSecondsRealtime(0.05f);
+
+    //    cam.position = camPosition_original;
+    //}
+
+
+    //public static CameraSetup instance;
+    //public CinemachineVirtualCamera followCam;
+    //// 시네머신 카메라가 로컬 플레이어를 추적하도록 설정
+    //void Start()
+    //{
+    //    // 만약 자신이 로컬 플레이어라면
+    //    if (this.photonView.IsMine)
+    //    {
+    //        // 씬에 있는 시네머신 가상 카메라를 찾고
+    //        followCam = FindObjectOfType<CinemachineVirtualCamera>();
+    //        // 가상 카메라의 추적 대상을 자신의 트랜스폼으로 변경
+    //        followCam.Follow = transform;
+    //        followCam.LookAt = transform;
+    //    }
+    //}
+
 
     [PunRPC]
     void DirRPC(int dir) => this.dir = dir;
 
 
-   // IEnumerator CamAction()
-   // {
-   ////     cam = CameraSetup.instance.transform;
+    // IEnumerator CamAction()
+    // {
+    ////     cam = CameraSetup.instance.transform;
 
-   //     camPosition_Origin = cam.position;
-   //     cam.position = 
-   //         new Vector3(cam.position.x + Random.Range(-shake,shake),cam.position.y + Random.Range(-shake,shake),
-   //         cam.position.z + Random.Range(-shake,shake));
-   //     yield return new WaitForSecondsRealtime(0.05f);
-   //     cam.position =
-   //               new Vector3(cam.position.x + Random.Range(-shake, shake), cam.position.y + Random.Range(-shake, shake),
-   //               cam.position.z + Random.Range(-shake, shake));
-   //     yield return new WaitForSecondsRealtime(0.05f);
+    //     camPosition_Origin = cam.position;
+    //     cam.position = 
+    //         new Vector3(cam.position.x + Random.Range(-shake,shake),cam.position.y + Random.Range(-shake,shake),
+    //         cam.position.z + Random.Range(-shake,shake));
+    //     yield return new WaitForSecondsRealtime(0.05f);
+    //     cam.position =
+    //               new Vector3(cam.position.x + Random.Range(-shake, shake), cam.position.y + Random.Range(-shake, shake),
+    //               cam.position.z + Random.Range(-shake, shake));
+    //     yield return new WaitForSecondsRealtime(0.05f);
 
-   //     cam.position = camPosition_Origin;
-   // }
+    //     cam.position = camPosition_Origin;
+    // }
 }
-   
+
 
 //    //public float knockBackPower = 1000;
 //    //public float knockDuration = 1;

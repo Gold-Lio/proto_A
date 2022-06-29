@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8057663966443936549}
   - component: {fileID: 8188115637888151800}
   - component: {fileID: 5791587845984521125}
+  - component: {fileID: 4965333645807005868}
+  - component: {fileID: -8377003521988585492}
   m_Layer: 6
   m_Name: Glove
   m_TagString: IsPunch
@@ -239,7 +241,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4965333645807005868}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -257,8 +260,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackStrength: 100
   PV: {fileID: 8188115637888151800}
-  cam: {fileID: 0}
-  shake: 0.05
+  stopTime: 0.05
+  slowTime: 0.15
+  cam: {fileID: 3237094415300951929, guid: 69c4009e18750574ea398d21acf3c33d, type: 3}
+  shake: 0.2
+--- !u!114 &4965333645807005868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504172611636862668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &-8377003521988585492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504172611636862668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: b03df7dd5c43bf74fb09ef2f8b27bf8c, type: 2}
+    m_AmplitudeGain: 0.2
+    m_FrequencyGain: 0.4
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -0.26343894
+          outSlope: -0.26343894
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.089527026
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: -0.66776055
+          outSlope: -0.66776055
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.0777027
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0.7689361
+          outSlope: 0.7689361
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.11655405
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0.41589722
+          outSlope: 0.41589722
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.0793919
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 343
 --- !u!1001 &1136032857942377583
 PrefabInstance:
   m_ObjectHideFlags: 0

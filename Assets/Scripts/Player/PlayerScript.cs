@@ -45,6 +45,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     Vector2 playerDir;
     Vector3 curPos;
 
+
     private void Awake()
     {
         PS = this;
@@ -159,7 +160,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
         StartCoroutine(UM.PunchCoolCo());
 
-
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("Punch", RpcTarget.AllViaServer, true);
 
         //KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
@@ -184,11 +184,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void CheckItem()
     {
-        if (hitInfo.transform.tag == "Item")
-        {
+        //if (hitInfo.transform.tag == "Item")
+        //{
             Debug.Log("들어옴");
-            theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
-            Destroy(hitInfo.transform.gameObject);
-        }
+        //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
+        //    Destroy(hitInfo.transform.gameObject);
     }
+
+
 }

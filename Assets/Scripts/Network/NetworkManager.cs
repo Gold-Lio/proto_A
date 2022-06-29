@@ -43,7 +43,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
 
-
     }
 
     public void Connect(InputField NickInput)
@@ -127,7 +126,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
 
-
     }
 
     void SetImpoCrew()
@@ -166,40 +164,32 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         MyPlayer.SetMission();
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 
-
         //  PlayerScript.PS.GetComponent<Inventory>();
         // Inventory.instance.SetInventory();
 
         ShowPanel(GamePanel);
         ShowGameUI();
-       
 
         //   Inventory_UI.instance.GoInventory()
         // Inventory.Instance.SetSlots();
         StartCoroutine(UM.PunchCoolCo());
 
-
         selectCountdown = time;
+
     }
 
     private void Update()
     {
         if (Mathf.Floor(selectCountdown) <= 0)
         {
-             WinCheck();
-
-
-
-
-
-
+            WinCheck();
             // Count 0일때 동작할 함수 삽입
         }
         else
         {
             selectCountdown -= Time.deltaTime;
             timeText.text = Mathf.Floor(selectCountdown).ToString();
-         }
+        }
     }
 
     //public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -214,7 +204,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!Players[i].isImposter) ++crewCount;
         return crewCount;
     }
-
 
     void ShowGameUI()
     {
@@ -232,6 +221,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    [PunRPC]
     public void WinCheck()
     {
         int crewCount = 0;

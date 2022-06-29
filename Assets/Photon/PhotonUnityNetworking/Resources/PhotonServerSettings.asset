@@ -58,6 +58,8 @@ MonoBehaviour:
   - FlipXRPC
   - DirRPC
   - SetTime
+  - WinCheck
+  - TimeSet
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
