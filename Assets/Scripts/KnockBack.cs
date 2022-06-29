@@ -9,6 +9,10 @@ public class KnockBack : MonoBehaviourPunCallbacks
 {
     public float knockBackStrength;
     public PhotonView PV;
+    //카메라
+    public float camShakeIntencity;
+    public float camShakeTime;
+
     int dir;
 
     bool stopping;
@@ -39,6 +43,7 @@ public class KnockBack : MonoBehaviourPunCallbacks
             {
                // TimeStop();
                 Debug.Log("타임스탑");
+                CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
                 //col.GetComponent<PlayerScript>();
                 //Vector2 input = col.transform.position - transform.position;
                 //input.y = 0;

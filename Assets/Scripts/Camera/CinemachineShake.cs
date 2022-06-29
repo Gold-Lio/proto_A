@@ -5,19 +5,46 @@ using Cinemachine;
 
 public class CinemachineShake : MonoBehaviour
 {
+    public static CinemachineShake Instance { get; private set; } 
+    private CinemachineVirtualCamera CV;
 
-    private CinemachineVirtualCamera cinemachineVirtualCamera;
+    private float shakerTimer;
+    private float shakeTimerTotal;
+    private float startingIntencity;
 
     private void Awake()
     {
-        cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        Instance = this; 
+        CV = GetComponent<CinemachineVirtualCamera>();
     }
 
     public void ShakeCamera(float intensity, float time)
     {
-      //  cinemachineVirtualCamera 
+        CinemachineBasicMultiChannelPerlin CBMCP = CV.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        CBMCP.m_AmplitudeGain = intensity;
+        
+        startingIntencity = intensity;
+        shakeTimerTotal = time;
+        shakerTimer = time;
     }
 
 
+    private void Update()
+    {
+        if(shakerTimer > 0f)
+        {
+            shakerTimer -= Time.deltaTime;
+            if(shakerTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin CBMCP = CV.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
+                CBMCP.m_AmplitudeGain = 0f;
+
+               // CBMCP.m_AmplitudeGain = Mathf.Lerp(startingIntencity, 0f, shakerTimer / shakeTimerTotal);
+                // t에 대한 a 와 b 사의의 값을 보간 ㅡ 1에서 , 0으로   , 시간의 지남에 따라정렬하지 않음. 
+
+            }
+        }
+    }
 }
