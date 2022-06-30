@@ -12,7 +12,6 @@ namespace SimpleInventory {
         public int allowType = -1; //허용되는 아이템 타입 (비트 플래그 사용, -1은 전체)
 
         public ItemHandler itemHandler = null; //아이템 핸들러
-
         public int Index { get; internal set; } //슬롯 인덱스
         public SlotItem Item { get; internal set; } //현재 슬롯 아이템
 

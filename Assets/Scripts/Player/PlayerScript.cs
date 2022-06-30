@@ -14,16 +14,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     //[SerializeField]
     //private InventorySlot theInventory;
 
-    private Joystick joystick;
-    public float range; // 습득 가능한 최대 거리.
-
-    // private bool pickupActivated = false; // 습득 가능할 시 true.
-
-    private RaycastHit hitInfo; // 충돌체 정보 저장.
-
-    // 아이템 레이어에만 반응하도록 레이어 마스크를 설정.
-    [SerializeField]
-    private LayerMask layerMask;
+    //public bl_Joystick js;
 
     public Rigidbody2D RB;
     public SpriteRenderer SR;
@@ -32,7 +23,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public Transform Character, Canvas;
     public Text NickText;
 
+    public bool isPC, isMobile;
     public bool isWalk, isMove, isImposter, ispunch, ishited, isDie;
+
     public int actor, colorIndex;
     public float speed; //기본 40
     public PlayerScript KillTargetPlayer;
@@ -50,7 +43,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         PS = this;
-        joystick = GameObject.FindObjectOfType<Joystick>();
+        //js = GameObject.FindObjectOfType<bl_Joystick>();
     }
 
     void Start()
@@ -72,12 +65,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
     }
-
-    private void Update()
-    {
-
-    }
-
 
     [PunRPC]
     void FixedUpdate()
@@ -101,9 +88,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
 
+            //Vector3 dir = new Vector3(js.Horizontal, js.Vertical,0);
+            //dir.Normalize();
+            //transform.position += dir * speed * Time.deltaTime;
 
-            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-                MoveControl();
+            //if (js.Horizontal != 0 || js.Vertical != 0)
+            //    MoveControl();
 
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
@@ -113,17 +103,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
+    //public void MoveControl()
+    //{
+    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * js.Vertical;
+    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * js.Horizontal;
+    //    transform.position += upMovement;
+    //    transform.position += rightMovement;
+    //}
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
-    private void MoveControl()
-    {
-        Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
-        Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
-        transform.position += upMovement;
-        transform.position += rightMovement;
-    }
+    //private void MoveControl()
+    //{
+    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
+    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
+    //    transform.position += upMovement;
+    //    transform.position += rightMovement;
+    //}
 
     public void SetPos(Vector3 target)
     {

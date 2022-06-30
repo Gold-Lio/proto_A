@@ -12,9 +12,9 @@ namespace SimpleInventory.Demo
     [Flags]
     public enum ItemType : int
     {
-        Sword = 1 << 0,   //장비창
-        Shield = 1 << 1,  //실드창
-        Potion = 1 << 2   //포션창
+        Sword = 1 << 0,
+        Shield = 1 << 1,
+        Potion = 1 << 2
     }
 
     public class Item : SlotItem, IUsable, ITradable

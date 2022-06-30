@@ -53,7 +53,6 @@ namespace SimpleInventory {
                     {
                         g.raycastTarget = false;
                     }
-
                     graphics.Clear();
                 }
             }

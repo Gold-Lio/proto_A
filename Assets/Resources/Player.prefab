@@ -152,10 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 128
   RB: {fileID: 4313270873243922857}
   SR: {fileID: 1140705742494177079}
   CharacterSR:
@@ -164,6 +160,8 @@ MonoBehaviour:
   Character: {fileID: 2251365688590393041}
   Canvas: {fileID: 8491290351953271947}
   NickText: {fileID: 8491290352219676445}
+  isPC: 0
+  isMobile: 0
   isWalk: 0
   isMove: 0
   isImposter: 0
