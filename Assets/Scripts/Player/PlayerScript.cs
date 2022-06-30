@@ -11,9 +11,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
 
-    [SerializeField]
-    private InventorySlot theInventory;
+    //[SerializeField]
+    //private InventorySlot theInventory;
 
+    private Joystick joystick;
     public float range; // 습득 가능한 최대 거리.
 
     // private bool pickupActivated = false; // 습득 가능할 시 true.
@@ -49,6 +50,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         PS = this;
+        joystick = GameObject.FindObjectOfType<Joystick>();
     }
 
     void Start()
@@ -73,12 +75,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        if(ishited)
-        {
-            
 
-
-        }
     }
 
 
@@ -103,9 +100,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
+
+
+            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+                MoveControl();
+
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
-     
+
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
@@ -114,6 +116,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
+
+    private void MoveControl()
+    {
+        Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
+        Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
+        transform.position += upMovement;
+        transform.position += rightMovement;
+    }
 
     public void SetPos(Vector3 target)
     {
@@ -186,13 +196,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             curPos = (Vector3)stream.ReceiveNext();
         }
-    }   
+    }
 
     public void CheckItem()
     {
         //if (hitInfo.transform.tag == "Item")
         //{
-            Debug.Log("들어옴");
+        Debug.Log("들어옴");
         //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
         //    Destroy(hitInfo.transform.gameObject);
     }
