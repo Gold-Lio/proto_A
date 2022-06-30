@@ -3,12 +3,14 @@ using UnityEngine;
 
 namespace SimpleInventory {
 
+    //해당 아이템을 가지고 있는 인벤토리 테이블과 순서의 정보를 가진 insface
     public interface ISlotItem {
 
         InventoryTab Tab { get; set; } //아이템을 가진 탭 이름
         int Index { get; set; } //인벤토리 슬롯 순서
     }
 
+    //아이템에 관한 기본적인 정보들을 가진 인터페이스
     public interface IItemProperty {
 
         int MaxCount { get; set; } //아이템 최대 갯수
@@ -25,6 +27,8 @@ namespace SimpleInventory {
         void SetProperty (string id, string name, int type, string description); //아이템 속성 설정 함수
     }
 
+
+    //구매 및 판매의 인터페이스
     public interface ITradable {
 
         int BuyPrice { get; set; } //구매 가격
@@ -33,14 +37,20 @@ namespace SimpleInventory {
         void SetPrice (int buyPrice, int sellPrice); //구매 및 판매 가격 설정 메서드
     }
 
+
+
     public interface IUsable {
         bool Usable { get; set; }
         Action<SlotItem> UseEvent { get; set; }
     }
 
+
+
     public interface IEquipment : IUsable {
         InventorySlot TargetSlot { get; set; } //사용시 착용되는 대상 슬롯
     }
+
+
 
     public interface IConsumable : IUsable { }
 }

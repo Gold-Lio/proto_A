@@ -11,11 +11,11 @@ namespace SimpleInventory {
 
         public InventoryTab Tab { get; set; }
         public int Index { get; set; }
-
         public int MaxCount { get; set; }
         public int Count { get; set; }
-
         public string Id { get; set; }
+
+
         public string Name { get; set; }
         public int Type { get; set; }
         public string Description { get; set; }
