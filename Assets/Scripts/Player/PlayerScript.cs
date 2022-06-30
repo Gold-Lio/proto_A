@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public static PlayerScript PS;
 
     [SerializeField]
-    private Inventory theInventory;
+    private InventorySlot theInventory;
 
     public float range; // 습득 가능한 최대 거리.
 
@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public Transform Character, Canvas;
     public Text NickText;
 
-    public bool isWalk, isMove, isImposter, isKillable, isDie;
+    public bool isWalk, isMove, isImposter, ispunch, ishited, isDie;
     public int actor, colorIndex;
     public float speed; //기본 40
     public PlayerScript KillTargetPlayer;
@@ -71,6 +71,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
     }
 
+    private void Update()
+    {
+        if(ishited)
+        {
+            
+
+
+        }
+    }
+
+
     [PunRPC]
     void FixedUpdate()
     {
@@ -79,27 +90,22 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             return;
         }
 
-        float inputX = Input.GetAxisRaw("Horizontal");
-        float inputY = Input.GetAxisRaw("Vertical");
-
-        input = new Vector2(inputX, inputY);
-        input *= speed;
-        RB.velocity = input.normalized * speed;
-
-        if (PV.IsMine)
+        if (!ishited)
         {
+            float inputX = Input.GetAxisRaw("Horizontal");
+            float inputY = Input.GetAxisRaw("Vertical");
+
+            input = new Vector2(inputX, inputY);
+            input *= speed;
+            RB.velocity = input.normalized * speed;
+
             if (inputX != 0)
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
-
-            Debug.DrawRay(transform.position, transform.forward * hitInfo.distance, Color.red);
-
-           // CheckDebug();
-
-            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, range, layerMask);
         }
+     
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
@@ -180,7 +186,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         {
             curPos = (Vector3)stream.ReceiveNext();
         }
-    }
+    }   
 
     public void CheckItem()
     {

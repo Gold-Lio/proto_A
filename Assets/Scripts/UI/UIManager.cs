@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviourPun
     public static UIManager UM;
 
     [SerializeField]
-    public Inventory theInventory;
+    public InventorySlot theInventory;
     public InteractionScript IS;
 
     void Awake() => UM = this;
@@ -124,10 +124,12 @@ public class UIManager : MonoBehaviourPun
         // 획득
         if (curBtn2 == 6)
         {
-            Debug.Log("PickUp");
-            // NM.MyPlayer.CheckItem();
-
             PlayerScript.PS.CheckItem();
+            //해당 스프라이트를 먹어지는 코드를 구현해야함. 
+
+
+
+
         }
     }
 
@@ -171,7 +173,7 @@ public class UIManager : MonoBehaviourPun
     public IEnumerator PunchCoolCo()
     {
         SetInteractionBtn1(5, false);
-        NM.MyPlayer.isKillable = false;
+        NM.MyPlayer.ispunch = false;
 
         for (int i = 1; i > 0; i--) // 기본 15초 킬대기
         {
@@ -187,7 +189,7 @@ public class UIManager : MonoBehaviourPun
         killCooltime = 0;
         Interaction1Text.text = "";
         //Enum상태 변경
-        NM.MyPlayer.isKillable = true;
+        NM.MyPlayer.ispunch = true;
         SetInteractionBtn1(5, true);
     }
 

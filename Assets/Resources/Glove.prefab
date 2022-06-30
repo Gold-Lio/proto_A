@@ -259,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackStrength: 100
   PV: {fileID: 8188115637888151800}
-  camShakeIntencity: 7
+  camShakeIntencity: 10
   camShakeTime: 0.2
   stopTime: 0.05
   slowTime: 0.15
