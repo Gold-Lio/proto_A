@@ -149,6 +149,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(GameStartCo());
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     IEnumerator GameStartCo()
     {
         ShowPanel(InfoPanel);

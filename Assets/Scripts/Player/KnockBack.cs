@@ -8,8 +8,10 @@ using Cinemachine;
 public class KnockBack : MonoBehaviourPunCallbacks
 {
     public float knockBackStrength;
+
     public PhotonView PV;
-    //Ä«¸Þ¶ó
+
+    //Ä«ï¿½Þ¶ï¿½
     public float camShakeIntencity;
     public float camShakeTime;
 
@@ -17,11 +19,6 @@ public class KnockBack : MonoBehaviourPunCallbacks
 
     bool stopping;
     public float stopTime;
-    public float slowTime;
-
-    Vector2 camPosition_original;
-    public float shake;
-
 
     // private void Start() => Destroy(gameObject, 0.4f);
     private void Start()
@@ -36,56 +33,37 @@ public class KnockBack : MonoBehaviourPunCallbacks
         if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
         {
             Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log("´ê´Â´Ù");
+            Debug.Log("ï¿½ï¿½Â´ï¿½");
 
-            if (RB != null)
-            {
+            //if (RB != null)
+            
                 // TimeStop();
-                Debug.Log("Å¸ÀÓ½ºÅ¾");
                 CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
                 col.GetComponent<PlayerScript>();
-                //Vector2 input = col.transform.position - transform.position;
-                //input.y = 0;
-                //RB.AddForce(input.normalized * knockBackStrength, ForceMode2D.Impulse);
-                ////PlayerScript.PS.TimeStop();
-                //Debug.Log("OK");
-                //StartCoroutine(CamAction());
-            }
+
+            
         }
     }
-
+    
     [PunRPC]
     void DirRPC(int dir) => this.dir = dir;
+    //
+    // public void TimeStop()
+    // {
+    //     if (!stopping)
+    //     {
+    //         stopping = true;
+    //         Time.timeScale = 0;
+    //
+    //         StartCoroutine(Stop());
+    //     }
+    // }
+    //
+    // IEnumerator Stop()
+    // {
+    //     yield return new WaitForSecondsRealtime(stopTime);
+    //
+    //     Time.timeScale = 1;
+    //     stopping = false;
+    // }
 }
-
-
-//    private void Start()
-//    {
-//        hitAudio = GetComponent<AudioSource>();
-//        hitEffect.gameObject.transform.position = hitEffectLocation.position;
-//    }
-
-//    [PunRPC]
-//    private void OnTriggerEnter2D(Collider2D col)
-//    {
-//        if (col.gameObject.CompareTag("Player"))
-//        {
-//            hitEffect?.Play();
-//            hitAudio?.PlayOneShot(hitSound);
-//            Rigidbody2D player = col.gameObject.GetComponent<Rigidbody2D>();
-//            Debug.Log("µé¾î¿È");
-
-//            if (player != null)
-//            {
-//                Vector2 difference = player.transform.position - transform.position;
-//                player.AddForce(difference.normalized * knockBackStrength, ForceMode2D.Impulse);
-//                Debug.Log("³ª°¨");
-//                difference = difference.normalized * 4;
-//                player.AddForce(difference, ForceMode2D.Impulse);
-//                // player.isKinematic = true;
-//                StartCoroutine(KnockBackCo(player));
-//            }
-//            //³Ë¹é¿¡¼­ ³¯¶ó°¡´Â À§Ä¡ ÀÚÃ¼µµ µ¿±âÈ­°¡ ÇÊ¿äÇÏ´Ù.
-//            //   StartCoroutine(PlayerScript.PS.KnockBack(knockDuration, knockBackPower, this.transform));
-//        }
-//    }
