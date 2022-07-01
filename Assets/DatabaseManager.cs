@@ -31,7 +31,7 @@ public class DatabaseManager : MonoBehaviour
     public bool[] switches;
 
 
-    public List<Item> itemList = new List<Item>();
+ //   public List<Item> itemList = new List<Item>();
 
 
     private void Start()

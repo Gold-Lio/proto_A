@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviourPun
     public static UIManager UM;
 
     [SerializeField]
-    public InventorySlot theInventory;
+   // public InventorySlot theInventory;
     public InteractionScript IS;
 
     void Awake() => UM = this;

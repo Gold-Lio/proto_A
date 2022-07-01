@@ -12,7 +12,7 @@ public class InteractionScript : MonoBehaviourPun
     public enum Type { Customize, Mission, PickUp };
     public Type type;
     MinigameManager MM;
-    public static Item go;
+   // public static Item go;
 
     GameObject Line;
     public int curInteractionNum;
