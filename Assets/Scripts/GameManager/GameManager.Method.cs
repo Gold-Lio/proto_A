@@ -23,7 +23,6 @@ public partial class GameManager : MonoBehaviour
         //actGamePause += () => audioSource.Pause();
         //actGameRestart += () => audioSource.Play();
     }
-
 }
 public partial class GameManager : MonoBehaviour
 {

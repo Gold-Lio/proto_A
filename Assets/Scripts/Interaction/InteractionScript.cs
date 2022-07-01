@@ -5,6 +5,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using static UIManager;
 using static NetworkManager;
+using UnityEngine.UI;
+
 
 public class InteractionScript : MonoBehaviourPun
 {
@@ -16,6 +18,8 @@ public class InteractionScript : MonoBehaviourPun
 
     GameObject Line;
     public int curInteractionNum;
+
+    public Button lastButton;
 
     void Start()
     {
@@ -43,9 +47,28 @@ public class InteractionScript : MonoBehaviourPun
             else if (type == Type.PickUp)
             {
                 UM.SetInteractionBtn2(6, true);
+
+                //여기서 애드리스너 하고 
+                // 여기서 col.디스트로이
+
+                lastButton.onClick.AddListener(() => listner());
+               
+                // col.gameObject.SetActive(false);
+                //Debug.Log(" 픽업 완료"); 혼자만 죽는다..
             }
         }
     }
+
+    public void listner()
+    {
+        Debug.Log("리스너 잘 드러가유~~");
+    }
+
+    //애드리스너 함수를 넣어야한다. 
+
+
+
+
 
     void OnTriggerExit2D(Collider2D col)
     {
