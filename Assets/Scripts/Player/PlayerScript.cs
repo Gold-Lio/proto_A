@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     //public bl_Joystick js;
 
-    public Rigidbody2D RB;
+    public Rigidbody RB;
     public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
 
@@ -77,17 +77,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         if (!ishited)
         {
             float inputX = Input.GetAxisRaw("Horizontal");
-            float inputY = Input.GetAxisRaw("Vertical");
+            float inputZ = Input.GetAxisRaw("Vertical");
 
-            input = new Vector3(inputX,0, inputY);
-            input *= speed;
-            RB.velocity = input.normalized * speed;
+            input = new Vector3(inputX,0, inputZ).normalized;
+            
+            //input *= speed;
+            RB.velocity = input * speed;
 
             if (inputX != 0)
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
-
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
 
@@ -145,7 +145,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void Punch()  // 펀치 함수. 
     {
-        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f), Quaternion.Euler(0, 0, -180))
+        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f), Quaternion.Euler(45, 0, 0))
                          .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
         StartCoroutine(UM.PunchCoolCo());

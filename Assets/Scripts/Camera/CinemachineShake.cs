@@ -40,10 +40,6 @@ public class CinemachineShake : MonoBehaviour
                 CinemachineBasicMultiChannelPerlin CBMCP = CV.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
                 CBMCP.m_AmplitudeGain = 0f;
-
-               // CBMCP.m_AmplitudeGain = Mathf.Lerp(startingIntencity, 0f, shakerTimer / shakeTimerTotal);
-                // t에 대한 a 와 b 사의의 값을 보간 ㅡ 1에서 , 0으로   , 시간의 지남에 따라정렬하지 않음. 
-
             }
         }
     }
