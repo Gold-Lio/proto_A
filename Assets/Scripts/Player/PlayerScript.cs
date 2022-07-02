@@ -33,7 +33,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [HideInInspector] public PhotonView PV;
     [HideInInspector] public string nick;
-    Vector2 input;
+    Vector3 input;
     bool facingRight;
 
     Vector2 playerDir;
@@ -79,7 +79,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
 
-            input = new Vector2(inputX, inputY);
+            input = new Vector3(inputX,0, inputY);
             input *= speed;
             RB.velocity = input.normalized * speed;
 
@@ -87,13 +87,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
-
-            //Vector3 dir = new Vector3(js.Horizontal, js.Vertical,0);
-            //dir.Normalize();
-            //transform.position += dir * speed * Time.deltaTime;
-
-            //if (js.Horizontal != 0 || js.Vertical != 0)
-            //    MoveControl();
 
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
@@ -103,24 +96,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
-    //public void MoveControl()
-    //{
-    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * js.Vertical;
-    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * js.Horizontal;
-    //    transform.position += upMovement;
-    //    transform.position += rightMovement;
-    //}
-
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
-
-    //private void MoveControl()
-    //{
-    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
-    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
-    //    transform.position += upMovement;
-    //    transform.position += rightMovement;
-    //}
 
     public void SetPos(Vector3 target)
     {
@@ -197,11 +174,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void CheckItem()
     {
-        //if (hitInfo.transform.tag == "Item")
-        //{
         Debug.Log("들어옴");
-        //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
-        //    Destroy(hitInfo.transform.gameObject);
     }
 
 

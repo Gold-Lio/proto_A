@@ -66,7 +66,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         ShowPanel(WaitingPanel);
         onChatButton.SetActive(true); //채팅활성화
-        MyPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity)
+        MyPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.Euler(45,0,0))
             .GetComponent<PlayerScript>();
 
         SetRandColor();
