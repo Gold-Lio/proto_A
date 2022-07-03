@@ -2,120 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc9b35d0-0c01-4d35-8540-2e4e7f745b3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/ChatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ChatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devion Games.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devion Games/Triggers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devion Games/Triggers/Integrations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Devion Games/Triggers/Integrations/UI Widgets.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/GameScene_DragDrop.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/GameScene_DragDrop.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Scripts/DragDrop.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Scripts/DragDrop.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Scripts/ItemSlot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Scripts/ItemSlot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Textures/HealthPotion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Textures/HealthPotion.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Textures/ItemSlot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragDrop/Textures/ItemSlot.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HUD.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HUD.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/INVEN.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Icons.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Glove.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Glove.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ShockWaveUnityEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ShockWaveUnityEvent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ShockwaveListener.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ShockwaveListener.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Prefabs/Slot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Prefabs/Slot.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scenes/InventoryTest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scenes/InventoryTest.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/InfoViewer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/InfoViewer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/InventoryManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/InventoryManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/MenuViewer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Scripts/MenuViewer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Default.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/None.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/None.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Potion1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Potion1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Potion2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Potion2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Potion3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Potion3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Shield1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Shield1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Shield2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Shield2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Shield3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Shield3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Sword1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Sword1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Sword2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Sword2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Sword3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Demo/Sprites/Sword3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Editor/RaycastColliderEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Editor/RaycastColliderEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ContentViewer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ContentViewer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ISlotItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ISlotItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/InventorySlot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/InventorySlot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ItemHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ItemHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/QuickSlotHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/QuickSlotHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/RaycastCollider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/RaycastCollider.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SelectedItemTracker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SelectedItemTracker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ShopHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/ShopHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SimpleInventory.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SimpleInventory.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SlotItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SlotItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SlotManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/SlotManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/TabManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleInventory/Scripts/Runtime/TabManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UJoystick/Example/Scene/Materials/Fux.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UJoystick/Example/Scene/Materials/Fux.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UJoystick/Example/Scene/Materials/White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UJoystick/Example/Scene/Materials/White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Fantastic UI Starter Pack - User Manual.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Fantastic UI Starter Pack - User Manual.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Material.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Material/Fantastic UI Starter Pack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Material/Fantastic UI Starter Pack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UltraMare/Fantastic UI Starter Pack/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.Demos.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/SimpleInventory.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/SimpleInventory.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/SimpleInventory.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/RuntimeInitializeOnLoads.json" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/RuntimeInitializeOnLoads.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/ScriptingAssemblies.json" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/ScriptingAssemblies.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/boot.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/globalgamemanagers" afterDir="false" />
@@ -132,6 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Demos/DemoVoicePun/Scripts/Highlighter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/Coin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/HUD.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/IInventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -212,6 +112,7 @@
       <workItem from="1656809723485" duration="3102000" />
       <workItem from="1656814473270" duration="2825000" />
       <workItem from="1656827042353" duration="206000" />
+      <workItem from="1656829891005" duration="2528000" />
     </task>
     <servers />
   </component>
