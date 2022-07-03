@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -6,17 +7,18 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using static NetworkManager;
 using static UIManager;
+using Random = UnityEngine.Random;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
 
-    //[SerializeField]
-    //private InventorySlot theInventory;
+    [SerializeField] public Inventory inventory;
 
     //public bl_Joystick js;
 
-    public Rigidbody RB;
+
+    public Rigidbody2D RB;
     public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
 
@@ -33,7 +35,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [HideInInspector] public PhotonView PV;
     [HideInInspector] public string nick;
-    Vector3 input;
+    Vector2 input;
     bool facingRight;
 
     Vector2 playerDir;
@@ -61,6 +63,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         return transform.position;
     }
+
     void SetNick()
     {
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
@@ -77,17 +80,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         if (!ishited)
         {
             float inputX = Input.GetAxisRaw("Horizontal");
-            float inputZ = Input.GetAxisRaw("Vertical");
+            float inputY = Input.GetAxisRaw("Vertical");
 
-            input = new Vector3(inputX,0, inputZ).normalized;
-            
-            //input *= speed;
-            RB.velocity = input * speed;
+            input = new Vector2(inputX, inputY);
+            input *= speed;
+            RB.velocity = input.normalized * speed;
 
             if (inputX != 0)
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
+
+            //Vector3 dir = new Vector3(js.Horizontal, js.Vertical,0);
+            //dir.Normalize();
+            //transform.position += dir * speed * Time.deltaTime;
+
+            //if (js.Horizontal != 0 || js.Vertical != 0)
+            //    MoveControl();
+
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
 
@@ -96,8 +106,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
+    //public void MoveControl()
+    //{
+    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * js.Vertical;
+    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * js.Horizontal;
+    //    transform.position += upMovement;
+    //    transform.position += rightMovement;
+    //}
+
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
+
+    //private void MoveControl()
+    //{
+    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
+    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
+    //    transform.position += upMovement;
+    //    transform.position += rightMovement;
+    //}
 
     public void SetPos(Vector3 target)
     {
@@ -143,10 +169,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     [PunRPC]
-    public void Punch()  // 펀치 함수. 
+    public void Punch() // 펀치 함수. 
     {
-        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f), Quaternion.Euler(45, 0, 0))
-                         .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
+        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
+                Quaternion.Euler(0, 0, -180))
+            .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
         StartCoroutine(UM.PunchCoolCo());
 
@@ -174,8 +201,20 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     public void CheckItem()
     {
+        //if (hitInfo.transform.tag == "Item")
+        //{
         Debug.Log("들어옴");
+        //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
+        //    Destroy(hitInfo.transform.gameObject);
     }
 
-
+    private void OnCollisionEnter(Collision col)
+    {
+        IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
 }
+

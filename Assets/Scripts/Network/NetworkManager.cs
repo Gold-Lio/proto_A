@@ -66,7 +66,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         ShowPanel(WaitingPanel);
         onChatButton.SetActive(true); //채팅활성화
-        MyPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.Euler(45,0,0))
+        MyPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity)
             .GetComponent<PlayerScript>();
 
         SetRandColor();
@@ -149,7 +149,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(GameStartCo());
     }
 
-    // ReSharper disable Unity.PerformanceAnalysis
     IEnumerator GameStartCo()
     {
         ShowPanel(InfoPanel);

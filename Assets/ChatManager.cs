@@ -12,14 +12,16 @@ public class ChatManager : MonoBehaviourPun
     public static ChatManager CM;
     void Awake() => CM = this;
 
-    public void ChatClear()
+
+    public void ChatClear() 
     {
         photonView.RPC("ChatClearRPC", RpcTarget.AllViaServer, true);
     }
 
-    public void OnEndEdit()
+
+    public void OnEndEdit() 
     {
-        if (Input.GetKeyDown(KeyCode.Return) && !string.IsNullOrWhiteSpace(UM.ChatInput.text))
+        if (Input.GetKeyDown(KeyCode.Return) && !string.IsNullOrWhiteSpace(UM.ChatInput.text)) 
         {
             string chat = $"{NM.MyPlayer.nick} : {UM.ChatInput.text}";
             UM.ChatInput.text = "";
@@ -29,10 +31,10 @@ public class ChatManager : MonoBehaviourPun
     }
 
     [PunRPC]
-    void ChatRPC(string chat)
+    void ChatRPC(string chat) 
     {
         UM.ChatText.text += (UM.ChatText.text == "" ? "" : "\n") + chat;
-
+        
 
         Fit(UM.ChatText.GetComponent<RectTransform>());
         Fit(UM.ChatContent);
@@ -49,7 +51,7 @@ public class ChatManager : MonoBehaviourPun
 
     void ChatEnable()
     {
-        // ¿£ÅÍ½Ã Ã¤ÆÃ È°¼ºÈ­
+        // ì—”í„°ì‹œ ì±„íŒ… í™œì„±í™”
         if (Input.GetKeyDown(KeyCode.Return))
         {
             UM.ChatInput.ActivateInputField();

@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviourPun
     public RectTransform ChatContent;
     public GameObject[] ChatPanels;
 
-    public Button AddItemButton;
+    public Animator anim;
 
     public int killCooltime;
     void Start()
@@ -124,31 +124,14 @@ public class UIManager : MonoBehaviourPun
         // 획득
         if (curBtn2 == 6)
         {
-            Debug.Log("먹었따!!");
-
-
-
-            //OnclickListener 함수로 만들어보자. 
-            //해당 아이템의 정보를 어떻게 가져올꺼지?
-            //닿은것에 따라서.
-            // 플레이어 입장에서 이게 닿았다면, 
-            // 그 닿은 것을 없ㅇ애고. 
-            // PS.Check() 이벤트로 해야한다?
-
+            PlayerScript.PS.CheckItem();
             //해당 스프라이트를 먹어지는 코드를 구현해야함. 
-            //AddItemButton.onClick.AddListener(AddItem());
+
+
+
 
         }
     }
-
-
-    public void AddItem()
-    {
-
-    }
-
-
-
 
 
 
@@ -185,6 +168,7 @@ public class UIManager : MonoBehaviourPun
             ColorBtn[i].interactable = !contain;
         }
     }
+
 
     public IEnumerator PunchCoolCo()
     {
