@@ -8,7 +8,7 @@ public class Meat : MonoBehaviour, IInventoryItem
     {
         get
         {
-            return "Meat ";
+            return "Meat";
         }
     }
     public Sprite _Image = null;

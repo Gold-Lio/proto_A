@@ -13,6 +13,7 @@ public class Coin : MonoBehaviour ,IInventoryItem
     }
 
     public Sprite _Image;
+    
     public Sprite Image
     {
         get

@@ -124,11 +124,8 @@ public class UIManager : MonoBehaviourPun
         // 획득
         if (curBtn2 == 6)
         {
-            PlayerScript.PS.CheckItem();
             //해당 스프라이트를 먹어지는 코드를 구현해야함. 
-
-
-
+            //애드리스너로 해보자
 
         }
     }

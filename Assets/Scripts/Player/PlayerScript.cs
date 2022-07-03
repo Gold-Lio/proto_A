@@ -9,7 +9,7 @@ using static NetworkManager;
 using static UIManager;
 using Random = UnityEngine.Random;
 
-public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
+public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
 {
     public static PlayerScript PS;
 
@@ -40,6 +40,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     Vector2 playerDir;
     Vector3 curPos;
+    private IPunObservable _punObservableImplementation;
 
 
     private void Awake()
@@ -186,7 +187,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         //GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
         //CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
     }
-
+    //
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
@@ -198,23 +199,41 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             curPos = (Vector3)stream.ReceiveNext();
         }
     }
+    //
+    // public void CheckItem()
+    // {
+    //     //if (hitInfo.transform.tag == "Item")
+    //     //{
+    //     Debug.Log("들어옴");
+    //     //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
+    //     //    Destroy(hitInfo.transform.gameObject);
+    // }
 
-    public void CheckItem()
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        //if (hitInfo.transform.tag == "Item")
-        //{
-        Debug.Log("들어옴");
-        //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
-        //    Destroy(hitInfo.transform.gameObject);
-    }
-
-    private void OnCollisionEnter(Collision col)
-    {
-        IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
         if (item != null)
         {
             inventory.AddItem(item);
-        }
+        } 
     }
+    //
+    // private void OnTriggerEnter2D(BoxCollider2D col)
+    // {
+    //     IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+    //     if (item != null)
+    //     {
+    //         inventory.AddItem(item);
+    //     }
+    // }
+    //
+    // private void OnCollisionEnter(Collision col)
+    // {
+    //     IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
+    //     if (item != null)
+    //     {
+    //         inventory.AddItem(item);
+    //     }
+    // }
 }
 

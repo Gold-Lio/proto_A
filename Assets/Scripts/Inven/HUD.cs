@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
    public Inventory Inventory;
-
    private void Start()
    {
        Inventory.ItemAdded += InventoryScript_ItemAdded;
@@ -24,7 +23,6 @@ public class HUD : MonoBehaviour
            {
                image.enabled = true;
                image.sprite = e.Item.Image;
-               
                
                
                break;

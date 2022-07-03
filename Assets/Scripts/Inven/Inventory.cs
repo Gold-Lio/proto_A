@@ -16,10 +16,11 @@ public class Inventory : MonoBehaviour
     {
         if (mItems.Count < SLOTS)
         {
-            Collider2D collider = (item as MonoBehaviour).GetComponent<Collider2D>();
-            if (collider.enabled)
+            BoxCollider2D col = (item as MonoBehaviour).GetComponent<BoxCollider2D>();
+            if (col.enabled)
             {
-                collider.enabled = false;
+                col.enabled = false;
+                
                 mItems.Add(item);
                 
                 item.Onpickup();

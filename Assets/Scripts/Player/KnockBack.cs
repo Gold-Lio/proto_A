@@ -9,7 +9,7 @@ public class KnockBack : MonoBehaviourPunCallbacks
 {
     public float knockBackStrength;
     public PhotonView PV;
-    //Ä«¸Þ¶ó
+    //Ä«ï¿½Þ¶ï¿½
     public float camShakeIntencity;
     public float camShakeTime;
 
@@ -22,8 +22,6 @@ public class KnockBack : MonoBehaviourPunCallbacks
     Vector2 camPosition_original;
     public float shake;
 
-
-    // private void Start() => Destroy(gameObject, 0.4f);
     private void Start()
     {
         Destroy(gameObject, 0.4f);
@@ -36,12 +34,12 @@ public class KnockBack : MonoBehaviourPunCallbacks
         if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
         {
             Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log("´ê´Â´Ù");
+            Debug.Log("ï¿½ï¿½Â´ï¿½");
 
             if (RB != null)
             {
                 // TimeStop();
-                Debug.Log("Å¸ÀÓ½ºÅ¾");
+                Debug.Log("Å¸ï¿½Ó½ï¿½Å¾");
                 CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
                 col.GetComponent<PlayerScript>();
                 //Vector2 input = col.transform.position - transform.position;
@@ -73,19 +71,19 @@ public class KnockBack : MonoBehaviourPunCallbacks
 //            hitEffect?.Play();
 //            hitAudio?.PlayOneShot(hitSound);
 //            Rigidbody2D player = col.gameObject.GetComponent<Rigidbody2D>();
-//            Debug.Log("µé¾î¿È");
+//            Debug.Log("ï¿½ï¿½ï¿½ï¿½");
 
 //            if (player != null)
 //            {
 //                Vector2 difference = player.transform.position - transform.position;
 //                player.AddForce(difference.normalized * knockBackStrength, ForceMode2D.Impulse);
-//                Debug.Log("³ª°¨");
+//                Debug.Log("ï¿½ï¿½ï¿½ï¿½");
 //                difference = difference.normalized * 4;
 //                player.AddForce(difference, ForceMode2D.Impulse);
 //                // player.isKinematic = true;
 //                StartCoroutine(KnockBackCo(player));
 //            }
-//            //³Ë¹é¿¡¼­ ³¯¶ó°¡´Â À§Ä¡ ÀÚÃ¼µµ µ¿±âÈ­°¡ ÇÊ¿äÇÏ´Ù.
+//            //ï¿½Ë¹é¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ó°¡´ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ï´ï¿½.
 //            //   StartCoroutine(PlayerScript.PS.KnockBack(knockDuration, knockBackPower, this.transform));
 //        }
 //    }
