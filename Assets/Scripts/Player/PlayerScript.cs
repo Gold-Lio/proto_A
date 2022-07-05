@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
 {
     public static PlayerScript PS;
 
-    [SerializeField] public Inventory inventory;
+    //[SerializeField] public Inventory inventory;
 
     //public bl_Joystick js;
 
