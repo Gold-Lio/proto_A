@@ -111,7 +111,7 @@ public class UIManager : MonoBehaviourPun
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
     }
-
+                                     
     public void ClickInteractionBtn1()
     {
         // 킬
@@ -138,8 +138,8 @@ public class UIManager : MonoBehaviourPun
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
-    }
 
+    }
     void Update()
     {
         if (!PhotonNetwork.InRoom) return;

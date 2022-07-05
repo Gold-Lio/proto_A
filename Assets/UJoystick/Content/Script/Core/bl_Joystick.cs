@@ -95,7 +95,7 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     /// <param name="data"></param>
     public void OnPointerDown(PointerEventData data)
     {
-        //Detect if is the default touchID
+       //Detect if is the default touchID
         if (lastId == -2)
         {
             //then get the current id of the current touch.

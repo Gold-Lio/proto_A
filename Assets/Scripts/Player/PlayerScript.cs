@@ -17,7 +17,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
 
     //public bl_Joystick js;
 
-
     public Rigidbody2D RB;
     public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
@@ -45,6 +44,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     private Slider hp_slider = null;
     private float hp_Max = 100.0f;
     private float hp_Cur = 100.0f;
+
+    public GameObject playerCanvasGo;
 
     public float HP_Cur 
     { 
@@ -147,6 +148,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         isImposter = _isImposter;
     }
 
+    public void SetHp()
+    {
+        if (PV.IsMine)
+        {
+            playerCanvasGo.SetActive(true);
+        }
+    }
+
     public void SetNickColor()
     {
         if (!isImposter) return;
@@ -192,15 +201,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
             curPos = (Vector3)stream.ReceiveNext();
         }
     }
-   
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
-        if (item != null)
+        if (col.transform.CompareTag("IsPunch") && !photonView.IsMine)
         {
-            inventory.AddItem(item);
-        } 
+            playerCanvasGo.GetComponent<HpBar>().curHP -= 10f;
+        }
     }
+
+
+
+
 
     public void SetHPBar()
     {
