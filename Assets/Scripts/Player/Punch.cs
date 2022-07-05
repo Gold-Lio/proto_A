@@ -10,7 +10,7 @@ public class Punch : MonoBehaviourPunCallbacks
     public float attackDamage;
     public PhotonView PV;
     public GameObject playerHPCanvas;
-    
+
     public float camShakeIntencity;
     public float camShakeTime;
 
@@ -31,24 +31,12 @@ public class Punch : MonoBehaviourPunCallbacks
     void Update() => transform.Translate(Vector3.right * (2f * Time.deltaTime * dir));
 
     private void OnTriggerEnter2D(Collider2D col)
-{
-        if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine)
+    {
+        if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) // 느린쪽 판정
         {
-            Rigidbody2D RB = col.gameObject.GetComponent<Rigidbody2D>();
-
-            if (RB != null)
-            {
-                //PlayerScript player = col.GetComponent<PlayerScript>();
-                CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
-              //  col.GetComponent<PlayerScript>();
-                
-                 //   playerHPCanvas.GetComponent<HpBar>().curHP -= 10f;
-                
-                //이제 여기 들어갈 슬라이드 감소 함수
-                //player.HP_Cur -= attackDamage;
-                
-                Debug.Log("때렸다");
-            }
+            CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
+            col.GetComponent<PlayerScript>().Hit();
+            Debug.Log("때렸다");
         }
     }
 
@@ -58,5 +46,3 @@ public class Punch : MonoBehaviourPunCallbacks
     [PunRPC]
     void DestoryRPC() => Destroy(gameObject);
 }
-
-

@@ -83,26 +83,23 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     [PunRPC]
     void FixedUpdate()
     {
-        if (!PV.IsMine)
-        {
-            return;
-        }
-
         if (!ishited)
         {
-            float inputX = Input.GetAxisRaw("Horizontal");
-            float inputY = Input.GetAxisRaw("Vertical");
-
-            input = new Vector2(inputX, inputY);
-            input *= speed;
-            RB.velocity = input.normalized * speed;
-
-            if (inputX != 0)
+            if (PV.IsMine)
             {
-                PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
-            }
+                float inputX = Input.GetAxisRaw("Horizontal");
+                float inputY = Input.GetAxisRaw("Vertical");
 
-            NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+                input = new Vector2(inputX, inputY);
+                input *= speed;
+                RB.velocity = input.normalized * speed;
+
+                if (inputX != 0)
+                {
+                    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
+                }
+                NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+            }
         }
 
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
@@ -202,19 +199,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    public void Hit()
     {
-        if (col.transform.CompareTag("IsPunch") && !photonView.IsMine)
+        playerCanvasGo.GetComponent<HpBar>().curHP -= 10f;
+
+        if (playerCanvasGo.GetComponent<HpBar>().curHP <= 0)
         {
-            playerCanvasGo.GetComponent<HpBar>().curHP -= 10f;
+            //플레이어 죽음 처리  and 미라 생성?
         }
     }
 
-
-
-
-
-    public void SetHPBar()
+        public void SetHPBar()
     {
         hp_slider = UM.hp_slider;
         // 2022.06.26 kkh : hp 슬라이더 값 초기화
