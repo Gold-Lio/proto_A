@@ -3,20 +3,52 @@
   <component name="ChangeListManager">
     <list default="true" id="cc9b35d0-0c01-4d35-8540-2e4e7f745b3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/Meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/Meat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/b_t_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/b_t_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/belts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/belts.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/boots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/bracers.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/bracers.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/cloaks.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/cloaks.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/coins.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/f.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/f.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gem.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gloves.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gloves.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/helmets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/helmets.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/hp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/hp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/ingots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/ingots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/mp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/mp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/necklace.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/necklace.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/pants.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/pants.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/rings.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/rings.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/scroll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/scroll.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shield.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shoulders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shoulders.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/sword.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Coin.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Coin.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/HUD.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/HUD.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/IInventoryItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/IInventoryItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Inventory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Inventory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/InventoryPanel.prefab" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/InventoryPanel.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Meat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Meat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inven/Item.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +57,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Demos/DemoVoicePun/Scripts/Highlighter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/DataBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HpBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UJoystick/Example/Scrips/MultiJoyStick.cs" root0="FORCE_HIGHLIGHTING" />
@@ -107,6 +140,7 @@
       <workItem from="1656829891005" duration="8233000" />
       <workItem from="1657019485731" duration="15901000" />
       <workItem from="1657041427549" duration="603000" />
+      <workItem from="1657051550920" duration="1198000" />
     </task>
     <servers />
   </component>
