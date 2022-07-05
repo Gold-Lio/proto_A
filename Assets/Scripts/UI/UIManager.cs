@@ -47,6 +47,9 @@ public class UIManager : MonoBehaviourPun
     public Animator anim;
 
     public int killCooltime;
+
+    public Slider hp_slider = null;
+
     void Start()
     {
         PV = photonView;
@@ -236,4 +239,15 @@ public class UIManager : MonoBehaviourPun
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
     }
 
+    public void SetHPBar()
+    {
+        if (!NM.isGameStart)
+        {
+            hp_slider.enabled = false;
+        }
+        else
+        {
+            hp_slider.enabled = true;
+        }
+    }
 }

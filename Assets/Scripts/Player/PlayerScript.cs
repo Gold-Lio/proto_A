@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     public Rigidbody2D RB;
     public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
-
     public Transform Character, Canvas;
     public Text NickText;
 
@@ -42,11 +41,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     Vector3 curPos;
     private IPunObservable _punObservableImplementation;
 
+    // 2022.06.26 kkh : hp 슬라이더 추가
+    private Slider hp_slider = null;
+    private float hp_Max = 100.0f;
+    private float hp_Cur = 100.0f;
+
+    public float HP_Cur 
+    { 
+        get => hp_Cur; 
+        set => hp_Cur = value; 
+    }
+
 
     private void Awake()
     {
         PS = this;
-        //js = GameObject.FindObjectOfType<bl_Joystick>();
     }
 
     void Start()
@@ -92,39 +101,32 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
 
-            //Vector3 dir = new Vector3(js.Horizontal, js.Vertical,0);
-            //dir.Normalize();
-            //transform.position += dir * speed * Time.deltaTime;
-
-            //if (js.Horizontal != 0 || js.Vertical != 0)
-            //    MoveControl();
-
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
 
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
-    }
+        
 
-    //public void MoveControl()
-    //{
-    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * js.Vertical;
-    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * js.Horizontal;
-    //    transform.position += upMovement;
-    //    transform.position += rightMovement;
-    //}
+        if (UM.hp_slider != null && UM.hp_slider.enabled && hp_slider == null)
+        {
+            hp_slider = UM.hp_slider;
+        }
+
+        if (hp_slider != null && hp_slider.enabled)
+        {
+
+            // 2022.06.26 kkh : 피격 당했을때 이걸 넣어야하는데 그게 어디지?
+            //hp_Cur -= 10;
+
+            // 2022.06.26 kkh : hp 감소 실행
+            HandleHP();
+        }
+    }
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
-
-    //private void MoveControl()
-    //{
-    //    Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical;
-    //    Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal;
-    //    transform.position += upMovement;
-    //    transform.position += rightMovement;
-    //}
 
     public void SetPos(Vector3 target)
     {
@@ -172,22 +174,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     [PunRPC]
     public void Punch() // 펀치 함수. 
     {
-        PhotonNetwork.Instantiate("Glove", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
+        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
                 Quaternion.Euler(0, 0, -180))
             .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
         StartCoroutine(UM.PunchCoolCo());
 
-        //KillTargetPlayer.GetComponent<PhotonView>().RPC("Punch", RpcTarget.AllViaServer, true);
-
-        //KillTargetPlayer.GetComponent<PhotonView>().RPC("SetDie", RpcTarget.AllViaServer, true, colorIndex, KillTargetPlayer.colorIndex);
-        //Vector3 TargetPos = KillTargetPlayer.transform.position;
-        //transform.position = TargetPos;
-
-        //GameObject CurDeadBody = PhotonNetwork.Instantiate("DeadBody", TargetPos, Quaternion.identity);
-        //CurDeadBody.GetComponent<PhotonView>().RPC("SpawnBody", RpcTarget.AllViaServer, KillTargetPlayer.colorIndex, Random.Range(0, 2));
     }
-    //
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
@@ -199,16 +192,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
             curPos = (Vector3)stream.ReceiveNext();
         }
     }
-    //
-    // public void CheckItem()
-    // {
-    //     //if (hitInfo.transform.tag == "Item")
-    //     //{
-    //     Debug.Log("들어옴");
-    //     //    theInventory.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
-    //     //    Destroy(hitInfo.transform.gameObject);
-    // }
-
+   
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
@@ -217,23 +201,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
             inventory.AddItem(item);
         } 
     }
-    //
-    // private void OnTriggerEnter2D(BoxCollider2D col)
-    // {
-    //     IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-    //     if (item != null)
-    //     {
-    //         inventory.AddItem(item);
-    //     }
-    // }
-    //
-    // private void OnCollisionEnter(Collision col)
-    // {
-    //     IInventoryItem item = col.collider.GetComponent<IInventoryItem>();
-    //     if (item != null)
-    //     {
-    //         inventory.AddItem(item);
-    //     }
-    // }
+
+    public void SetHPBar()
+    {
+        hp_slider = UM.hp_slider;
+        // 2022.06.26 kkh : hp 슬라이더 값 초기화
+        hp_slider.value = hp_Cur / hp_Max;
+    }
+
+    private void HandleHP()
+    {
+        hp_slider.value = hp_Cur / hp_Max;
+    }
 }
 
