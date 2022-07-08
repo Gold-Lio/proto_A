@@ -15,6 +15,9 @@ public class HpBar : MonoBehaviourPunCallbacks
     public float curHP;
     private void Update()
     {
-        hpBar.value = Mathf.Lerp(hpBar.value, curHP / maxHp, Time.deltaTime * 5f); 
+        if (PhotonNetwork.IsMasterClient)
+        {
+            hpBar.value = Mathf.Lerp(hpBar.value, curHP / maxHp, Time.deltaTime * 5f);
+        }
     }
 }

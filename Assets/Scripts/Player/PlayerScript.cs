@@ -149,7 +149,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     {
         if (PV.IsMine)
         {
-            playerCanvasGo.SetActive(true);
+            return;
         }
     }
 
