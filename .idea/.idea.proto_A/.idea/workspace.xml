@@ -2,65 +2,313 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc9b35d0-0c01-4d35-8540-2e4e7f745b3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/Meat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/Meat.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/b_t_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/b_t_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/belts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/belts.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/boots.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/boots.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/bracers.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/bracers.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/cloaks.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/cloaks.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/coins.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/coins.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/f.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/f.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gem.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gem.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gloves.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/gloves.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/helmets.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/helmets.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/hp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/hp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/ingots.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/ingots.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/mp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/mp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/necklace.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/necklace.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/pants.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/pants.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/rings.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/rings.PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/scroll.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/scroll.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shield.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shield.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shoulders.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/shoulders.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/sword.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Design/RPG_inventory_icons/sword.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/InventoryPanel.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inven/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1.Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/BMJUA_TTF.TTF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/BMJUA_TTF.TTF.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0/nav_stabilize_base.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0/nav_stabilize_base.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0/nav_stabilize_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0/nav_stabilize_graph.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0/nav_stabilize_target.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame0/nav_stabilize_target.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/admin_Card.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/admin_Card.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/admin_Wallet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/admin_Wallet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/engineFuel_buttonBase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/engineFuel_buttonBase.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/enterID_panel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame1/enterID_panel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wires1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wires1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wires2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wires2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wires3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wires3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBase3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBaseBack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/Minigame2/electricity_wiresBaseBack.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_15.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_16.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_22.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_23.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_27.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_28.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_29.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_30.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_31.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_33.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_34.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_35.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_36.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_37.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_38.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_39.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_4.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_40.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_41.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_42.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_43.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/ETC/R_9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/HP_Bar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/HP_Bar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/apple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/apple.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/armor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/armor.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/axe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/axe.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/bag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/bag.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/book.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Item/book.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Joystick.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Joystick.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Prefab/Slot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Prefab/Slot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Punch.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/Punch.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/Meat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/Meat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/b_t_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/b_t_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/belts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/belts.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/boots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/bracers.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/bracers.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/cloaks.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/cloaks.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/f.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/f.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/gem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/gem.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/gloves.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/gloves.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/helmets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/helmets.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/hp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/hp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/ingots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/ingots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/mp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/mp.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/necklace.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/necklace.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/pants.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/pants.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/rings.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/rings.PNG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/scroll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/scroll.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/shield.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/shield.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/shoulders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/shoulders.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/sword.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/RPG_inventory_icons/sword.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/StunExplosion2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/StunExplosion2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_GameScene.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_GameScene.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_Inventory.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_Inventory.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_Inventory_Item.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_Inventory_Item.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_Stat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Resources/UI_Stat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Cinemachine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Cinemachine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonChat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonChat.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonRealtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonRealtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.Demos.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.Demos.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.Utilities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.Utilities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonUnityNetworking.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonVoice.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonVoice.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonVoice.PUN.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonVoice.PUN.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonVoice.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/PhotonVoice.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.Animation.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.Animation.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.Animation.Triangle.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.Animation.Triangle.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.Common.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.Common.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.IK.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.IK.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.PixelPerfect.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.PixelPerfect.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.Mathematics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.Mathematics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.Timeline.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/Unity.Timeline.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ARModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ARModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AccessibilityModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AccessibilityModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AndroidJNIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AndroidJNIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AnimationModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AnimationModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AssetBundleModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AssetBundleModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.AudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ClothModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ClothModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ClusterInputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ClusterInputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ClusterRendererModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ClusterRendererModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.CoreModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.CoreModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.CrashReportingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.CrashReportingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.DSPGraphModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.DSPGraphModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.DirectorModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.DirectorModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.GIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.GIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.GameCenterModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.GameCenterModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.GridModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.GridModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.HotReloadModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.HotReloadModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.IMGUIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.IMGUIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ImageConversionModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ImageConversionModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.InputLegacyModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.InputLegacyModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.InputModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.InputModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.JSONSerializeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.JSONSerializeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.LocalizationModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.LocalizationModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ParticleSystemModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ParticleSystemModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.PerformanceReportingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.PerformanceReportingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.Physics2DModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.Physics2DModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.PhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.PhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ProfilerModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ProfilerModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ScreenCaptureModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.ScreenCaptureModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SharedInternalsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SharedInternalsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SpriteMaskModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SpriteMaskModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SpriteShapeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SpriteShapeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.StreamingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.StreamingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SubstanceModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SubstanceModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SubsystemsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.SubsystemsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TLSModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TLSModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TerrainModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TerrainModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TextCoreModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TextCoreModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TextRenderingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TextRenderingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TilemapModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.TilemapModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UIElementsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UIElementsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UIElementsNativeModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UIElementsNativeModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UIModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UIModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UNETModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UNETModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UmbraModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UmbraModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityConnectModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityConnectModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityCurlModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityCurlModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VFXModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VFXModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VRModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VRModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VehiclesModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VehiclesModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VideoModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VideoModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VirtualTexturingModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.VirtualTexturingModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.WindModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.WindModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.XRModule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.XRModule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Managed/UnityEngine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Plugins/x86_64/AudioIn.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Plugins/x86_64/opus_egpv.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Plugins/x86_64/webrtc-audio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/Resources/unity_builtin_extra" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/Resources/unity_builtin_extra" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/resources.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/resources.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/resources.resource" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/Proto_A_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/Proto_A_Data/sharedassets0.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test_1/UnityPlayer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Test_1/UnityPlayer.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Demos/DemoVoicePun/Scripts/Highlighter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/DataBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inven/Item.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HpBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UJoystick/Example/Scrips/MultiJoyStick.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

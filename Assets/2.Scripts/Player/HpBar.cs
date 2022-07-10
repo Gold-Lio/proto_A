@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
-
 public class HpBar : MonoBehaviourPunCallbacks
 {
     public static HpBar instance;
@@ -15,7 +14,7 @@ public class HpBar : MonoBehaviourPunCallbacks
     public float curHP;
     private void Update()
     {
-        if (PhotonNetwork.IsMasterClient)
+        if (!PhotonNetwork.IsMasterClient)
         {
             hpBar.value = Mathf.Lerp(hpBar.value, curHP / maxHp, Time.deltaTime * 5f);
         }
