@@ -2,53 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc9b35d0-0c01-4d35-8540-2e4e7f745b3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.proto_A/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1.Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1.Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Arrow_Barrage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Arrow_Barrage.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Beam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Beam.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Blackhole.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Blackhole.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Buff.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Buff.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Chop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Chop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Claw.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Claw.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Dash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Dash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Fly.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Fly.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Heal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Heal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_MeteorShower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_MeteorShower.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Pound.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Pound.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_PsycicAttack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_PsycicAttack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Punches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Punches.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Recon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Recon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Reflect.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Reflect.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Slash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Slash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Slide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_Slide.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_SpiritArrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3.Sprites/UIButton_Sprite/UI Assets/Ability_Skill_Icons/UI_Skill_Icon_SpiritArrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChatManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ChatManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collider.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Collider.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DatabaseManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DatabaseManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HP_Bar.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/HP_Bar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Inventory/Drag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Inventory/Drag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Inventory/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Inventory/Inventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Network/NetworkManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/Network/NetworkManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2.Scripts/Player/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2.Scripts/Player/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/8.Fonts/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/8.Fonts/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +18,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/Inventory/Drag.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/2.Scripts/Inventory/Drag&amp;Drop/DragAndDrop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LowPolyNature/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -137,7 +100,7 @@
       <workItem from="1657019485731" duration="15901000" />
       <workItem from="1657041427549" duration="603000" />
       <workItem from="1657051550920" duration="1198000" />
-      <workItem from="1657429173983" duration="2035000" />
+      <workItem from="1657429173983" duration="19304000" />
     </task>
     <servers />
   </component>

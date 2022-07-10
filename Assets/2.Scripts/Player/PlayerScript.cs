@@ -13,8 +13,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
 {
     public static PlayerScript PS;
 
-    //[SerializeField] public Inventory inventory;
-
+    //public InventoryObject inventory;
     //public bl_Joystick js;
 
     public Rigidbody2D RB;
@@ -40,18 +39,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     Vector3 curPos;
     private IPunObservable _punObservableImplementation;
 
-    // 2022.06.26 kkh : hp 슬라이더 추가
-    private Slider hp_slider = null;
-    private float hp_Max = 100.0f;
-    private float hp_Cur = 100.0f;
-
     public GameObject playerCanvasGo;
-
-    public float HP_Cur 
-    { 
-        get => hp_Cur; 
-        set => hp_Cur = value; 
-    }
 
 
     private void Awake()
@@ -105,22 +93,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
-        
-
-        if (UM.hp_slider != null && UM.hp_slider.enabled && hp_slider == null)
-        {
-            hp_slider = UM.hp_slider;
-        }
-
-        if (hp_slider != null && hp_slider.enabled)
-        {
-
-            // 2022.06.26 kkh : 피격 당했을때 이걸 넣어야하는데 그게 어디지?
-            //hp_Cur -= 10;
-
-            // 2022.06.26 kkh : hp 감소 실행
-            HandleHP();
-        }
     }
 
     [PunRPC]
@@ -209,16 +181,22 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         }
     }
 
-        public void SetHPBar()
-    {
-        hp_slider = UM.hp_slider;
-        // 2022.06.26 kkh : hp 슬라이더 값 초기화
-        hp_slider.value = hp_Cur / hp_Max;
-    }
-
-    private void HandleHP()
-    {
-        hp_slider.value = hp_Cur / hp_Max;
-    }
+    // public void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.gameObject.CompareTag("Item"))
+    //     {
+    //         var item = col.GetComponent<GroundItem>();
+    //         if (item)
+    //         {
+    //             inventory.AddItem(new Item(item.item), 1);
+    //             Destroy(col.gameObject);
+    //         }
+    //     }
+    // }
+    //
+    // private void OnApplicationQuit()
+    // {
+    //     inventory.Container.Items.Clear();
+    // }
 }
 
