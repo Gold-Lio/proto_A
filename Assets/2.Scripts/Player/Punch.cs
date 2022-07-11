@@ -35,7 +35,11 @@ public class Punch : MonoBehaviourPunCallbacks
         if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) // 느린쪽 판정
         {
             CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
-            col.GetComponent<PlayerScript>().Hit();
+            // kkh : 
+            PlayerScript player = col.GetComponent<PlayerScript>();
+            player.HP_Cur -= attackDamage;
+
+            //col.GetComponent<PlayerScript>().Hit();
             Debug.Log("때렸다");
         }
     }

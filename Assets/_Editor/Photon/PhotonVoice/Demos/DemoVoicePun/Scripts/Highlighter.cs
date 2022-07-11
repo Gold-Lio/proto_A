@@ -32,8 +32,8 @@ namespace ExitGames.Demos.DemoPunVoice
         [SerializeField]
         private Image speakerSprite;
 
-        // [SerializeField]
-        // private Text bufferLagText;
+        //[SerializeField]
+        //private Text bufferLagText;
 
         private bool showSpeakerLag;
 
@@ -72,11 +72,11 @@ namespace ExitGames.Demos.DemoPunVoice
         {
             this.recorderSprite.enabled = this.photonVoiceView.IsRecording;
             this.speakerSprite.enabled = this.photonVoiceView.IsSpeaking;
-            // this.bufferLagText.enabled = this.showSpeakerLag && this.photonVoiceView.IsSpeaking;
-            // if (this.bufferLagText.enabled)
-            // {
-            //     this.bufferLagText.text = string.Format("{0}", this.photonVoiceView.SpeakerInUse.Lag);
-            // }
+            //this.bufferLagText.enabled = this.showSpeakerLag && this.photonVoiceView.IsSpeaking;
+            //if (this.bufferLagText.enabled)
+            //{
+            //    this.bufferLagText.text = string.Format("{0}", this.photonVoiceView.SpeakerInUse.Lag);
+            //}
         }
 
         private void LateUpdate()

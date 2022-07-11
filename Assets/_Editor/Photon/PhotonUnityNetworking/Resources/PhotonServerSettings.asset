@@ -35,11 +35,10 @@ MonoBehaviour:
   StartInOfflineMode: 0
   RpcList:
   - AddMissionGage
-  - CantHearYou
-  - ChangeColour
   - ChatClearRPC
   - ChatRPC
   - ClickRpc
+  - DestoryRPC
   - DestroyRpc
   - DestroySpaceship
   - DirRPC
@@ -47,7 +46,6 @@ MonoBehaviour:
   - FixedUpdate
   - FlipXRPC
   - GameStartRPC
-  - HeresWhy
   - Punch
   - RespawnSpaceship
   - SetColor
@@ -55,7 +53,9 @@ MonoBehaviour:
   - SetMaxMissionGage
   - SpawnBody
   - WinCheck
-  - DestoryRPC
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
