@@ -125,7 +125,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.CurrentRoom.IsVisible = false;
 
         PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
-
     }
 
     void SetImpoCrew()
@@ -134,9 +133,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (impoType == ImpoType.Rand1)
         {
-            for (int i = 0; i < 1; i++) // 임포스터 1명 (테스트)
+            for (int i = 0; i < 1; i++) //  파라오 1명 (테스트)
             {
-                int rand = Random.Range(0, GachaList.Count); // 랜덤
+                int rand = Random.Range(0, GachaList.Count); // 플레이어 에서 끌어와 랜덤
                 Players[rand].GetComponent<PhotonView>().RPC("SetImpoCrew", RpcTarget.AllViaServer, true);
                 GachaList.RemoveAt(rand);
             }
