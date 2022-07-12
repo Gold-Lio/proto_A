@@ -19,26 +19,24 @@ public class InventoryUI : MonoBehaviour
         inventory = Inventory.instance;
         slots = slotHolder.GetComponentsInChildren<Slot>();
 
-        inventory.onSlotCountChange += SlotChange;
-        //시작하자마자. 이것을 네트워크로
-        //현재, 
+        inventory.OnaddItem += RedrawSlotUI;
         inventoryPanel.SetActive(activeInventory);
     }
 
-    private void SlotChange(int val)
+    //이 함수는 반복문을 통해서 슬롯을 초기화 하고, item의 갯수만큼 slot을 채워넣는다.
+    private void RedrawSlotUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if(i< inventory.SlotCnt)
-            {
-                slots[i].GetComponent<Button>().interactable = true;
-            }
-            else
-            {
-                slots[i].GetComponent<Button>().interactable = false;
-            }
+            slots[i].RemoveSlot();
+        }
+        for (int i = 0; i < inventory.items.Count; i++)
+        {
+            slots[i].item = inventory.items[i];
+            slots[i].UpdateSlotUI();
         }
     }
+
 
     private void Update()
     {
@@ -48,10 +46,4 @@ public class InventoryUI : MonoBehaviour
             inventoryPanel.SetActive(activeInventory);
         }
     }
-
-    public void AddSlot()
-    {
-        inventory.SlotCnt++;
-    }
-
 }
