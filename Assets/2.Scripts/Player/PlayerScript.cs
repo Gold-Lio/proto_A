@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
 {
     public static PlayerScript PS;
 
-    //public InventoryObject inventory;
+    public Inventory inventory;
     //public bl_Joystick js;
 
     public Rigidbody2D RB;
@@ -206,6 +206,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         hp_slider.value = hp_Cur / hp_Max;
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
 
     //public void Hit()
     //{

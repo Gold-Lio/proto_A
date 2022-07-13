@@ -1408,6 +1408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 4429179265509200975, guid: 485704d0df7e75d418cdb22f957210cf,
+    type: 3}
   RB: {fileID: 4313270873243922857}
   SR: {fileID: 1140705742494177079}
   CharacterSR:
