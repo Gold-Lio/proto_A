@@ -39,7 +39,7 @@ public class Punch : MonoBehaviourPunCallbacks
             PlayerScript player = col.GetComponent<PlayerScript>();
             player.HP_Cur -= attackDamage;
 
-            col.GetComponentInChildren<HealthBar>().hp -= 10;
+            //col.GetComponentInChildren<HealthBar>().hp -= 10;
             
             Debug.Log("때렸다");
 

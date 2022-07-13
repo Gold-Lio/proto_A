@@ -11,10 +11,6 @@ public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
 
-    [SerializeField]
-   // public InventorySlot theInventory;
-    public InteractionScript IS;
-
     void Awake() => UM = this;
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
