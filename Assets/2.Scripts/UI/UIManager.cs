@@ -126,7 +126,10 @@ public class UIManager : MonoBehaviourPun
             //해당 스프라이트를 먹어지는 코드를 구현해야함. 
             //애드리스너로 해보자 =>이벤트로 변경해서 + 넣어주기
             //
-            
+            //IInventoryItem item = 
+            if (!PV.IsMine)
+                return;
+
 
 
         }
