@@ -1,0 +1,1344 @@
+fileFormatVersion: 2
+guid: be7709ca06d0b754cbcf79562cca0931
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2425912486117180543
+    second: PC Computer - MapleStory - Mummy_0
+  - first:
+      213: -3325923744371231310
+    second: PC Computer - MapleStory - Mummy_1
+  - first:
+      213: 8381132573019911219
+    second: PC Computer - MapleStory - Mummy_2
+  - first:
+      213: -6987483754911475341
+    second: PC Computer - MapleStory - Mummy_3
+  - first:
+      213: -6574969911564270015
+    second: PC Computer - MapleStory - Mummy_4
+  - first:
+      213: -4426809699634179656
+    second: PC Computer - MapleStory - Mummy_5
+  - first:
+      213: 4423129761025721943
+    second: PC Computer - MapleStory - Mummy_6
+  - first:
+      213: 1559444881417412256
+    second: PC Computer - MapleStory - Mummy_7
+  - first:
+      213: -1362473013252563724
+    second: PC Computer - MapleStory - Mummy_8
+  - first:
+      213: -669668595729597467
+    second: PC Computer - MapleStory - Mummy_9
+  - first:
+      213: -1463221933640200068
+    second: PC Computer - MapleStory - Mummy_10
+  - first:
+      213: 1640246487540984576
+    second: PC Computer - MapleStory - Mummy_11
+  - first:
+      213: -7626663964473119139
+    second: PC Computer - MapleStory - Mummy_12
+  - first:
+      213: 4521774117744772877
+    second: PC Computer - MapleStory - Mummy_13
+  - first:
+      213: -7690352305328918200
+    second: PC Computer - MapleStory - Mummy_14
+  - first:
+      213: 1683891276941326687
+    second: PC Computer - MapleStory - Mummy_15
+  - first:
+      213: 6078133176356764096
+    second: PC Computer - MapleStory - Mummy_16
+  - first:
+      213: 6869517204623228717
+    second: PC Computer - MapleStory - Mummy_17
+  - first:
+      213: 6461250187654361586
+    second: PC Computer - MapleStory - Mummy_18
+  - first:
+      213: -4222676418850097055
+    second: PC Computer - MapleStory - Mummy_19
+  - first:
+      213: -3131389376767957572
+    second: PC Computer - MapleStory - Mummy_20
+  - first:
+      213: 3879594475852421715
+    second: PC Computer - MapleStory - Mummy_21
+  - first:
+      213: -2861629667848957670
+    second: PC Computer - MapleStory - Mummy_22
+  - first:
+      213: 6255233529942187383
+    second: PC Computer - MapleStory - Mummy_23
+  - first:
+      213: 816006506794666458
+    second: PC Computer - MapleStory - Mummy_24
+  - first:
+      213: -364684596091003076
+    second: PC Computer - MapleStory - Mummy_25
+  - first:
+      213: 4953889260772411506
+    second: PC Computer - MapleStory - Mummy_26
+  - first:
+      213: -227835392528625585
+    second: PC Computer - MapleStory - Mummy_27
+  - first:
+      213: 7134349471291702996
+    second: PC Computer - MapleStory - Mummy_28
+  - first:
+      213: 7868163380958269438
+    second: PC Computer - MapleStory - Mummy_29
+  - first:
+      213: -5559429663878151219
+    second: PC Computer - MapleStory - Mummy_30
+  - first:
+      213: 5557832216729383792
+    second: PC Computer - MapleStory - Mummy_31
+  - first:
+      213: -4345820915907670559
+    second: PC Computer - MapleStory - Mummy_32
+  - first:
+      213: -6065618032728649914
+    second: PC Computer - MapleStory - Mummy_33
+  - first:
+      213: -1733191248576689374
+    second: PC Computer - MapleStory - Mummy_34
+  - first:
+      213: 5270590928188699358
+    second: PC Computer - MapleStory - Mummy_35
+  - first:
+      213: 9176738719956083924
+    second: PC Computer - MapleStory - Mummy_36
+  - first:
+      213: 8328605553786697624
+    second: PC Computer - MapleStory - Mummy_37
+  - first:
+      213: -4234210079609506988
+    second: PC Computer - MapleStory - Mummy_38
+  - first:
+      213: 51199397077797394
+    second: PC Computer - MapleStory - Mummy_39
+  - first:
+      213: 6914456458899176511
+    second: PC Computer - MapleStory - Mummy_40
+  - first:
+      213: 3792319943666330084
+    second: PC Computer - MapleStory - Mummy_41
+  - first:
+      213: 6745127726162811824
+    second: PC Computer - MapleStory - Mummy_42
+  - first:
+      213: -6301629242198188362
+    second: PC Computer - MapleStory - Mummy_43
+  - first:
+      213: 7370775584473527763
+    second: PC Computer - MapleStory - Mummy_44
+  - first:
+      213: 4577459043078204948
+    second: PC Computer - MapleStory - Mummy_45
+  - first:
+      213: 3744691649564818211
+    second: PC Computer - MapleStory - Mummy_46
+  - first:
+      213: -5131036919786418626
+    second: PC Computer - MapleStory - Mummy_47
+  - first:
+      213: -1372489991460141478
+    second: PC Computer - MapleStory - Mummy_48
+  - first:
+      213: -1916180780072845388
+    second: PC Computer - MapleStory - Mummy_49
+  - first:
+      213: -4699351802689876275
+    second: PC Computer - MapleStory - Mummy_50
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 745
+        width: 67
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bfcc8627d655ed0800000000000000
+      internalID: -2425912486117180543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 745
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b537bad9f1f7d1d0800000000000000
+      internalID: -3325923744371231310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 745
+        width: 69
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 334be468ba3cf4470800000000000000
+      internalID: 8381132573019911219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 745
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37950b2db88770f90800000000000000
+      internalID: -6987483754911475341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 648
+        width: 66
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146845c73b301c4a0800000000000000
+      internalID: -6574969911564270015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 648
+        width: 58
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b11d0d4800d092c0800000000000000
+      internalID: -4426809699634179656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_6
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 648
+        width: 63
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7568569351d126d30800000000000000
+      internalID: 4423129761025721943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 648
+        width: 59
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae9fab7bd244a510800000000000000
+      internalID: 1559444881417412256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_8
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 648
+        width: 63
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc560d5306871de0800000000000000
+      internalID: -1362473013252563724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 648
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb7d42d5fbd4b6f0800000000000000
+      internalID: -669668595729597467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 558
+        width: 70
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70d0d1676791bbe0800000000000000
+      internalID: -1463221933640200068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_11
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 595
+        width: 55
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b66f17d7353c610800000000000000
+      internalID: 1640246487540984576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_12
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 595
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5eae483885a82690800000000000000
+      internalID: -7626663964473119139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_13
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 595
+        width: 61
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d078bba4a9190ce30800000000000000
+      internalID: 4521774117744772877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_14
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 574
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8417343d251664590800000000000000
+      internalID: -7690352305328918200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_15
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 574
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59777ad1326e5710800000000000000
+      internalID: 1683891276941326687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_16
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 574
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9f24aabedd95450800000000000000
+      internalID: 6078133176356764096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_17
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 574
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f7008508d655f50800000000000000
+      internalID: 6869517204623228717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_18
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 574
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1701000d8faa950800000000000000
+      internalID: 6461250187654361586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_19
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 574
+        width: 40
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16875057b2a0665c0800000000000000
+      internalID: -4222676418850097055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 464
+        width: 66
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb56050e3f11b84d0800000000000000
+      internalID: -3131389376767957572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_21
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 464
+        width: 58
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a50cdee9617d530800000000000000
+      internalID: 3879594475852421715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_22
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 464
+        width: 63
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11d4298af27948d0800000000000000
+      internalID: -2861629667848957670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_23
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 464
+        width: 59
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d115bf0cd0fc650800000000000000
+      internalID: 6255233529942187383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_24
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 464
+        width: 63
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad947e33899035b00800000000000000
+      internalID: 816006506794666458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_25
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 464
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f50f2ca4160faf0800000000000000
+      internalID: -364684596091003076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_26
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 355
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27846fc2900cfb440800000000000000
+      internalID: 4953889260772411506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_27
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 242
+        width: 118
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40d119eae096dcf0800000000000000
+      internalID: -227835392528625585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_28
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 334
+        width: 93
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de76d37b0d420360800000000000000
+      internalID: 7134349471291702996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_29
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 242
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff01cc58e4513d60800000000000000
+      internalID: 7868163380958269438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_30
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 242
+        width: 108
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc306c20d20f8d2b0800000000000000
+      internalID: -5559429663878151219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_31
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 242
+        width: 84
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073706754f2612d40800000000000000
+      internalID: 5557832216729383792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_32
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 242
+        width: 93
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed4cd1f6ea80b3c0800000000000000
+      internalID: -4345820915907670559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_33
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 242
+        width: 84
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f4108498892dba0800000000000000
+      internalID: -6065618032728649914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_34
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 242
+        width: 93
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b45c40eb772f7e0800000000000000
+      internalID: -1733191248576689374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_35
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 126
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2751f3686e42940800000000000000
+      internalID: 5270590928188699358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_36
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 126
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d42e8fce335a5f70800000000000000
+      internalID: 9176738719956083924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_37
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 126
+        width: 75
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8973dc3df96259370800000000000000
+      internalID: 8328605553786697624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_38
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 126
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4533f7ccd501d35c0800000000000000
+      internalID: -4234210079609506988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_39
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 126
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a49839495e5b000800000000000000
+      internalID: 51199397077797394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_40
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 126
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c3797d38515ff50800000000000000
+      internalID: 6914456458899176511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_41
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 126
+        width: 75
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e96cdc65e601a430800000000000000
+      internalID: 3792319943666330084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_42
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 126
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb92920ee18b9d50800000000000000
+      internalID: 6745127726162811824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_43
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 11
+        width: 86
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be1098779d1c88a0800000000000000
+      internalID: -6301629242198188362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_44
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 11
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5baaf87514a4660800000000000000
+      internalID: 7370775584473527763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_45
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 11
+        width: 97
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e639c4fb6668f30800000000000000
+      internalID: 4577459043078204948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_46
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 11
+        width: 70
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bbead0731d7f330800000000000000
+      internalID: 3744691649564818211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_47
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 11
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e47ba5b15eac8b0800000000000000
+      internalID: -5131036919786418626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_48
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 11
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a564d31ef9fe3fce0800000000000000
+      internalID: -1372489991460141478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_49
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 11
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfb35e9bbb5865e0800000000000000
+      internalID: -1916180780072845388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Mummy_50
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 11
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce04160f6c88ceb0800000000000000
+      internalID: -4699351802689876275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
