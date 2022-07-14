@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
+public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static GameManager instance
     {
