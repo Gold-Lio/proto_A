@@ -211,7 +211,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
         if (item != null)
         {
-            inventory.AddItem(item);
+            //inventory.AddItem(item);
+            PV.RPC("AddItem", RpcTarget.AllBuffered, item);
         }
     }
 
@@ -225,24 +226,5 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     //    }
     //}
 
-
-
-    // public void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     if (col.gameObject.CompareTag("Item"))
-    //     {
-    //         var item = col.GetComponent<GroundItem>();
-    //         if (item)
-    //         {
-    //             inventory.AddItem(new Item(item.item), 1);
-    //             Destroy(col.gameObject);
-    //         }
-    //     }
-    // }
-    //
-    // private void OnApplicationQuit()
-    // {
-    //     inventory.Container.Items.Clear();
-    // }
 }
 

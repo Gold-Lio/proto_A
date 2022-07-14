@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Inventory : MonoBehaviour
+using Photon.Pun;
+using Photon.Realtime;
+public class Inventory : MonoBehaviourPun
 {
     private const int SLOTS = 5;
     private const int Max = 6;
@@ -37,7 +38,8 @@ public class Inventory : MonoBehaviour
 
     //실행은 되지만 빠져나감으로써ㅡ HUD의 Inventory_ItemRemoved가 아예작동하지 않음.
     public void RemovedItem(IInventoryItem item)
-    { 
+    {
+
         if (mItems.Contains(item))
         {
             Debug.Log($"현재 카운트는 : {mItems.Count} 입니다.");
@@ -60,7 +62,6 @@ public class Inventory : MonoBehaviour
                 ItemRemoved(this, new InventoryEventArgs(item));
             }
         }
-        Debug.Log("빠져나갔다.");
     }
 }
 
