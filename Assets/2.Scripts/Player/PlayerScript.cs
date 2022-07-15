@@ -98,21 +98,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         }
 
         // 2022.06.26 kkh : 혹시 몰라서 한번더 체크
-        if (UM.hp_slider != null && UM.hp_slider.enabled && hp_slider == null)
-        {
-            hp_slider = UM.hp_slider;
-        }
+        //if (UM.hp_slider != null && UM.hp_slider.enabled && hp_slider == null)
+        //{
+        //    hp_slider = UM.hp_slider;
+        //}
 
-        if (hp_slider != null && hp_slider.enabled)
-        {
+        //if (hp_slider != null && hp_slider.enabled)
+        //{
 
-            // 2022.06.26 kkh : 피격 당했을때 이걸 넣어야하는데 그게 어디지?
-            //hp_Cur -= 10;
+        //    // 2022.06.26 kkh : 피격 당했을때 이걸 넣어야하는데 그게 어디지?
+        //    //hp_Cur -= 10;
 
 
-            // 2022.06.26 kkh : hp 감소 실행
-            HandleHP();
-        }
+        //    // 2022.06.26 kkh : hp 감소 실행
+        //    HandleHP();
+        //}
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
@@ -194,37 +194,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         }
     }
 
-    public void SetHPBar()
-    {
-        hp_slider = UM.hp_slider;
-        // 2022.06.26 kkh : hp 슬라이더 값 초기화
-        hp_slider.value = hp_Cur / hp_Max;
-    }
-
-    private void HandleHP()
-    {
-        hp_slider.value = hp_Cur / hp_Max;
-    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
         if (item != null)
         {
-            //inventory.AddItem(item);
-            PV.RPC("AddItem", RpcTarget.AllBuffered, item);
+            inventory.AddItem(item);
         }
     }
-
-    //public void Hit()
-    //{
-    //    playerCanvasGo.GetComponent<HpBar>().curHP -= 10f;
-
-    //    if (playerCanvasGo.GetComponent<HpBar>().curHP <= 0)
-    //    {
-    //        //플레이어 죽음 처리  and 미라 생성?
-    //    }
-    //}
-
 }
 

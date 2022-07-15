@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviourPun
 
     public int killCooltime;
 
-    public Slider hp_slider = null;
+   // public Slider hp_slider = null;
 
     void Start()
     {
@@ -129,9 +129,6 @@ public class UIManager : MonoBehaviourPun
             //IInventoryItem item = 
             if (!PV.IsMine)
                 return;
-
-
-
         }
     }
 
@@ -170,7 +167,6 @@ public class UIManager : MonoBehaviourPun
             ColorBtn[i].interactable = !contain;
         }
     }
-
 
     public IEnumerator PunchCoolCo()
     {
@@ -239,17 +235,5 @@ public class UIManager : MonoBehaviourPun
     {
         StartCoroutine(MissionClearCo(MissionPanel));
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
-    }
-
-    public void SetHPBar()
-    {
-        if (!NM.isGameStart)
-        {
-            hp_slider.enabled = false;
-        }
-        else
-        {
-            hp_slider.enabled = true;
-        }
     }
 }
