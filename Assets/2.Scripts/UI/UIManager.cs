@@ -15,10 +15,10 @@ public class UIManager : MonoBehaviourPun
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
-    int curBtn0, curBtn1, curBtn2;
-    bool active0, active1, active2;
-    //그냥 0 use , 1 attack   2 pickup
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2;
+    int curBtn0, curBtn1, curBtn2, curBtn3, curBtn4;  //3-사보 4-기믹(use버튼 동일 이미지)
+    bool active0, active1, active2, active3, active4; //3-사보 4-기믹(use버튼 동일 이미지)
+    //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
+    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2, InteractionBtn3, InteractionBtn4; // 3번은 사보. , 4 기믹
     public Text Interaction1Text;
 
     public Image PreviewImage;
@@ -41,10 +41,7 @@ public class UIManager : MonoBehaviourPun
     public GameObject[] ChatPanels;
 
     public Animator anim;
-
     public int killCooltime;
-
-   // public Slider hp_slider = null;
 
     void Start()
     {
@@ -76,6 +73,7 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn1.sprite = sprites[index];
         InteractionBtn1.GetComponent<Button>().interactable = active1;
     }
+
     public void SetInteractionBtn2(int index, bool _active)
     {
         curBtn2 = index;
@@ -83,6 +81,27 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn2.sprite = sprites[index];
         InteractionBtn2.GetComponent<Button>().interactable = active2;
     }
+
+    //파라오 사보
+    public void SetInteractionBtn3(int index, bool _active)
+    {
+        curBtn3 = index;
+        active3 = _active;
+        InteractionBtn3.sprite = sprites[index];
+        InteractionBtn3.GetComponent<Button>().interactable = active2;
+    }
+
+    //기믹
+    public void SetInteractionBtn4(int index, bool _active)
+    {
+        curBtn4 = index;
+        active4 = _active;
+        InteractionBtn4.sprite = sprites[index];
+        InteractionBtn4.GetComponent<Button>().interactable = active2;
+    }
+
+
+
 
     public void ColorChange(int _colorIndex)
     {
@@ -110,7 +129,7 @@ public class UIManager : MonoBehaviourPun
                                      
     public void ClickInteractionBtn1()
     {
-        // 킬
+        // 공격!!
         if (curBtn1 == 5)
         {
             if (NM.MyPlayer.isDie) return;
@@ -125,29 +144,36 @@ public class UIManager : MonoBehaviourPun
         {
             //해당 스프라이트를 먹어지는 코드를 구현해야함. 
             //애드리스너로 해보자 =>이벤트로 변경해서 + 넣어주기
-            //
-            //IInventoryItem item = 
             if (!PV.IsMine)
                 return;
         }
     }
 
-    //기믹 Onbutton.
+    //사보 Onbutton.
     public void ClickInteractionBtn3()
     {
-        if(curBtn0 == 0)
+        if(curBtn0 == 6)
+        {
+            StartCoroutine(GimmickCo());
+        }
+    }
+
+    // 기믹이 누를 것들. 
+    public void ClickInteractionBtn4()
+    {
+        if (curBtn0 == 0)
         {
             StartCoroutine(GimmickCo());
         }
     }
 
 
-
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
-
     }
+
+
     void Update()
     {
         if (!PhotonNetwork.InRoom) return;

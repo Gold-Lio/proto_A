@@ -9,11 +9,13 @@ using static NetworkManager;
 using static UIManager;
 using Random = UnityEngine.Random;
 
-public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
+public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
     public Inventory inventory;
 
+    public enum State { Idle, Walk };
+    public State state;
     public Rigidbody2D RB;
     public SpriteRenderer SR;
     public SpriteRenderer[] CharacterSR;
@@ -38,7 +40,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     private IPunObservable _punObservableImplementation;
 
     public GameObject playerCanvasGo;
-
     public Animator anim;
 
     private void Awake()
@@ -56,7 +57,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
         NM.SortPlayers();
         isMove = true;
         anim = GetComponent<Animator>();
-
     }
 
     public Vector3 GetPosition()
@@ -71,39 +71,29 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
     [PunRPC]
     void FixedUpdate()
     {
-        if (!ishited)
+        if (!PV.IsMine) return;
+
+        if (isMove)
         {
-            if (PV.IsMine)
+            float inputX = Input.GetAxisRaw("Horizontal");
+            float inputY = Input.GetAxisRaw("Vertical");
+
+            input = new Vector2(inputX, inputY);
+            input *= speed;
+            RB.velocity = input.normalized * speed;
+
+            if (inputX != 0)
             {
-                float inputX = Input.GetAxisRaw("Horizontal");
-                float inputY = Input.GetAxisRaw("Vertical");
-
-                input = new Vector2(inputX, inputY);
-                input *= speed;
-                RB.velocity = input.normalized * speed;
-                if(inputX > 0 && inputY > 0 )
-                {
-                    anim.SetBool("Walk", true);
-                }
-                else if(inputX < 0 && inputY < 0)
-                {
-                    anim.SetBool("Idle",true);
-                }
-
-                if (inputX != 0)
-                {
-                    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
-                }
-
-                NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+                PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
+             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
-
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
-        else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
+            else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
+    
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
@@ -156,6 +146,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks ,  IPunObservable
             NM.Interactions[GachaList[rand]].SetActive(true);
             GachaList.RemoveAt(rand);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (!col.gameObject.CompareTag("Player")) return;
+        Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
     }
 
     [PunRPC]

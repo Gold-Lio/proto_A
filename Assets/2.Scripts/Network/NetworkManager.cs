@@ -30,6 +30,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public Light2D PointLight2D;
     public GameObject[] Interactions;
     public GameObject[] Lights;
+
+    public GameObject[] wall;
+
+
     PhotonView PV;
     public bool isTest;
     public enum ImpoType { Rand1 }

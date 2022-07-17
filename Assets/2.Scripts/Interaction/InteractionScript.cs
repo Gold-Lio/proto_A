@@ -47,7 +47,7 @@ public class InteractionScript : MonoBehaviourPun
 
             else if (type == Type.Gimmick)
             {
-
+                UM.SetInteractionBtn3(0, true);
             }
         }
     }
@@ -71,8 +71,13 @@ public class InteractionScript : MonoBehaviourPun
             else if (type == Type.PickUp)
             {
                 UM.SetInteractionBtn2(6, false);
-
             }
+
+            else if (type == Type.Gimmick)
+            {
+                UM.SetInteractionBtn3(0, false);
+            }
+
         }
     }
 
