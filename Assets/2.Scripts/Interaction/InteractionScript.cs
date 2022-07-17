@@ -9,7 +9,7 @@ using static NetworkManager;
 public class InteractionScript : MonoBehaviourPun
 {
     private InteractionScript IS;
-    public enum Type { Customize, Mission, PickUp };
+    public enum Type { Customize, Mission, PickUp, Gimmick };
     public Type type;
     MinigameManager MM;
    // public static Item go;
@@ -43,6 +43,11 @@ public class InteractionScript : MonoBehaviourPun
             else if (type == Type.PickUp)
             {
                 UM.SetInteractionBtn2(6, true);
+            }
+
+            else if (type == Type.Gimmick)
+            {
+
             }
         }
     }

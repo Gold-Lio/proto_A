@@ -132,6 +132,15 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
+    //기믹 Onbutton.
+    public void ClickInteractionBtn3()
+    {
+        if(curBtn0 == 0)
+        {
+            StartCoroutine(GimmickCo());
+        }
+    }
+
 
 
     public void SetIsCustomize(bool b)
@@ -202,6 +211,13 @@ public class UIManager : MonoBehaviourPun
     public void ShowLog(string log)
     {
         LogText.text = log;
+    }
+
+
+    IEnumerator GimmickCo()
+    {
+        //다른곳에서 . 
+        yield return new WaitForSeconds(10f);
     }
 
 
