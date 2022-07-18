@@ -86,14 +86,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             }
-             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
+            NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
-            else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
+        else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
-    
+
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
@@ -114,14 +114,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     void SetImpoCrew(bool _isImposter)
     {
         isImposter = _isImposter;
-    }
-
-    public void SetHp()
-    {
-        if (PV.IsMine)
-        {
-            return;
-        }
     }
 
     public void SetNickColor()

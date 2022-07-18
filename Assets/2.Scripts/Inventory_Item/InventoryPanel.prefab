@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1709350573778076423}
   - component: {fileID: 1708662791792366477}
   - component: {fileID: 1596739719575458222}
+  - component: {fileID: 6563214305136857835}
   m_Layer: 0
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -242,6 +243,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 4429179265509200975, guid: 485704d0df7e75d418cdb22f957210cf,
     type: 3}
+--- !u!114 &6563214305136857835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596739719575458225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1596751199040691945
 GameObject:
   m_ObjectHideFlags: 0
