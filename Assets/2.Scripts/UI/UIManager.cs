@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviourPun
             WaitingInteractionBtn0.sprite = sprites[index];
             WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
         }
-        else // 
+        else  
         {
             InteractionBtn0.sprite = sprites[index];
             InteractionBtn0.GetComponent<Button>().interactable = active0;

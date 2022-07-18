@@ -47,7 +47,7 @@ public class InteractionScript : MonoBehaviourPun
 
             else if (type == Type.Gimmick)
             {
-                UM.SetInteractionBtn3(0, true);
+                UM.SetInteractionBtn3(0, true);  //사보 버튼이 use로 변함.  그냥 use버튼이 또다른 
             }
         }
     }
