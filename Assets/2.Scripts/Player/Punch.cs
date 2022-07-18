@@ -9,7 +9,6 @@ public class Punch : MonoBehaviourPunCallbacks
 {
     public float attackDamage;
     public PhotonView PV;
-    public GameObject playerHPCanvas;
 
     public float camShakeIntencity;
     public float camShakeTime;
@@ -36,7 +35,6 @@ public class Punch : MonoBehaviourPunCallbacks
         {
             CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
            
-
             col.GetComponentInChildren<HealthBar>().hp -= 10;
             Debug.Log("때렸다");
         }

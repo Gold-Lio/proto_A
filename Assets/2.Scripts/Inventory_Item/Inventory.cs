@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+
 public class Inventory : MonoBehaviourPun
 {
-    private const int SLOTS = 5;
-    private const int Max = 6;
+    private const int SLOTS = 2;
 
     private List<IInventoryItem> mItems = new List<IInventoryItem>(); //인터페이스의 List 변수 mitems를 만듦
 

@@ -166,20 +166,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
         MyPlayer.SetMission();
-        //MyPlayer.SetHPBar();    // HPBar 추가
         UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
-
-        //  PlayerScript.PS.GetComponent<Inventory>();
-        // Inventory.instance.SetInventory();
 
         ShowPanel(GamePanel);
         ShowGameUI();
-
-        //Pickup.instance.SetPickup();
-        //Slot.instance.SetSlot();
-
-        //   Inventory_UI.instance.GoInventory()
-        // Inventory.Instance.SetSlots();
         StartCoroutine(UM.PunchCoolCo());
 
         selectCountdown = time;
@@ -214,15 +204,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-            UM.SetInteractionBtn2(6, false);
-            //UM.SetHPBar();
+            UM.SetInteractionBtn2(6, true);
         }
         else
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
             UM.SetInteractionBtn2(6, false);
-            //UM.SetHPBar();
         }
     }
 

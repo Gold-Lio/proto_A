@@ -167,12 +167,10 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
     }
-
 
     void Update()
     {
