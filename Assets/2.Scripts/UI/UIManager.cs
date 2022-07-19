@@ -15,10 +15,11 @@ public class UIManager : MonoBehaviourPun
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
-    int curBtn0, curBtn1, curBtn2, curBtn3, curBtn4;  //3-사보 4-기믹(use버튼 동일 이미지)
-    bool active0, active1, active2, active3, active4; //3-사보 4-기믹(use버튼 동일 이미지)
+    int curBtn0, curBtn1, curBtn2, curBtn3, curBtn4, curBtn5;  //3-사보 4-기믹(use버튼 동일 이미지)
+    bool active0, active1, active2, active3, active4, active5; //3-사보 4-기믹(use버튼 동일 이미지)
     //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2, InteractionBtn3, InteractionBtn4; // 3번은 사보. , 4 기믹
+    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1,
+        InteractionBtn2, InteractionBtn3, InteractionBtn4, InteractionBtn5; // 3번은 사보. , 4 기믹
     public Text Interaction1Text;
 
     public Image PreviewImage;
@@ -100,7 +101,14 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn4.GetComponent<Button>().interactable = active2;
     }
 
-
+    //미션 완료
+    public void SetInteractionBtn5(int index, bool _active)
+    {
+        curBtn5 = index;
+        active5 = _active;
+        InteractionBtn5.sprite = sprites[index];
+        InteractionBtn5.GetComponent<Button>().interactable = active2;
+    }
 
 
     public void ColorChange(int _colorIndex)
@@ -168,6 +176,18 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
+    public void ClickInteractionBtn5() //미션 완료
+    {
+        if (curBtn0 == 0)
+        {
+            //use가 켜질텐데 거기서 일어날 미션 완료 상호작용들
+
+        }
+    }
+
+
+
+
     public void SetIsCustomize(bool b)
     {
         NM.MyPlayer.isMove = b;
@@ -180,14 +200,12 @@ public class UIManager : MonoBehaviourPun
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
     }
-
     void ShowStartBtn()
     {
         StartBtn.gameObject.SetActive(true);
         //StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 7; // 기본값
         StartBtn.interactable = PhotonNetwork.CurrentRoom.PlayerCount >= 1; // 2
     }
-
     public void SetActiveColors()
     {
         List<int> colorList = new List<int>();
@@ -201,7 +219,6 @@ public class UIManager : MonoBehaviourPun
             ColorBtn[i].interactable = !contain;
         }
     }
-
     public IEnumerator PunchCoolCo()
     {
         SetInteractionBtn1(5, false);

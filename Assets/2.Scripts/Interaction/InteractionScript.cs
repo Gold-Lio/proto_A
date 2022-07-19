@@ -9,7 +9,7 @@ using static NetworkManager;
 public class InteractionScript : MonoBehaviourPun
 {
     private InteractionScript IS;
-    public enum Type { Customize, Mission, PickUp, Gimmick };
+    public enum Type { Customize, Mission, PickUp, Gimmick ,MissionDone};
     public Type type;
     MinigameManager MM;
    // public static Item go;
@@ -49,8 +49,6 @@ public class InteractionScript : MonoBehaviourPun
             {
                 UM.SetInteractionBtn4(0, true); //기믹에 닿으면 4번이 켜지지만, use다. 
             }
-
-
         }
     }
 
