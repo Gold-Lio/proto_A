@@ -204,17 +204,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-            UM.SetInteractionBtn2(6, true);
+            UM.SetInteractionBtn2(6, false); //아이템 줍는다
+            UM.SetInteractionBtn3(7, true); // 사보 쿨타임필요
+
         }
         else
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
-            UM.SetInteractionBtn2(6, false);
+            UM.SetInteractionBtn2(6, false); //아이템 줍는다
+
         }
     }
 
-    [PunRPC]
     public void WinCheck()
     {
         int crewCount = 0;

@@ -152,9 +152,9 @@ public class UIManager : MonoBehaviourPun
     //사보 Onbutton.
     public void ClickInteractionBtn3()
     {
-        if(curBtn0 == 6)
+        if(curBtn3 == 6)
         {
-            StartCoroutine(GimmickCo());
+            Debug.Log("사보");
         }
     }
 
@@ -163,7 +163,8 @@ public class UIManager : MonoBehaviourPun
     {
         if (curBtn0 == 0)
         {
-            StartCoroutine(GimmickCo());
+            //use가 켜질텐데 거기서 일어날 상호작용들. 
+
         }
     }
 
