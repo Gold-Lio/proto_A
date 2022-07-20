@@ -425,7 +425,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 100
 --- !u!95 &5425572626427818940
 Animator:
   serializedVersion: 3
@@ -723,7 +723,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -1869315837
-  m_SortingOrder: 1
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &8491290351953271941
 MonoBehaviour:
