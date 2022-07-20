@@ -35,8 +35,7 @@ Transform:
 --- !u!198 &8417581437011975423
 ParticleSystem:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5959082714464654678, guid: 617b90c29a8d04bca908db7339f59de2,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 5959082714464654678, guid: 617b90c29a8d04bca908db7339f59de2, type: 3}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367264026401678515}
