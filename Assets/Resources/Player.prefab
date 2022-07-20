@@ -381,6 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2251365688590393041}
+  - component: {fileID: 1134813157383694236}
   - component: {fileID: 5425572626427818940}
   - component: {fileID: 3647885987567031802}
   - component: {fileID: 4313270873243922857}
@@ -389,7 +390,6 @@ GameObject:
   - component: {fileID: 9219653269411246464}
   - component: {fileID: 6836631978736809089}
   - component: {fileID: 1878694176956332237}
-  - component: {fileID: 1134813157383694236}
   - component: {fileID: 4836872079512627638}
   - component: {fileID: 6359967021702264543}
   m_Layer: 6
@@ -415,6 +415,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1134813157383694236
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719893841155581119}
+  m_Enabled: 1
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!95 &5425572626427818940
 Animator:
   serializedVersion: 3
@@ -616,17 +627,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!210 &1134813157383694236
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7719893841155581119}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!114 &4836872079512627638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,8 +722,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1869315837
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8491290351953271941
 MonoBehaviour:
