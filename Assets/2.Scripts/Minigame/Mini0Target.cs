@@ -47,7 +47,6 @@ public class Mini0Target : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 		{
 			if (!isClear) MissionClear();
 		}
-			
 	}
 
 	void MissionClear() 

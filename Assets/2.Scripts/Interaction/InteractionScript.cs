@@ -9,10 +9,11 @@ using static NetworkManager;
 public class InteractionScript : MonoBehaviourPun
 {
     private InteractionScript IS;
-    public enum Type { Customize, Mission, PickUp, Gimmick ,MissionDone};
+    public enum Type { Customize, Mission, Open};
     public Type type;
     MinigameManager MM;
-   // public static Item go;
+    public GameObject activeWallText;
+    // public static Item go;
 
     GameObject Line;
     public int curInteractionNum;
@@ -40,15 +41,12 @@ public class InteractionScript : MonoBehaviourPun
                 UM.SetInteractionBtn0(0, true);
             }
 
-            else if (type == Type.PickUp)
+            else if (type == Type.Open)
             {
-                UM.SetInteractionBtn2(6, true);
+                activeWallText.SetActive(true);
+                UM.SetInteractionBtn2(0, true);
             }
 
-            else if (type == Type.Gimmick)
-            {
-                UM.SetInteractionBtn4(0, true); //기믹에 닿으면 4번이 켜지지만, use다. 
-            }
         }
     }
 
@@ -68,14 +66,10 @@ public class InteractionScript : MonoBehaviourPun
                 UM.SetInteractionBtn0(0, false);
             }
 
-            else if (type == Type.PickUp)
+            else if (type == Type.Open)
             {
-                UM.SetInteractionBtn2(6, false);
-            }
-
-            else if (type == Type.Gimmick)
-            {
-                UM.SetInteractionBtn4(0, false);
+                activeWallText.SetActive(false);
+                UM.SetInteractionBtn2(0, false);
             }
         }
     }

@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static NetworkManager;
+using static WallGimmick;
 
 
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
+    public WallGimmick WG;
 
     void Awake() => UM = this;
 
@@ -44,6 +46,7 @@ public class UIManager : MonoBehaviourPun
     public Animator anim;
     public int killCooltime;
 
+    
     void Start()
     {
         PV = photonView;
@@ -83,33 +86,6 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn2.GetComponent<Button>().interactable = active2;
     }
 
-    //파라오 사보
-    public void SetInteractionBtn3(int index, bool _active)
-    {
-        curBtn3 = index;
-        active3 = _active;
-        InteractionBtn3.sprite = sprites[index];
-        InteractionBtn3.GetComponent<Button>().interactable = active2;
-    }
-
-    //기믹
-    public void SetInteractionBtn4(int index, bool _active)
-    {
-        curBtn4 = index;
-        active4 = _active;
-        InteractionBtn4.sprite = sprites[index];
-        InteractionBtn4.GetComponent<Button>().interactable = active2;
-    }
-
-    //미션 완료
-    public void SetInteractionBtn5(int index, bool _active)
-    {
-        curBtn5 = index;
-        active5 = _active;
-        InteractionBtn5.sprite = sprites[index];
-        InteractionBtn5.GetComponent<Button>().interactable = active2;
-    }
-
 
     public void ColorChange(int _colorIndex)
     {
@@ -147,44 +123,14 @@ public class UIManager : MonoBehaviourPun
 
     public void ClickInteractionBtn2()
     {
-        // 획득
-        if (curBtn2 == 6)
-        {
-            //해당 스프라이트를 먹어지는 코드를 구현해야함. 
-            //애드리스너로 해보자 =>이벤트로 변경해서 + 넣어주기
-            if (!PV.IsMine)
-                return;
-        }
-    }
-
-    //사보 Onbutton.
-    public void ClickInteractionBtn3()
-    {
-        if(curBtn3 == 6)
-        {
-            Debug.Log("사보");
-        }
-    }
-
-    // 기믹이 누를 것들. 
-    public void ClickInteractionBtn4()
-    {
+        //문 여는 Use 버튼. 
         if (curBtn0 == 0)
         {
-            //use가 켜질텐데 거기서 일어날 상호작용들. 
-
+            //문 열리는 쏼롸쏼라
+            //WG.DoorMapClick();
+            WG.DoorMapClickRPC();
         }
     }
-
-    public void ClickInteractionBtn5() //미션 완료
-    {
-        if (curBtn0 == 0)
-        {
-            //use가 켜질텐데 거기서 일어날 미션 완료 상호작용들
-
-        }
-    }
-
 
     public void SetIsCustomize(bool b)
     {
@@ -267,15 +213,16 @@ public class UIManager : MonoBehaviourPun
         MissionGageSlider.maxValue = NM.GetCrewCount();
     }
 
+
     [PunRPC]
     public void AddMissionGage()
     {
-        MissionGageSlider.value += 0.25f;
+        MissionGageSlider.value += 0.005f;
 
-        if (MissionGageSlider.value == MissionGageSlider.maxValue) 
+        if (MissionGageSlider.value == MissionGageSlider.maxValue)
         {
             // 크루원 승리
-            //NM.Winner(true);
+            NM.Winner(true);
         }
     }
 

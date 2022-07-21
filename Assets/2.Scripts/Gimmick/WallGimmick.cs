@@ -4,47 +4,40 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using static NetworkManager;
+using UnityEngine.UI;
 
 public class WallGimmick : MonoBehaviourPun
 {
+    public static WallGimmick instance;
     PhotonView PV;
     public GameObject[] wall;
+    public GameObject wallEyeOpen;
+    public GameObject wallEyeClose;
+
 
     private void Start()
     {
         PV = photonView;
-    }
-
-    //버튼이 이것을 눌러야함. 
-    public void DoorMapClick()
-    {
-        PV.RPC("DoorMapClickRPC", RpcTarget.AllViaServer);
+        wallEyeOpen.SetActive(true);
+        wallEyeClose.SetActive(false); //초반 초기화
     }
 
     [PunRPC]
-    void DoorMapClickRPC()
+    public void DoorMapClickRPC()
     {
-        StartCoroutine(DoorCo());
+        wall[0].SetActive(true);
+        wall[1].SetActive(true);
+        wallEyeOpen.SetActive(false);
+        wallEyeClose.SetActive(true);
+        StartCoroutine(DoorCoolCo()); //벽을 2초만 생성.
     }
 
-    IEnumerator DoorCo()
+    IEnumerator DoorCoolCo()
     {
-
-        yield return null; 
+        yield return new WaitForSeconds(5.0f); //5초 뒤에 벽이 사라짐. 
+        wall[0].SetActive(false);
+        wall[1].SetActive(false);
+        wallEyeOpen.SetActive(true);
+        wallEyeClose.SetActive(false);
     }
-
-    //벽막기 쿨타임
-    //디버그  사용하기까지 Text 몇초 남았습니다
-    //IEnumerator DoorCoolCo(int doorIndex)
-    //{
-    //    //Debug.Log
-    //    //yield return new WaitForSeconds(18);
-       
-    //    //DoorMaps[doorIndex].interactable = false;
-    //    //yield return new WaitForSeconds(18);
-    //    //DoorMaps[doorIndex].interactable = true;
-    //}
-
-
-
 }

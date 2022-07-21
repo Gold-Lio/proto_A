@@ -38,8 +38,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public ImpoType impoType;
 
 
-    public GameObject AI_Monster;
-
+    public Transform[] positions;
 
     void Start()
     {
@@ -97,6 +96,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         onChatButton.SetActive(false); //채팅 비활성화
         CurBackground.SetActive(true);
+
     }
 
     void SetRandColor()
@@ -175,13 +175,24 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(UM.PunchCoolCo());
 
         selectCountdown = time;
+        // Main 맵으로 들어온다. 
 
-        //AI 맵 배치.
-        AI_Monster.SetActive(true);
-
-
-
+        SetAIMonster();
     }
+
+    
+    public void SetAIMonster()
+    {
+        positions = GameObject.Find("AI_SpawnPosition").GetComponentsInChildren<Transform>();
+
+        int idx;
+        for (int i = 0; i < 1; i++)
+        {
+            idx = Random.Range(1, positions.Length);
+            PhotonNetwork.Instantiate("AI_Monster", positions[idx].position, Quaternion.identity);
+        }
+    }
+
 
     private void Update()
     {
@@ -211,15 +222,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-            UM.SetInteractionBtn2(6, false); //아이템 줍는다
-            UM.SetInteractionBtn3(7, true); // 사보 쿨타임필요
+            UM.SetInteractionBtn2(0, false);
 
         }
         else
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
-            UM.SetInteractionBtn2(6, false); //아이템 줍는다  
+            UM.SetInteractionBtn2(0, false);
         }
     }
 
