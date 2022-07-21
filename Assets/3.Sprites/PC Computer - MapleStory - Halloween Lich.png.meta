@@ -1,0 +1,4800 @@
+fileFormatVersion: 2
+guid: 7612e88359608394eaa11d783b447bda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -35921466775217085
+    second: PC Computer - MapleStory - Halloween Lich_0
+  - first:
+      213: 5041689201898654691
+    second: PC Computer - MapleStory - Halloween Lich_1
+  - first:
+      213: 8404965796563102481
+    second: PC Computer - MapleStory - Halloween Lich_2
+  - first:
+      213: 8220344677216094347
+    second: PC Computer - MapleStory - Halloween Lich_3
+  - first:
+      213: 8708228706251721194
+    second: PC Computer - MapleStory - Halloween Lich_4
+  - first:
+      213: -335267139344838456
+    second: PC Computer - MapleStory - Halloween Lich_5
+  - first:
+      213: 504020494889430147
+    second: PC Computer - MapleStory - Halloween Lich_6
+  - first:
+      213: 6710125973235299876
+    second: PC Computer - MapleStory - Halloween Lich_7
+  - first:
+      213: -1208397830303574703
+    second: PC Computer - MapleStory - Halloween Lich_8
+  - first:
+      213: -3089351988767618770
+    second: PC Computer - MapleStory - Halloween Lich_9
+  - first:
+      213: 2453440560614843726
+    second: PC Computer - MapleStory - Halloween Lich_10
+  - first:
+      213: -6944590109004258497
+    second: PC Computer - MapleStory - Halloween Lich_11
+  - first:
+      213: 3411040222143032382
+    second: PC Computer - MapleStory - Halloween Lich_12
+  - first:
+      213: -86856382151873350
+    second: PC Computer - MapleStory - Halloween Lich_13
+  - first:
+      213: -8050888937471771740
+    second: PC Computer - MapleStory - Halloween Lich_14
+  - first:
+      213: -229470714461264744
+    second: PC Computer - MapleStory - Halloween Lich_15
+  - first:
+      213: 5916142954737049180
+    second: PC Computer - MapleStory - Halloween Lich_16
+  - first:
+      213: 5882776144125050278
+    second: PC Computer - MapleStory - Halloween Lich_17
+  - first:
+      213: -6727239603984587755
+    second: PC Computer - MapleStory - Halloween Lich_18
+  - first:
+      213: -410305391442694007
+    second: PC Computer - MapleStory - Halloween Lich_19
+  - first:
+      213: -9165837407808955428
+    second: PC Computer - MapleStory - Halloween Lich_20
+  - first:
+      213: 2524780946845174821
+    second: PC Computer - MapleStory - Halloween Lich_21
+  - first:
+      213: 4823223236499845366
+    second: PC Computer - MapleStory - Halloween Lich_22
+  - first:
+      213: 4000378668987657031
+    second: PC Computer - MapleStory - Halloween Lich_23
+  - first:
+      213: -3666065963484513414
+    second: PC Computer - MapleStory - Halloween Lich_24
+  - first:
+      213: -482090172373002510
+    second: PC Computer - MapleStory - Halloween Lich_25
+  - first:
+      213: -3867789960158815657
+    second: PC Computer - MapleStory - Halloween Lich_26
+  - first:
+      213: -6130766465819013487
+    second: PC Computer - MapleStory - Halloween Lich_27
+  - first:
+      213: 7453439743115406150
+    second: PC Computer - MapleStory - Halloween Lich_28
+  - first:
+      213: -7994862961715750509
+    second: PC Computer - MapleStory - Halloween Lich_29
+  - first:
+      213: -7146054137399267343
+    second: PC Computer - MapleStory - Halloween Lich_30
+  - first:
+      213: -6345827786876291628
+    second: PC Computer - MapleStory - Halloween Lich_31
+  - first:
+      213: -5295154070450724476
+    second: PC Computer - MapleStory - Halloween Lich_32
+  - first:
+      213: 8027882961164596001
+    second: PC Computer - MapleStory - Halloween Lich_33
+  - first:
+      213: 3918290693210969038
+    second: PC Computer - MapleStory - Halloween Lich_34
+  - first:
+      213: 877172111089736607
+    second: PC Computer - MapleStory - Halloween Lich_35
+  - first:
+      213: -6871029567536984608
+    second: PC Computer - MapleStory - Halloween Lich_36
+  - first:
+      213: -2312591190517745496
+    second: PC Computer - MapleStory - Halloween Lich_37
+  - first:
+      213: 1917849560018291460
+    second: PC Computer - MapleStory - Halloween Lich_38
+  - first:
+      213: -9085994670292639433
+    second: PC Computer - MapleStory - Halloween Lich_39
+  - first:
+      213: -2472854231155984368
+    second: PC Computer - MapleStory - Halloween Lich_40
+  - first:
+      213: 1744662908694357515
+    second: PC Computer - MapleStory - Halloween Lich_41
+  - first:
+      213: -3359789239846062216
+    second: PC Computer - MapleStory - Halloween Lich_42
+  - first:
+      213: 4854630085659409902
+    second: PC Computer - MapleStory - Halloween Lich_43
+  - first:
+      213: 3733223471768032110
+    second: PC Computer - MapleStory - Halloween Lich_44
+  - first:
+      213: 928316904905750213
+    second: PC Computer - MapleStory - Halloween Lich_45
+  - first:
+      213: 7921354930056789178
+    second: PC Computer - MapleStory - Halloween Lich_46
+  - first:
+      213: -2976753996412465773
+    second: PC Computer - MapleStory - Halloween Lich_47
+  - first:
+      213: -5980327070980101737
+    second: PC Computer - MapleStory - Halloween Lich_48
+  - first:
+      213: 8902404250101089405
+    second: PC Computer - MapleStory - Halloween Lich_49
+  - first:
+      213: 3211594308292913973
+    second: PC Computer - MapleStory - Halloween Lich_50
+  - first:
+      213: -1008677223026419625
+    second: PC Computer - MapleStory - Halloween Lich_51
+  - first:
+      213: 7620662901379841818
+    second: PC Computer - MapleStory - Halloween Lich_52
+  - first:
+      213: -1453210049953471996
+    second: PC Computer - MapleStory - Halloween Lich_53
+  - first:
+      213: 8881064615184057710
+    second: PC Computer - MapleStory - Halloween Lich_54
+  - first:
+      213: -308378410881583915
+    second: PC Computer - MapleStory - Halloween Lich_55
+  - first:
+      213: -1716341219914414548
+    second: PC Computer - MapleStory - Halloween Lich_56
+  - first:
+      213: -5276299694613612426
+    second: PC Computer - MapleStory - Halloween Lich_57
+  - first:
+      213: 9183661510028707507
+    second: PC Computer - MapleStory - Halloween Lich_58
+  - first:
+      213: -1184719782772372797
+    second: PC Computer - MapleStory - Halloween Lich_59
+  - first:
+      213: -1125414445000292188
+    second: PC Computer - MapleStory - Halloween Lich_60
+  - first:
+      213: -2466955629728866209
+    second: PC Computer - MapleStory - Halloween Lich_61
+  - first:
+      213: -8437173643121703618
+    second: PC Computer - MapleStory - Halloween Lich_62
+  - first:
+      213: 1589055516859649775
+    second: PC Computer - MapleStory - Halloween Lich_63
+  - first:
+      213: -7246153216377422975
+    second: PC Computer - MapleStory - Halloween Lich_64
+  - first:
+      213: 258503298068071568
+    second: PC Computer - MapleStory - Halloween Lich_65
+  - first:
+      213: -3263516203445149139
+    second: PC Computer - MapleStory - Halloween Lich_66
+  - first:
+      213: 5864556463918022537
+    second: PC Computer - MapleStory - Halloween Lich_67
+  - first:
+      213: -8057041592314248205
+    second: PC Computer - MapleStory - Halloween Lich_68
+  - first:
+      213: 3684772080180271876
+    second: PC Computer - MapleStory - Halloween Lich_69
+  - first:
+      213: -6082593290948553691
+    second: PC Computer - MapleStory - Halloween Lich_70
+  - first:
+      213: 7750819718962845417
+    second: PC Computer - MapleStory - Halloween Lich_71
+  - first:
+      213: 1018695003973810581
+    second: PC Computer - MapleStory - Halloween Lich_72
+  - first:
+      213: 5182840621744943467
+    second: PC Computer - MapleStory - Halloween Lich_73
+  - first:
+      213: 2287225611277859311
+    second: PC Computer - MapleStory - Halloween Lich_74
+  - first:
+      213: 5250858926705536542
+    second: PC Computer - MapleStory - Halloween Lich_75
+  - first:
+      213: 7004124294019403310
+    second: PC Computer - MapleStory - Halloween Lich_76
+  - first:
+      213: -9013738179998012429
+    second: PC Computer - MapleStory - Halloween Lich_77
+  - first:
+      213: -3007161620545992704
+    second: PC Computer - MapleStory - Halloween Lich_78
+  - first:
+      213: -5746135516179249140
+    second: PC Computer - MapleStory - Halloween Lich_79
+  - first:
+      213: -2120035723682083528
+    second: PC Computer - MapleStory - Halloween Lich_80
+  - first:
+      213: 5988605720893498182
+    second: PC Computer - MapleStory - Halloween Lich_81
+  - first:
+      213: -8546989239830304623
+    second: PC Computer - MapleStory - Halloween Lich_82
+  - first:
+      213: -7696170364880239090
+    second: PC Computer - MapleStory - Halloween Lich_83
+  - first:
+      213: 7786653635361403846
+    second: PC Computer - MapleStory - Halloween Lich_84
+  - first:
+      213: 4213627471134182710
+    second: PC Computer - MapleStory - Halloween Lich_85
+  - first:
+      213: -368521179860294771
+    second: PC Computer - MapleStory - Halloween Lich_86
+  - first:
+      213: -4845567003993026383
+    second: PC Computer - MapleStory - Halloween Lich_87
+  - first:
+      213: -8142906796129295060
+    second: PC Computer - MapleStory - Halloween Lich_88
+  - first:
+      213: 1182604288753297901
+    second: PC Computer - MapleStory - Halloween Lich_89
+  - first:
+      213: 5616173470538356601
+    second: PC Computer - MapleStory - Halloween Lich_90
+  - first:
+      213: 7302427785197539050
+    second: PC Computer - MapleStory - Halloween Lich_91
+  - first:
+      213: -6873244868300747166
+    second: PC Computer - MapleStory - Halloween Lich_92
+  - first:
+      213: -7725901511044333607
+    second: PC Computer - MapleStory - Halloween Lich_93
+  - first:
+      213: -6740237531212483878
+    second: PC Computer - MapleStory - Halloween Lich_94
+  - first:
+      213: 5172755136941313226
+    second: PC Computer - MapleStory - Halloween Lich_95
+  - first:
+      213: 723713643266544811
+    second: PC Computer - MapleStory - Halloween Lich_96
+  - first:
+      213: 4101770222089511314
+    second: PC Computer - MapleStory - Halloween Lich_97
+  - first:
+      213: 540135528659922707
+    second: PC Computer - MapleStory - Halloween Lich_98
+  - first:
+      213: 7932622116236087212
+    second: PC Computer - MapleStory - Halloween Lich_99
+  - first:
+      213: -516773160267388899
+    second: PC Computer - MapleStory - Halloween Lich_100
+  - first:
+      213: -4346830367970132246
+    second: PC Computer - MapleStory - Halloween Lich_101
+  - first:
+      213: 6429409205501791337
+    second: PC Computer - MapleStory - Halloween Lich_102
+  - first:
+      213: 1221408780688337014
+    second: PC Computer - MapleStory - Halloween Lich_103
+  - first:
+      213: 8414268383674122047
+    second: PC Computer - MapleStory - Halloween Lich_104
+  - first:
+      213: 5782595033490386705
+    second: PC Computer - MapleStory - Halloween Lich_105
+  - first:
+      213: -3860780551876815506
+    second: PC Computer - MapleStory - Halloween Lich_106
+  - first:
+      213: 3253610322246384710
+    second: PC Computer - MapleStory - Halloween Lich_107
+  - first:
+      213: 1673747078869774496
+    second: PC Computer - MapleStory - Halloween Lich_108
+  - first:
+      213: -5137243967924355072
+    second: PC Computer - MapleStory - Halloween Lich_109
+  - first:
+      213: 913298139637844477
+    second: PC Computer - MapleStory - Halloween Lich_110
+  - first:
+      213: -2995917741653414842
+    second: PC Computer - MapleStory - Halloween Lich_111
+  - first:
+      213: -4493528909763130401
+    second: PC Computer - MapleStory - Halloween Lich_112
+  - first:
+      213: -1306414831003528375
+    second: PC Computer - MapleStory - Halloween Lich_113
+  - first:
+      213: 7453303180242596065
+    second: PC Computer - MapleStory - Halloween Lich_114
+  - first:
+      213: 496664168421628819
+    second: PC Computer - MapleStory - Halloween Lich_115
+  - first:
+      213: 4905896463499796671
+    second: PC Computer - MapleStory - Halloween Lich_116
+  - first:
+      213: 2436163715070887199
+    second: PC Computer - MapleStory - Halloween Lich_117
+  - first:
+      213: -4536108119279202023
+    second: PC Computer - MapleStory - Halloween Lich_118
+  - first:
+      213: 3768375319710667957
+    second: PC Computer - MapleStory - Halloween Lich_119
+  - first:
+      213: 2129778066235277193
+    second: PC Computer - MapleStory - Halloween Lich_120
+  - first:
+      213: 9023261402191746897
+    second: PC Computer - MapleStory - Halloween Lich_121
+  - first:
+      213: 1174898720372628281
+    second: PC Computer - MapleStory - Halloween Lich_122
+  - first:
+      213: -3843778129314174298
+    second: PC Computer - MapleStory - Halloween Lich_123
+  - first:
+      213: -59830351178384167
+    second: PC Computer - MapleStory - Halloween Lich_124
+  - first:
+      213: 7239967108539061964
+    second: PC Computer - MapleStory - Halloween Lich_125
+  - first:
+      213: 3149803841703551949
+    second: PC Computer - MapleStory - Halloween Lich_126
+  - first:
+      213: -2360991810817268118
+    second: PC Computer - MapleStory - Halloween Lich_127
+  - first:
+      213: -5937644581792139399
+    second: PC Computer - MapleStory - Halloween Lich_128
+  - first:
+      213: 2864213407635755529
+    second: PC Computer - MapleStory - Halloween Lich_129
+  - first:
+      213: -821989786694377904
+    second: PC Computer - MapleStory - Halloween Lich_130
+  - first:
+      213: 6173844331249918274
+    second: PC Computer - MapleStory - Halloween Lich_131
+  - first:
+      213: 1422904920538808409
+    second: PC Computer - MapleStory - Halloween Lich_132
+  - first:
+      213: 6523367758031010068
+    second: PC Computer - MapleStory - Halloween Lich_133
+  - first:
+      213: -4061484497537771310
+    second: PC Computer - MapleStory - Halloween Lich_134
+  - first:
+      213: -2080538625423621848
+    second: PC Computer - MapleStory - Halloween Lich_135
+  - first:
+      213: -3331286058751039790
+    second: PC Computer - MapleStory - Halloween Lich_136
+  - first:
+      213: -2258875119331867264
+    second: PC Computer - MapleStory - Halloween Lich_137
+  - first:
+      213: -2018822494516765036
+    second: PC Computer - MapleStory - Halloween Lich_138
+  - first:
+      213: 2846654798494169288
+    second: PC Computer - MapleStory - Halloween Lich_139
+  - first:
+      213: -6268373410073887650
+    second: PC Computer - MapleStory - Halloween Lich_140
+  - first:
+      213: 2138606696723619988
+    second: PC Computer - MapleStory - Halloween Lich_141
+  - first:
+      213: 3020428045850187814
+    second: PC Computer - MapleStory - Halloween Lich_142
+  - first:
+      213: 7342357564161240488
+    second: PC Computer - MapleStory - Halloween Lich_143
+  - first:
+      213: 2672880877905771098
+    second: PC Computer - MapleStory - Halloween Lich_144
+  - first:
+      213: -9171048865379304333
+    second: PC Computer - MapleStory - Halloween Lich_145
+  - first:
+      213: 1474111285388193884
+    second: PC Computer - MapleStory - Halloween Lich_146
+  - first:
+      213: 5920092019587655735
+    second: PC Computer - MapleStory - Halloween Lich_147
+  - first:
+      213: 1894002545922729814
+    second: PC Computer - MapleStory - Halloween Lich_148
+  - first:
+      213: 7426614850047691754
+    second: PC Computer - MapleStory - Halloween Lich_149
+  - first:
+      213: -1020729700980764722
+    second: PC Computer - MapleStory - Halloween Lich_150
+  - first:
+      213: -3637370994222917068
+    second: PC Computer - MapleStory - Halloween Lich_151
+  - first:
+      213: 498148317651905293
+    second: PC Computer - MapleStory - Halloween Lich_152
+  - first:
+      213: 983531903878933005
+    second: PC Computer - MapleStory - Halloween Lich_153
+  - first:
+      213: 3624193085898981467
+    second: PC Computer - MapleStory - Halloween Lich_154
+  - first:
+      213: -2270328453210962732
+    second: PC Computer - MapleStory - Halloween Lich_155
+  - first:
+      213: -1457659154787456466
+    second: PC Computer - MapleStory - Halloween Lich_156
+  - first:
+      213: -2610052440132275859
+    second: PC Computer - MapleStory - Halloween Lich_157
+  - first:
+      213: 3362639978288504115
+    second: PC Computer - MapleStory - Halloween Lich_158
+  - first:
+      213: 7441677380315639774
+    second: PC Computer - MapleStory - Halloween Lich_159
+  - first:
+      213: -9216788658557371322
+    second: PC Computer - MapleStory - Halloween Lich_160
+  - first:
+      213: -1337727091739753129
+    second: PC Computer - MapleStory - Halloween Lich_161
+  - first:
+      213: -7510034539705070957
+    second: PC Computer - MapleStory - Halloween Lich_162
+  - first:
+      213: 316461453022208366
+    second: PC Computer - MapleStory - Halloween Lich_163
+  - first:
+      213: 6646163975817457308
+    second: PC Computer - MapleStory - Halloween Lich_164
+  - first:
+      213: 7778260312697691907
+    second: PC Computer - MapleStory - Halloween Lich_165
+  - first:
+      213: 3007118383097764250
+    second: PC Computer - MapleStory - Halloween Lich_166
+  - first:
+      213: -4996387521707281934
+    second: PC Computer - MapleStory - Halloween Lich_167
+  - first:
+      213: 654192350612271645
+    second: PC Computer - MapleStory - Halloween Lich_168
+  - first:
+      213: -7367038310399934244
+    second: PC Computer - MapleStory - Halloween Lich_169
+  - first:
+      213: -7773651751176335278
+    second: PC Computer - MapleStory - Halloween Lich_170
+  - first:
+      213: -2859763674968811066
+    second: PC Computer - MapleStory - Halloween Lich_171
+  - first:
+      213: -2518479064247493835
+    second: PC Computer - MapleStory - Halloween Lich_172
+  - first:
+      213: -3755356205925540575
+    second: PC Computer - MapleStory - Halloween Lich_173
+  - first:
+      213: -8821725098748712184
+    second: PC Computer - MapleStory - Halloween Lich_174
+  - first:
+      213: 9066914896255916671
+    second: PC Computer - MapleStory - Halloween Lich_175
+  - first:
+      213: -4020370288205907334
+    second: PC Computer - MapleStory - Halloween Lich_176
+  - first:
+      213: 7912692445571571924
+    second: PC Computer - MapleStory - Halloween Lich_177
+  - first:
+      213: 959260990239890115
+    second: PC Computer - MapleStory - Halloween Lich_178
+  - first:
+      213: -4085381246668156304
+    second: PC Computer - MapleStory - Halloween Lich_179
+  - first:
+      213: 1030646502054659780
+    second: PC Computer - MapleStory - Halloween Lich_180
+  - first:
+      213: -9032365997249131353
+    second: PC Computer - MapleStory - Halloween Lich_181
+  - first:
+      213: 6255906621644853851
+    second: PC Computer - MapleStory - Halloween Lich_182
+  - first:
+      213: -1683937360448571180
+    second: PC Computer - MapleStory - Halloween Lich_183
+  - first:
+      213: 3026971421643685625
+    second: PC Computer - MapleStory - Halloween Lich_184
+  - first:
+      213: 4698157594210512610
+    second: PC Computer - MapleStory - Halloween Lich_185
+  - first:
+      213: -4735550547889427438
+    second: PC Computer - MapleStory - Halloween Lich_186
+  - first:
+      213: 8134172410870559177
+    second: PC Computer - MapleStory - Halloween Lich_187
+  - first:
+      213: 6514277345803046045
+    second: PC Computer - MapleStory - Halloween Lich_188
+  - first:
+      213: -2614934550701784053
+    second: PC Computer - MapleStory - Halloween Lich_189
+  - first:
+      213: -7337312550274955515
+    second: PC Computer - MapleStory - Halloween Lich_190
+  - first:
+      213: -7189059248760087395
+    second: PC Computer - MapleStory - Halloween Lich_191
+  - first:
+      213: -6876081353861945524
+    second: PC Computer - MapleStory - Halloween Lich_192
+  - first:
+      213: -3033408978453900536
+    second: PC Computer - MapleStory - Halloween Lich_193
+  - first:
+      213: -3928573282805423145
+    second: PC Computer - MapleStory - Halloween Lich_194
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1420
+        width: 106
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c5d05cd91608ff0800000000000000
+      internalID: -35921466775217085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1420
+        width: 111
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb871bfd9da7f540800000000000000
+      internalID: 5041689201898654691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1420
+        width: 113
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ba37d4cdf64a470800000000000000
+      internalID: 8404965796563102481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_3
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1420
+        width: 115
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b880db04ee7841270800000000000000
+      internalID: 8220344677216094347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1420
+        width: 110
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae94ef2ced7d9d870800000000000000
+      internalID: 8708228706251721194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_5
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1420
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c05d762054e85bf0800000000000000
+      internalID: -335267139344838456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1259
+        width: 112
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ca66d38f3aef600800000000000000
+      internalID: 504020494889430147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_7
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1259
+        width: 116
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426ffc855082f1d50800000000000000
+      internalID: 6710125973235299876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_8
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1259
+        width: 117
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15517616398ea3fe0800000000000000
+      internalID: -1208397830303574703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_9
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1259
+        width: 120
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e290c5bfbba6025d0800000000000000
+      internalID: -3089351988767618770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_10
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1259
+        width: 116
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45abf4e03f5c0220800000000000000
+      internalID: 2453440560614843726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_11
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1259
+        width: 117
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f332c12071cdf9f90800000000000000
+      internalID: -6944590109004258497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1100
+        width: 113
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ca7637203765f20800000000000000
+      internalID: 3411040222143032382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_13
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1147
+        width: 58
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcac53a49c6bcef0800000000000000
+      internalID: -86856382151873350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_14
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1147
+        width: 112
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab7fd3ba2f754090800000000000000
+      internalID: -8050888937471771740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_15
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1154
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8946e2ad991c0dcf0800000000000000
+      internalID: -229470714461264744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_16
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 1126
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e18891cac5a1250800000000000000
+      internalID: 5916142954737049180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_17
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 953
+        width: 214
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad37bb1cb1d3a150800000000000000
+      internalID: 5882776144125050278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_18
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 1069
+        width: 31
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5142f8df83b04a2a0800000000000000
+      internalID: -6727239603984587755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_19
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1070
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98071ad9b6d4e4af0800000000000000
+      internalID: -410305391442694007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_20
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1069
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb5f86b0776cc080800000000000000
+      internalID: -9165837407808955428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_21
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 910
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c8160f4e2d90320800000000000000
+      internalID: 2524780946845174821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_22
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 906
+        width: 182
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0bbf3aaf78fe240800000000000000
+      internalID: 4823223236499845366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_23
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 901
+        width: 172
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b2f0c5433348730800000000000000
+      internalID: 4000378668987657031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_24
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 901
+        width: 190
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bfa5b0e648f1dc0800000000000000
+      internalID: -3666065963484513414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_25
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 901
+        width: 241
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6100eda854f49f0800000000000000
+      internalID: -482090172373002510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_26
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 901
+        width: 184
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a59ee0689d25ac0800000000000000
+      internalID: -3867789960158815657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_27
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 942
+        width: 196
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e0bfba1642beaa0800000000000000
+      internalID: -6130766465819013487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_28
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 942
+        width: 191
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b2c23d4ffef6760800000000000000
+      internalID: 7453439743115406150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_29
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 913
+        width: 165
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3995103be7a8c0190800000000000000
+      internalID: -7994862961715750509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_30
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1064
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff2b9a9f9d14dc90800000000000000
+      internalID: -7146054137399267343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_31
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 904
+        width: 170
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d57f6ddf371fe7a0800000000000000
+      internalID: -6345827786876291628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_32
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1061
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48122d78d65d386b0800000000000000
+      internalID: -5295154070450724476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_33
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1040
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12370a60505c86f60800000000000000
+      internalID: 8027882961164596001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_34
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 901
+        width: 105
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec31f8f10a0906630800000000000000
+      internalID: 3918290693210969038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_35
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1033
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b126833675c2c00800000000000000
+      internalID: 877172111089736607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_36
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1033
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed80c9330335a0a0800000000000000
+      internalID: -6871029567536984608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_37
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1032
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8fd7a909608efd0800000000000000
+      internalID: -2312591190517745496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_38
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 996
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b878d73029d9a10800000000000000
+      internalID: 1917849560018291460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_39
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1005
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7316d1eacff08e180800000000000000
+      internalID: -9085994670292639433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_40
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 987
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01830a2bd28aeadd0800000000000000
+      internalID: -2472854231155984368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_41
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1001
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06e68dfba9463810800000000000000
+      internalID: 1744662908694357515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_42
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 987
+        width: 68
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877bbcebc71af51d0800000000000000
+      internalID: -3359789239846062216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_43
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 980
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed37ab875c1f5340800000000000000
+      internalID: 4854630085659409902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_44
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 969
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6352e5d7f21fc330800000000000000
+      internalID: 3733223471768032110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_45
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 924
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6b5eb7e4b02ec00800000000000000
+      internalID: 928316904905750213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_46
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 922
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcf2d9f65e4eed60800000000000000
+      internalID: 7921354930056789178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_47
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 909
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d4c14030270b6d0800000000000000
+      internalID: -2976753996412465773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_48
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 901
+        width: 30
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799249dc63c910da0800000000000000
+      internalID: -5980327070980101737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_49
+      rect:
+        serializedVersion: 2
+        x: 2282
+        y: 901
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74043e9f71bb8b70800000000000000
+      internalID: 8902404250101089405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_50
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 901
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b2774f100e19c20800000000000000
+      internalID: 3211594308292913973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_51
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 917
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7589b7ce8657002f0800000000000000
+      internalID: -1008677223026419625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_52
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 910
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f3eb5688802c960800000000000000
+      internalID: 7620662901379841818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_53
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 910
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402ee74b82925dbe0800000000000000
+      internalID: -1453210049953471996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_54
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 906
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65465fa631ef3b70800000000000000
+      internalID: 8881064615184057710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_55
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 901
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4f00b187b68bbf0800000000000000
+      internalID: -308378410881583915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_56
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 901
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2604a901c45e28e0800000000000000
+      internalID: -1716341219914414548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_57
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 901
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678bd0ef161d6c6b0800000000000000
+      internalID: -5276299694613612426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_58
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 901
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b640ba7c7be27f70800000000000000
+      internalID: 9183661510028707507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_59
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 669
+        width: 107
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca897d62a70f8fe0800000000000000
+      internalID: -1184719782772372797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_60
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 669
+        width: 111
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a80aa46689b160f0800000000000000
+      internalID: -1125414445000292188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_61
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 669
+        width: 112
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f506c5ddcec93cdd0800000000000000
+      internalID: -2466955629728866209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_62
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 669
+        width: 126
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35417d064329ea80800000000000000
+      internalID: -8437173643121703618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_63
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 669
+        width: 126
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee4bcac2957d0610800000000000000
+      internalID: 1589055516859649775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_64
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 669
+        width: 117
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bf4cd9a0e707b90800000000000000
+      internalID: -7246153216377422975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_65
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 669
+        width: 117
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0944d964163669300800000000000000
+      internalID: 258503298068071568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_66
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 669
+        width: 124
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22abe6cd49a5b2d0800000000000000
+      internalID: -3263516203445149139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_67
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 669
+        width: 127
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ffd0d3807136150800000000000000
+      internalID: 5864556463918022537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_68
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 669
+        width: 156
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3cf8d1c53af2090800000000000000
+      internalID: -8057041592314248205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_69
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 669
+        width: 147
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b1c652fa0f22330800000000000000
+      internalID: 3684772080180271876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_70
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 669
+        width: 147
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52456dbf0a9469ba0800000000000000
+      internalID: -6082593290948553691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_71
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 669
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e69fd20871709b60800000000000000
+      internalID: 7750819718962845417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_72
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 669
+        width: 135
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599f25675b1232e00800000000000000
+      internalID: 1018695003973810581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_73
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 669
+        width: 132
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61729ae5162de740800000000000000
+      internalID: 5182840621744943467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_74
+      rect:
+        serializedVersion: 2
+        x: 2246
+        y: 669
+        width: 128
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe97461439bddbf10800000000000000
+      internalID: 2287225611277859311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_75
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 669
+        width: 109
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ee8f3af5cced840800000000000000
+      internalID: 5250858926705536542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_76
+      rect:
+        serializedVersion: 2
+        x: 2518
+        y: 669
+        width: 111
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ec5bb9fe5a33160800000000000000
+      internalID: 7004124294019403310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_77
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 613
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fba7d2d1e4c8e280800000000000000
+      internalID: -9013738179998012429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_78
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 600
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0080b21507a6446d0800000000000000
+      internalID: -3007161620545992704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_79
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 606
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0841ee3130a140b0800000000000000
+      internalID: -5746135516179249140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_80
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 605
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d8ac2edbe1492e0800000000000000
+      internalID: -2120035723682083528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_81
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 428
+        width: 195
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643aab59c2dcb1350800000000000000
+      internalID: 5988605720893498182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_82
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 428
+        width: 190
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19824dcf19ef26980800000000000000
+      internalID: -8546989239830304623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_83
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 428
+        width: 191
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06cc6644d5b13590800000000000000
+      internalID: -7696170364880239090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_84
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 590
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c378b4d930cf0c60800000000000000
+      internalID: 7786653635361403846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_85
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 592
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63dc7c83cdfc97a30800000000000000
+      internalID: 4213627471134182710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_86
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 578
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83283e70ffb2eaf0800000000000000
+      internalID: -368521179860294771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_87
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 597
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b054a79b7611ccb0800000000000000
+      internalID: -4845567003993026383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_88
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 444
+        width: 184
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25699179659efe80800000000000000
+      internalID: -8142906796129295060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_89
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 433
+        width: 185
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de96efcb554796010800000000000000
+      internalID: 1182604288753297901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_90
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 428
+        width: 190
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97759640408a0fd40800000000000000
+      internalID: 5616173470538356601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_91
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 428
+        width: 185
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee44a6716f675560800000000000000
+      internalID: 7302427785197539050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_92
+      rect:
+        serializedVersion: 2
+        x: 2577
+        y: 428
+        width: 187
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e48a255345d90a0800000000000000
+      internalID: -6873244868300747166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_93
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 585
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df7c80628518c490800000000000000
+      internalID: -7725901511044333607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_94
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 583
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2f25a3dadd572a0800000000000000
+      internalID: -6740237531212483878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_95
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 569
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accc67ff36159c740800000000000000
+      internalID: 5172755136941313226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_96
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 590
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4910269b52b0a00800000000000000
+      internalID: 723713643266544811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_97
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 428
+        width: 184
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291abede84a6ce830800000000000000
+      internalID: 4101770222089511314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_98
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 435
+        width: 122
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31fa75cc662fe7700800000000000000
+      internalID: 540135528659922707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_99
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 583
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cafc8af29c5561e60800000000000000
+      internalID: 7932622116236087212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_100
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 428
+        width: 182
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d186ec87c8d04d8f0800000000000000
+      internalID: -516773160267388899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_101
+      rect:
+        serializedVersion: 2
+        x: 3191
+        y: 428
+        width: 178
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee72429fc4fca3c0800000000000000
+      internalID: -4346830367970132246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_102
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 574
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c8f81ab99d93950800000000000000
+      internalID: 6429409205501791337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_103
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 572
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678a87290d053f010800000000000000
+      internalID: 1221408780688337014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_104
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 576
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f32b5a38c75c470800000000000000
+      internalID: 8414268383674122047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_105
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 576
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fe123ab87ef3050800000000000000
+      internalID: 5782595033490386705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_106
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 573
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6555a91b80cb6ac0800000000000000
+      internalID: -3860780551876815506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_107
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 428
+        width: 111
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c3a078955272d20800000000000000
+      internalID: 3253610322246384710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_108
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 428
+        width: 112
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a071efa9185a3710800000000000000
+      internalID: 1673747078869774496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_109
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 567
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000c95754d7d4b8b0800000000000000
+      internalID: -5137243967924355072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_110
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 567
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df98323b1dfacac00800000000000000
+      internalID: 913298139637844477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_111
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 567
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c2570efac5c66d0800000000000000
+      internalID: -2995917741653414842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_112
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 560
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdbce99a347c3a1c0800000000000000
+      internalID: -4493528909763130401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_113
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 431
+        width: 116
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9439bb402aeaedde0800000000000000
+      internalID: -1306414831003528375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_114
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 564
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e036adc0c37f6760800000000000000
+      internalID: 7453303180242596065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_115
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 428
+        width: 147
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b9f630e6184e600800000000000000
+      internalID: 496664168421628819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_116
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 569
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb020cb47de351440800000000000000
+      internalID: 4905896463499796671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_117
+      rect:
+        serializedVersion: 2
+        x: 3390
+        y: 428
+        width: 174
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f150f73ddfdfec120800000000000000
+      internalID: 2436163715070887199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_118
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 428
+        width: 106
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9111997e2b18c01c0800000000000000
+      internalID: -4536108119279202023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_119
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 560
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b414b73365fb4430800000000000000
+      internalID: 3768375319710667957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_120
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 561
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f3f500edd7e8d10800000000000000
+      internalID: 2129778066235277193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_121
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 553
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157d1212070193d70800000000000000
+      internalID: 9023261402191746897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_122
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 557
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b1fda49241e4010800000000000000
+      internalID: 1174898720372628281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_123
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 544
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa20d6182828aac0800000000000000
+      internalID: -3843778129314174298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_124
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 555
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcb933dc907b2ff0800000000000000
+      internalID: -59830351178384167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_125
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 548
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc69bf9e9b7897460800000000000000
+      internalID: 7239967108539061964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_126
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 539
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3a6e8d7e956bb20800000000000000
+      internalID: 3149803841703551949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_127
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 532
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6661a605721c3fd0800000000000000
+      internalID: -2360991810817268118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_128
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 530
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977b1cb36bf399da0800000000000000
+      internalID: -5937644581792139399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_129
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 525
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9025a034beabfb720800000000000000
+      internalID: 2864213407635755529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_130
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e1513e4a4b794f0800000000000000
+      internalID: -821989786694377904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_131
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 541
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241e5b675b6eda550800000000000000
+      internalID: 6173844331249918274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_132
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 521
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9500fd18c7c2fb310800000000000000
+      internalID: 1422904920538808409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_133
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 532
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419bca4e968a78a50800000000000000
+      internalID: 6523367758031010068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_134
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 534
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8518f3e55b2a7c0800000000000000
+      internalID: -4061484497537771310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_135
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 516
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8214522b4217023e0800000000000000
+      internalID: -2080538625423621848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_136
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 530
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6eeeebaf4e4c1d0800000000000000
+      internalID: -3331286058751039790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_137
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 513
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08581480c0dd6a0e0800000000000000
+      internalID: -2258875119331867264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_138
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 504
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e92cd23a3bbf3e0800000000000000
+      internalID: -2018822494516765036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_139
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 526
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8f76ef479518720800000000000000
+      internalID: 2846654798494169288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_140
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 518
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cba0548934209a0800000000000000
+      internalID: -6268373410073887650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_141
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 516
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490ab78b57bddad10800000000000000
+      internalID: 2138606696723619988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_142
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 512
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62817860e47bae920800000000000000
+      internalID: 3020428045850187814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_143
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 513
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8adabb99d4b45e560800000000000000
+      internalID: 7342357564161240488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_144
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 513
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5af1863ffaf71520800000000000000
+      internalID: 2672880877905771098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_145
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 509
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c3151b5a3e9b080800000000000000
+      internalID: -9171048865379304333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_146
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 486
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5035f46768157410800000000000000
+      internalID: 1474111285388193884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_147
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 490
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738a5296354682250800000000000000
+      internalID: 5920092019587655735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_148
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 483
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657e869d749d84a10800000000000000
+      internalID: 1894002545922729814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_149
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 497
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aebcbb4bbd2a01760800000000000000
+      internalID: 7426614850047691754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_150
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 483
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfc959beb3a5d1f0800000000000000
+      internalID: -1020729700980764722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_151
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 488
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a98053a56758dc0800000000000000
+      internalID: -3637370994222917068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_152
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 493
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ba91f6147c9e600800000000000000
+      internalID: 498148317651905293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_153
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 481
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0aa7fb3e0536ad00800000000000000
+      internalID: 983531903878933005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_154
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 481
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b508f6ae868bb4230800000000000000
+      internalID: 3624193085898981467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_155
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 453
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d406eeec4c2e70e0800000000000000
+      internalID: -2270328453210962732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_156
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 460
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a2c43c8ba55cbe0800000000000000
+      internalID: -1457659154787456466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_157
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 451
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6136c4622b37cbd0800000000000000
+      internalID: -2610052440132275859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_158
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 454
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dd9658e3f7aae20800000000000000
+      internalID: 3362639978288504115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_159
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 449
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edfe5c25626264760800000000000000
+      internalID: 7441677380315639774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_160
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 446
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cb6d43c83671080800000000000000
+      internalID: -9216788658557371322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_161
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 439
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7558f623c407f6de0800000000000000
+      internalID: -1337727091739753129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_162
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 444
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a07f1406ff6c790800000000000000
+      internalID: -7510034539705070957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_163
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 442
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e612e7cc30c446400800000000000000
+      internalID: 316461453022208366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_164
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 437
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ee8915ceaeb3c50800000000000000
+      internalID: 6646163975817457308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_165
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 428
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f5ddc1b8ee1fb60800000000000000
+      internalID: 7778260312697691907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_166
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 428
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99d61eac3e6bb920800000000000000
+      internalID: 3007118383097764250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_167
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 428
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f17170650449aab0800000000000000
+      internalID: -4996387521707281934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_168
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 433
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12b5011a78241900800000000000000
+      internalID: 654192350612271645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_169
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 428
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd00bed50b503c990800000000000000
+      internalID: -7367038310399934244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_170
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 229
+        width: 87
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2509a8b3be07e1490800000000000000
+      internalID: -7773651751176335278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_171
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 228
+        width: 82
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c91bebd6141058d0800000000000000
+      internalID: -2859763674968811066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_172
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 228
+        width: 128
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b154172a09c0dd0800000000000000
+      internalID: -2518479064247493835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_173
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 228
+        width: 101
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ddfbc6d6b42ebc0800000000000000
+      internalID: -3755356205925540575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_174
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 228
+        width: 114
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b6fee13cfe29580800000000000000
+      internalID: -8821725098748712184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_175
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 251
+        width: 74
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a18004f0724dd70800000000000000
+      internalID: 9066914896255916671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_176
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 287
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ab3f11686c438c0800000000000000
+      internalID: -4020370288205907334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_177
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 287
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0e5332bd78fcd60800000000000000
+      internalID: 7912692445571571924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_178
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 251
+        width: 74
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca532ac9caff4d00800000000000000
+      internalID: 959260990239890115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_179
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 229
+        width: 53
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0725d44c66fcd47c0800000000000000
+      internalID: -4085381246668156304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_180
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 229
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c687f378879d4e00800000000000000
+      internalID: 1030646502054659780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_181
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 28
+        width: 112
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac06a42bf696a280800000000000000
+      internalID: -9032365997249131353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_182
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 27
+        width: 112
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52d72b5de171d650800000000000000
+      internalID: 6255906621644853851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_183
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 29
+        width: 112
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8347e74e371a8e0800000000000000
+      internalID: -1683937360448571180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_184
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 27
+        width: 112
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9feb45c6876f10a20800000000000000
+      internalID: 3026971421643685625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_185
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 27
+        width: 91
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eea8b5a075333140800000000000000
+      internalID: 4698157594210512610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_186
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 27
+        width: 85
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ce421edd1f74eb0800000000000000
+      internalID: -4735550547889427438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_187
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 27
+        width: 84
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1f8b306b262e070800000000000000
+      internalID: 8134172410870559177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_188
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 27
+        width: 80
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c07fc5bbc576a50800000000000000
+      internalID: 6514277345803046045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_189
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 99
+        width: 81
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04468271e2e5bbd0800000000000000
+      internalID: -2614934550701784053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_190
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 110
+        width: 71
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50788da3c11ac2a90800000000000000
+      internalID: -7337312550274955515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_191
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 55
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c1b68d3b45b3c90800000000000000
+      internalID: -7189059248760087395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_192
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 54
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c472f5090704390a0800000000000000
+      internalID: -6876081353861945524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_193
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 27
+        width: 59
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80356c41b9a27e5d0800000000000000
+      internalID: -3033408978453900536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - MapleStory - Halloween Lich_194
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 28
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3ea4ce967ea79c0800000000000000
+      internalID: -3928573282805423145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
