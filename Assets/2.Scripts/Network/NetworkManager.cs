@@ -21,7 +21,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public float time;
     private float selectCountdown;
 
-
     public GameObject CrewInfoText, ImposterInfoText, WaitingBackground, Background;
     public GameObject onChatButton;
 
@@ -33,11 +32,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public GameObject[] wall;
 
-
     PhotonView PV;
     public bool isTest;
     public enum ImpoType { Rand1 }
     public ImpoType impoType;
+
+
+    public GameObject AI_Monster;
+
 
     void Start()
     {
@@ -47,7 +49,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PV = photonView;
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
-
     }
 
     public void Connect(InputField NickInput)
@@ -144,6 +145,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
                 Players[rand].GetComponent<PhotonView>().RPC("SetImpoCrew", RpcTarget.AllViaServer, true);
                 GachaList.RemoveAt(rand);
             }
+            //나중에 추가될
         }
     }
 
@@ -173,6 +175,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(UM.PunchCoolCo());
 
         selectCountdown = time;
+
+        //AI 맵 배치.
+        AI_Monster.SetActive(true);
+
+
 
     }
 
@@ -213,7 +220,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
             UM.SetInteractionBtn2(6, false); //아이템 줍는다  
-
         }
     }
 

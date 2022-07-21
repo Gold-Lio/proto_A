@@ -8,7 +8,7 @@ using static NetworkManager;
 public class WallGimmick : MonoBehaviourPun
 {
     PhotonView PV;
-
+    public GameObject[] wall;
 
     private void Start()
     {
@@ -16,23 +16,21 @@ public class WallGimmick : MonoBehaviourPun
     }
 
     //버튼이 이것을 눌러야함. 
-    public void DoorMapClick(int doorIndex)
+    public void DoorMapClick()
     {
-        PV.RPC("DoorMapClickRPC", RpcTarget.AllViaServer, doorIndex);
+        PV.RPC("DoorMapClickRPC", RpcTarget.AllViaServer);
     }
 
     [PunRPC]
-    void DoorMapClickRPC(int doorIndex)
+    void DoorMapClickRPC()
     {
-        StartCoroutine(DoorCo(doorIndex));
-      //  StartCoroutine(DoorCoolCo(doorIndex));
+        StartCoroutine(DoorCo());
     }
 
-    IEnumerator DoorCo(int doorIndex)
+    IEnumerator DoorCo()
     {
-        NM.wall[doorIndex].SetActive(true);
-        yield return new WaitForSeconds(7);
-        NM.wall[doorIndex].SetActive(false);
+
+        yield return null; 
     }
 
     //벽막기 쿨타임
