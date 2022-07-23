@@ -57,6 +57,4 @@ public class Mini0Target : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
 		MM.CompleteMission();
 	}
 
-
-
 }

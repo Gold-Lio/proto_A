@@ -12,8 +12,6 @@ using Random = UnityEngine.Random;
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
-    public Inventory inventory;
-
     public enum State { Idle, Walk };
     public State state;
     public Rigidbody2D RB;
@@ -168,13 +166,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            inventory.AddItem(item);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+    //    if (item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
 }
 

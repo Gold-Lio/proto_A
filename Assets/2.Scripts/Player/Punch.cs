@@ -24,7 +24,7 @@ public class Punch : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        Destroy(gameObject, 0.3f);
+        Destroy(gameObject, 0.5f);
     }
 
     void Update() => transform.Translate(Vector3.right * (1f * Time.deltaTime * dir));

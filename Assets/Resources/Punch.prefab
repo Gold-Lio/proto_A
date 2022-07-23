@@ -257,12 +257,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c695e4fe24232d5489a1fc8eee4c9244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 5
   PV: {fileID: 8188115637888151800}
   camShakeIntencity: 13
   camShakeTime: 0.2
   stopTime: 0.05
-  slowTime: 0.15
+  slowTime: 0.2
   shake: 0.2
 --- !u!114 &4965333645807005868
 MonoBehaviour:

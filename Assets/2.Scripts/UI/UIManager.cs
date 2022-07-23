@@ -10,15 +10,16 @@ using static NetworkManager;
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
+    public static InteractionScript IS;
 
     void Awake() => UM = this;
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
-    int curBtn0, curBtn1, curBtn2, curBtn3, curBtn4;  //3-사보 4-기믹(use버튼 동일 이미지)
-    bool active0, active1, active2, active3, active4; //3-사보 4-기믹(use버튼 동일 이미지)
+    int curBtn0, curBtn1 , curBtn2;  //3-사보 4-기믹(use버튼 동일 이미지)
+    bool active0, active1 , active2; //3-사보 4-기믹(use버튼 동일 이미지)
     //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1, InteractionBtn2, InteractionBtn3, InteractionBtn4; // 3번은 사보. , 4 기믹
+    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1;
     public Text Interaction1Text;
 
     public Image PreviewImage;
@@ -53,17 +54,23 @@ public class UIManager : MonoBehaviourPun
         curBtn0 = index;
         active0 = _active;
 
-        // 대기실
-        if (!NM.isGameStart)
-        {
-            WaitingInteractionBtn0.sprite = sprites[index];
-            WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
-        }
-        else  
-        {
-            InteractionBtn0.sprite = sprites[index];
-            InteractionBtn0.GetComponent<Button>().interactable = active0;
-        }
+        //// 대기실
+        //if (!NM.isGameStart)
+        //{
+        //    WaitingInteractionBtn0.sprite = sprites[index];
+        //    WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
+        //}
+        //else
+        //{
+        //    InteractionBtn0.sprite = sprites[index];
+        //    InteractionBtn0.GetComponent<Button>().interactable = active0;
+        //}
+
+        InteractionBtn0.sprite = sprites[index];
+        InteractionBtn0.GetComponent<Button>().interactable = active0;
+
+
+        //같다면 그 걸로 버튼 변경 
     }
 
     public void SetInteractionBtn1(int index, bool _active)
@@ -96,6 +103,8 @@ public class UIManager : MonoBehaviourPun
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
+
+
     }
                                      
     public void ClickInteractionBtn1()
@@ -147,7 +156,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, false);
         NM.MyPlayer.ispunch = false;
 
-        for (int i = 1; i > 0; i--) // 기본 15초 킬대기
+        for (int i = 0; i > 0; i--) // 기본 10초 킬대기
         {
             killCooltime = i;
 

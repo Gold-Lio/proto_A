@@ -6,19 +6,16 @@ using UnityEngine.EventSystems;
 
 public class Mini1Target : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
-	
 	RectTransform RT;
 	MinigameManager MM;
 	Vector2 offset, firstPos;
 	bool isClear;
-
 
 	void Awake()
 	{
 		RT = GetComponent<RectTransform>();
 		MM = transform.GetComponentInParent<MinigameManager>();
 	}
-
 
 	void OnEnable()
 	{
