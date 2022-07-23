@@ -39,16 +39,6 @@ public class InteractionScript : MonoBehaviourPun
                 //Line.SetActive(true);
                 UM.SetInteractionBtn0(0, true);
             }
-
-            else if (type == Type.PickUp)
-            {
-                UM.SetInteractionBtn2(6, true);
-            }
-
-            else if (type == Type.Gimmick)
-            {
-                UM.SetInteractionBtn3(0, true);  //사보 버튼이 use로 변함.  그냥 use버튼이 또다른 
-            }
         }
     }
 
@@ -67,17 +57,6 @@ public class InteractionScript : MonoBehaviourPun
                 //Line.SetActive(false);
                 UM.SetInteractionBtn0(0, false);
             }
-
-            else if (type == Type.PickUp)
-            {
-                UM.SetInteractionBtn2(6, false);
-            }
-
-            else if (type == Type.Gimmick)
-            {
-                UM.SetInteractionBtn3(0, false);
-            }
-
         }
     }
 

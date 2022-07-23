@@ -204,13 +204,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-            UM.SetInteractionBtn2(6, true);
         }
         else
         {
             UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
-            UM.SetInteractionBtn2(6, false);
         }
     }
 

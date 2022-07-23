@@ -74,35 +74,6 @@ public class UIManager : MonoBehaviourPun
         InteractionBtn1.GetComponent<Button>().interactable = active1;
     }
 
-    public void SetInteractionBtn2(int index, bool _active)
-    {
-        curBtn2 = index;
-        active2 = _active;
-        InteractionBtn2.sprite = sprites[index];
-        InteractionBtn2.GetComponent<Button>().interactable = active2;
-    }
-
-    //파라오 사보
-    public void SetInteractionBtn3(int index, bool _active)
-    {
-        curBtn3 = index;
-        active3 = _active;
-        InteractionBtn3.sprite = sprites[index];
-        InteractionBtn3.GetComponent<Button>().interactable = active2;
-    }
-
-    //기믹
-    public void SetInteractionBtn4(int index, bool _active)
-    {
-        curBtn4 = index;
-        active4 = _active;
-        InteractionBtn4.sprite = sprites[index];
-        InteractionBtn4.GetComponent<Button>().interactable = active2;
-    }
-
-
-
-
     public void ColorChange(int _colorIndex)
     {
         PreviewImage.color = colors[_colorIndex];
@@ -134,36 +105,6 @@ public class UIManager : MonoBehaviourPun
         {
             if (NM.MyPlayer.isDie) return;
             NM.MyPlayer.Punch();
-        }
-    }
-
-    public void ClickInteractionBtn2()
-    {
-        // 획득
-        if (curBtn2 == 6)
-        {
-            //해당 스프라이트를 먹어지는 코드를 구현해야함. 
-            //애드리스너로 해보자 =>이벤트로 변경해서 + 넣어주기
-            if (!PV.IsMine)
-                return;
-        }
-    }
-
-    //사보 Onbutton.
-    public void ClickInteractionBtn3()
-    {
-        if(curBtn0 == 6)
-        {
-            StartCoroutine(GimmickCo());
-        }
-    }
-
-    // 기믹이 누를 것들. 
-    public void ClickInteractionBtn4()
-    {
-        if (curBtn0 == 0)
-        {
-            StartCoroutine(GimmickCo());
         }
     }
 
