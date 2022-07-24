@@ -6,7 +6,6 @@ using Photon.Pun;
 using Photon.Realtime;
 using static NetworkManager;
 
-
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM;
@@ -19,7 +18,8 @@ public class UIManager : MonoBehaviourPun
     int curBtn0, curBtn1 , curBtn2;  //3-사보 4-기믹(use버튼 동일 이미지)
     bool active0, active1 , active2; //3-사보 4-기믹(use버튼 동일 이미지)
     //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
-    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1;
+    public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1,
+        InteractionBtn2;
     public Text Interaction1Text;
 
     public Image PreviewImage;
@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviourPun
     public Button StartBtn;
     public Text LogText;
     public GameObject[] Minigames;
+    public GameObject[] altarGames;
     public GameObject MissionClearText;
     public int curInteractionNum;
     public Slider MissionGageSlider;
@@ -54,23 +55,26 @@ public class UIManager : MonoBehaviourPun
         curBtn0 = index;
         active0 = _active;
 
-        //// 대기실
-        //if (!NM.isGameStart)
-        //{
-        //    WaitingInteractionBtn0.sprite = sprites[index];
-        //    WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
-        //}
-        //else
-        //{
-        //    InteractionBtn0.sprite = sprites[index];
-        //    InteractionBtn0.GetComponent<Button>().interactable = active0;
-        //}
+        // 대기실
+        if (!NM.isGameStart)
+        {
+            WaitingInteractionBtn0.sprite = sprites[index];
+            WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
+        }
+        else if(NM.isGameStart)
+        {
+            InteractionBtn0.sprite = sprites[index];
+            InteractionBtn0.GetComponent<Button>().interactable = active0;
+        }
 
-        InteractionBtn0.sprite = sprites[index];
-        InteractionBtn0.GetComponent<Button>().interactable = active0;
+        else if (IS.isAltarBox)
+        {
+            InteractionBtn2.sprite = sprites[index];
+            InteractionBtn2.GetComponent<Button>().interactable = active0;
+        }
 
+        //같다면 그 걸로 버튼 변경
 
-        //같다면 그 걸로 버튼 변경 
     }
 
     public void SetInteractionBtn1(int index, bool _active)
@@ -101,7 +105,15 @@ public class UIManager : MonoBehaviourPun
         {
             // 크루원 작업
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
-            CurMinigame.GetComponent<MinigameManager>().StartMission();
+            CurMinigame.GetComponent<MinigameManager>().StartMission(); 
+        }
+
+        // 
+        else if (curBtn2 == 0)
+        {
+            //빨강, 파랑, 초록을 구별해야한다. 현재 잘 들어가고 있음. 
+            //GameObject CurAltar = altarGames[Random.Range]
+
         }
 
 

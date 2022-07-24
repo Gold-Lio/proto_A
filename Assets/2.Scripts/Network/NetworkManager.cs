@@ -21,7 +21,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public float time;
     private float selectCountdown;
 
-
     public GameObject CrewInfoText, ImposterInfoText, WaitingBackground, Background;
     public GameObject onChatButton;
 
@@ -29,6 +28,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public Transform SpawnPoint;
     public Light2D PointLight2D;
     public GameObject[] Interactions;
+    public GameObject[] Altars;
     public GameObject[] Lights;
 
     public GameObject[] wall;

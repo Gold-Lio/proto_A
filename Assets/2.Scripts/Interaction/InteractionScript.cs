@@ -17,6 +17,8 @@ public class InteractionScript : MonoBehaviourPun
     GameObject Line;
     public int curInteractionNum;
 
+    public bool isAltarBox;
+
     void Start()
     {
         //	Line = transform.GetChild(0).gameObject;
@@ -42,6 +44,7 @@ public class InteractionScript : MonoBehaviourPun
 
             else if(type == Type.Altar_Box)
             {
+                isAltarBox = true;
                 UM.SetInteractionBtn0(2, true);
             }
         }
@@ -65,7 +68,8 @@ public class InteractionScript : MonoBehaviourPun
 
             else if (type == Type.Altar_Box)
             {
-                UM.SetInteractionBtn0(0, false);
+                isAltarBox = false;
+                UM.SetInteractionBtn0(2, false);
             }
         }
     }
