@@ -13,7 +13,6 @@ public class LivingEntity : MonoBehaviourPun, IDamageable
     public bool dead { get; protected set; } // 사망 상태
     public event Action onDeath; // 사망시 발동할 이벤트
 
-
     // 호스트->모든 클라이언트 방향으로 체력과 사망 상태를 동기화 하는 메서드
     [PunRPC]
     public void ApplyUpdatedHealth(float newHealth, bool newDead)

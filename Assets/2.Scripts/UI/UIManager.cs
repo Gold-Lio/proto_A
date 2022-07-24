@@ -16,14 +16,23 @@ public class UIManager : MonoBehaviourPun
             {
                 m_instance = FindObjectOfType<UIManager>();
             }
-
             return m_instance;
         }
     }
 
     private static UIManager m_instance; // 싱글톤이 할당될 변수
 
+
+    private void Awake()
+    {
+        if(UM != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public static InteractionScript IS;
+
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;

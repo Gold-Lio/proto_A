@@ -10,8 +10,10 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    public static NetworkManager NM;
-    void Awake() => NM = this;
+    private string gameVersion = "1";
+    public static NetworkManager NM; // 싱글톤이 할당될 변수
+
+    public void Awake() => NM = this;
 
     public GameObject DisconnectPanel, WaitingPanel, InfoPanel, GamePanel, CrewWinPanel, ImposterWinPanel;
     public List<PlayerScript> Players = new List<PlayerScript>();

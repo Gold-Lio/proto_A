@@ -39,4 +39,9 @@ public class HealthBar : MonoBehaviourPun
             }
         }
     }
+
+    private void Die()
+    {
+
+    }
 }
