@@ -43,6 +43,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         PS = this;
+        anim = GetComponent<Animator>();
     }
 
     void Start()
@@ -54,9 +55,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
-        anim = GetComponent<Animator>();
     }
-
     public Vector3 GetPosition()
     {
         return transform.position;
@@ -79,6 +78,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             input = new Vector2(inputX, inputY);
             input *= speed;
             RB.velocity = input.normalized * speed;
+
+            if(RB.velocity.normalized.x == 0)
+            {
+                anim.SetBool("Walk", false);
+            }
+            else
+            {
+                anim.SetBool("Walk", true);
+            }
 
             if (inputX != 0)
             {

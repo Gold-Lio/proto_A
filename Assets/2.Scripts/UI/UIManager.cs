@@ -8,10 +8,22 @@ using static NetworkManager;
 
 public class UIManager : MonoBehaviourPun
 {
-    public static UIManager UM;
-    public static InteractionScript IS;
+    public static UIManager UM
+    {
+        get
+        {
+            if (m_instance == null)
+            {
+                m_instance = FindObjectOfType<UIManager>();
+            }
 
-    void Awake() => UM = this;
+            return m_instance;
+        }
+    }
+
+    private static UIManager m_instance; // 싱글톤이 할당될 변수
+
+    public static InteractionScript IS;
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
