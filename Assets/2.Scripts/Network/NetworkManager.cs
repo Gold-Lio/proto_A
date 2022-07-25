@@ -175,6 +175,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(UM.PunchCoolCo());
 
         selectCountdown = time;
+        StartCoroutine(LightCheckCo());
 
     }
 
@@ -213,6 +214,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
         }
     }
+
+    IEnumerator LightCheckCo()
+    {
+        if (MyPlayer.isImposter)
+        {
+            PointLight2D.pointLightOuterRadius = 70;
+        }
+        yield return null;
+    }
+
 
     [PunRPC]
     public void WinCheck()
