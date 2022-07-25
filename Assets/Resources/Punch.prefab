@@ -136,7 +136,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 12a16b827f54b5443920014585939492, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 78c1c4dd7e76e0944aa2ce64e5aca494, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -287,6 +287,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5504172611636862659}
     m_Modifications:
+    - target: {fileID: -6081407868211508289, guid: 45b74d42e5559bf49a14a707b4842b51,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.358
+      objectReference: {fileID: 0}
+    - target: {fileID: -6081407868211508289, guid: 45b74d42e5559bf49a14a707b4842b51,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 121052, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
       propertyPath: m_Name
       value: StunExplosion2
@@ -334,57 +344,6 @@ PrefabInstance:
     - target: {fileID: 400650, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19928688, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19928688, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 19928688, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1869315837
-      objectReference: {fileID: 0}
-    - target: {fileID: 19938162, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19938162, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 19938162, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1869315837
-      objectReference: {fileID: 0}
-    - target: {fileID: 19997950, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19997950, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 19997950, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1869315837
-      objectReference: {fileID: 0}
-    - target: {fileID: 199724279481417892, guid: 45b74d42e5559bf49a14a707b4842b51,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199724279481417892, guid: 45b74d42e5559bf49a14a707b4842b51,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 199724279481417892, guid: 45b74d42e5559bf49a14a707b4842b51,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1869315837
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b74d42e5559bf49a14a707b4842b51, type: 3}

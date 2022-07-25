@@ -11,6 +11,10 @@ public class MinigameManager : MonoBehaviour, IMinigame
 
     public bool isMissioning = false;
 
+    private void Start()
+    {
+    }
+
     public void StartMission()
     {
         isMissioning = true;
@@ -29,6 +33,7 @@ public class MinigameManager : MonoBehaviour, IMinigame
         if (--remainMission <= 0)
         {
             UM.MissionClear(gameObject);
+            //현재 있는 게임 오브젝트 사라짐. 
             NM.Interactions[UM.curInteractionNum].SetActive(false);
         }
     }
