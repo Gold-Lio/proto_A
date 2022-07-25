@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviourPun
 
     private void Awake()
     {
-        if(UM != this)GetComponent<PhotonView
+        if(UM != this)
         {
             Destroy(gameObject);
         }
