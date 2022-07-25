@@ -132,8 +132,12 @@ public class UIManager : MonoBehaviourPun
         // 
         else if (curBtn2 == 0)
         {
-            //빨강, 파랑, 초록을 구별해야한다. 현재 잘 들어가고 있음. 
-            //GameObject CurAltar = altarGames[Random.Range]
+            ////빨강, 파랑, 초록을 구별해야한다. 현재 잘 들어가고 있음. 
+            ////GameObject CurAltar = altarGames[Random.Range]
+            //if(IS.isAltarBox)
+            //{
+                
+            //}
 
         }
 

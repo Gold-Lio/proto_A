@@ -214,7 +214,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
         }
     }
-
+     
+    //학생과 악마 빛 범위 차이 
     IEnumerator LightCheckCo()
     {
         if (MyPlayer.isImposter)

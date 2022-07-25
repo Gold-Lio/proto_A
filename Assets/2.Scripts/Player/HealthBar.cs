@@ -11,7 +11,6 @@ public class HealthBar : MonoBehaviourPun
     public Image hpImage;
     public Image hpEffectImage;
 
-
     [HideInInspector] public float hp;
     [SerializeField] private float maxHp;
     [SerializeField] private float hurtSpeed;
@@ -42,6 +41,14 @@ public class HealthBar : MonoBehaviourPun
 
     private void Die()
     {
-
+        if(photonView.IsMine)
+        {
+            if (hp == 0)
+            {
+                // 플레이어에 접근해서 애니메이션 실행. 
+                // 몇초 뒤에 플레이어 Destory.
+                // 그리고 그 플레이어는 모든 플레이어, 카메라로 전환. 
+            }
+        }
     }
 }

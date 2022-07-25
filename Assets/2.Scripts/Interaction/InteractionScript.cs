@@ -8,7 +8,7 @@ using static NetworkManager;
 
 public class InteractionScript : MonoBehaviourPun
 {
-    private InteractionScript IS;
+    public static InteractionScript IS;
     public enum Type { Customize, Mission, Altar_Box };
      public Type type;
     MinigameManager MM;

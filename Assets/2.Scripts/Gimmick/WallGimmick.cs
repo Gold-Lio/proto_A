@@ -35,18 +35,4 @@ public class WallGimmick : MonoBehaviourPun
         NM.wall[doorIndex].SetActive(false);
     }
 
-    //벽막기 쿨타임
-    //디버그  사용하기까지 Text 몇초 남았습니다
-    //IEnumerator DoorCoolCo(int doorIndex)
-    //{
-    //    //Debug.Log
-    //    //yield return new WaitForSeconds(18);
-       
-    //    //DoorMaps[doorIndex].interactable = false;
-    //    //yield return new WaitForSeconds(18);
-    //    //DoorMaps[doorIndex].interactable = true;
-    //}
-
-
-
 }
