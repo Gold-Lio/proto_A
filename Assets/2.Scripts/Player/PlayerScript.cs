@@ -99,7 +99,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
-
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
@@ -152,6 +151,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
     }
 
+
     [PunRPC]
     public void Punch() // 펀치 함수. 
     {
@@ -160,8 +160,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
         StartCoroutine(UM.PunchCoolCo());
-
     }
+
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)

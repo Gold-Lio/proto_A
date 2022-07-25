@@ -50,12 +50,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
 
+
+        InvokeRepeating("UpdatePing", 2, 2);
     }
 
     public void Connect(InputField NickInput)
     {
         if (string.IsNullOrWhiteSpace(NickInput.text)) return;
         PhotonNetwork.LocalPlayer.NickName = NickInput.text;
+
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -191,6 +194,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             selectCountdown -= Time.deltaTime;
             timeText.text = Mathf.Floor(selectCountdown).ToString();
         }
+    }
+
+    void UpdatePing()
+    {
+        int pingRate = PhotonNetwork.GetPing();
+        Debug.Log("Ping: " + pingRate);
     }
 
     public int GetCrewCount()
