@@ -974,6 +974,15 @@ AnimationClip:
     path: Body/Front arm
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300016, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
+    - time: 0.18333334
+      value: {fileID: 21300200, guid: d6da763f1e9a89141898fe7aa269f532, type: 3}
+    attribute: m_Sprite
+    path: Body/Back arm
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -1066,6 +1075,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 3735823952
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 1329021286
       attribute: 1
       script: {fileID: 0}
@@ -1100,6 +1116,8 @@ AnimationClip:
     - {fileID: 21300202, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
     - {fileID: 21300018, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
     - {fileID: 21300202, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
+    - {fileID: 21300016, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
+    - {fileID: 21300200, guid: d6da763f1e9a89141898fe7aa269f532, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
