@@ -23,7 +23,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public float time;
     private float selectCountdown;
 
-    public GameObject CrewInfoText, ImposterInfoText, WaitingBackground, Background;
+    public GameObject studentInfoText, studentInfoText_S, badGuyInfoText, badGuyInfoText_S, WaitingBackground, Background;
     public GameObject onChatButton;
 
     public bool isGameStart;
@@ -162,8 +162,20 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         ShowPanel(InfoPanel);
         ShowBackground(Background);
-        if (MyPlayer.isImposter) ImposterInfoText.SetActive(true);
-        else CrewInfoText.SetActive(true);
+
+
+        if (MyPlayer.isImposter)
+        {
+            badGuyInfoText.SetActive(true);
+            badGuyInfoText_S.SetActive(true);
+        }
+
+        else
+        {
+            studentInfoText.SetActive(true);
+            studentInfoText_S.SetActive(true);
+        }
+
 
         yield return new WaitForSeconds(3);
         isGameStart = true;
