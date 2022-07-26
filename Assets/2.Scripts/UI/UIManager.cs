@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviourPun
 
     private static UIManager m_instance; // 싱글톤이 할당될 변수
 
-
     private void Awake()
     {
         if(UM != this)
@@ -57,6 +56,11 @@ public class UIManager : MonoBehaviourPun
     public Slider MissionGageSlider;
     PhotonView PV;
 
+    public Button altarBtn;
+    public bool HasInteractable;
+    public AltarInteractable CurrentInteractable;
+
+
     public InputField ChatInput;
     public Text ChatText;
     public Scrollbar ChatScroll;
@@ -65,6 +69,8 @@ public class UIManager : MonoBehaviourPun
 
     public Animator anim;
     public int killCooltime;
+
+
 
     void Start()
     {
@@ -138,10 +144,7 @@ public class UIManager : MonoBehaviourPun
             //{
                 
             //}
-
         }
-
-
     }
                                      
     public void ClickInteractionBtn1()
@@ -158,6 +161,7 @@ public class UIManager : MonoBehaviourPun
     {
         NM.MyPlayer.isMove = b;
     }
+   
 
     void Update()
     {
@@ -165,6 +169,14 @@ public class UIManager : MonoBehaviourPun
         SetActiveColors();
         if (!PhotonNetwork.IsMasterClient) return;
         ShowStartBtn();
+
+    }
+
+
+    public void OnUseButtonPressed()
+    {
+        if (CurrentInteractable == null) { return; }
+        CurrentInteractable.use(true);
     }
 
     void ShowStartBtn()
