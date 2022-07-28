@@ -31,12 +31,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [HideInInspector] public PhotonView PV;
     [HideInInspector] public string nick;
     Vector2 input;
-    bool facingRight;
+     bool facingRight;
 
     Vector2 playerDir;
     Vector3 curPos;
     private IPunObservable _punObservableImplementation;
 
+    public Vector2 curScale;
     public GameObject playerCanvasGo;
     public Animator anim;
 
@@ -56,6 +57,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.Players.Add(this);
         NM.SortPlayers();
         isMove = true;
+        facingRight = true;
+
     }
     public Vector3 GetPosition()
     {
@@ -80,14 +83,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             input *= speed;
             RB.velocity = input.normalized * speed;
 
-            
-            if(RB.velocity.normalized.x == 0)
+            anim.SetFloat("Walk", Mathf.Abs(inputX));
+
+            if (inputX > 0 && !facingRight)
             {
-                anim.SetFloat("Walk", Mathf.Abs(inputX));
+                FlipXRPC();
             }
-            else
+            else if(inputX < 0 && facingRight)
             {
-               // anim.SeSetFloattBool("Walk", true);
+                FlipXRPC();
             }
 
             //if (inputX != 0)
@@ -102,8 +106,16 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
-    //[PunRPC]
-    //void FlipXRPC(float axis) => SR.flipX = axis == 1;
+    [PunRPC]
+    void FlipXRPC()
+    //=> SR.flipX = axis == 1;
+    {
+        facingRight = !facingRight;
+        curScale = transform.localScale;
+        curScale.x *= -3;
+        transform.localScale = curScale;
+    }
+
 
     public void SetPos(Vector3 target)
     {
@@ -113,10 +125,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC] //이게 그냥 두개 자체에 색깔을 더하는 역할의 함수. 
     public void SetColor(int _colorIndex)
     {
-
         playerStaffLight2D.color = UM.colors[_colorIndex];
-        //CharacterSR[0].color = UM.colors[_colorIndex];
-        //CharacterSR[1].color = UM.colors[_colorIndex];
         colorIndex = _colorIndex;
     }
 

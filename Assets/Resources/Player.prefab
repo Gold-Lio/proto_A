@@ -170,6 +170,7 @@ MonoBehaviour:
   targetDeadColorIndex: 0
   PV: {fileID: 0}
   nick: 
+  curScale: {x: 0, y: 0}
   playerCanvasGo: {fileID: 2304074747141068589}
   anim: {fileID: 2406375612361668635}
 --- !u!114 &8087583354573648746
