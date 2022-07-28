@@ -14,18 +14,13 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
-    public enum State { Idle, Walk };
-    public State state;
     public Rigidbody2D RB; 
     //public SpriteRenderer SR;  //  이SR 부분들. Flip에 들어가는  SR, 색깔 구분에 들어가는  SR. 
-   // public SpriteRenderer[] CharacterSR;
     public Light2D playerStaffLight2D;
-
 
     public Transform Character, Canvas;
     public Text NickText;
 
-    public bool isPC, isMobile;
     public bool isWalk, isMove, isImposter, ispunch, ishited, isDie;
 
     public int actor, colorIndex;
@@ -87,21 +82,19 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             
             if(RB.velocity.normalized.x == 0)
             {
-                Debug.Log("워크하는가?");
                 anim.SetBool("Walk", false);
             }
             else
             {
-                Debug.Log("워크하지 않는가?");
                 anim.SetBool("Walk", true);
             }
 
-            Debug.Log("바로 빠지는가?");
 
             //if (inputX != 0)
             //{
             //    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
             //}
+
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
         // IsMine이 아닌 것들은 부드럽게 위치 동기화

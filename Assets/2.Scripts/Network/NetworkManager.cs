@@ -34,6 +34,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public GameObject[] Lights;
 
     public GameObject[] wall;
+    public Text pingText;
 
 
     PhotonView PV;
@@ -69,14 +70,14 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 5 }, null);
+        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 4 }, null);
     }
 
     public override void OnJoinedRoom()
     {
         ShowPanel(WaitingPanel);
         onChatButton.SetActive(true); //채팅활성화
-        MyPlayer = PhotonNetwork.Instantiate("Player_2", Vector3.zero, Quaternion.identity)
+        MyPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity)
             .GetComponent<PlayerScript>();
 
         SetRandColor();
@@ -188,7 +189,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         ShowPanel(GamePanel);
         ShowGameUI();
         StartCoroutine(UM.PunchCoolCo());
-
         selectCountdown = time;
         StartCoroutine(LightCheckCo());
 
@@ -211,7 +211,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void UpdatePing()
     {
         int pingRate = PhotonNetwork.GetPing();
-        Debug.Log("Ping: " + pingRate);
+        pingText.text = "Ping : " + pingRate;
     }
 
     public int GetCrewCount()
@@ -274,13 +274,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (isCrewWin)
         {
-            print("고고학자 승리");
+            print("학생 승리");
             ShowPanel(CrewWinPanel);
             Invoke("WinnerDelay", 3);
         }
         else
         {
-            print("파라오 승리");
+            print("악령 승리");
             ShowPanel(ImposterWinPanel);
             Invoke("WinnerDelay", 3);
         }
