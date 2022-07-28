@@ -89,7 +89,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 anim.SetBool("Walk", true);
             }
 
-
             //if (inputX != 0)
             //{
             //    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);

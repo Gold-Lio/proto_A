@@ -108,8 +108,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24}
-  m_Size: {x: 0.77, y: 0.73}
+  m_Offset: {x: -0.15, y: -0.89}
+  m_Size: {x: 0.85, y: 3}
   m_Direction: 0
 --- !u!58 &5027527389148651245
 CircleCollider2D:
@@ -157,8 +157,6 @@ MonoBehaviour:
   Character: {fileID: 8435485618662020470}
   Canvas: {fileID: 2304074747141068588}
   NickText: {fileID: 2304074746874795194}
-  isPC: 0
-  isMobile: 0
   isWalk: 0
   isMove: 0
   isImposter: 0

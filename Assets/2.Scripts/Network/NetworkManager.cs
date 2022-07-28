@@ -10,7 +10,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    private string gameVersion = "1";
     public static NetworkManager NM; // 싱글톤이 할당될 변수
 
     public void Awake() => NM = this;

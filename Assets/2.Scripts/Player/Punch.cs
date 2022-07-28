@@ -7,7 +7,8 @@ using Cinemachine;
 
 public class Punch : MonoBehaviourPunCallbacks
 {
-    public float attackDamage;
+    [SerializeField]
+    private float attackDamage;
     public PhotonView PV;
 
     public float camShakeIntencity;

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8851396086996310854}
   - component: {fileID: 8851396086996310855}
   - component: {fileID: 8851396086996310852}
-  - component: {fileID: 8851396086996310857}
+  - component: {fileID: 1505310641}
+  - component: {fileID: 1505310637}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae496f5dad56ea645b72d374a0376368, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,7 +90,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &8851396086996310857
+--- !u!210 &1505310641
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8851396086996310850}
+  m_Enabled: 1
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 1
+  m_SortingOrder: 100
+--- !u!114 &1505310637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +110,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8851396086996310850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13905cd045834f946a8633b4e7334902, type: 3}
+  m_Script: {fileID: 11500000, guid: 85ecb76eff402d848acfb9940aab1cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

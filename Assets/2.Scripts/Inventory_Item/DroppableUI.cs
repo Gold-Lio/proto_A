@@ -7,7 +7,7 @@ public class DroppableUI : MonoBehaviour, IPointerEnterHandler, IDropHandler, IP
 	private	Image			image;
 	private	RectTransform	rect;
 
-	private bool isHadItem = false;
+	private bool isHadItem = false; //왜냐하면 중복으로 아이템 먹지 못하게 막는 boolean.
 
 	private void Awake()
 	{
