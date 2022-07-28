@@ -43,7 +43,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         PS = this;
-        anim = GetComponent<Animator>();
+        anim =  gameObject.GetComponent<Animator>();
+
     }
 
     void Start()
@@ -82,11 +83,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             
             if(RB.velocity.normalized.x == 0)
             {
-                anim.SetBool("Walk", false);
+                anim.SetFloat("Walk", Mathf.Abs(inputX));
             }
             else
             {
-                anim.SetBool("Walk", true);
+               // anim.SeSetFloattBool("Walk", true);
             }
 
             //if (inputX != 0)
@@ -160,7 +161,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public void Punch() // 펀치 함수. 
     {
         //플립한 그곳에서 생성시키도록 다시 수정
-        
+
+        anim.SetTrigger("Attack");
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
