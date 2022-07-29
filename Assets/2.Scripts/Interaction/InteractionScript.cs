@@ -12,9 +12,6 @@ public class InteractionScript : MonoBehaviourPun
     public enum Type { Customize, Mission, Altar_Box, Item };
     public Type type;
     
-    public enum altarBoxType { Red, Green, Blue};
-    public altarBoxType altarBox;
-
     MinigameManager MM;
     // public static Item go;
 
@@ -22,6 +19,7 @@ public class InteractionScript : MonoBehaviourPun
     public int curInteractionNum;
 
     public bool isAltarBox;
+    public bool isRed, isGreen, isBlue;
 
     void Start()
     {
@@ -46,16 +44,18 @@ public class InteractionScript : MonoBehaviourPun
                 UM.SetInteractionBtn0(0, true);
             }
 
-            else if (type == Type.Altar_Box)
+            //아이템 획득
+            else if (type == Type.Item)
             {
-                isAltarBox = true;
-
-                UM.SetInteractionBtn0(0, true);
+                UM.SetInteractionBtn0(6, true);
             }
 
-            else if(type == Type.Item)
+            else if (type == Type.Altar_Box)
             {
-                UM.SetInteractionBtn0(4, true);
+                if(isAltarBox) //red
+                {
+                    UM.SetInteractionBtn0(3, true);
+                }
             }
         }
     }
@@ -76,15 +76,18 @@ public class InteractionScript : MonoBehaviourPun
                 UM.SetInteractionBtn0(0, false);
             }
 
-            else if (type == Type.Altar_Box)
-            {
-                isAltarBox = false;
-                UM.SetInteractionBtn0(0, false);
-            }
-
+            //아이템 획득 Off
             else if (type == Type.Item)
             {
-                UM.SetInteractionBtn0(4, false);
+                UM.SetInteractionBtn0(6, false);
+            }
+
+            else if (type == Type.Altar_Box)
+            {
+                if (isAltarBox) //red
+                {
+                    UM.SetInteractionBtn0(3, false);
+                }
             }
         }
     }

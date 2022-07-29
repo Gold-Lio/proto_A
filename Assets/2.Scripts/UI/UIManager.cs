@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static NetworkManager;
+using static InteractionScript;
 
 public class UIManager : MonoBehaviourPun
 {
@@ -24,7 +25,7 @@ public class UIManager : MonoBehaviourPun
 
     private void Awake()
     {
-        if(UM != this)
+        if (UM != this)
         {
             Destroy(gameObject);
         }
@@ -35,10 +36,10 @@ public class UIManager : MonoBehaviourPun
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
-    int curBtn0, curBtn1 , curBtn2,
+    int curBtn0, curBtn1, curBtn2,
         curBtn3, curBtn4, curBtn5;  // 3 red 4 green 5 blue
-                                    
-    bool active0, active1 , active2; //3-사보 4-기믹(use버튼 동일 이미지)
+
+    bool active0, active1, active2; //3-사보 4-기믹(use버튼 동일 이미지)
     //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
     public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1,
         InteractionBtn2;
@@ -53,13 +54,13 @@ public class UIManager : MonoBehaviourPun
     public Text LogText;
     public GameObject[] Minigames;
 
-    
+
     public GameObject altarRed;
     public GameObject altarGreen;
     public GameObject altarBlue;
 
     public GameObject MissionClearText;
-    
+
     public int curInteractionNum;
     public int curAltarNum;
 
@@ -85,13 +86,15 @@ public class UIManager : MonoBehaviourPun
         curBtn0 = index;
         active0 = _active;
 
+        //시작안함 or 시작. 
+
         // 대기실
         if (!NM.isGameStart)
         {
             WaitingInteractionBtn0.sprite = sprites[index];
             WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
         }
-        else if(NM.isGameStart)
+        else if (NM.isGameStart)
         {
             InteractionBtn0.sprite = sprites[index];
             InteractionBtn0.GetComponent<Button>().interactable = active0;
@@ -131,31 +134,21 @@ public class UIManager : MonoBehaviourPun
             CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
 
-        else if (curBtn2 == 4) //아이템 획득 , 다른 Sprite종류
+        else if (curBtn2 == 6) //아이템 획득 , 다른 Sprite종류
         {
-            //아이템 먹는~~
-
+            //아이템 먹는~~ 먹었을때ㅡ 나오는 것들
         }
 
-        else if(curBtn3 == 0)  //Red
+        else if (curBtn3 == 3)  //Red
         {
-            
-        }
-
-        else if (curBtn4 == 0)  //Green
-        {
-
-        }
-
-        else if (curBtn5 == 0)  //Blue
-        {
-
+            altarRed.SetActive(true);
         }
     }
-                                     
+
+
+    // 공격!! 원툴
     public void ClickInteractionBtn1()
     {
-        // 공격!!
         if (curBtn1 == 5)
         {
             if (NM.MyPlayer.isDie) return;
@@ -206,7 +199,7 @@ public class UIManager : MonoBehaviourPun
         {
             killCooltime = i;
 
-            if (UM.curBtn1 == 5) 
+            if (UM.curBtn1 == 5)
                 Interaction1Text.text = killCooltime.ToString();
             else
                 Interaction1Text.text = "";
@@ -253,14 +246,14 @@ public class UIManager : MonoBehaviourPun
     {
         MissionGageSlider.value += 0.25f;
 
-        if (MissionGageSlider.value == MissionGageSlider.maxValue) 
+        if (MissionGageSlider.value == MissionGageSlider.maxValue)
         {
             // 크루원 승리
             //NM.Winner(true);
         }
     }
 
-    public IEnumerator MissionClearCo(GameObject MissionPanel) 
+    public IEnumerator MissionClearCo(GameObject MissionPanel)
     {
         MissionPanel.SetActive(false);
         MissionClearText.SetActive(true);
@@ -268,7 +261,7 @@ public class UIManager : MonoBehaviourPun
         MissionClearText.SetActive(false);
     }
 
-    public void MissionClear(GameObject MissionPanel) 
+    public void MissionClear(GameObject MissionPanel)
     {
         StartCoroutine(MissionClearCo(MissionPanel));
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
