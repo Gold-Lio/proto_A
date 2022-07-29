@@ -380,7 +380,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300200, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
-    - time: 0.98333335
+    - time: 1
       value: {fileID: 21300200, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
     attribute: m_Sprite
     path: Body/Back arm

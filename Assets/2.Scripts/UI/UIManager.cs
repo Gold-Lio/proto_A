@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviourPun
 
     private static UIManager m_instance; // 싱글톤이 할당될 변수
 
-
     private void Awake()
     {
         if(UM != this)
@@ -193,7 +192,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, false);
         NM.MyPlayer.ispunch = false;
 
-        for (int i = 0; i > 0; i--) // 기본 10초 킬대기
+        for (int i = 5; i > 0; i--) // 기본 10초 킬대기
         {
             killCooltime = i;
 
@@ -204,6 +203,7 @@ public class UIManager : MonoBehaviourPun
 
             yield return new WaitForSeconds(1);
         }
+
         killCooltime = 0;
         Interaction1Text.text = "";
         //Enum상태 변경

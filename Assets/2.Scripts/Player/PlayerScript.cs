@@ -45,7 +45,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         PS = this;
         anim =  gameObject.GetComponent<Animator>();
-
     }
 
     void Start()
@@ -93,7 +92,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 FlipXRPC();
             }
-
+ 
             //if (inputX != 0)
             //{
             //    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
@@ -112,10 +111,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         facingRight = !facingRight;
         curScale = transform.localScale;
-        curScale.x *= -3;
+        curScale.x *= -1;
         transform.localScale = curScale;
     }
-
 
     public void SetPos(Vector3 target)
     {
@@ -171,12 +169,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         //플립한 그곳에서 생성시키도록 다시 수정
 
-        anim.SetTrigger("Attack");
+        anim.SetBool("Attack",true);
+
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
-        //StartCoroutine(UM.PunchCoolCo());
+        StartCoroutine(UM.PunchCoolCo());
     }
 
 
