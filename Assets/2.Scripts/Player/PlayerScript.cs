@@ -168,16 +168,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public void Punch() // 펀치 함수. 
     {
         //플립한 그곳에서 생성시키도록 다시 수정
-
-        anim.SetBool("Attack",true);
-
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
-
+        anim.SetTrigger("Attack");
+        StartCoroutine(WaitforCo());
+        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
+        //  .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
         StartCoroutine(UM.PunchCoolCo());
     }
-
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -191,6 +190,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
+    IEnumerator WaitforCo()
+    {
+        yield return new WaitForSeconds(2f);
+    }
     //private void OnTriggerEnter2D(Collider2D col)
     //{
     //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();

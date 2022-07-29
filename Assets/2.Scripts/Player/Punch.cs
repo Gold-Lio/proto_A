@@ -28,7 +28,7 @@ public class Punch : MonoBehaviourPunCallbacks
         Destroy(gameObject, 0.5f);
     }
 
-    void Update() => transform.Translate(Vector3.right * (1f * Time.deltaTime * dir));
+    void Update() => transform.Translate(Vector3.right * (3f * Time.deltaTime * dir));
 
     private void OnTriggerEnter2D(Collider2D col)
     {

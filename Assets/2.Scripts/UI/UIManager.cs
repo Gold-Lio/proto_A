@@ -35,7 +35,9 @@ public class UIManager : MonoBehaviourPun
 
     // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
     public Sprite[] sprites;
-    int curBtn0, curBtn1 , curBtn2;  //3-사보 4-기믹(use버튼 동일 이미지)
+    int curBtn0, curBtn1 , curBtn2,
+        curBtn3, curBtn4, curBtn5;  // 3 red 4 green 5 blue
+                                    
     bool active0, active1 , active2; //3-사보 4-기믹(use버튼 동일 이미지)
     //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
     public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1,
@@ -50,9 +52,17 @@ public class UIManager : MonoBehaviourPun
     public Button StartBtn;
     public Text LogText;
     public GameObject[] Minigames;
-    public GameObject[] altarGames;
+
+    
+    public GameObject altarRed;
+    public GameObject altarGreen;
+    public GameObject altarBlue;
+
     public GameObject MissionClearText;
+    
     public int curInteractionNum;
+    public int curAltarNum;
+
     public Slider MissionGageSlider;
     PhotonView PV;
 
@@ -87,16 +97,9 @@ public class UIManager : MonoBehaviourPun
             InteractionBtn0.GetComponent<Button>().interactable = active0;
         }
 
-        else if (IS.isAltarBox)
-        {
-            InteractionBtn2.sprite = sprites[index];
-            InteractionBtn2.GetComponent<Button>().interactable = active0;
-        }
-
-        //같다면 그 걸로 버튼 변경
-
     }
 
+    //공격버튼Set
     public void SetInteractionBtn1(int index, bool _active)
     {
         curBtn1 = index;
@@ -125,22 +128,29 @@ public class UIManager : MonoBehaviourPun
         {
             // 크루원 작업
             GameObject CurMinigame = Minigames[Random.Range(0, Minigames.Length)];
-            CurMinigame.GetComponent<MinigameManager>().StartMission(); 
+            CurMinigame.GetComponent<MinigameManager>().StartMission();
         }
 
-        // 
-        else if (curBtn2 == 0)
+        else if (curBtn2 == 4) //아이템 획득 , 다른 Sprite종류
         {
-            ////빨강, 파랑, 초록을 구별해야한다. 현재 잘 들어가고 있음. 
-            ////GameObject CurAltar = altarGames[Random.Range]
-            //if(IS.isAltarBox)
-            //{
-                
-            //}
+            //아이템 먹는~~
 
         }
 
+        else if(curBtn3 == 0)  //Red
+        {
+            
+        }
 
+        else if (curBtn4 == 0)  //Green
+        {
+
+        }
+
+        else if (curBtn5 == 0)  //Blue
+        {
+
+        }
     }
                                      
     public void ClickInteractionBtn1()
@@ -192,7 +202,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, false);
         NM.MyPlayer.ispunch = false;
 
-        for (int i = 5; i > 0; i--) // 기본 10초 킬대기
+        for (int i = 0; i > 0; i--) // 기본 10초 킬대기
         {
             killCooltime = i;
 

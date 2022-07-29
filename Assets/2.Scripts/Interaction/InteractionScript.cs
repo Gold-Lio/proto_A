@@ -9,10 +9,14 @@ using static NetworkManager;
 public class InteractionScript : MonoBehaviourPun
 {
     public static InteractionScript IS;
-    public enum Type { Customize, Mission, Altar_Box };
-     public Type type;
+    public enum Type { Customize, Mission, Altar_Box, Item };
+    public Type type;
+    
+    public enum altarBoxType { Red, Green, Blue};
+    public altarBoxType altarBox;
+
     MinigameManager MM;
-   // public static Item go;
+    // public static Item go;
 
     GameObject Line;
     public int curInteractionNum;
@@ -42,10 +46,16 @@ public class InteractionScript : MonoBehaviourPun
                 UM.SetInteractionBtn0(0, true);
             }
 
-            else if(type == Type.Altar_Box)
+            else if (type == Type.Altar_Box)
             {
                 isAltarBox = true;
-                UM.SetInteractionBtn0(2, true);
+
+                UM.SetInteractionBtn0(0, true);
+            }
+
+            else if(type == Type.Item)
+            {
+                UM.SetInteractionBtn0(4, true);
             }
         }
     }
@@ -69,7 +79,12 @@ public class InteractionScript : MonoBehaviourPun
             else if (type == Type.Altar_Box)
             {
                 isAltarBox = false;
-                UM.SetInteractionBtn0(2, false);
+                UM.SetInteractionBtn0(0, false);
+            }
+
+            else if (type == Type.Item)
+            {
+                UM.SetInteractionBtn0(4, false);
             }
         }
     }
