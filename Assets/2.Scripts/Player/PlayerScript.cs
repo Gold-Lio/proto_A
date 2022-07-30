@@ -15,7 +15,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
     public Rigidbody2D RB; 
-    //public SpriteRenderer SR;  //  이SR 부분들. Flip에 들어가는  SR, 색깔 구분에 들어가는  SR. 
+    public SpriteRenderer SR;  //  이SR 부분들. Flip에 들어가는  SR, 색깔 구분에 들어가는  SR. 
+    public SpriteRenderer[] CharacterSR;
     public Light2D playerStaffLight2D;
 
     public Transform Character, Canvas;
@@ -57,8 +58,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.SortPlayers();
         isMove = true;
         facingRight = true;
-
     }
+
     public Vector3 GetPosition()
     {
         return transform.position;
@@ -81,22 +82,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             input = new Vector2(inputX, inputY);
             input *= speed;
             RB.velocity = input.normalized * speed;
+            anim.SetBool("Walk", true);
 
-            anim.SetFloat("Walk", Mathf.Abs(inputX));
 
-            if (inputX > 0 && facingRight)
-            {
-                FlipXRPC();
-            }
-            else if (inputX < 0 && !facingRight)
-            {
-                FlipXRPC();
-            }
+            //anim.SetFloat("Walk", Mathf.Abs(inputX));
 
-            //if (inputX != 0)
+            //if (inputX > 0 && facingRight)
             //{
-            //    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
+            //    FlipXRPC();
             //}
+            //else if (inputX < 0 && !facingRight)
+            //{
+            //    FlipXRPC();
+            //}
+
+            if (inputX != 0)
+            {
+                PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
+            }
 
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
@@ -106,18 +109,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     [PunRPC]
-    void FlipXRPC()
-    {
-        //facingRight = !facingRight;
-        //curScale = transform.localScale; // 자식이 뒤집히도록 만들어야한낟
-        //curScale.x *= -1;
-        //transform.localScale = curScale;
+    void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
-        facingRight = !facingRight;
-        curScale = transform.localScale; // 자식이 뒤집히도록 만들어야한낟
-        curScale.x *= -1;
-        transform.localScale = curScale;
-    }
+
+    //[PunRPC]
+    //void FlipXRPC()
+    //{
+    //    //facingRight = !facingRight;
+    //    //curScale = transform.localScale; // 자식이 뒤집히도록 만들어야한낟
+    //    //curScale.x *= -1;
+    //    //transform.localScale = curScale;
+    //   }
 
     public void SetPos(Vector3 target)
     {
@@ -127,7 +129,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC] //이게 그냥 두개 자체에 색깔을 더하는 역할의 함수. 
     public void SetColor(int _colorIndex)
     {
-        playerStaffLight2D.color = UM.colors[_colorIndex];
+        // playerStaffLight2D.color = UM.colors[_colorIndex];
+
+        CharacterSR[0].color = UM.colors[_colorIndex];
+        CharacterSR[1].color = UM.colors[_colorIndex];
         colorIndex = _colorIndex;
     }
 
@@ -172,20 +177,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public void Punch() // 펀치 함수. 
     {
         //플립한 그곳에서 생성시키도록 다시 수정
-        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
-        //        Quaternion.Euler(0, 0, -180))
-        //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
-        anim.SetTrigger("Attack");
+        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
+                Quaternion.Euler(0, 0, -180))
+            .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
+
 
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(curScale ? 9f : -9f, 0f, -1f),
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
-
-
-
         //StartCoroutine(WaitforCo());
-        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
+        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
          // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
         StartCoroutine(UM.PunchCoolCo());
     }
