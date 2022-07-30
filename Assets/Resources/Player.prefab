@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 3805032338363268902}
   - component: {fileID: 8087583354573648746}
   - component: {fileID: 2958493148267946513}
-  - component: {fileID: 147962412530933471}
   - component: {fileID: 3633714540076203384}
+  - component: {fileID: 3758859692461216291}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -194,7 +194,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 3805032338363268902}
   - {fileID: 2958493148267946513}
-  - {fileID: 147962412530933471}
+  - {fileID: 3758859692461216291}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -214,33 +214,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &147962412530933471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75500008285613848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 2
-    Name: Walk
-  - Type: 9
-    SynchronizeType: 1
-    Name: Attack
-  - Type: 9
-    SynchronizeType: 1
-    Name: Die
-  m_SynchronizeLayers:
-  - SynchronizeType: 1
-    LayerIndex: 0
 --- !u!114 &3633714540076203384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +233,33 @@ MonoBehaviour:
   AutoCreateRecorderIfNotFound: 0
   UsePrimaryRecorder: 1
   SetupDebugSpeaker: 1
+--- !u!114 &3758859692461216291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75500008285613848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 0
+    Name: Die
+  - Type: 1
+    SynchronizeType: 2
+    Name: Walk
+  - Type: 9
+    SynchronizeType: 1
+    Name: Attack
+  m_SynchronizeLayers:
+  - SynchronizeType: 1
+    LayerIndex: 0
 --- !u!1 &2304074746874795195
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +489,7 @@ MonoBehaviour:
   myHealthBar: {fileID: 7286265676380573734}
   hpImage: {fileID: 7286265675483169918}
   hpEffectImage: {fileID: 7286265676485261932}
+  playerCanDie: 0
   hp: 0
   maxHp: 100
   hurtSpeed: 0.005
