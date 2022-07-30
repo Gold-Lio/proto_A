@@ -7,7 +7,7 @@ using Photon.Realtime;
 using static NetworkManager;
 using static InteractionScript;
 
-public class UIManager : MonoBehaviourPun
+public class UIManager : MonoBehaviourPun 
 {
     public static UIManager UM
     {
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviourPun
         {
             Destroy(gameObject);
         }
-    }
+}
 
     public static InteractionScript IS;
 
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviourPun
         curBtn3, curBtn4, curBtn5;  // 3 red 4 green 5 blue
 
     bool active0, active1, active2; //3-사보 4-기믹(use버튼 동일 이미지)
-    //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)
+    //그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)trxue
     public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1,
         InteractionBtn2;
     public Text Interaction1Text;
@@ -53,7 +53,6 @@ public class UIManager : MonoBehaviourPun
     public Button StartBtn;
     public Text LogText;
     public GameObject[] Minigames;
-
 
     public GameObject altarRed;
     public GameObject altarGreen;
@@ -100,6 +99,8 @@ public class UIManager : MonoBehaviourPun
             InteractionBtn0.GetComponent<Button>().interactable = active0;
         }
 
+        //다른것이 없을까?
+
     }
 
     //공격버튼Set
@@ -137,12 +138,23 @@ public class UIManager : MonoBehaviourPun
         else if (curBtn2 == 6) //아이템 획득 , 다른 Sprite종류
         {
             //아이템 먹는~~ 먹었을때ㅡ 나오는 것들
+            //DestroyObject()
         }
 
-        else if (curBtn3 == 3)  //Red
+
+        else if (curBtn3 == 2)  //레드
         {
             altarRed.SetActive(true);
         }
+        else if (curBtn3 == 3)  //그린
+        {
+            altarGreen.SetActive(true);
+        }
+        else if (curBtn3 == 4)  //블루
+        {
+            altarBlue.SetActive(true);
+        }
+
     }
 
 

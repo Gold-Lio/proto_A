@@ -31,13 +31,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [HideInInspector] public PhotonView PV;
     [HideInInspector] public string nick;
     Vector2 input;
-     bool facingRight;
+    bool facingRight;
 
+    Vector2 curScale;
     Vector2 playerDir;
     Vector3 curPos;
     private IPunObservable _punObservableImplementation;
 
-    public Vector2 curScale;
     public GameObject playerCanvasGo;
     public Animator anim;
 
@@ -84,15 +84,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
             anim.SetFloat("Walk", Mathf.Abs(inputX));
 
-            if (inputX > 0 && !facingRight)
+            if (inputX > 0 && facingRight)
             {
                 FlipXRPC();
             }
-            else if(inputX < 0 && facingRight)
+            else if (inputX < 0 && !facingRight)
             {
                 FlipXRPC();
             }
- 
+
             //if (inputX != 0)
             //{
             //    PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
@@ -107,10 +107,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [PunRPC]
     void FlipXRPC()
-    //=> SR.flipX = axis == 1;
     {
+        //facingRight = !facingRight;
+        //curScale = transform.localScale; // 자식이 뒤집히도록 만들어야한낟
+        //curScale.x *= -1;
+        //transform.localScale = curScale;
+
         facingRight = !facingRight;
-        curScale = transform.localScale;
+        curScale = transform.localScale; // 자식이 뒤집히도록 만들어야한낟
         curScale.x *= -1;
         transform.localScale = curScale;
     }
@@ -172,9 +176,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
         anim.SetTrigger("Attack");
-        StartCoroutine(WaitforCo());
-        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
-        //  .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
+
+        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(curScale ? 9f : -9f, 0f, -1f),
+        //        Quaternion.Euler(0, 0, -180))
+        //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
+
+
+
+
+        //StartCoroutine(WaitforCo());
+        PhotonNetwork.Instantiate("Punch", transform.position + Vector3.right, Quaternion.Euler(0, 0, -180));
+         // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
         StartCoroutine(UM.PunchCoolCo());
     }
 

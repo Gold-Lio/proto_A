@@ -11,11 +11,13 @@ public class HealthBar : MonoBehaviourPun
     public Image hpImage;
     public Image hpEffectImage;
 
+    public Animator dieAnim;
     public bool playerCanDie = false;
 
     [HideInInspector] public float hp;
     [SerializeField] private float maxHp;
     [SerializeField] private float hurtSpeed;
+
 
     private void Start()
     {
@@ -30,7 +32,7 @@ public class HealthBar : MonoBehaviourPun
         if(photonView.IsMine)
         {
             myHealthBar.SetActive(true);
-
+            
             hpImage.fillAmount = hp / maxHp;
             if (hpEffectImage.fillAmount > hpImage.fillAmount)
             {
@@ -51,6 +53,7 @@ public class HealthBar : MonoBehaviourPun
             {
                 if (playerCanDie == true)
                 {
+                    dieAnim.SetTrigger("Die");
                     GameManager.instance.playerDie();
                 }
                 // 플레이어에 접근해서 애니메이션 실행. 

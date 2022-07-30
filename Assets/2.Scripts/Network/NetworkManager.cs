@@ -26,6 +26,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public GameObject onChatButton;
 
     public bool isGameStart;
+    public bool isCrewWin;
     public Transform SpawnPoint;
     public Light2D PointLight2D;
     public GameObject[] Interactions;
@@ -197,7 +198,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (Mathf.Floor(selectCountdown) <= 0)
         {
-            WinCheck();
+            Winner(false); 
             // Count 0일때 동작할 함수 삽입
         }
         else
