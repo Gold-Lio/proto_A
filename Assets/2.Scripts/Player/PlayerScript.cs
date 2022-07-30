@@ -185,7 +185,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
         //StartCoroutine(WaitforCo());
-        PhotonNetwork.Instantiate("Punch", transform.position + Vector3.right, Quaternion.Euler(0, 0, -180));
+        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
          // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
         StartCoroutine(UM.PunchCoolCo());
     }

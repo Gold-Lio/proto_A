@@ -7,7 +7,7 @@ using Photon.Realtime;
 using static NetworkManager;
 using static InteractionScript;
 
-public class UIManager : MonoBehaviourPun 
+public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM
     {
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviourPun
         {
             Destroy(gameObject);
         }
-}
+    }
 
     public static InteractionScript IS;
 
@@ -75,6 +75,8 @@ public class UIManager : MonoBehaviourPun
     public Animator anim;
     public int killCooltime;
 
+    public bool isRed, isGreen, isBlue;
+
     void Start()
     {
         PV = photonView;
@@ -99,8 +101,22 @@ public class UIManager : MonoBehaviourPun
             InteractionBtn0.GetComponent<Button>().interactable = active0;
         }
 
-        //다른것이 없을까?
-
+        //다른것이 없을까?\
+        else if (NM.isGameStart && isRed)
+        {
+            InteractionBtn0.sprite = sprites[index];
+            InteractionBtn0.GetComponent<Button>().interactable = active0;
+        }
+        else if (NM.isGameStart && isGreen)
+        {
+            InteractionBtn0.sprite = sprites[index];
+            InteractionBtn0.GetComponent<Button>().interactable = active0;
+        }
+        else if (NM.isGameStart && isBlue)
+        {
+            InteractionBtn0.sprite = sprites[index];
+            InteractionBtn0.GetComponent<Button>().interactable = active0;
+        }
     }
 
     //공격버튼Set
@@ -139,22 +155,21 @@ public class UIManager : MonoBehaviourPun
         {
             //아이템 먹는~~ 먹었을때ㅡ 나오는 것들
             //DestroyObject()
+            altarRed.SetActive(true);
         }
 
-
-        else if (curBtn3 == 2)  //레드
+        else if (curBtn0 == 2)  //레드
         {
             altarRed.SetActive(true);
         }
-        else if (curBtn3 == 3)  //그린
+        else if (curBtn0 == 3)  //그린
         {
             altarGreen.SetActive(true);
         }
-        else if (curBtn3 == 4)  //블루
+        else if (curBtn0 == 4)  //블루
         {
             altarBlue.SetActive(true);
         }
-
     }
 
 

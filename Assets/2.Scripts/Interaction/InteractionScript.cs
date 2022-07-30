@@ -19,7 +19,7 @@ public class InteractionScript : MonoBehaviourPun
     public int curInteractionNum;
 
     public bool isAltarBox;
-    public bool isRed, isGreen, isBlue;
+   
 
     void Start()
     {
@@ -52,17 +52,22 @@ public class InteractionScript : MonoBehaviourPun
 
             else if (type == Type.Altar_Red)
             {
+                UM.isRed = true;
+                UM.curInteractionNum = curInteractionNum;
                 UM.SetInteractionBtn0(2, true);
             }
             else if (type == Type.Altar_Green)
             {
+                UM.isGreen = true;
+                UM.curInteractionNum = curInteractionNum;
                 UM.SetInteractionBtn0(3, true);
             }
             else if (type == Type.Altar_Blue)
             {
+                UM.isBlue = true;
+                UM.curInteractionNum = curInteractionNum;
                 UM.SetInteractionBtn0(4, true);
             }
-
         }
     }
 
@@ -90,14 +95,17 @@ public class InteractionScript : MonoBehaviourPun
 
             else if (type == Type.Altar_Red)
             {
+                UM.isRed = false;
                 UM.SetInteractionBtn0(2, false);
             }
             else if (type == Type.Altar_Green)
             {
+                UM.isGreen = false;
                 UM.SetInteractionBtn0(3, false);
             }
             else if (type == Type.Altar_Blue)
             {
+                UM.isBlue = false;
                 UM.SetInteractionBtn0(4, false);
             }
         }
