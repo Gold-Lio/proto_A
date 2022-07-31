@@ -22,12 +22,11 @@ public class Mini3Target : MonoBehaviour
 
     public void AddButton()
     {
-        slider.value += 0.1f;
+        slider.value += 1f;
 
         if(!isClear)
         {
-            slider.value = 1; // Value 최고치에 달했을경우
-        
+            if(slider.value == slider.maxValue); // Value 최고치에 달했을경우
             MissionClear();
         }
     }
