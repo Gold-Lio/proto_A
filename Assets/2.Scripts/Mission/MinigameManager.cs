@@ -13,6 +13,7 @@ public class MinigameManager : MonoBehaviour, IMinigame
 
     private void Start()
     {
+
     }
 
     public void StartMission()
@@ -37,5 +38,4 @@ public class MinigameManager : MonoBehaviour, IMinigame
             NM.Interactions[UM.curInteractionNum].SetActive(false);
         }
     }
-
 }

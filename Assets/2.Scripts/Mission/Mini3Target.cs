@@ -8,7 +8,7 @@ public class Mini3Target : MonoBehaviour
 
     [SerializeField] private Slider slider;
     MinigameManager MM;
-    bool isClear;
+    bool isClear = false;
 
     private void Start()
     {

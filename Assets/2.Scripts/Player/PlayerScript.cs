@@ -82,7 +82,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             input = new Vector2(inputX, inputY);
             input *= speed;
             RB.velocity = input.normalized * speed;
-            anim.SetBool("Walk", true);
+            anim.SetBool("Walk", false);
 
 
             //anim.SetFloat("Walk", Mathf.Abs(inputX));
@@ -99,6 +99,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             if (inputX != 0)
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
+                anim.SetBool("Walk", true);
             }
 
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
