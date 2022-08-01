@@ -22,7 +22,6 @@ public class Mini2Target : MonoBehaviour, IPointerUpHandler
 		slider.interactable = true;
 	}
 
-
 	public void MissionClear(float f)
 	{
 		if (isClear) return;

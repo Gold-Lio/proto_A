@@ -12,12 +12,14 @@ public class Mini3Target : MonoBehaviour
 
     private void Start()
     {
-        MM = GetComponent<MinigameManager>();
+        MM = transform.GetComponentInParent<MinigameManager>();
     }
 
     private void OnEnable()
     {
         isClear = false;
+        slider.value = 0;
+        slider.interactable = true;
     }
 
     public void AddButton()
@@ -26,16 +28,14 @@ public class Mini3Target : MonoBehaviour
 
         if(!isClear)
         {
-            if(slider.value == slider.maxValue); // Value 최고치에 달했을경우
+            if(slider.value == slider.maxValue) // Value 최고치에 달했을경우
             MissionClear();
         }
     }
-
 
     void MissionClear()
     {
         isClear = true;
         MM.CompleteMission();
     }
-
 }
