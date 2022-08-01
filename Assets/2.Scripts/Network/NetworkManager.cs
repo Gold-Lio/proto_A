@@ -46,7 +46,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (isTest) return;
 
-        Screen.SetResolution(720, 405, false);
+        Screen.SetResolution(1920, 1080, false);
         PV = photonView;
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
