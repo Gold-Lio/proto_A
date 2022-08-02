@@ -239,15 +239,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     //학생과 악마 빛 범위 차이 
     IEnumerator LightCheckCo()
     {
-        if (MyPlayer.isImposter)
+        if(isGameStart)
         {
-            PointLight2D.pointLightOuterRadius = 50;
+            if (MyPlayer.isImposter)
+            {
+                PointLight2D.pointLightOuterRadius = 50;
+            }
+            else
+            {
+                PointLight2D.pointLightOuterRadius = 30;
+            }
         }
-        else
-        {
-            PointLight2D.pointLightOuterRadius = 30;
-        }
-
         yield return null;
     }
 
