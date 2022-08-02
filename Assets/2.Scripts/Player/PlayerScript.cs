@@ -42,13 +42,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject playerCanvasGo;
     public Animator anim;
 
-    public AudioSource walkAudio;
+    //public AudioSource walkAudio;
 
     private void Awake()
     {
         PS = this;
         anim =  gameObject.GetComponent<Animator>();
-        walkAudio = GetComponent<AudioSource>();
+        //walkAudio = GetComponent<AudioSource>();
 
     }
 
@@ -105,10 +105,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
                 anim.SetBool("Walk", true);
-                walkAudio.Play();
+                //walkAudio.Play();
             }
-            else
-                walkAudio.Stop();
+            //else
+            //    walkAudio.Stop();
 
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
