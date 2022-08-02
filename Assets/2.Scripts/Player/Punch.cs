@@ -37,6 +37,8 @@ public class Punch : MonoBehaviourPunCallbacks
             CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
            
             col.GetComponentInChildren<HealthBar>().hp -= attackDamage;
+            
+            col.GetComponent<PlayerScript>().anim.SetTrigger("Hited");
             Debug.Log("때렸다");
         }
     }
