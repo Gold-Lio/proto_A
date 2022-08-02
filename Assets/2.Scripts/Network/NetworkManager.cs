@@ -241,8 +241,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (MyPlayer.isImposter)
         {
-            PointLight2D.pointLightOuterRadius = 60;
+            PointLight2D.pointLightOuterRadius = 50;
         }
+        else
+        {
+            PointLight2D.pointLightOuterRadius = 30;
+        }
+
         yield return null;
     }
 
