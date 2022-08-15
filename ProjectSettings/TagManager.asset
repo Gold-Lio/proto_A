@@ -4,19 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
   - DeadBody
-  - Relics
+  - IsPunch
+  - FieldItem
   - Item
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Map
+  - 
   - Water
   - UI
   - Player
+  - Map
   - Item
+  - Mission
+  - PostProcess
   - 
   - 
   - 
@@ -26,12 +30,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -45,9 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Map
-    uniqueID: 1945969025
+  - name: Layer 1
+    uniqueID: 2425651459
     locked: 0
-  - name: Player
-    uniqueID: 4090468151
+  - name: Map
+    uniqueID: 4250941897
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4189426099
     locked: 0
