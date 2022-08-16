@@ -18,7 +18,6 @@ public class HealthBar : MonoBehaviourPun
     [SerializeField] private float maxHp;
     [SerializeField] private float hurtSpeed;
 
-
     private void Start()
     {
         hp = maxHp;

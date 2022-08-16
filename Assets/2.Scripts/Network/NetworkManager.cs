@@ -32,7 +32,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public GameObject[] Interactions;
     public GameObject[] Altars;
     public GameObject[] Lights;
-
     public GameObject[] wall;
     public Text pingText;
 
@@ -46,11 +45,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (isTest) return;
 
-        Screen.SetResolution(1920, 1080, false);
+        Screen.SetResolution(800, 400, false);
         PV = photonView;
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
-
 
         InvokeRepeating("UpdatePing", 2, 2);
     }
@@ -122,7 +120,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public void SortPlayers() => Players.Sort((p1, p2) => p1.actor.CompareTo(p2.actor));
-
     public Color GetColor(int colorIndex)
     {
         return UM.colors[colorIndex];
@@ -170,7 +167,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             badGuyInfoText.SetActive(true);
             badGuyInfoText_S.SetActive(true);
         }
-
         else
         {
             studentInfoText.SetActive(true);
@@ -191,7 +187,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         StartCoroutine(UM.PunchCoolCo());
         selectCountdown = time;
         StartCoroutine(LightCheckCo());
-
     }
 
     private void Update()
@@ -243,11 +238,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             if (MyPlayer.isImposter)
             {
-                PointLight2D.pointLightOuterRadius = 50;
+                PointLight2D.pointLightOuterRadius = 90;
             }
+
             else
             {
-                PointLight2D.pointLightOuterRadius = 30;
+                PointLight2D.pointLightOuterRadius = 50;
             }
         }
         yield return null;
