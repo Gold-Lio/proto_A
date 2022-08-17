@@ -49,7 +49,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         PS = this;
         anim =  gameObject.GetComponent<Animator>();
         //walkAudio = GetComponent<AudioSource>();
-
     }
 
 
@@ -119,6 +118,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
+
+
+
 
 
     //[PunRPC]
