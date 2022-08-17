@@ -88,7 +88,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             RB.velocity = input.normalized * speed;
             anim.SetBool("Walk", false);
 
-
             //anim.SetFloat("Walk", Mathf.Abs(inputX));
 
             //if (inputX > 0 && facingRight)
@@ -118,10 +117,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
-
-
-
-
 
     //[PunRPC]
     //void FlipXRPC()
@@ -183,7 +178,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
     }
 
-
     [PunRPC]
     public void Punch() // 펀치 함수. 
     {
@@ -192,16 +186,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 Quaternion.Euler(0, 0, -180))
             .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
-
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(curScale ? 9f : -9f, 0f, -1f),
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
         //StartCoroutine(WaitforCo());
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
-         // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
+        // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
         StartCoroutine(UM.PunchCoolCo());
     }
+
+
+    public void PlayerDie()
+    {
+        Destroy(this.gameObject); //그냥 플레이어 바만 사라지는거다. 그래서 지금 전혀 되지 않고 있는거다...!
+        PhotonNetwork.Instantiate("PlayerDeadBody", transform.position, Quaternion.identity);
+    }
+
+
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -219,6 +221,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         yield return new WaitForSeconds(2f);
     }
+
     //private void OnTriggerEnter2D(Collider2D col)
     //{
     //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();

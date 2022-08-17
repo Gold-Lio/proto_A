@@ -7,6 +7,8 @@ using Photon.Realtime;
 using static NetworkManager;
 using static InteractionScript;
 
+
+
 public class UIManager : MonoBehaviourPun
 {
     public static UIManager UM
@@ -76,6 +78,7 @@ public class UIManager : MonoBehaviourPun
     public int killCooltime;
 
     public bool isRed, isGreen, isBlue;
+    public bool PlayerCanDie;   
 
     void Start()
     {
@@ -222,7 +225,7 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, false);
         NM.MyPlayer.ispunch = false;
 
-        for (int i = 10; i > 0; i--) // 기본 10초 킬대기
+        for (int i = 0; i > 0; i--) // 기본 0초 킬대기
         {
             killCooltime = i;
 

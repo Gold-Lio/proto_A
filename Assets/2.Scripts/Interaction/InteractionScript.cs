@@ -13,7 +13,6 @@ public class InteractionScript : MonoBehaviourPun
     public Type type;
 
     MinigameManager MM;
-    // public static Item go;
 
     GameObject Line;
     public int curInteractionNum;

@@ -33,8 +33,8 @@ public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-
-    //주기적으로 자동 실행될 메서드 -현재 유물 진행도 여부
+    
+    //주기적으로 자동 실행될 메서드 -현재 전체 유물 진행도 여부
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
