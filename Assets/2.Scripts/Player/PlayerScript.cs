@@ -116,6 +116,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
+    //void Move()
+    //{
+    //    if (isMove)
+    //    {
+
+    //    }
+    //}
+
+
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
