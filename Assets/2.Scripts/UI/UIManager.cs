@@ -217,12 +217,12 @@ public class UIManager : MonoBehaviourPun
         }
     }
 
-    public IEnumerator PunchCoolCo()
+    public IEnumerator PunchCoolCo()    
     {
         SetInteractionBtn1(5, false);
         NM.MyPlayer.ispunch = false;
 
-        for (int i = 10; i > 0; i--) // 기본 10초 킬대기
+        for (int i = 0; i > 0; i--) // 기본 10초 킬대기
         {
             killCooltime = i;
 
@@ -253,7 +253,6 @@ public class UIManager : MonoBehaviourPun
     {
         LogText.text = log;
     }
-
 
     IEnumerator GimmickCo()
     {
