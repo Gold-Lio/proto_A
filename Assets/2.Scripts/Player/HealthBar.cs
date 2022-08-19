@@ -26,6 +26,7 @@ public class HealthBar : MonoBehaviourPun
         GameManager.instance.isPlayerDie += Die;
     }
 
+
     private void Update()
     {
         if(photonView.IsMine)
@@ -43,6 +44,7 @@ public class HealthBar : MonoBehaviourPun
             }
         }
     }
+
 
     private void Die()
     {
