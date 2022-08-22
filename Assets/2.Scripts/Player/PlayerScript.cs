@@ -64,6 +64,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         facingRight = true;
     }
 
+
+    /// <summary>
+    ///현재 개체 소유자를 가져오는 도우미 방법입니다.
+    /// Helper method for getting the current object owner.
+    /// </summary>
+    public PhotonView GetView()
+    {
+        return this.photonView;
+    }
+
+
+
     public Vector3 GetPosition()
     {
         return transform.position;

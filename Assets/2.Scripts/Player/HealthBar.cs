@@ -25,6 +25,7 @@ public class HealthBar : MonoBehaviourPun
 
         GameManager.instance.isPlayerDie += Die;
     }
+   
 
 
     private void Update()
@@ -42,6 +43,8 @@ public class HealthBar : MonoBehaviourPun
             {
                 hpEffectImage.fillAmount = hpImage.fillAmount;
             }
+
+            Die(); //그 많은 검출을 때리니까 유니티가 팅김. 어떤 한 조건을 만족햇을때만 실행하도록 만드러야함. 
         }
     }
 
@@ -50,13 +53,10 @@ public class HealthBar : MonoBehaviourPun
     {
         if(photonView.IsMine)
         {
-            if (hp == 0)
+            if (hp <= 0)
             {
-                if (playerCanDie == true)
-                {
                     dieAnim.SetTrigger("Die");
                     GameManager.instance.playerDie();
-                }
                 // 플레이어에 접근해서 애니메이션 실행. 
                 // 몇초 뒤에 플레이어 Destory.
                 // 그리고 그 플레이어는 모든 플레이어, 카메라로 전환. 
