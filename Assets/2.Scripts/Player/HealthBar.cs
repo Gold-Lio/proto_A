@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviourPun
     public Image hpImage;
     public Image hpEffectImage;
 
-    public Animator dieAnim;
+    public Animator dieAnim;    
     public bool playerCanDie = false;
 
     [HideInInspector] public float hp;
