@@ -13,8 +13,6 @@ public class LivingEntity : MonoBehaviourPun, IDamageable
     public bool dead { get; protected set; } // 사망 상태
     public event Action onDeath; // 사망시 발동할 이벤트
 
-
-
     // 호스트->모든 클라이언트 방향으로 체력과 사망 상태를 동기화 하는 메서드
     [PunRPC]
     public void ApplyUpdatedHealth(float newHealth, bool newDead)
@@ -36,7 +34,7 @@ public class LivingEntity : MonoBehaviourPun, IDamageable
     // 데미지 처리
     // 호스트에서 먼저 단독 실행되고, 호스트를 통해 다른 클라이언트들에서 일괄 실행됨
     [PunRPC]
-    public virtual void OnDamage(float damage, Vector3 hitPoint)
+    public virtual void OnDamage(float damage)
     {
         if (PhotonNetwork.IsMasterClient)
         {
@@ -47,7 +45,7 @@ public class LivingEntity : MonoBehaviourPun, IDamageable
             photonView.RPC("ApplyUpdatedHealth", RpcTarget.Others, health, dead);
 
             // 다른 클라이언트들도 OnDamage를 실행하도록 함
-            photonView.RPC("OnDamage", RpcTarget.Others, damage, hitPoint);
+            photonView.RPC("OnDamage", RpcTarget.Others, damage);
         }
 
         // 체력이 0 이하 && 아직 죽지 않았다면 사망 처리 실행

@@ -1128,6 +1128,9 @@ MonoBehaviour:
   hp: 0
   maxHp: 100
   hurtSpeed: 0.005
+  deathClip: {fileID: 0}
+  hitClip: {fileID: 0}
+  itemPickupClip: {fileID: 0}
 --- !u!1 &8957713386404951466
 GameObject:
   m_ObjectHideFlags: 0
