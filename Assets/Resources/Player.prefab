@@ -287,7 +287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78b736601df34e145b113200f637e37f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c47e398a757a26944afdfef9c300a9e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -686,7 +686,6 @@ GameObject:
   - component: {fileID: 5551391777379905735}
   - component: {fileID: 5551391777379905732}
   - component: {fileID: 5551391777379905733}
-  - component: {fileID: 4530135077055980841}
   m_Layer: 6
   m_Name: Canvas
   m_TagString: Player
@@ -777,26 +776,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4530135077055980841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5551391777379905739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f502edd04602642b6ee97f812dd2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myHealthBar: {fileID: 4029932945535104960}
-  hpImage: {fileID: 4029932946667447192}
-  hpEffectImage: {fileID: 4029932945657306506}
-  dieAnim: {fileID: 8328879128483766269}
-  playerCanDie: 0
-  hp: 0
-  maxHp: 100
-  hurtSpeed: 0.005
 --- !u!1 &6052570122251225342
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +797,8 @@ GameObject:
   - component: {fileID: 8934468180311164407}
   - component: {fileID: 6962207347307682462}
   - component: {fileID: 7410972628957345221}
+  - component: {fileID: 3658227986338892789}
+  - component: {fileID: 7428828882582078923}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1047,6 +1028,7 @@ MonoBehaviour:
   - {fileID: 7367051637708183744}
   - {fileID: 8934468180311164407}
   - {fileID: 7410972628957345221}
+  - {fileID: 3658227986338892789}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1112,6 +1094,40 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
+--- !u!114 &3658227986338892789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052570122251225342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35144820bcc25444bb8f0fd767d9423e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SmoothingDelay: 5
+--- !u!114 &7428828882582078923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052570122251225342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f502edd04602642b6ee97f812dd2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  myHealthBar: {fileID: 4029932945535104960}
+  hpImage: {fileID: 4029932946667447192}
+  hpEffectImage: {fileID: 4029932945657306506}
+  dieAnim: {fileID: 8328879128483766269}
+  playerCanDie: 0
+  hp: 0
+  maxHp: 100
+  hurtSpeed: 0.005
 --- !u!1 &8957713386404951466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58086affa71851c4b81d7fba4c08e0b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f03ad306684b814691c894ce28dc105, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -61,6 +61,9 @@ MonoBehaviour:
   - ApplyUpdatedHealth
   - OnDamage
   - RestoreHealth
+  - RpcClearBuffer
+  - RpcNonServerOwnedTeleportFromServer
+  - RpcTeleport
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

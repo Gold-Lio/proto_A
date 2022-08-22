@@ -265,6 +265,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             else
                 ++crewCount;
         }
+
         if (impoCount == 0 && crewCount > 0) // 모든 임포가 죽음
             Winner(true);
         else if (impoCount != 0 && impoCount > crewCount) // 임포가 크루보다 많음
