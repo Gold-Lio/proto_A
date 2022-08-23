@@ -10,7 +10,8 @@ public class Punch : MonoBehaviourPunCallbacks
     [SerializeField]
     private float attackDamage;
     public PhotonView PV;
-
+   // public PlayerHealth PH;
+    
     public float camShakeIntencity;
     public float camShakeTime;
 
@@ -40,7 +41,24 @@ public class Punch : MonoBehaviourPunCallbacks
             
             col.GetComponent<PlayerScript>().anim.SetTrigger("Hited");
             Debug.Log("때렸다");
+
+           if(col.GetComponent<PlayerHealth>().hp <= 0)
+           {
+                // PV.RPC("PlayerDead", RpcTarget.AllBuffered,col);
+                // Destroy(col.gameObject);
+                //PlayerDie(col);
+                PV.RPC("PlayerDie", RpcTarget.AllBuffered, col);
+                PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+           }
         }
+    }
+
+
+
+    [PunRPC]
+    public void PlayerDie(Collider2D col)
+    {
+        Destroy(col.gameObject);
     }
 
     [PunRPC]

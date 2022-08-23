@@ -224,6 +224,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         StartCoroutine(UM.PunchCoolCo());
     }
 
+    [PunRPC]
+    public void PlayerDead(Collider2D col)
+    {
+        //이것을 RPC로 적용해서 만들기. 클라, 마스터클라에서도 뜨도록. 변경. 
+        col.GetComponent<PlayerScript>().gameObject.SetActive(false);
+        PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+    }
+
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)

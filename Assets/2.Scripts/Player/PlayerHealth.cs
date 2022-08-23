@@ -79,15 +79,14 @@ public class PlayerHealth : LivingEntity
         // LivingEntity의 Die() 실행(사망 적용)
         base.Die();
 
+
+        playerCanDie = true;
         // 체력 슬라이더 비활성화
         myHealthBar.gameObject.SetActive(false);
-
         // 사망음 재생
         playerAudioPlayer.PlayOneShot(deathClip);
-
         // 애니메이터의 Die 트리거를 발동시켜 사망 애니메이션 재생
         playerAnimator.SetTrigger("Die");
-
 
         //아예못움직이게끔 처리
       
