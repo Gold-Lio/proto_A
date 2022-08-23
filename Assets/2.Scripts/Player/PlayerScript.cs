@@ -249,6 +249,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         yield return new WaitForSeconds(2f);
     }
+
+    [PunRPC]
+    void DestroyRPC() => Destroy(gameObject);
+
+
     //private void OnTriggerEnter2D(Collider2D col)
     //{
     //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();

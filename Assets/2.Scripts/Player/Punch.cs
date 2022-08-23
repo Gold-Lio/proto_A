@@ -8,7 +8,7 @@ using Cinemachine;
 public class Punch : MonoBehaviourPunCallbacks
 {
     [SerializeField]
-    private float attackDamage;
+    public float attackDamage;
     public PhotonView PV;
    // public PlayerHealth PH;
     
@@ -26,7 +26,7 @@ public class Punch : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.7f);
     }
 
     void Update() => transform.Translate(Vector3.right * (3f * Time.deltaTime * dir));
@@ -36,20 +36,24 @@ public class Punch : MonoBehaviourPunCallbacks
         if (!PV.IsMine && col.CompareTag("Player") && col.GetComponent<PhotonView>().IsMine) // 느린쪽 판정
         {
             CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
-           
-            col.GetComponent<PlayerHealth>().hp -= attackDamage;
-            
-            col.GetComponent<PlayerScript>().anim.SetTrigger("Hited");
-            Debug.Log("때렸다");
 
-           if(col.GetComponent<PlayerHealth>().hp <= 0)
-           {
-                // PV.RPC("PlayerDead", RpcTarget.AllBuffered,col);
-                // Destroy(col.gameObject);
-                //PlayerDie(col);
-                PV.RPC("PlayerDie", RpcTarget.AllBuffered, col);
-                PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
-           }
+            col.GetComponent<PlayerHealth>().Hit();
+            PV.RPC("DestoryRPC", RpcTarget.AllBuffered);
+
+            //col.GetComponent<PlayerHealth>().hp -= attackDamage;
+            
+            //col.GetComponent<PlayerScript>().anim.SetTrigger("Hited");
+            //Debug.Log("때렸다");
+
+
+           //if(col.GetComponent<PlayerHealth>().hp <= 0)
+           //{
+           //     // PV.RPC("PlayerDead", RpcTarget.AllBuffered,col);
+           //     // Destroy(col.gameObject);
+           //     //PlayerDie(col);
+           //     PV.RPC("PlayerDie", RpcTarget.AllBuffered, col);
+           //     PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+           //}
         }
     }
 

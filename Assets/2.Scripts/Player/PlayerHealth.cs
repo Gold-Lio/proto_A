@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using static NetworkManager;
 
 public class PlayerHealth : LivingEntity
 {
@@ -25,8 +26,12 @@ public class PlayerHealth : LivingEntity
     private AudioSource playerAudioPlayer; // 플레이어 소리 재생기
     private Animator playerAnimator; // 플레이어의 애니메이터
 
+    PhotonView PV;
+
     private void Awake()
     {
+
+        PV = photonView;
         // 사용할 컴포넌트를 가져오기
         playerAnimator = GetComponent<Animator>();
         playerAudioPlayer = GetComponent<AudioSource>();
@@ -122,4 +127,17 @@ public class PlayerHealth : LivingEntity
         yield return null;
     }
 
+
+    public void Hit()
+    {
+        hpImage.fillAmount -= 1f;
+        if(hpImage.fillAmount <= 0)
+        {
+            //GameObject.Find("Canvas").transform.Find("RespawnPanel").gameObject.SetActive(true);
+            //PV.RPC("DestroyRPC", RpcTarget.AllBuffered); // AllBuffered로 해야 제대로 사라져 복제버그가 안 생긴다
+            PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+            Debug.Log("죽었따");
+            NM.WinCheck();
+        }
+    }
 }
