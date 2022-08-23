@@ -67,6 +67,9 @@ MonoBehaviour:
   - PlayerDead
   - PlayerDie
   - DestroyRPC
+  - DestroyPlayer
+  - Hit
+  - DestoryPunch
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

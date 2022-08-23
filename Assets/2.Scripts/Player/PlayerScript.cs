@@ -251,7 +251,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     [PunRPC]
-    void DestroyRPC() => Destroy(gameObject);
+    void DestroyPlayer() => Destroy(gameObject);
 
 
     //private void OnTriggerEnter2D(Collider2D col)

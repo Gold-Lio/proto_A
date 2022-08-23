@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using static NetworkManager;
+using static UIManager;
+
 
 public class PlayerHealth : LivingEntity
 {
@@ -30,7 +32,6 @@ public class PlayerHealth : LivingEntity
 
     private void Awake()
     {
-
         PV = photonView;
         // 사용할 컴포넌트를 가져오기
         playerAnimator = GetComponent<Animator>();
@@ -60,25 +61,6 @@ public class PlayerHealth : LivingEntity
         hpImage.fillAmount = health;
     }
 
-
-    // 데미지 처리
-    [PunRPC]
-    public override void OnDamage(float damage) 
-    {
-        if (!dead)
-        {
-            // 사망하지 않은 경우에만 효과음을 재생
-            playerAudioPlayer.PlayOneShot(hitClip);
-        }
-
-        // LivingEntity의 OnDamage() 실행(데미지 적용)
-        base.OnDamage(damage);
-        // 갱신된 체력을 체력 슬라이더에 반영
-        hpImage.fillAmount = health;
-    }
-
-
-
     public override void Die()
     {
         // LivingEntity의 Die() 실행(사망 적용)
@@ -96,6 +78,8 @@ public class PlayerHealth : LivingEntity
         //아예못움직이게끔 처리
       
     }
+
+
     private void Update()
     {
 
@@ -122,21 +106,21 @@ public class PlayerHealth : LivingEntity
     }
 
 
-    IEnumerator PlayerDie()
-    {
-        yield return null;
-    }
-
-
+    [PunRPC]
     public void Hit()
     {
-        hpImage.fillAmount -= 1f;
-        if(hpImage.fillAmount <= 0)
+        hp -= 5f;  //1로하면 한방이고 0.5로 하면 50방/...? 이게 도대체 무슨 일인가
+        //hpImage.fillAmount -= 0.5f;
+        if (hpImage.fillAmount <= 0)
         {
             //GameObject.Find("Canvas").transform.Find("RespawnPanel").gameObject.SetActive(true);
-            //PV.RPC("DestroyRPC", RpcTarget.AllBuffered); // AllBuffered로 해야 제대로 사라져 복제버그가 안 생긴다
+            PV.RPC("DestroyPlayer", RpcTarget.AllBuffered); // AllBuffered로 해야 제대로 사라져 복제버그가 안 생긴다
             PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
             Debug.Log("죽었따");
+
+
+            //WinCheck에서 왜 막히는걸까?? 빠지는 이유가 있는것일까?
+            //사라지는 시점에서 먹히지 않음. 그래서 사라지지 않고 똑같이 1 1 검출해서 게임 Set이 되지 않음. 
             NM.WinCheck();
         }
     }

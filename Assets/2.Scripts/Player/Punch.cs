@@ -26,7 +26,7 @@ public class Punch : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        Destroy(gameObject, 0.7f);
+        Destroy(gameObject, 0.9f);
     }
 
     void Update() => transform.Translate(Vector3.right * (3f * Time.deltaTime * dir));
@@ -38,36 +38,29 @@ public class Punch : MonoBehaviourPunCallbacks
             CinemachineShake.Instance.ShakeCamera(camShakeIntencity, camShakeTime);
 
             col.GetComponent<PlayerHealth>().Hit();
-            PV.RPC("DestoryRPC", RpcTarget.AllBuffered);
+            col.GetComponent<PlayerScript>().anim.SetTrigger("Hited");
+
+            //PV.RPC("DestoryPunch", RpcTarget.AllBuffered);
 
             //col.GetComponent<PlayerHealth>().hp -= attackDamage;
-            
-            //col.GetComponent<PlayerScript>().anim.SetTrigger("Hited");
+
             //Debug.Log("때렸다");
 
 
-           //if(col.GetComponent<PlayerHealth>().hp <= 0)
-           //{
-           //     // PV.RPC("PlayerDead", RpcTarget.AllBuffered,col);
-           //     // Destroy(col.gameObject);
-           //     //PlayerDie(col);
-           //     PV.RPC("PlayerDie", RpcTarget.AllBuffered, col);
-           //     PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
-           //}
+            //if(col.GetComponent<PlayerHealth>().hp <= 0)
+            //{
+            //     // PV.RPC("PlayerDead", RpcTarget.AllBuffered,col);
+            //     // Destroy(col.gameObject);
+            //     //PlayerDie(col);
+            //     PV.RPC("PlayerDie", RpcTarget.AllBuffered, col);
+            //     PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+            //}
         }
-    }
-
-
-
-    [PunRPC]
-    public void PlayerDie(Collider2D col)
-    {
-        Destroy(col.gameObject);
     }
 
     [PunRPC]
     void DirRPC(int dir) => this.dir = dir;
 
     [PunRPC]
-    void DestoryRPC() => Destroy(gameObject);
+    void DestoryPunch() => Destroy(gameObject);
 }
