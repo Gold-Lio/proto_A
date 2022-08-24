@@ -1120,6 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  attackDamage: 10
   myHealthBar: {fileID: 4029932945535104960}
   hpImage: {fileID: 4029932946667447192}
   hpEffectImage: {fileID: 4029932945657306506}

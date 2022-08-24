@@ -240,7 +240,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             {
                 PointLight2D.pointLightOuterRadius = 90;
             }
-
             else
             {
                 PointLight2D.pointLightOuterRadius = 50;
@@ -250,7 +249,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
 
-    [PunRPC]
+    [PunRPC]    
     public void WinCheck()
     {
         int crewCount = 0;

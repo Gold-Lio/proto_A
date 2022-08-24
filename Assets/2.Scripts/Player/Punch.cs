@@ -7,10 +7,7 @@ using Cinemachine;
 
 public class Punch : MonoBehaviourPunCallbacks
 {
-    [SerializeField]
-    public float attackDamage;
     public PhotonView PV;
-   // public PlayerHealth PH;
     
     public float camShakeIntencity;
     public float camShakeTime;
@@ -45,8 +42,7 @@ public class Punch : MonoBehaviourPunCallbacks
             //col.GetComponent<PlayerHealth>().hp -= attackDamage;
 
             //Debug.Log("때렸다");
-
-
+            
             //if(col.GetComponent<PlayerHealth>().hp <= 0)
             //{
             //     // PV.RPC("PlayerDead", RpcTarget.AllBuffered,col);

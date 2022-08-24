@@ -77,6 +77,12 @@ public class UIManager : MonoBehaviourPun
 
     public bool isRed, isGreen, isBlue;
 
+
+    public GameObject playerDeathMenu;
+    public Text deathText;
+
+
+
     void Start()
     {
         PV = photonView;
@@ -241,7 +247,6 @@ public class UIManager : MonoBehaviourPun
         SetInteractionBtn1(5, true);
     }
 
-
     public IEnumerator DieCo(int killerColorIndex, int deadBodyColorIndex)
     {
         DiePanel.SetActive(true);
@@ -259,7 +264,6 @@ public class UIManager : MonoBehaviourPun
         //다른곳에서 . 
         yield return new WaitForSeconds(10f);
     }
-
 
     [PunRPC]
     public void SetMaxMissionGage()
@@ -291,5 +295,21 @@ public class UIManager : MonoBehaviourPun
     {
         StartCoroutine(MissionClearCo(MissionPanel));
         PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
+    }
+
+    public void PlayerKilled()
+    {
+        //죽었다면, 죽은 사람 전용으로,  DeadPanel을 생성시키고
+        //전체 interaction 제거하고  모든걸, 
+
+        if (PV.IsMine)
+        {
+            playerDeathMenu.SetActive(true);
+        }
+        //킬.
+    }
+    public void CamSwitch()
+    {
+        //이제 Yes를 눌렀을때, 
     }
 }

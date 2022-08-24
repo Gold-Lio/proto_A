@@ -214,13 +214,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
 
+
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(curScale ? 9f : -9f, 0f, -1f),
         //        Quaternion.Euler(0, 0, -180))
         //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
+
+
         //StartCoroutine(WaitforCo());
         //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
-         // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
+        // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
+
+
         StartCoroutine(UM.PunchCoolCo());
     }
 
@@ -230,6 +235,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         //이것을 RPC로 적용해서 만들기. 클라, 마스터클라에서도 뜨도록. 변경. 
         col.GetComponent<PlayerScript>().gameObject.SetActive(false);
         PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+
     }
 
 

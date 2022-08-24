@@ -10,6 +10,9 @@ using static UIManager;
 
 public class PlayerHealth : LivingEntity
 {
+    [SerializeField]
+    private float attackDamage;
+
     public GameObject myHealthBar;
     public Image hpImage;
     public Image hpEffectImage;
@@ -30,6 +33,7 @@ public class PlayerHealth : LivingEntity
 
     PhotonView PV;
 
+    
     private void Awake()
     {
         PV = photonView;
@@ -82,7 +86,30 @@ public class PlayerHealth : LivingEntity
 
     private void Update()
     {
+        HeathDisappearAnimation();
 
+    }
+
+    [PunRPC]
+    public void Hit()
+    {
+        hp -= attackDamage;  //1로하면 한방이고 0.5로 하면 50방/...? 이게 도대체 무슨 일인가
+        //hpImage.fillAmount -= 0.5f;
+        if (hpImage.fillAmount <= 0)
+        {
+            //GameObject.Find("Canvas").transform.Find("RespawnPanel").gameObject.SetActive(true);
+            PV.RPC("DestroyPlayer", RpcTarget.AllBuffered); // AllBuffered로 해야 제대로 사라져 복제버그가 안 생긴다
+            PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+            Debug.Log("죽었따");
+
+            //WinCheck에서 왜 막히는걸까?? 빠지는 이유가 있는것일까?
+            //사라지는 시점에서 먹히지 않음. 그래서 사라지지 않고 똑같이 1 1 검출해서 게임 Set이 되지 않음. 
+            NM.WinCheck();
+        }
+    }
+
+    public void HeathDisappearAnimation()
+    {
         //체력 닳는 모션
         if (photonView.IsMine)
         {
@@ -102,26 +129,6 @@ public class PlayerHealth : LivingEntity
             //Die(); //그 많은 검출을 때리니까 유니티가 팅김.
             //어떤 한 조건을 만족햇을때만 실행하도록 만드러야함. 
             //스택오버플로우 발생. 
-        }
-    }
-
-
-    [PunRPC]
-    public void Hit()
-    {
-        hp -= 5f;  //1로하면 한방이고 0.5로 하면 50방/...? 이게 도대체 무슨 일인가
-        //hpImage.fillAmount -= 0.5f;
-        if (hpImage.fillAmount <= 0)
-        {
-            //GameObject.Find("Canvas").transform.Find("RespawnPanel").gameObject.SetActive(true);
-            PV.RPC("DestroyPlayer", RpcTarget.AllBuffered); // AllBuffered로 해야 제대로 사라져 복제버그가 안 생긴다
-            PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
-            Debug.Log("죽었따");
-
-
-            //WinCheck에서 왜 막히는걸까?? 빠지는 이유가 있는것일까?
-            //사라지는 시점에서 먹히지 않음. 그래서 사라지지 않고 똑같이 1 1 검출해서 게임 Set이 되지 않음. 
-            NM.WinCheck();
         }
     }
 }
