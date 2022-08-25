@@ -982,6 +982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f0f74de5f6d894c82c592d2c1cf84e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 6774788977761571382, guid: 1013e61ed2fd5494f8cdd3d10cc9ec2c,
+    type: 3}
   RB: {fileID: 217949588619697640}
   SR: {fileID: 6052570122251226881}
   CharacterSR:
