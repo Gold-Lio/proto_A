@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Photon.Pun;
+using Photon.Realtime;
 
 namespace GameDevTV.Core.UI.Dragging
 {
@@ -19,7 +22,7 @@ namespace GameDevTV.Core.UI.Dragging
     /// has occurred.
     /// </summary>
     /// <typeparam name="T">The type that represents the item being dragged.</typeparam>
-    public class DragItem<T> : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class DragItem<T> : MonoBehaviourPun, IBeginDragHandler, IDragHandler, IEndDragHandler
         where T : class
     {
         // PRIVATE STATE
@@ -37,6 +40,8 @@ namespace GameDevTV.Core.UI.Dragging
             source = GetComponentInParent<IDragSource<T>>();
         }
 
+
+        [PunRPC]
         // PRIVATE
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
@@ -47,11 +52,14 @@ namespace GameDevTV.Core.UI.Dragging
             transform.SetParent(parentCanvas.transform, true);
         }
 
+
+        [PunRPC]
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
             transform.position = eventData.position;
         }
 
+        [PunRPC]
         void IEndDragHandler.OnEndDrag(PointerEventData eventData)
         {
             transform.position = startPosition;
@@ -72,10 +80,10 @@ namespace GameDevTV.Core.UI.Dragging
             {
                 DropItemIntoContainer(container);
             }
-
-            
         }
 
+
+        [PunRPC]
         private IDragDestination<T> GetContainer(PointerEventData eventData)
         {
             if (eventData.pointerEnter)
@@ -87,6 +95,8 @@ namespace GameDevTV.Core.UI.Dragging
             return null;
         }
 
+
+        [PunRPC]
         private void DropItemIntoContainer(IDragDestination<T> destination)
         {
             if (object.ReferenceEquals(destination, source)) return;
@@ -106,6 +116,8 @@ namespace GameDevTV.Core.UI.Dragging
             AttemptSwap(destinationContainer, sourceContainer);
         }
 
+
+        [PunRPC]
         private void AttemptSwap(IDragContainer<T> destination, IDragContainer<T> source)
         {
             // Provisionally remove item from both sides. 
@@ -152,6 +164,8 @@ namespace GameDevTV.Core.UI.Dragging
             }
         }
 
+
+        [PunRPC]
         private bool AttemptSimpleTransfer(IDragDestination<T> destination)
         {
             var draggingItem = source.GetItem();
@@ -170,6 +184,8 @@ namespace GameDevTV.Core.UI.Dragging
             return true;
         }
 
+
+        [PunRPC]
         private int CalculateTakeBack(T removedItem, int removedNumber, IDragContainer<T> removeSource, IDragContainer<T> destination)
         {
             var takeBackNumber = 0;
