@@ -14,7 +14,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
-    public Inventory inventory;
+    //public Inventory inventory;
     
     public Rigidbody2D RB; 
     public SpriteRenderer SR;  //  이SR 부분들. Flip에 들어가는  SR, 색깔 구분에 들어가는  SR. 
@@ -264,13 +264,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-        if (item != null)
-        {
-            inventory.AddItem(item);
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
+    //    if (item != null)
+    //    {
+    //        inventory.AddItem(item);
+    //    }
+    //}
 }
 
