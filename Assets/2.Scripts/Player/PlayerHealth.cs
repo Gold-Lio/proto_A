@@ -33,6 +33,9 @@ public class PlayerHealth : LivingEntity
 
     PhotonView PV;
 
+    PlayerScript MyPlayer;
+
+    public bool isDie;
     
     private void Awake()
     {
@@ -97,13 +100,11 @@ public class PlayerHealth : LivingEntity
         //hpImage.fillAmount -= 0.5f;
         if (hpImage.fillAmount <= 0)
         {
-            //GameObject.Find("Canvas").transform.Find("RespawnPanel").gameObject.SetActive(true);
-            
-            Debug.Log("죽었따");
-            StartCoroutine(DeadDelay());
-
             PV.RPC("DestroyPlayer", RpcTarget.AllBuffered); // AllBuffered로 해야 제대로 사라져 복제버그가 안 생긴다
+           
             PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
+
+            isDie = true;
 
             //WinCheck에서 왜 막히는걸까?? 빠지는 이유가 있는것일까?
             //사라지는 시점에서 먹히지 않음. 그래서 사라지지 않고 똑같이 1 1 검출해서 게임 Set이 되지 않음. 
@@ -134,12 +135,13 @@ public class PlayerHealth : LivingEntity
             //스택오버플로우 발생. 
         }
     }
-
-    IEnumerator DeadDelay()
+    
+    public void AfterDie()
     {
-        playerAnimator.SetBool("Die",true);
-        yield return new WaitForSeconds(5f);
+        if(isDie)
+        {
+            //패널 생성하고 , 나머지 UI다 제거후, 카메라 스위치. 
+        }
     }
-
 }
 

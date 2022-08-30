@@ -1132,6 +1132,7 @@ MonoBehaviour:
   deathClip: {fileID: 0}
   hitClip: {fileID: 0}
   itemPickupClip: {fileID: 0}
+  isDie: 0
 --- !u!1 &8957713386404951466
 GameObject:
   m_ObjectHideFlags: 0

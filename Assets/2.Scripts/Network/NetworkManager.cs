@@ -248,6 +248,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         yield return null;
     }
 
+    public void PlayerDie()
+    { 
+    
+
+    
+    }
+
+
+
 
     [PunRPC]    
     public void WinCheck()
