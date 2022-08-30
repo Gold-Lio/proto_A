@@ -9,7 +9,7 @@ using static NetworkManager;
 using static UIManager;
 using Random = UnityEngine.Random;
 using UnityEngine.Experimental.Rendering.Universal;
-
+using Photon.Voice.Unity.Demos.DemoVoiceUI;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -215,29 +215,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 Quaternion.Euler(0, 0, -180))
             .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
 
-
-
-        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(curScale ? 9f : -9f, 0f, -1f),
-        //        Quaternion.Euler(0, 0, -180))
-        //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
-
-
-
-        //StartCoroutine(WaitforCo());
-        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
-        // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
-
-
         StartCoroutine(UM.PunchCoolCo());
-    }
-
-    [PunRPC]
-    public void PlayerDead(Collider2D col)
-    {
-        //이것을 RPC로 적용해서 만들기. 클라, 마스터클라에서도 뜨도록. 변경. 
-        col.GetComponent<PlayerScript>().gameObject.SetActive(false);
-        PhotonNetwork.Instantiate("PlayerDeadStone", transform.position, Quaternion.identity);
-
     }
 
 
@@ -261,16 +239,5 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     void DestroyPlayer() => Destroy(gameObject);
 
-
-
-
-    //private void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-    //    if (item != null)
-    //    {
-    //        inventory.AddItem(item);
-    //    }
-    //}
 }
 
