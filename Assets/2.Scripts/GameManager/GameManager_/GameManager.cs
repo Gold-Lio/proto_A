@@ -5,6 +5,24 @@ using Photon.Pun;
 using Photon.Realtime;
 public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 {
+    // Item 관련 --------------------------------------------------------------------------------
+    private ItemDataManager itemData;
+    public ItemDataManager ItemData
+    {
+        get => itemData;
+    }
+    // ------------------------------------------------------------------------------------------
+
+    // Inven 관련 --------------------------------------------------------------------------------
+    private InventoryUI inventoryUI;
+    public InventoryUI InvenUI => inventoryUI;
+    // ------------------------------------------------------------------------------------------
+
+    // Player 관련 테스트 ------------------------------------------------------------------------
+    private PlayerScript player;
+    public PlayerScript MainPlayer => player;
+    // ------------------------------------------------------------------------------------------
+
     public static GameManager instance
     {
         get
@@ -14,6 +32,7 @@ public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             {
                 // 씬에서 GameManager 오브젝트를 찾아 할당
                 m_instance = FindObjectOfType<GameManager>();
+                instance.Initialize();
             }
 
             // 싱글톤 오브젝트를 반환
@@ -74,5 +93,15 @@ public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     public override void OnLeftRoom()
     {
         //씬 매니저 로비씬. 
+    }
+
+    /// <summary>
+    /// 게임매니저 초기화 (게임매니저가 재생성될때 Awake가 실행될때 컴포지트를 중복으로 불러올수 있어서 생성
+    /// </summary>
+    private void Initialize()
+    {
+        itemData = GetComponent<ItemDataManager>();
+
+        inventoryUI = FindObjectOfType<InventoryUI>();
     }
 }
