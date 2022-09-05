@@ -51,6 +51,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private float dropRange = 2.0f;
     // 플레이어 인풋 액션 추가
     private PlayerInputAction playerInputAction;
+    // 인벤토리 클래스
+    private Inventory inven;
+
 
     private void Awake()
     {
@@ -60,6 +63,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         // 플레이어 인풋 액션 추가 (드랍, 인벤토리 onoff)
         playerInputAction = new PlayerInputAction();
         //walkAudio = GetComponent<AudioSource>();
+
+        // 인벤 클래스 생성
+        inven = new Inventory();
     }
 
 
@@ -73,6 +79,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.SortPlayers();
         isMove = true;
         facingRight = true;
+
+        // 인벤토리UI 초기화
+        GameManager.instance.InvenUI.InitializeInventory(inven);
     }
 
 
