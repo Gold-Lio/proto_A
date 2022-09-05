@@ -108,7 +108,7 @@ namespace Photon.Pun
     {
         public virtual void OnEnable()
         {
-            PhotonNetwork.AddCallbackTarget(this);
+            PhotonNetwork.AddCallbackTarget(this);          
         }
 
         public virtual void OnDisable()

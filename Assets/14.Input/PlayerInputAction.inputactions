@@ -1,0 +1,69 @@
+{
+    "name": "PlayerInputAction",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "6c4018eb-4eb0-4ac7-96e7-23620f2f4ce5",
+            "actions": [
+                {
+                    "name": "ItemDrop",
+                    "type": "Button",
+                    "id": "4b098a0e-aa84-4fa2-95ad-5e536b73dd40",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "InventoryOnOff",
+                    "type": "Button",
+                    "id": "11bb55ba-2cd1-4275-9d9c-c6f10fa168ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2c65db23-10d6-4ade-99e7-4a35277829cc",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "K&M",
+                    "action": "ItemDrop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "38b5d1b2-1044-4793-9656-c78a96de31ae",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "K&M",
+                    "action": "InventoryOnOff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "K&M",
+            "bindingGroup": "K&M",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

@@ -10,6 +10,7 @@ using static UIManager;
 using Random = UnityEngine.Random;
 using UnityEngine.Experimental.Rendering.Universal;
 using Photon.Voice.Unity.Demos.DemoVoiceUI;
+using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
@@ -46,10 +47,18 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     //public AudioSource walkAudio;
 
+    // 아이템 드랍 거리
+    private float dropRange = 2.0f;
+    // 플레이어 인풋 액션 추가
+    private PlayerInputAction playerInputAction;
+
     private void Awake()
     {
         PS = this;
         anim =  gameObject.GetComponent<Animator>();
+
+        // 플레이어 인풋 액션 추가 (드랍, 인벤토리 onoff)
+        playerInputAction = new PlayerInputAction();
         //walkAudio = GetComponent<AudioSource>();
     }
 
@@ -238,6 +247,43 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
     [PunRPC]
     void DestroyPlayer() => Destroy(gameObject);
+
+
+
+    public override void OnEnable()
+    {
+        playerInputAction.UI.Enable();
+        playerInputAction.UI.InventoryOnOff.performed += OnInventoryOnOff;
+    }
+
+    public override void OnDisable()
+    {
+        playerInputAction.UI.InventoryOnOff.performed -= OnInventoryOnOff;
+        playerInputAction.UI.Disable();
+
+    }
+
+    private void OnInventoryOnOff(InputAction.CallbackContext _)
+    {
+        GameManager.instance.InvenUI.InventoryOnOffSwitch();
+    }
+
+
+    public Vector3 ItemDropPosition(Vector3 inputPos)
+    {
+        Vector3 result = Vector3.zero;
+        Vector3 toInputPos = inputPos - transform.position;
+        if (toInputPos.sqrMagnitude > dropRange * dropRange)
+        {
+            result = transform.position + toInputPos.normalized * dropRange;
+        }
+        else
+        {
+            result = inputPos;
+        }
+
+        return result;
+    }
 
 }
 
