@@ -20,7 +20,14 @@ public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     // Player 관련 테스트 ------------------------------------------------------------------------
     private PlayerScript player;
-    public PlayerScript MainPlayer => player;
+    public PlayerScript MainPlayer
+    {
+        get => player;
+        set
+        {
+            player = value;
+        }
+    }
     // ------------------------------------------------------------------------------------------
 
     public static GameManager instance
@@ -101,7 +108,6 @@ public partial class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     private void Initialize()
     {
         itemData = GetComponent<ItemDataManager>();
-
         inventoryUI = FindObjectOfType<InventoryUI>();
     }
 }

@@ -6,6 +6,14 @@
             "id": "6c4018eb-4eb0-4ac7-96e7-23620f2f4ce5",
             "actions": [
                 {
+                    "name": "InventoryOnOff",
+                    "type": "Button",
+                    "id": "11bb55ba-2cd1-4275-9d9c-c6f10fa168ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "ItemDrop",
                     "type": "Button",
                     "id": "4b098a0e-aa84-4fa2-95ad-5e536b73dd40",
@@ -14,9 +22,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "InventoryOnOff",
+                    "name": "ItemPickUp",
                     "type": "Button",
-                    "id": "11bb55ba-2cd1-4275-9d9c-c6f10fa168ce",
+                    "id": "41bd47c2-f46e-4802-8360-8ef4313a9d38",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -42,6 +50,17 @@
                     "processors": "",
                     "groups": "K&M",
                     "action": "InventoryOnOff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "598c6d2c-a820-427d-ae84-1845a315346b",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "K&M",
+                    "action": "ItemPickUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

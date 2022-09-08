@@ -11,13 +11,14 @@ using Random = UnityEngine.Random;
 using UnityEngine.Experimental.Rendering.Universal;
 using Photon.Voice.Unity.Demos.DemoVoiceUI;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
     //public Inventory inventory;
-    
-    public Rigidbody2D RB; 
+
+    public Rigidbody2D RB;
     public SpriteRenderer SR;  //  이SR 부분들. Flip에 들어가는  SR, 색깔 구분에 들어가는  SR. 
     public SpriteRenderer[] CharacterSR;
     public Light2D playerStaffLight2D;
@@ -40,17 +41,23 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     Vector2 curScale;
     Vector2 playerDir;
     Vector3 curPos;
-    private IPunObservable _punObservableImplementation; 
+    private IPunObservable _punObservableImplementation;
 
     public GameObject playerCanvasGo;
     public Animator anim;
 
     //public AudioSource walkAudio;
 
-    // 아이템 드랍 거리
-    private float dropRange = 2.0f;
+    // 인벤토리 및 아이템 관련 변수들 --------------------------------------------------------
     // 플레이어 인풋 액션 추가
     private PlayerInputAction playerInputAction;
+
+    // 아이템 줍는 범위
+    private float itemPickupRange = 5.0f;
+
+    // 아이템 드랍 거리
+    private float dropRange = 5.0f;
+
     // 인벤토리 클래스
     private Inventory inven;
 
@@ -58,7 +65,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         PS = this;
-        anim =  gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
 
         // 플레이어 인풋 액션 추가 (드랍, 인벤토리 onoff)
         playerInputAction = new PlayerInputAction();
@@ -82,6 +89,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
         // 인벤토리UI 초기화
         GameManager.instance.InvenUI.InitializeInventory(inven);
+        inven.AddItem(ItemIDCode.Test_Item);
+
+        GameManager.instance.MainPlayer = this;
     }
 
 
@@ -259,14 +269,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
 
+
+
+
+    // 인벤토리 및 아이템 관렴 함수들 ---------------------------------------------------------------------
+
     public override void OnEnable()
     {
         playerInputAction.UI.Enable();
         playerInputAction.UI.InventoryOnOff.performed += OnInventoryOnOff;
+        playerInputAction.UI.ItemPickUp.performed += OnItemPickUp;
     }
 
     public override void OnDisable()
     {
+        playerInputAction.UI.ItemPickUp.performed -= OnItemPickUp;
         playerInputAction.UI.InventoryOnOff.performed -= OnInventoryOnOff;
         playerInputAction.UI.Disable();
 
@@ -277,8 +294,23 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         GameManager.instance.InvenUI.InventoryOnOffSwitch();
     }
 
+    private void OnItemPickUp(InputAction.CallbackContext _)
+    {
+        //Collider[] cols = Physics.OverlapSphere(transform.position, itemPickupRange, LayerMask.GetMask("Item"));
+        Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position, itemPickupRange, LayerMask.GetMask("Item"));
+        foreach (var col in cols)
+        {
+            Item item = col.GetComponent<Item>();
 
-    public Vector3 ItemDropPosition(Vector3 inputPos)
+            if (inven.AddItem(item.data))
+            {
+                GameManager.instance.InvenUI.Detail.IsPause = false;
+                Destroy(col.gameObject);
+            }
+        }
+    }
+
+    public Vector3 OnItemDropPosition(Vector3 inputPos)
     {
         Vector3 result = Vector3.zero;
         Vector3 toInputPos = inputPos - transform.position;
@@ -293,6 +325,5 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
         return result;
     }
-
 }
 
