@@ -16,10 +16,6 @@ public class InventoryUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public GameObject slotPrefab;   // 초기화시 새로 생성해야할 경우 사용
 
     // 기본 데이터 ---------------------------------------------------------------------------------
-    /// <summary>
-    /// 이 인벤토리를 사용하는 플레이어
-    /// </summary>
-    //private Player player;
 
     /// <summary>
     /// 이 클래스로 표현하려는 인벤토리
@@ -147,7 +143,7 @@ public class InventoryUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         // TempSlot 초기화
         tempItemSlotUI.Initialize(Inventory.TempSlotID, inven.TempSlot);    // TempItemSlotUI와 TempSlot 연결
         tempItemSlotUI.Close(); // tempItemSlotUI 닫은채로 시작하기
-        
+
         inputActions.UI.ItemDrop.canceled += tempItemSlotUI.OnDrop;
 
         RefreshAllSlots();  // 전체 슬롯UI 갱신
@@ -201,25 +197,12 @@ public class InventoryUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         OnInventoryClose?.Invoke();
     }
 
-
-    // 델리게이트용 함수 ---------------------------------------------------------------------------
-    /// <summary>
-    /// SpliterUI가 OK됬을 때 실행될 함수
-    /// </summary>
-    /// <param name="slotID">나누려는 슬롯의 ID</param>
-    /// <param name="count">나눈 갯수</param>
-    private void OnSpliteOK(uint slotID, uint count)
-    {
-        inven.TempRemoveItem(slotID, count);    // slotID에서 count만큼 덜어내서 TempSlot에 옮기기
-        tempItemSlotUI.Open();  // tempItemSlotUI 열어서 보여주기
-    }
-
     // 이벤트 시스템의 인터페이스 함수들 -------------------------------------------------------------
 
     public void OnDrag(PointerEventData eventData)
     {
         if (isMove)
-            transform.position = Mouse.current.position.ReadValue() + new Vector2(0,-200);
+            transform.position = Mouse.current.position.ReadValue() + new Vector2(0, -200);
     }
 
     /// <summary>
@@ -271,13 +254,9 @@ public class InventoryUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
                     ItemSlotUI slotUI = endObj.GetComponent<ItemSlotUI>();  // ItemSlotUI 컴포넌트 가져오기
                     if (slotUI != null)
                     {
-                        inven.MoveItem(Inventory.TempSlotID, slotUI.ID);
-
-                        inven.MoveItem(Inventory.TempSlotID, dragStartID);
-
-                        detail.IsPause = false;                         // 상세정보창 다시 열릴 수 있게 하기
                         detail.Open(slotUI.ItemSlot.SlotItemData);      // 상세정보창 열기
                         dragStartID = InvalideID;                       // 드래그 시작 id를 될 수 없는 값으로 설정(드래그가 끝났음을 표시)
+                        detail.IsPause = false;                         // 상세정보창 다시 열릴 수 있게 하기
                     }
                 }
 
@@ -288,6 +267,6 @@ public class InventoryUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             }
             if (isMove)
                 isMove = false;
-        }        
+        }
     }
 }

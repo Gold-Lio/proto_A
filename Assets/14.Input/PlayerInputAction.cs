@@ -19,6 +19,14 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
             ""id"": ""6c4018eb-4eb0-4ac7-96e7-23620f2f4ce5"",
             ""actions"": [
                 {
+                    ""name"": ""InventoryOnOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""11bb55ba-2cd1-4275-9d9c-c6f10fa168ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""ItemDrop"",
                     ""type"": ""Button"",
                     ""id"": ""4b098a0e-aa84-4fa2-95ad-5e536b73dd40"",
@@ -27,9 +35,9 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""InventoryOnOff"",
+                    ""name"": ""ItemPickUp"",
                     ""type"": ""Button"",
-                    ""id"": ""11bb55ba-2cd1-4275-9d9c-c6f10fa168ce"",
+                    ""id"": ""41bd47c2-f46e-4802-8360-8ef4313a9d38"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -57,6 +65,17 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""action"": ""InventoryOnOff"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""598c6d2c-a820-427d-ae84-1845a315346b"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""K&M"",
+                    ""action"": ""ItemPickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -82,8 +101,9 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
 }");
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_ItemDrop = m_UI.FindAction("ItemDrop", throwIfNotFound: true);
         m_UI_InventoryOnOff = m_UI.FindAction("InventoryOnOff", throwIfNotFound: true);
+        m_UI_ItemDrop = m_UI.FindAction("ItemDrop", throwIfNotFound: true);
+        m_UI_ItemPickUp = m_UI.FindAction("ItemPickUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -133,14 +153,16 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
-    private readonly InputAction m_UI_ItemDrop;
     private readonly InputAction m_UI_InventoryOnOff;
+    private readonly InputAction m_UI_ItemDrop;
+    private readonly InputAction m_UI_ItemPickUp;
     public struct UIActions
     {
         private @PlayerInputAction m_Wrapper;
         public UIActions(@PlayerInputAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ItemDrop => m_Wrapper.m_UI_ItemDrop;
         public InputAction @InventoryOnOff => m_Wrapper.m_UI_InventoryOnOff;
+        public InputAction @ItemDrop => m_Wrapper.m_UI_ItemDrop;
+        public InputAction @ItemPickUp => m_Wrapper.m_UI_ItemPickUp;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -150,22 +172,28 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_UIActionsCallbackInterface != null)
             {
-                @ItemDrop.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDrop;
-                @ItemDrop.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDrop;
-                @ItemDrop.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDrop;
                 @InventoryOnOff.started -= m_Wrapper.m_UIActionsCallbackInterface.OnInventoryOnOff;
                 @InventoryOnOff.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnInventoryOnOff;
                 @InventoryOnOff.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnInventoryOnOff;
+                @ItemDrop.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDrop;
+                @ItemDrop.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDrop;
+                @ItemDrop.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDrop;
+                @ItemPickUp.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPickUp;
+                @ItemPickUp.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPickUp;
+                @ItemPickUp.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPickUp;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @ItemDrop.started += instance.OnItemDrop;
-                @ItemDrop.performed += instance.OnItemDrop;
-                @ItemDrop.canceled += instance.OnItemDrop;
                 @InventoryOnOff.started += instance.OnInventoryOnOff;
                 @InventoryOnOff.performed += instance.OnInventoryOnOff;
                 @InventoryOnOff.canceled += instance.OnInventoryOnOff;
+                @ItemDrop.started += instance.OnItemDrop;
+                @ItemDrop.performed += instance.OnItemDrop;
+                @ItemDrop.canceled += instance.OnItemDrop;
+                @ItemPickUp.started += instance.OnItemPickUp;
+                @ItemPickUp.performed += instance.OnItemPickUp;
+                @ItemPickUp.canceled += instance.OnItemPickUp;
             }
         }
     }
@@ -181,7 +209,8 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
     }
     public interface IUIActions
     {
-        void OnItemDrop(InputAction.CallbackContext context);
         void OnInventoryOnOff(InputAction.CallbackContext context);
+        void OnItemDrop(InputAction.CallbackContext context);
+        void OnItemPickUp(InputAction.CallbackContext context);
     }
 }

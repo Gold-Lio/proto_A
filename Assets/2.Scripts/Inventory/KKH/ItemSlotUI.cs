@@ -38,7 +38,7 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     /// </summary>
     protected Image itemImage;
 
-    
+
     // 프로퍼티들 ----------------------------------------------------------------------------------
 
     /// <summary>
@@ -142,7 +142,7 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         // 마우스 왼쪽 버튼 클릭일 때
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            TempItemSlotUI temp = invenUI.TempSlotUI;
+
         }
         if (eventData.button == PointerEventData.InputButton.Right)
         {

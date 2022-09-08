@@ -203,44 +203,6 @@ public class Inventory
     }
 
     /// <summary>
-    /// 특정 슬롯의 아이템을 모두 버리는 함수
-    /// </summary>
-    /// <param name="slotIndex">아이템을 버릴 슬롯의 인덱스</param>
-    /// <returns>버리는데 성공하면 true, 아니면 false</returns>
-    public bool ClearItem(uint slotIndex)
-    {
-        bool result = false;
-
-        //Debug.Log($"인벤토리에서 {slotIndex} 슬롯을 비웁니다.");
-        if (IsValidSlotIndex(slotIndex))        // slotIndex가 적절한 범위인지 확인
-        {
-            ItemSlot slot = slots[slotIndex];
-            //Debug.Log($"{slot.SlotItemData.itemName}을 삭제합니다.");
-            slot.ClearSlotItem();               // 적절한 슬롯이면 삭제 처리
-            //Debug.Log($"삭제에 성공했습니다.");
-            result = true;
-        }
-        else
-        {
-            //Debug.Log($"실패 : 잘못된 인덱스입니다.");
-        }
-
-        return result;
-    }
-
-    /// <summary>
-    /// 모든 아이템 슬롯을 비우는 함수
-    /// </summary>
-    public void ClearInventory()
-    {
-        Debug.Log("인벤토리 클리어");
-        foreach (var slot in slots)
-        {
-            slot.ClearSlotItem();   // 전체 슬롯들을 돌면서 하나씩 삭제
-        }
-    }
-
-    /// <summary>
     /// 아이템 이동시키기
     /// </summary>
     /// <param name="from">시작 슬롯의 ID</param>
@@ -290,13 +252,13 @@ public class Inventory
     /// 아이템을 나눠서 임시 슬롯에 저장
     /// </summary>
     /// <param name="from">아이템을 나눌 슬롯</param>
-    /// <param name="count">나는 아이템 갯수</param>
-    public void TempRemoveItem(uint from, uint count = 1, bool equiped = false)
+    public void TempRemoveItem(uint from)
     {
         if (IsValidAndNotEmptySlot(from))  // from이 절절한 슬롯이면
         {
             ItemSlot slot = slots[from];
             tempSlot.AssignSlotItem(slot.SlotItemData);  // temp 슬롯에 지정된 갯수의 아이템 할당
+            slot.ClearSlotItem();
         }
     }
 
