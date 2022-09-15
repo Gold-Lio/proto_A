@@ -28,13 +28,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public bool isGameStart;
     public bool isCrewWin;
     public Transform SpawnPoint;
+    
     public Light2D PointLight2D;
-    public GameObject[] Interactions;
-    public GameObject[] Altars;
     public GameObject[] Lights;
-    public GameObject[] wall;
     public Text pingText;
-
 
     PhotonView PV;
     public bool isTest;
@@ -135,6 +132,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
     }
 
+
+
     void SetImpoCrew()
     {
         List<PlayerScript> GachaList = new List<PlayerScript>(Players);
@@ -149,6 +148,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
         }
     }
+
+
+
+
 
     [PunRPC]
     void GameStartRPC()
@@ -179,12 +182,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
-        MyPlayer.SetMission();
-        UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 
         ShowPanel(GamePanel);
-        ShowGameUI();
-        StartCoroutine(UM.PunchCoolCo());
+        //ShowGameUI();
+        //StartCoroutine(UM.PunchCoolCo());
         selectCountdown = time;
         StartCoroutine(LightCheckCo());
     }
@@ -217,19 +218,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         return crewCount;
     }
 
-    void ShowGameUI()
-    {
-        if (MyPlayer.isImposter)
-        {
-            UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
-            UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-        }
-        else
-        {
-            UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
-            UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
-        }
-    }
+    //void ShowGameUI()
+    //{
+    //    if (MyPlayer.isImposter)
+    //    {
+    //        UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
+    //        UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
+    //    }
+    //    else
+    //    {
+    //        UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
+    //        UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
+    //    }
+    //}
      
     //학생과 악마 빛 범위 차이 
     IEnumerator LightCheckCo()
@@ -247,15 +248,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
         yield return null;
     }
-
-    public void PlayerDie()
-    { 
-    
-
-    
-    }
-
-
 
 
     [PunRPC]    
