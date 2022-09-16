@@ -48,7 +48,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
 
 
-    // 인벤토리 및 아이템 관련 변수들 --------------------------------------------------------
+    // 인벤토리 및 아이템 관련 변수들 ----------------------------------------------------------------------------
     // 플레이어 인풋 액션 추가
     private PlayerInputAction playerInputAction;
 
@@ -94,14 +94,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         GameManager.instance.MainPlayer = this;
     }
 
-    /// <summary>
-    ///현재 개체 소유자를 가져오는 도우미 방법입니다.
-    /// Helper method for getting the current object owner.
-    /// </summary>
     public PhotonView GetView()
     {
         return this.photonView;
     }
+
 
     public Vector3 GetPosition()
     {
@@ -202,7 +199,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     
     
     
-    // 인벤토리 및 아이템 관렴 함수들 ---------------------------------------------------------------------
+    // 인벤토리 및 아이템 관렴 함수들 -------------------------------------------------------------------------------
 
     public override void OnEnable()
     {

@@ -18,10 +18,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public List<PlayerScript> Players = new List<PlayerScript>();
     public PlayerScript MyPlayer;
 
-    public Text timeText;
-    public float time;
-    private float selectCountdown;
-
     public GameObject studentInfoText, studentInfoText_S, badGuyInfoText, badGuyInfoText_S, WaitingBackground, Background;
     public GameObject onChatButton;
 
@@ -151,8 +147,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
 
 
-
-
     [PunRPC]
     void GameStartRPC()
     {
@@ -184,24 +178,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         MyPlayer.SetNickColor();
 
         ShowPanel(GamePanel);
-        //ShowGameUI();
-        //StartCoroutine(UM.PunchCoolCo());
-        selectCountdown = time;
         StartCoroutine(LightCheckCo());
     }
 
     private void Update()
     {
-        if (Mathf.Floor(selectCountdown) <= 0)
-        {
-            Winner(false); 
-            // Count 0일때 동작할 함수 삽입
-        }
-        else
-        {
-            selectCountdown -= Time.deltaTime;
-            timeText.text = Mathf.Floor(selectCountdown).ToString();
-        }
     }
 
     void UpdatePing()
@@ -217,20 +198,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!Players[i].isImposter) ++crewCount;
         return crewCount;
     }
-
-    //void ShowGameUI()
-    //{
-    //    if (MyPlayer.isImposter)
-    //    {
-    //        UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
-    //        UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-    //    }
-    //    else
-    //    {
-    //        UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
-    //        UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
-    //    }
-    //}
      
     //학생과 악마 빛 범위 차이 
     IEnumerator LightCheckCo()
@@ -248,7 +215,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
         yield return null;
     }
-
 
     [PunRPC]    
     public void WinCheck()

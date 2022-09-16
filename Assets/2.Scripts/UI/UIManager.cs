@@ -31,16 +31,7 @@ public class UIManager : MonoBehaviourPun
     }
 
 
-    // 0 : use, 1 customize, 2 cancel, 3 start, 4 report, 5 kill, 6 sabotage, 7 null, 8 emergency
-    //public Sprite[] sprites;
-    //int curBtn0, curBtn1, curBtn2,
-    //    curBtn3, curBtn4, curBtn5;  // 3 red 4 green 5 blue
-
-    //bool active0, active1, active2; //3-사보 4-기믹(use버튼 동일 이미지)
-    ////그냥 0 use , 1 attack   2 pickup  3 사보(파라오 온리.)trxue
-    //public Image WaitingInteractionBtn0, InteractionBtn0, InteractionBtn1,
-    //    InteractionBtn2;
-    //public Text Interaction1Text;
+  
 
     public Image PreviewImage;
     public Color[] colors;
@@ -68,26 +59,6 @@ public class UIManager : MonoBehaviourPun
     {
         PV = photonView;
     }
-
-    //public void SetInteractionBtn0(int index, bool _active)
-    //{
-    //    //curBtn0 = index;
-    //    //active0 = _active;
-
-    //    //시작안함 or 시작. 
-
-    //    // 대기실
-    //    if (!NM.isGameStart)
-    //    {
-    //    //    WaitingInteractionBtn0.sprite = sprites[index];
-    //    //    WaitingInteractionBtn0.GetComponent<Button>().interactable = active0;
-    //    //}
-    //    //else if (NM.isGameStart)
-    //    //{
-    //    //    InteractionBtn0.sprite = sprites[index];
-    //    //    InteractionBtn0.GetComponent<Button>().interactable = active0;
-    //    }
-    //}
 
     public void ColorChange(int _colorIndex)
     {
@@ -147,20 +118,5 @@ public class UIManager : MonoBehaviourPun
     //    //Enum상태 변경
     //    NM.MyPlayer.ispunch = true;
     //    SetInteractionBtn1(5, true);
-    //}
-
-    //public IEnumerator MissionClearCo(GameObject MissionPanel)
-    //{
-    //    MissionPanel.SetActive(false);
-    //    MissionClearText.SetActive(true);
-    //    yield return new WaitForSeconds(2);
-    //    MissionClearText.SetActive(false);
-    //}
-
-
-    //public void MissionClear(GameObject MissionPanel)
-    //{
-    //    StartCoroutine(MissionClearCo(MissionPanel));
-    //    PV.RPC("AddMissionGage", RpcTarget.AllViaServer);
     //}
 }
