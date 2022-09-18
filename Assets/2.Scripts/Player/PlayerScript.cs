@@ -99,11 +99,11 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         return this.photonView;
     }
 
-
     public Vector3 GetPosition()
     {
         return transform.position;
     }
+
     void SetNick()
     {
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
@@ -132,16 +132,15 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
           
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
+
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
 
-
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
-
 
 
     public void SetPos(Vector3 target)
@@ -176,7 +175,9 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     }
 
 
-    //서로 겹치지 않도록 하는 Oncol.
+
+
+    //서로 겹치지 않도록 하는 col.
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
@@ -200,7 +201,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     
     
     // 인벤토리 및 아이템 관렴 함수들 -------------------------------------------------------------------------------
-
     public override void OnEnable()
     {
         playerInputAction.UI.Enable();
