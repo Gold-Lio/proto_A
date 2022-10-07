@@ -88,10 +88,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         facingRight = true;
 
         // 인벤토리UI 초기화
-        GameManager.instance.InvenUI.InitializeInventory(inven);
-        inven.AddItem(ItemIDCode.Test_Item);
+        //GameManager.instance.InvenUI.InitializeInventory(inven);
+        //inven.AddItem(ItemIDCode.Test_Item);
 
-        GameManager.instance.MainPlayer = this;
+        //GameManager.instance.MainPlayer = this;
     }
 
     public PhotonView GetView()
@@ -132,7 +132,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
           
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
-
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
         else if ((transform.position - curPos).sqrMagnitude >= 100) transform.position = curPos;
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
@@ -175,8 +174,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     }
 
 
-
-
     //서로 겹치지 않도록 하는 col.
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -195,62 +192,60 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             curPos = (Vector3)stream.ReceiveNext();
         }
     }
-    
-    
-    
-    
-    
-    // 인벤토리 및 아이템 관렴 함수들 -------------------------------------------------------------------------------
-    public override void OnEnable()
-    {
-        playerInputAction.UI.Enable();
-        playerInputAction.UI.InventoryOnOff.performed += OnInventoryOnOff;
-        playerInputAction.UI.ItemPickUp.performed += OnItemPickUp;
-    }
 
-    public override void OnDisable()
-    {
-        playerInputAction.UI.ItemPickUp.performed -= OnItemPickUp;
-        playerInputAction.UI.InventoryOnOff.performed -= OnInventoryOnOff;
-        playerInputAction.UI.Disable();
 
-    }
 
-    private void OnInventoryOnOff(InputAction.CallbackContext _)
-    {
-        GameManager.instance.InvenUI.InventoryOnOffSwitch();
-    }
+    //인벤토리 및 아이템 관렴 함수들 -------------------------------------------------------------------------------
+    //public override void OnEnable()
+    //{
+    //    playerInputAction.UI.Enable();
+    //    playerInputAction.UI.InventoryOnOff.performed += OnInventoryOnOff;
+    //    playerInputAction.UI.ItemPickUp.performed += OnItemPickUp;
+    //}
 
-    private void OnItemPickUp(InputAction.CallbackContext _)
-    {
-        //Collider[] cols = Physics.OverlapSphere(transform.position, itemPickupRange, LayerMask.GetMask("Item"));
-        Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position, itemPickupRange, LayerMask.GetMask("Item"));
-        foreach (var col in cols)
-        {
-            Item item = col.GetComponent<Item>();
+    //public override void OnDisable()
+    //{
+    //    playerInputAction.UI.ItemPickUp.performed -= OnItemPickUp;
+    //    playerInputAction.UI.InventoryOnOff.performed -= OnInventoryOnOff;
+    //    playerInputAction.UI.Disable();
 
-            if (inven.AddItem(item.data))
-            {
-                GameManager.instance.InvenUI.Detail.IsPause = false;
-                Destroy(col.gameObject);
-            }
-        }
-    }
+    //}
 
-    public Vector3 OnItemDropPosition(Vector3 inputPos)
-    {
-        Vector3 result = Vector3.zero;
-        Vector3 toInputPos = inputPos - transform.position;
-        if (toInputPos.sqrMagnitude > dropRange * dropRange)
-        {
-            result = transform.position + toInputPos.normalized * dropRange;
-        }
-        else
-        {
-            result = inputPos;
-        }
+    //private void OnInventoryOnOff(InputAction.CallbackContext _)
+    //{
+    //    GameManager.instance.InvenUI.InventoryOnOffSwitch();
+    //}
 
-        return result;
-    }
+    //private void OnItemPickUp(InputAction.CallbackContext _)
+    //{
+    //    Collider[] cols = Physics.OverlapSphere(transform.position, itemPickupRange, LayerMask.GetMask("Item"));
+    //    Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position, itemPickupRange, LayerMask.GetMask("Item"));
+    //    foreach (var col in cols)
+    //    {
+    //        Item item = col.GetComponent<Item>();
+
+    //        if (inven.AddItem(item.data))
+    //        {
+    //            GameManager.instance.InvenUI.Detail.IsPause = false;
+    //            Destroy(col.gameObject);
+    //        }
+    //    }
+    //}
+
+    //public Vector3 OnItemDropPosition(Vector3 inputPos)
+    //{
+    //    Vector3 result = Vector3.zero;
+    //    Vector3 toInputPos = inputPos - transform.position;
+    //    if (toInputPos.sqrMagnitude > dropRange * dropRange)
+    //    {
+    //        result = transform.position + toInputPos.normalized * dropRange;
+    //    }
+    //    else
+    //    {
+    //        result = inputPos;
+    //    }
+
+    //    return result;
+    //}
 }
 

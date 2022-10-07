@@ -71,8 +71,8 @@ public class TempItemSlotUI : ItemSlotUI
         if (!IsEmpty())
         {
             Ray ray = Camera.main.ScreenPointToRay(mousePos);
-            Vector3 pos = GameManager.instance.MainPlayer.OnItemDropPosition(GameManager.instance.MainPlayer.transform.position);
-            ItemFactory.MakeItems((ItemIDCode)ItemSlot.SlotItemData.id, pos);   // 임시 슬롯에 들어있는 모든 아이템을 생성
+            //Vector3 pos = GameManager.instance.MainPlayer.OnItemDropPosition(GameManager.instance.MainPlayer.transform.position);
+            //ItemFactory.MakeItems((ItemIDCode)ItemSlot.SlotItemData.id, pos);   // 임시 슬롯에 들어있는 모든 아이템을 생성
 
             Close();    // 임시슬롯UI 닫고 클리어하기
         }
