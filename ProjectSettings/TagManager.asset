@@ -21,7 +21,7 @@ TagManager:
   - Item
   - Mission
   - PostProcess
-  - 
+  - LightMapLayer
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: Layer 3
     uniqueID: 4189426099
+    locked: 0
+  - name: LightMap
+    uniqueID: 1234713225
     locked: 0

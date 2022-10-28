@@ -18,24 +18,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public List<PlayerScript> Players = new List<PlayerScript>();
     public PlayerScript MyPlayer;
 
-    public Text timeText;
-    public float time;
-    private float selectCountdown;
-
     public GameObject studentInfoText, studentInfoText_S, badGuyInfoText, badGuyInfoText_S, WaitingBackground, Background;
     public GameObject onChatButton;
 
     public bool isGameStart;
     public bool isCrewWin;
     public Transform SpawnPoint;
+    
     public Light2D PointLight2D;
-    public GameObject[] Interactions;
-    public GameObject[] Altars;
     public GameObject[] Lights;
-
-    public GameObject[] wall;
     public Text pingText;
-
 
     PhotonView PV;
     public bool isTest;
@@ -46,11 +38,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         if (isTest) return;
 
-        Screen.SetResolution(1920, 1080, false);
+        Screen.SetResolution(800, 400, false);
         PV = photonView;
         ShowPanel(DisconnectPanel);
         ShowBackground(WaitingBackground);
-
 
         InvokeRepeating("UpdatePing", 2, 2);
     }
@@ -122,7 +113,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
     public void SortPlayers() => Players.Sort((p1, p2) => p1.actor.CompareTo(p2.actor));
-
     public Color GetColor(int colorIndex)
     {
         return UM.colors[colorIndex];
@@ -138,6 +128,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PV.RPC("GameStartRPC", RpcTarget.AllViaServer);
     }
 
+
+
     void SetImpoCrew()
     {
         List<PlayerScript> GachaList = new List<PlayerScript>(Players);
@@ -152,6 +144,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
         }
     }
+
+
 
     [PunRPC]
     void GameStartRPC()
@@ -170,7 +164,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             badGuyInfoText.SetActive(true);
             badGuyInfoText_S.SetActive(true);
         }
-
         else
         {
             studentInfoText.SetActive(true);
@@ -183,29 +176,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         MyPlayer.SetPos(SpawnPoint.position);
         MyPlayer.SetNickColor();
-        MyPlayer.SetMission();
-        UM.GetComponent<PhotonView>().RPC("SetMaxMissionGage", RpcTarget.AllViaServer);
 
         ShowPanel(GamePanel);
-        ShowGameUI();
-        StartCoroutine(UM.PunchCoolCo());
-        selectCountdown = time;
         StartCoroutine(LightCheckCo());
-
     }
 
     private void Update()
     {
-        if (Mathf.Floor(selectCountdown) <= 0)
-        {
-            Winner(false); 
-            // Count 0일때 동작할 함수 삽입
-        }
-        else
-        {
-            selectCountdown -= Time.deltaTime;
-            timeText.text = Mathf.Floor(selectCountdown).ToString();
-        }
     }
 
     void UpdatePing()
@@ -221,20 +198,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!Players[i].isImposter) ++crewCount;
         return crewCount;
     }
-
-    void ShowGameUI()
-    {
-        if (MyPlayer.isImposter)
-        {
-            UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
-            UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅
-        }
-        else
-        {
-            UM.SetInteractionBtn0(0, false); //첫번째 버튼이 use로 세팅
-            UM.SetInteractionBtn1(5, true); //두번재 버튼이 킬로 세팅   
-        }
-    }
      
     //학생과 악마 빛 범위 차이 
     IEnumerator LightCheckCo()
@@ -243,18 +206,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         {
             if (MyPlayer.isImposter)
             {
-                PointLight2D.pointLightOuterRadius = 50;
+                PointLight2D.pointLightOuterRadius = 90;
             }
             else
             {
-                PointLight2D.pointLightOuterRadius = 30;
+                PointLight2D.pointLightOuterRadius = 50;
             }
         }
         yield return null;
     }
 
-
-    [PunRPC]
+    [PunRPC]    
     public void WinCheck()
     {
         int crewCount = 0;
@@ -269,6 +231,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             else
                 ++crewCount;
         }
+
         if (impoCount == 0 && crewCount > 0) // 모든 임포가 죽음
             Winner(true);
         else if (impoCount != 0 && impoCount > crewCount) // 임포가 크루보다 많음

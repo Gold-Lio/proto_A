@@ -9,12 +9,16 @@ using static NetworkManager;
 using static UIManager;
 using Random = UnityEngine.Random;
 using UnityEngine.Experimental.Rendering.Universal;
-
+using Photon.Voice.Unity.Demos.DemoVoiceUI;
+using UnityEngine.InputSystem;
+using UnityEditor;
 
 public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     public static PlayerScript PS;
-    public Rigidbody2D RB; 
+    //public Inventory inventory;
+
+    public Rigidbody2D RB;
     public SpriteRenderer SR;  //  이SR 부분들. Flip에 들어가는  SR, 색깔 구분에 들어가는  SR. 
     public SpriteRenderer[] CharacterSR;
     public Light2D playerStaffLight2D;
@@ -37,19 +41,38 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     Vector2 curScale;
     Vector2 playerDir;
     Vector3 curPos;
-    private IPunObservable _punObservableImplementation; 
+    private IPunObservable _punObservableImplementation;
 
     public GameObject playerCanvasGo;
     public Animator anim;
 
-    //public AudioSource walkAudio;
+
+
+    // 인벤토리 및 아이템 관련 변수들 ----------------------------------------------------------------------------
+    // 플레이어 인풋 액션 추가
+    private PlayerInputAction playerInputAction;
+
+    // 아이템 줍는 범위
+    private float itemPickupRange = 5.0f;
+
+    // 아이템 드랍 거리
+    private float dropRange = 5.0f;
+
+    // 인벤토리 클래스
+    private Inventory inven;
+
 
     private void Awake()
     {
         PS = this;
-        anim =  gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
+
+        // 플레이어 인풋 액션 추가 (드랍, 인벤토리 onoff)
+        playerInputAction = new PlayerInputAction();
         //walkAudio = GetComponent<AudioSource>();
 
+        // 인벤 클래스 생성
+        inven = new Inventory();
     }
 
 
@@ -63,12 +86,24 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NM.SortPlayers();
         isMove = true;
         facingRight = true;
+
+        // 인벤토리UI 초기화
+        //GameManager.instance.InvenUI.InitializeInventory(inven);
+        //inven.AddItem(ItemIDCode.Test_Item);
+
+        //GameManager.instance.MainPlayer = this;
+    }
+
+    public PhotonView GetView()
+    {
+        return this.photonView;
     }
 
     public Vector3 GetPosition()
     {
         return transform.position;
     }
+
     void SetNick()
     {
         NickText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
@@ -89,27 +124,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             RB.velocity = input.normalized * speed;
             anim.SetBool("Walk", false);
 
-
-            //anim.SetFloat("Walk", Mathf.Abs(inputX));
-
-            //if (inputX > 0 && facingRight)
-            //{
-            //    FlipXRPC();
-            //}
-            //else if (inputX < 0 && !facingRight)
-            //{
-            //    FlipXRPC();
-            //}
-
             if (inputX != 0)
             {
                 PV.RPC("FlipXRPC", RpcTarget.AllBuffered, inputX);
                 anim.SetBool("Walk", true);
-                //walkAudio.Play();
             }
-            //else
-            //    walkAudio.Stop();
-
+          
             NM.PointLight2D.transform.position = transform.position + new Vector3(0, 0, 10);
         }
         // IsMine이 아닌 것들은 부드럽게 위치 동기화
@@ -117,18 +137,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         else transform.position = Vector3.Lerp(transform.position, curPos, Time.deltaTime * 10);
     }
 
+
     [PunRPC]
     void FlipXRPC(float axis) => SR.flipX = axis == 1;
 
-
-    //[PunRPC]
-    //void FlipXRPC()
-    //{
-    //    //facingRight = !facingRight;
-    //    //curScale = transform.localScale; // 자식이 뒤집히도록 만들어야한낟
-    //    //curScale.x *= -1;
-    //    //transform.localScale = curScale;
-    //   }
 
     public void SetPos(Vector3 target)
     {
@@ -161,44 +173,12 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    public void SetMission()
-    {
-        if (!PV.IsMine) return;
-        if (isImposter) return;
 
-        List<int> GachaList = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        for (int i = 0; i < 4; i++)
-        {
-            int rand = Random.Range(0, GachaList.Count);
-            NM.Interactions[GachaList[rand]].SetActive(true);
-            GachaList.RemoveAt(rand);
-        }
-    }
-
+    //서로 겹치지 않도록 하는 col.
     void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Player")) return;
         Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col.gameObject.GetComponent<CapsuleCollider2D>());
-    }
-
-
-    [PunRPC]
-    public void Punch() // 펀치 함수. 
-    {
-        //플립한 그곳에서 생성시키도록 다시 수정
-        PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(SR.flipX ? 9f : -9f, 0f, -1f),
-                Quaternion.Euler(0, 0, -180))
-            .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
-
-
-        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(curScale ? 9f : -9f, 0f, -1f),
-        //        Quaternion.Euler(0, 0, -180))
-        //    .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, SR.flipX ? 1 : -1);
-
-        //StartCoroutine(WaitforCo());
-        //PhotonNetwork.Instantiate("Punch", transform.position + new Vector3(-10,0,0), Quaternion.identity);
-         // .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All); //, SR.flipX ? 1 : -1);
-        StartCoroutine(UM.PunchCoolCo());
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -213,17 +193,59 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    IEnumerator WaitforCo()
-    {
-        yield return new WaitForSeconds(2f);
-    }
-    //private void OnTriggerEnter2D(Collider2D col)
+
+
+    //인벤토리 및 아이템 관렴 함수들 -------------------------------------------------------------------------------
+    //public override void OnEnable()
     //{
-    //    IInventoryItem item = col.gameObject.GetComponent<IInventoryItem>();
-    //    if (item != null)
+    //    playerInputAction.UI.Enable();
+    //    playerInputAction.UI.InventoryOnOff.performed += OnInventoryOnOff;
+    //    playerInputAction.UI.ItemPickUp.performed += OnItemPickUp;
+    //}
+
+    //public override void OnDisable()
+    //{
+    //    playerInputAction.UI.ItemPickUp.performed -= OnItemPickUp;
+    //    playerInputAction.UI.InventoryOnOff.performed -= OnInventoryOnOff;
+    //    playerInputAction.UI.Disable();
+
+    //}
+
+    //private void OnInventoryOnOff(InputAction.CallbackContext _)
+    //{
+    //    GameManager.instance.InvenUI.InventoryOnOffSwitch();
+    //}
+
+    //private void OnItemPickUp(InputAction.CallbackContext _)
+    //{
+    //    Collider[] cols = Physics.OverlapSphere(transform.position, itemPickupRange, LayerMask.GetMask("Item"));
+    //    Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position, itemPickupRange, LayerMask.GetMask("Item"));
+    //    foreach (var col in cols)
     //    {
-    //        inventory.AddItem(item);
+    //        Item item = col.GetComponent<Item>();
+
+    //        if (inven.AddItem(item.data))
+    //        {
+    //            GameManager.instance.InvenUI.Detail.IsPause = false;
+    //            Destroy(col.gameObject);
+    //        }
     //    }
+    //}
+
+    //public Vector3 OnItemDropPosition(Vector3 inputPos)
+    //{
+    //    Vector3 result = Vector3.zero;
+    //    Vector3 toInputPos = inputPos - transform.position;
+    //    if (toInputPos.sqrMagnitude > dropRange * dropRange)
+    //    {
+    //        result = transform.position + toInputPos.normalized * dropRange;
+    //    }
+    //    else
+    //    {
+    //        result = inputPos;
+    //    }
+
+    //    return result;
     //}
 }
 
